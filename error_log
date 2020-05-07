@@ -1,0 +1,2 @@
+[07-May-2020 04:45:26 UTC] PHP Warning:  require(/home/kamartam/public_html/natan-dev/kamar/vendor/autoload.php): failed to open stream: No such file or directory in /home/kamartam/public_html/natan-dev/kamar/index.php on line 24
+[07-May-2020 04:45:26 UTC] PHP Fatal error:  require(): Failed opening required '/home/kamartam/public_html/natan-dev/kamar/vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/kamartam/public_html/natan-dev/kamar/index.php on line 24

@@ -11,7 +11,7 @@ class ArticlesTransformer extends TransformerAbstract
 		return [
 			'id'   => $model->id,
 			'title' => $model->title,
-			'abstract' => $model->abstract,
+			'abstract' => $model->abstract['id'],
 			'status'=> $model->status == 0 ? 'Draft' : 'Live',
 			'action'=> '<div class="btn-group">
                   <a href="'.route('admin.articles.edit', ['id'=>$model->id]).'" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-fw fa-pencil-alt"></i></a>

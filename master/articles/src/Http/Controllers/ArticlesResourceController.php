@@ -159,14 +159,14 @@ class ArticlesResourceController extends Controller {
 		$data = $this->repository->update($dataInsert, $data->id);
 
 
-		$this->articlesToCategory->deleteWhere(array('article_id'=>$article->id));
+		$this->articlesToCategory->deleteWhere(array('article_id'=>$data->id));
 
 
 		// // insert ulang
 		foreach ($request->category_id as $key => $category_id) {
 			$dataArticleCategory = array(
 				'category_id' 	=> $category_id,
-				'article_id'	=> $article->id
+				'article_id'	=> $data->id
 			);
 			$this->articlesToCategory->create($dataArticleCategory);
 		}

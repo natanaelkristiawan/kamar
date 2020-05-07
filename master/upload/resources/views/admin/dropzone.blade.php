@@ -36,7 +36,7 @@
                         }
                         $('#sortable_{!!$field!!}').append(rendered);
                         toastr.success('Files uploaded successfully.', 'Success');
-                        ++i;
+                        i++;
                     }
                 });
 
@@ -68,6 +68,7 @@
             } else {
                 rendered = rendered + Mustache.render(template_file_{!!$field!!}, value);
             }
+            i++;
         });
 
         $('#sortable_{!!$field!!}').html(rendered);

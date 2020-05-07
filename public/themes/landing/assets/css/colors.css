@@ -45,8 +45,8 @@
 .red-skin .single_widgets.widget_search form button,
 .red-skin .single_widgets.widget_tags ul li a:hover, .red-skin .single_widgets.widget_tags ul li a:focus,
 .red-skin .pagination>.active>a, .red-skin .pagination>.active>a:focus, .red-skin .pagination>.active>a:hover, .red-skin .pagination>.active>span, .red-skin .pagination>.active>span:focus, .red-skin .pagination>.active>span:hover, .red-skin .pagination>li>a:focus, .red-skin .pagination>li>a:hover{
-	background-color:#D70040;
-	background:#D70040;
+	background-color:#FC6E51;
+	background:#FC6E51;
 }
  
 .red-skin a.link:hover, .red-skin a.link:focus, .red-skin a:hover, a:focus,
@@ -69,7 +69,7 @@
 .red-skin .blog-page .article_detail_wrapss .comment-area .all-comments article .comment-details .comment-meta .comment-left-meta .comment-date,
 .red-skin .cn-info-icon i, .red-skin .client-info h5,
 .red-skin .listing-card-info-price{
-	color:#D70040;
+	color:#FC6E51;
 }
 
 .red-skin .pagination>.active>a, .red-skin .pagination>.active>a:focus, .red-skin .pagination>.active>a:hover, .red-skin .pagination>.active>span, .red-skin .pagination>.active>span:focus, .red-skin .pagination>.active>span:hover, .red-skin .pagination>li>a:focus, .red-skin .pagination>li>a:hover,
@@ -89,31 +89,31 @@
 .red-skin .nav-tabs .nav-item.show .nav-link, .red-skin .nav-tabs .nav-link.active,
 .red-skin .btn.pop-login,
 .red-skin .single_widgets.widget_tags ul li a:hover, .red-skin .single_widgets.widget_tags ul li a:focus{
-	border-color:#D70040;
+	border-color:#FC6E51;
 }
 
 .red-skin .nav-menu>.active>a, .red-skin .nav-menu>.focus>a, .red-skin .nav-menu>li:hover>a {
-    color: #D70040 !important;
+    color: #FC6E51 !important;
 }
 .red-skin .nav-menu>.active>a .submenu-indicator-chevron, .red-skin .nav-menu>.focus>a .submenu-indicator-chevron, .red-skin .nav-menu>li:hover>a .submenu-indicator-chevron {
-    border-color: transparent #D70040 #D70040 transparent;
+    border-color: transparent #FC6E51 #FC6E51 transparent;
 }
 .red-skin .nav-dropdown>.focus>a .submenu-indicator-chevron,
 .red-skin .nav-dropdown>li:hover>a .submenu-indicator-chevron {
-    border-color: transparent #D70040 #D70040 transparent
+    border-color: transparent #FC6E51 #FC6E51 transparent
 }
 .red-skin .btn-group .btn-secondary .nav-link.active, .red-skin .btn-group .btn-secondary .nav-link:hover, .red-skin .btn-group .btn-secondary .nav-link:focus {
-    background-color: #D70040 !important;
+    background-color: #FC6E51 !important;
 }
 .red-skin .btn-group .btn-secondary .nav-link.active, .red-skin .btn-group .btn-secondary .nav-link:hover, .red-skin .btn-group .btn-secondary .nav-link:focus {
-    background-color: #D70040 !important;
+    background-color: #FC6E51 !important;
 }
 
 .red-skin .nav-menu.nav-menu-social>li.add-listing a {
     color: #ffffff !important;
 }
 .red-skin .nav-dropdown>.focus>a, .red-skin .nav-dropdown>li:hover>a {
-    color: #D70040;
+    color: #FC6E51;
 }
 .red-skin li.login-attri.theme-log a {
     box-shadow:0 8px 5px rgba(240, 44, 45, 0.2);

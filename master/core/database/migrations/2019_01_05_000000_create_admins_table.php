@@ -13,7 +13,7 @@ class CreateAdminsTable extends Migration
 			$table->bigIncrements('id');
 			$table->string('name');
 			$table->string('status');
-			$table->string('email')->unique();
+			$table->string('email')->nullable();
 			$table->string('password');
 			$table->string('photo')->nullable();
 			$table->rememberToken();

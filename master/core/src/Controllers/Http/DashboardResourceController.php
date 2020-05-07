@@ -29,6 +29,7 @@ class DashboardResourceController extends Controller
 
   public function profile()
   {
+    Meta::title('Profile');
     $data = Auth::guard('admin')->user();
     return view('core::admin.core.profile', compact('data'));
   }

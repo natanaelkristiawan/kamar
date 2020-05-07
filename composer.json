@@ -15,6 +15,20 @@
             "options"   : {
                 "symlink" : true
             }
+        },
+        {
+            "type"      : "path",
+            "url"       : "master/upload",
+            "options"   : {
+                "symlink" : true
+            }
+        },
+        {
+            "type"      : "path",
+            "url"       : "master/articles",
+            "options"   : {
+                "symlink" : true
+            }
         }
     ],
 
@@ -25,7 +39,9 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "master/core": "@dev"
+        "master/core": "@dev",
+        "master/upload": "@dev",
+        "master/articles": "@dev"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

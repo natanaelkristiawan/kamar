@@ -9,7 +9,7 @@
       @include('theme.admin.partials.header')
       @include('theme.admin.partials.sidebar')
       <div class="content-page">
-        @yield('content');
+        @yield('content')
         @include('theme.admin.partials.copyright')
       </div>
     </div>

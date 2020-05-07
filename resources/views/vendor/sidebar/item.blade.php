@@ -1,5 +1,5 @@
-<li>
-    <a class="waves-effect" href="@if($item->hasItems())javascript:void(0)@else{{ $item->getUrl() }}@endif">
+<li class="@if($active)active @endif">
+    <a class="waves-effect @if($active)active @endif" href="@if($item->hasItems())javascript:void(0)@else{{ $item->getUrl() }}@endif">
         
         @if($item->getIcon() == 'fa fa-angle-double-right')
         @else

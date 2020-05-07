@@ -1,6 +1,7 @@
 <?php
 
 Breadcrumbs::for('articles', function ($trail) {
+  $trail->parent('dashboard');
   $trail->push('Articles', route('admin.articles'));
 });
 
@@ -15,12 +16,13 @@ Breadcrumbs::for('articles.edit', function ($trail) {
 });
 
 Breadcrumbs::for('categories', function ($trail) {
+  $trail->parent('dashboard');
   $trail->push('Categories', route('admin.categories'));
 });
 
 Breadcrumbs::for('categories.create', function ($trail) {
   $trail->parent('categories');
-  $trail->push('Edit', route('admin.categories.create'));
+  $trail->push('Create', route('admin.categories.create'));
 });
 
 Breadcrumbs::for('categories.edit', function ($trail) {

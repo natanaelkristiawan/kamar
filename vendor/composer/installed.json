@@ -2049,7 +2049,7 @@
         "dist": {
             "type": "path",
             "url": "master/core",
-            "reference": "fb99565a7ddeb525bc52082dd08f88f2d43c8b46"
+            "reference": "4327196eda68e23b314af6d55582c5f49901a94c"
         },
         "require": {
             "davejamesmiller/laravel-breadcrumbs": "^5.3",
@@ -2057,6 +2057,7 @@
             "league/flysystem-sftp": "^1.0",
             "league/fractal": "^0.17.0",
             "maatwebsite/laravel-sidebar": "^2.1",
+            "mcamara/laravel-localization": "^1.5",
             "prettus/l5-repository": "^2.6"
         },
         "type": "library",
@@ -2141,6 +2142,80 @@
         "transport-options": {
             "symlink": true
         }
+    },
+    {
+        "name": "mcamara/laravel-localization",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mcamara/laravel-localization.git",
+            "reference": "13a51715f8e066b0bfb637fd9065d7496c3579ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/13a51715f8e066b0bfb637fd9065d7496c3579ec",
+            "reference": "13a51715f8e066b0bfb637fd9065d7496c3579ec",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0||^6.0||^7.0",
+            "php": ">=7.1.0"
+        },
+        "require-dev": {
+            "orchestra/testbench-browser-kit": "~3.4|~3.8|~4.0",
+            "phpunit/phpunit": "6.0.*|^8.0"
+        },
+        "suggest": {
+            "ext-intl": "*"
+        },
+        "time": "2020-03-05T15:19:05+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider"
+                ],
+                "aliases": {
+                    "LaravelLocalization": "Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [],
+            "psr-0": {
+                "Mcamara\\LaravelLocalization": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marc Cámara",
+                "email": "mcamara88@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Easy localization for Laravel",
+        "homepage": "https://github.com/mcamara/laravel-localization",
+        "keywords": [
+            "laravel",
+            "localization",
+            "php"
+        ],
+        "funding": [
+            {
+                "url": "https://github.com/iwasherefirst2",
+                "type": "github"
+            },
+            {
+                "url": "https://github.com/mcamara",
+                "type": "github"
+            }
+        ]
     },
     {
         "name": "mockery/mockery",

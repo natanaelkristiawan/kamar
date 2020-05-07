@@ -120,15 +120,15 @@
             </div>
 
             <div class="edit-wraper-new" style="display: none">
-                <div class="modal inmodal fade"  tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="static" data-keyboard="false">
-                    <div class="modal-dialog modal-lg">
+                <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Image Meta</h4>
-                                <small class="font-bold">You can edit image meta for other purpose</small>
+                                <h5 class="modal-title mt-0" id="myModalLabel">Modal Heading</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
                             <div class="modal-body">
-                                <div class="row">
+                                 <div class="row">
                                     <div class="col-sm-3">
                                         <div id="main-img">
                                             <img src="{!!url("/image/preview")!!}/@{{path}}" class="img-responsive" alt="">
@@ -154,15 +154,12 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="modal-footer">
-
-                            <button data-dismiss="modal" class="btn btn-success btn-close pull-right" type="submit">Save</button>
-
+                                <button data-dismiss="modal" aria-hidden="true" class="btn btn-success btn-close pull-right" type="submit">Save</button>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
 
                 <input class="form-control" type="hidden" name="{!!$field!!}[@{{i}}][folder]" value="@{{folder}}">
                 <input class="form-control" type="hidden" name="{!!$field!!}[@{{i}}][time]" value="@{{time}}">

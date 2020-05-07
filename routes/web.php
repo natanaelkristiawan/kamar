@@ -12,12 +12,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+Route::group(
+[
+  'prefix' => LaravelLocalization::setLocale(),
+  'middleware' => [ 'billingual' ]
+], function($route){
+  $route->get('/', function () {
     return view('welcome');
+  });
+
+  
+   $route->get('login', function(){
+    return 'login page';
+  })->name('login');
+
 });
 
 
-Route::get('login', function(){
-  return 'login page';
-})->name('login');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+// Route::get('login', function(){
+//   return 'login page';
+// })->name('login');

@@ -14,6 +14,7 @@
       </div>
     </div>
     <!-- END wrapper -->   
+    @include('theme.admin.partials.modal')
     @include('theme.admin.partials.footer')
   </body>
 

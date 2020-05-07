@@ -15,7 +15,7 @@ class ExtenderSidebar implements SidebarExtender
 	{
 		$menu->group('Main Navigator', function(Group $group) {
 			$group->item('Articles', function(Item $item){
-				$item->icon('ni ni-ungroup text-orange');
+				$item->icon('mdi mdi-book');
         $item->url('articles');
 				$item->item('Category', function(Item $item){
           $item->url(route('admin.categories'));

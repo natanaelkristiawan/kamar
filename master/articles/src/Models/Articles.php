@@ -23,6 +23,8 @@ class Articles extends Model
 
   protected $casts = [
 		'meta' => 'array',
+    'abstract' => 'array',
+    'content' => 'array',
 		'banners' => 'array',
 		'banners_mobile' => 'array',
 		'images' => 'array',

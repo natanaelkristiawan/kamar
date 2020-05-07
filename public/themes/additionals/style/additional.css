@@ -162,4 +162,14 @@ position: relative;
     color: #dd4b39;
 }
 
+.has-error input {
+    border-color: #f16c69 !important; 
+}
+
+.bootstrap-tagsinput {
+    width: 100%;
+    font-size: 13.5px;
+    height: calc(2.25rem + 2px);
+}
+
 }

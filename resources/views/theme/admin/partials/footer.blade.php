@@ -40,6 +40,7 @@
 <script src="{{ asset('themes/vertical') }}/assets/js/app.js"></script>
 
 <script type="text/javascript">
+  Dropzone.autoDiscover = false; 
   function sendFile(file, editor, uploadUrl) { 
     data = new FormData();
     data.append("file", file);

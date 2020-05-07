@@ -34,7 +34,7 @@
                         <h4 class="text-muted font-18 m-b-5 text-center">Welcome Back !</h4>
                         <p class="text-muted text-center">Sign in to continue to administrator.</p>
 
-                        @yield('content');
+                        @yield('content')
                     </div>
 
                 </div>

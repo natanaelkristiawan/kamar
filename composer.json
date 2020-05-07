@@ -29,6 +29,41 @@
             "options"   : {
                 "symlink" : true
             }
+        },
+        {
+            "type"      : "path",
+            "url"       : "master/customers",
+            "options"   : {
+                "symlink" : true
+            }
+        },
+        {
+            "type"      : "path",
+            "url"       : "master/payments",
+            "options"   : {
+                "symlink" : true
+            }
+        }, 
+        {
+            "type"      : "path",
+            "url"       : "master/rooms",
+            "options"   : {
+                "symlink" : true
+            }
+        },
+        {
+            "type"      : "path",
+            "url"       : "master/books",
+            "options"   : {
+                "symlink" : true
+            }
+        },
+        {
+            "type"      : "path",
+            "url"       : "master/reviews",
+            "options"   : {
+                "symlink" : true
+            }
         }
     ],
 
@@ -41,7 +76,12 @@
         "laravel/tinker": "^2.0",
         "master/articles": "@dev",
         "master/core": "@dev",
-        "master/upload": "@dev"
+        "master/upload": "@dev",
+        "master/customers": "@dev",
+        "master/payments": "@dev",
+        "master/rooms": "@dev",
+        "master/books": "@dev",
+        "master/reviews": "@dev"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

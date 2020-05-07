@@ -1,0 +1,21 @@
+{
+    "name": "master/rooms",
+    "description": "This module additional",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Master\\Rooms\\": "src"
+        },
+        "classmap": [ "src" ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Master\\Rooms\\RoomsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

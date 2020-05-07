@@ -1,0 +1,21 @@
+{
+    "name": "master/payments",
+    "description": "This module additional",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Master\\Payments\\": "src"
+        },
+        "classmap": [ "src" ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Master\\Payments\\PaymentsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

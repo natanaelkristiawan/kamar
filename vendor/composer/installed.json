@@ -2043,6 +2043,40 @@
         }
     },
     {
+        "name": "master/books",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "dist": {
+            "type": "path",
+            "url": "master/books",
+            "reference": "92293b69fd7e105788b03e4fe655d115edea2318"
+        },
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Master\\Books\\BooksServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Master\\Books\\": "src"
+            },
+            "classmap": [
+                "src"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "description": "This module additional",
+        "transport-options": {
+            "symlink": true
+        }
+    },
+    {
         "name": "master/core",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -2086,6 +2120,142 @@
             "MIT"
         ],
         "description": "This is core of all module creator",
+        "transport-options": {
+            "symlink": true
+        }
+    },
+    {
+        "name": "master/customers",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "dist": {
+            "type": "path",
+            "url": "master/customers",
+            "reference": "19f004798feacd92f561b021484c20197cbcc3a4"
+        },
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Master\\Customers\\CustomersServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Master\\Customers\\": "src"
+            },
+            "classmap": [
+                "src"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "description": "This module additional",
+        "transport-options": {
+            "symlink": true
+        }
+    },
+    {
+        "name": "master/payments",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "dist": {
+            "type": "path",
+            "url": "master/payments",
+            "reference": "5d67b4ea03db5c39799cfd93bd6b968d684d66b5"
+        },
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Master\\Payments\\PaymentsServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Master\\Payments\\": "src"
+            },
+            "classmap": [
+                "src"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "description": "This module additional",
+        "transport-options": {
+            "symlink": true
+        }
+    },
+    {
+        "name": "master/reviews",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "dist": {
+            "type": "path",
+            "url": "master/reviews",
+            "reference": "388869fbb7aafde341b9675f8c7d01d2549889a6"
+        },
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Master\\Reviews\\ReviewsServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Master\\Reviews\\": "src"
+            },
+            "classmap": [
+                "src"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "description": "This module additional",
+        "transport-options": {
+            "symlink": true
+        }
+    },
+    {
+        "name": "master/rooms",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "dist": {
+            "type": "path",
+            "url": "master/rooms",
+            "reference": "3141f6d3ac8cdd4185a3e46686a3d83d79d6b6b5"
+        },
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Master\\Rooms\\RoomsServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Master\\Rooms\\": "src"
+            },
+            "classmap": [
+                "src"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "description": "This module additional",
         "transport-options": {
             "symlink": true
         }

@@ -1,0 +1,21 @@
+{
+    "name": "master/reviews",
+    "description": "This module additional",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Master\\Reviews\\": "src"
+        },
+        "classmap": [ "src" ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Master\\Reviews\\ReviewsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

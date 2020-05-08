@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button data-dismiss="modal" aria-hidden="true" class="btn btn-success btn-close pull-right" type="submit">Save</button>
+                                <button onclick="$('.modal').modal('hide')" class="btn btn-success btn-close pull-right" type="submit">Save</button>
                             </div>
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->

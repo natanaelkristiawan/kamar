@@ -120,7 +120,7 @@
                 </div>
             </div>
 
-            <div class="edit-wraper-new" style="display: none">
+            <div class="edit-wraper-new">
                 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button data-dismiss="modal" aria-hidden="true" class="btn btn-success btn-close pull-right" type="submit">Save</button>
+                                <button class="btn btn-success btn-close pull-right" type="submit">Save</button>
                             </div>
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
@@ -185,13 +185,11 @@ $(function () {
 
     $(document.body).on('click', ".btn-close", function(e){
         $(this).parents('.img-box').children(".edit-wraper-new").children(".modal").modal('hide');
-        $(this).parents(".edit-wraper-new").hide();
         e.preventDefault();
+
     })
     
     $(document.body).on('click', ".edit-image", function(e){
-        poff    = $(this).parents('.upload-wraper').offset();
-        $(this).parents('.img-box').children(".edit-wraper-new").show();
         $(this).parents('.img-box').children(".edit-wraper-new").children(".modal").modal('show');
         e.preventDefault();
     });

@@ -4,10 +4,10 @@ namespace Master\Rooms\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Ameneties extends Model 
+class Types extends Model 
 {
   use SoftDeletes;
-  protected $table = 'ameneties';
+  protected $table = 'types';
   protected $fillable = [
     'name',
     'slug',

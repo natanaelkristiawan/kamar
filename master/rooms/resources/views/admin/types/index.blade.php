@@ -10,7 +10,7 @@
       <div class="col-sm-12">
         <div class="page-title-box">
           <h4 class="page-title">{!! Meta::get('title') !!}</h4>
-          {{ Breadcrumbs::render('ameneties') }}
+          {{ Breadcrumbs::render('types') }}
         </div>
       </div>
     </div>
@@ -26,12 +26,12 @@
                   <h4 class="mt-0 header-title">Data</h4>
                 </div>
                 <div class="col-lg-6 text-right">
-                  <a href="{{ route('admin.ameneties.create') }}" class="btn btn-sm btn-primary">New</a>
+                  <a href="{{ route('admin.types.create') }}" class="btn btn-sm btn-primary">New</a>
                   <button type="button" data-toggle="modal" data-target="#modal-filter" class="btn btn-sm btn-neutral">Filter</button>
                 </div>
               </div>
 
-              @include('rooms::admin.ameneties.partials.table')
+              @include('rooms::admin.types.partials.table')
 
               
             </div>
@@ -46,7 +46,7 @@
 
 @section('modal')
 @parent
-@include('rooms::admin.ameneties.partials.filter')
+@include('rooms::admin.types.partials.filter')
 @stop
 
 @section('script')
@@ -73,7 +73,7 @@ $(document).ready(function() {
       }
     },
     ajax: {
-      url: "{{ route('admin.ameneties') }}",
+      url: "{{ route('admin.types') }}",
       dataType: "json",
       type: "GET",
       data: function ( d ) {

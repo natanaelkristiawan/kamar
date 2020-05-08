@@ -7,7 +7,7 @@
       <div class="col-sm-12">
         <div class="page-title-box">
           <h4 class="page-title">{!! Meta::get('title') !!}</h4>
-          {{ Breadcrumbs::render('ameneties.create') }}
+          {{ Breadcrumbs::render('types.create') }}
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
                     <div class="col-sm-4 col-sm-offset-2">
                       <button class="btn btn-primary btn-sm" name="submit" value="submit" type="submit">Save</button>
                       <button class="btn btn-primary btn-sm" name="submit" value="submit_exit" type="submit">Save & Exit</button>
-                      <a href="{{ route('admin.ameneties') }}" class="btn btn-danger btn-sm" >Cancel</a>
+                      <a href="{{ route('admin.types') }}" class="btn btn-danger btn-sm" >Cancel</a>
                     </div>
                   </div>
                 </form>

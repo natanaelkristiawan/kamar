@@ -21,8 +21,8 @@ class ExtenderSidebar implements SidebarExtender
           $item->url(route('admin.ameneties'));
         });
 
-        $item->item('Type', function(Item $item){
-          $item->url('#');
+        $item->item('Types', function(Item $item){
+          $item->url(route('admin.types'));
         });
         
         $item->item('Locations', function(Item $item){

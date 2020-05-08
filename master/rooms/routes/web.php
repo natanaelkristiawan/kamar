@@ -19,6 +19,15 @@ $route->group(['prefix' => env('ADMIN_URL', 'admin')], function ($route) {
 			$route->get('/edit/{id}', 'AmenetiesResourceController@edit')->name('admin.ameneties.edit');
 			$route->post('/edit/{id}', 'AmenetiesResourceController@update');
 			$route->get('delete/{id}', 'AmenetiesResourceController@delete')->name('admin.ameneties.delete');
+		});	
+
+		$route->group(['prefix' => 'types'], function($route) {
+			$route->get('/', 'TypesResourceController@index')->name('admin.types');
+			$route->get('/create', 'TypesResourceController@create')->name('admin.types.create');
+			$route->post('/create', 'TypesResourceController@store');
+			$route->get('/edit/{id}', 'TypesResourceController@edit')->name('admin.types.edit');
+			$route->post('/edit/{id}', 'TypesResourceController@update');
+			$route->get('delete/{id}', 'TypesResourceController@delete')->name('admin.types.delete');
 		});
 	});
 });

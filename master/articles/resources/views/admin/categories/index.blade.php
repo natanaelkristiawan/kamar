@@ -63,7 +63,8 @@ var page = 1;
 $(document).ready(function() {
   oTable = $('#datatable').dataTable({
     pageLength: 10,
-    responsive: true,
+    responsive: false,
+    scrollX: true,
     order: [[ 0, "asc" ]],
     dom: 'lrtip',
     columnDefs: [

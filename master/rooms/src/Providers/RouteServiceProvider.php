@@ -34,6 +34,13 @@ class RouteServiceProvider extends ServiceProvider
 				return $model->find($id);
 			});
 		}
+
+		if (Request::is('*/locations/edit/*') || Request::is('*/locations/delete/*')) {
+			Route::bind('id', function ($id) {
+				$model = $this->app->make('Master\Rooms\Interfaces\LocationsRepositoryInterface');
+				return $model->find($id);
+			});
+		}
 	}
 
 	public function map()

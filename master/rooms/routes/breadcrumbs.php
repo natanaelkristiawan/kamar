@@ -19,3 +19,14 @@ Breadcrumbs::for('types.create', function ($trail) {
   $trail->parent('types');
   $trail->push('Create', route('admin.types.create'));
 });
+
+
+Breadcrumbs::for('locations', function ($trail) {
+  $trail->parent('dashboard');
+  $trail->push('Locations', route('admin.locations'));
+});
+
+Breadcrumbs::for('locations.create', function ($trail) {
+  $trail->parent('locations');
+  $trail->push('Create', route('admin.locations.create'));
+});

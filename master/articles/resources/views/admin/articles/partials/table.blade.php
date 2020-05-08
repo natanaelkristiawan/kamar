@@ -2,7 +2,7 @@
   <thead class="thead-light">
     <tr>
       <th>Title</th>
-      <th>Abstract</th>
+      <th width="20%">Abstract</th>
       <th>Status</th>
       <th width="10%">Action</th>
     </tr>
@@ -10,7 +10,7 @@
   <tfoot>
     <tr>
       <th>Title</th>
-      <th>Abstract</th>
+      <th width="20%">Abstract</th>
       <th>Status</th>
       <th width="10%">Action</th>
     </tr>

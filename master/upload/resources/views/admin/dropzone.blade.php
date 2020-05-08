@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button onclick="$('.modal').modal('hide')" class="btn btn-success btn-close pull-right" type="submit">Save</button>
+                                <button data-dismiss="modal" aria-hidden="true" class="btn btn-success btn-close pull-right" type="submit">Save</button>
                             </div>
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
@@ -184,6 +184,7 @@ $(function () {
     });
 
     $(document.body).on('click', ".btn-close", function(e){
+        $(this).parents('.img-box').children(".edit-wraper-new").children(".modal").modal('hide');
         $(this).parents(".edit-wraper-new").hide();
         e.preventDefault();
     })

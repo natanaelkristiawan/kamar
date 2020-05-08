@@ -10,7 +10,7 @@ class ArticlesTransformer extends TransformerAbstract
 	{
 		return [
 			'id'   => $model->id,
-			'title' => Str::words($model->title, 10),
+			'name' => Str::words($model->name, 10),
 			'abstract' => Str::words(strip_tags($model->abstract['id']), 10),
 			'status'=> $model->status == 0 ? 'Draft' : 'Live',
 			'action'=> '<div class="btn-group">

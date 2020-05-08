@@ -99,7 +99,7 @@ $(document).ready(function() {
       page = parseInt(api.rows().page()) + 1;
     },
     columns: [
-      {data : 'title'},
+      {data : 'name'},
       {data : 'abstract'},
       {data : 'status'},
       {data : 'action'},

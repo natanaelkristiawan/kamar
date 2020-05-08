@@ -9,7 +9,7 @@ class Articles extends Model
 	use SoftDeletes;
 	protected $table = 'articles';
 	protected $fillable = [
-		'title',
+		'name',
 		'slug',
 		'order',
 		'meta',
@@ -17,6 +17,7 @@ class Articles extends Model
 		'banners_mobile',
 		'images',
 		'abstract',
+    'title',
 		'content',
 		'status',
 	];
@@ -24,6 +25,7 @@ class Articles extends Model
   protected $casts = [
 		'meta' => 'array',
     'abstract' => 'array',
+    'title' => 'array',
     'content' => 'array',
 		'banners' => 'array',
 		'banners_mobile' => 'array',

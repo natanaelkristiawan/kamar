@@ -10,7 +10,7 @@ class ArticlesRepository extends BaseRepository implements ArticlesRepositoryInt
 	private $pageLimit;
 
 	protected $fieldSearchable = [
-		'title'      => 'like',
+		'name'      => 'like',
 		'status'    => '='
 	];
 

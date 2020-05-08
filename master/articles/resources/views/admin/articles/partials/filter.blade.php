@@ -5,8 +5,8 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label>Title</label> 
-              <input type="text" placeholder="Search Title" name="search[title]" class="form-control filter-field">
+              <label>Name</label> 
+              <input type="text" placeholder="Search Name" name="search[name]" class="form-control filter-field">
             </div>
           </div>
 

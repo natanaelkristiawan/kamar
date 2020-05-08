@@ -20,6 +20,13 @@ class RouteServiceProvider extends ServiceProvider
 				return $model->find($id);
 			});
 		}
+
+		if (Request::is('*/ameneties/edit/*') || Request::is('*/ameneties/delete/*')) {
+			Route::bind('id', function ($id) {
+				$model = $this->app->make('Master\Rooms\Interfaces\AmenetiesRepositoryInterface');
+				return $model->find($id);
+			});
+		}
 	}
 
 	public function map()

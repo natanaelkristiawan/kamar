@@ -18,7 +18,7 @@ class ExtenderSidebar implements SidebarExtender
 				$item->icon('mdi mdi-sofa');
 				$item->url('rooms');
 				$item->item('Ameneties', function(Item $item){
-          $item->url('#');
+          $item->url(route('admin.ameneties'));
         });
 
         $item->item('Type', function(Item $item){

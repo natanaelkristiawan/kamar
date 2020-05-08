@@ -21,8 +21,8 @@
                 <div class="card-body">
                   <h4 class="mt-0 header-title">Data</h4>
                   <div class="form-group">
-                    <label>Title <span class="required">*</span></label> 
-                    <input required="" data-error="Please enter title" type="text" value="{{ $data->title }}" placeholder="Title" id="title" name="title" class="form-control">
+                    <label>Name <span class="required">*</span></label> 
+                    <input required="" data-error="Please enter name" type="text" value="{{ $data->name }}" placeholder="Name" id="name" name="name" class="form-control">
                     <div class="help-block with-errors error"></div>
                   </div>
                   <div class="form-group">
@@ -150,17 +150,23 @@
                   <div class="tab-content">
                     <div class="tab-pane active p-3" id="content-id" role="tabpanel">
                       <div class="form-group">
+                        <label>Title</label> 
+                        <input type="text" placeholder="Title" name="title[id]" value="{{ (bool)count((array)$data->title) ? $data->title['id'] : ''}}" class="form-control">
+                      </div>
+                      <div class="form-group">
                         <label>Abstract</label>
                         <textarea name="abstract[id]" class="textarea form-control">{{ (bool)count((array)$data->abstract) ? $data->abstract['id'] : '' }}</textarea>
                       </div>
-
-
                       <div class="form-group">
                         <label>Article</label>
                         <textarea name="content[id]" class="textarea form-control">{{ (bool)count((array)$data->content) ? $data->content['id'] : '' }}</textarea>
                       </div>
                     </div>
                     <div class="tab-pane p-3" id="content-en" role="tabpanel">
+                      <div class="form-group">
+                        <label>Title</label> 
+                        <input type="text" placeholder="Title" name="title[en]" value="{{ (bool)count((array)$data->title) ? $data->title['en'] : ''}}" class="form-control">
+                      </div>
                       <div class="form-group">
                         <label>Abstract</label>
                         <textarea name="abstract[en]" class="textarea form-control">{{ (bool)count((array)$data->abstract) ? $data->abstract['en'] : '' }}</textarea>
@@ -211,9 +217,9 @@
     }
   });
   $(document).ready(function(){
-    $('#title').on('keyup', function(){
-      var title = $(this).val();
-      var slug = slugify(title);
+    $('#name').on('keyup', function(){
+      var name = $(this).val();
+      var slug = slugify(name);
       $('#slug').val(slug);
     });
   });

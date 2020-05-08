@@ -11,7 +11,7 @@ class ArticlesTable extends Migration
 	{
 		Schema::create('articles', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('title')->nullable();
+			$table->string('name')->nullable();
 			$table->string('slug')->nullable();
 		 	$table->integer('order')->default(0);
       $table->text('meta')->nullable();
@@ -19,6 +19,7 @@ class ArticlesTable extends Migration
       $table->text('banners_mobile')->nullable();
       $table->text('images')->nullable();
       $table->text('abstract')->nullable();
+      $table->text('title')->nullable();
       $table->text('content')->nullable();
 			$table->tinyinteger('status')->default(0);
 			$table->timestamps();

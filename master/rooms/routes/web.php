@@ -10,5 +10,15 @@ $route->group(['prefix' => env('ADMIN_URL', 'admin')], function ($route) {
 			$route->post('/edit/{id}', 'RoomsResourceController@update');
 			$route->get('delete/{id}', 'RoomsResourceController@delete')->name('admin.rooms.delete');
 		});
+
+
+		$route->group(['prefix' => 'ameneties'], function($route) {
+			$route->get('/', 'AmenetiesResourceController@index')->name('admin.ameneties');
+			$route->get('/create', 'AmenetiesResourceController@create')->name('admin.ameneties.create');
+			$route->post('/create', 'AmenetiesResourceController@store');
+			$route->get('/edit/{id}', 'AmenetiesResourceController@edit')->name('admin.ameneties.edit');
+			$route->post('/edit/{id}', 'AmenetiesResourceController@update');
+			$route->get('delete/{id}', 'AmenetiesResourceController@delete')->name('admin.ameneties.delete');
+		});
 	});
 });

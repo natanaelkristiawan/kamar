@@ -65,7 +65,7 @@ class ArticlesResourceController extends Controller {
 	public function store(Request $request)
 	{
 		$validator = Validator::make($request->all(), [
-			'title' 			=> 'required',
+			'name' 			=> 'required',
 			'slug' 			=> 'required',
 			'order' 		=> 'required',
 			'status' 		=> 'required',
@@ -78,7 +78,7 @@ class ArticlesResourceController extends Controller {
 		}
 
 		$dataInsert = array(
-			'title' 		=> $request->title,
+			'name' 		=> $request->name,
 			'slug'			=> $request->slug,
 			'order'			=> $request->order,
 			'status'		=> $request->status,
@@ -86,6 +86,7 @@ class ArticlesResourceController extends Controller {
 			'images' 		=> is_null($request->images) ? array() : array_values($request->images),
 			'banners' 		=> is_null($request->banners) ? array() : array_values($request->banners),
 			'banners_mobile'=> is_null($request->banners_mobile) ? array() : array_values($request->banners_mobile),
+			'title' 		=> $request->title,
 			'abstract'	=> $request->abstract,
 			'content'		=> $request->content
 		);
@@ -131,7 +132,7 @@ class ArticlesResourceController extends Controller {
 	public function update(Request $request, Articles $data)
 	{
 	  $validator = Validator::make($request->all(), [
-			'title' 			=> 'required',
+			'name' 			=> 'required',
 			'slug' 			=> 'required',
 			'order' 		=> 'required',
 			'status' 		=> 'required',
@@ -144,7 +145,7 @@ class ArticlesResourceController extends Controller {
 		}
 
 		$dataInsert = array(
-			'title' 		=> $request->title,
+			'name' 		=> $request->name,
 			'slug'			=> $request->slug,
 			'order'			=> $request->order,
 			'status'		=> $request->status,
@@ -152,6 +153,7 @@ class ArticlesResourceController extends Controller {
 			'images' 		=> is_null($request->images) ? array() : array_values($request->images),
 			'banners' 		=> is_null($request->banners) ? array() : array_values($request->banners),
 			'banners_mobile'=> is_null($request->banners_mobile) ? array() : array_values($request->banners_mobile),
+			'title' 		=> $request->title,
 			'abstract'	=> $request->abstract,
 			'content'		=> $request->content
 		);

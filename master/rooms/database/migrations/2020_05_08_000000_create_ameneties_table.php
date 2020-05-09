@@ -11,10 +11,10 @@ class CreateAmenetiesTable extends Migration
 	{
 		Schema::create('ameneties', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->string('name');
-			$table->string('slug');
-			$table->text('icon');
-			$table->text('content');
+			$table->string('name')->nullable();
+			$table->string('slug')->nullable();
+			$table->text('icon')->nullable();
+			$table->text('content')->nullable();
 			$table->string('status');
 			$table->softDeletes();
 			$table->timestamps();

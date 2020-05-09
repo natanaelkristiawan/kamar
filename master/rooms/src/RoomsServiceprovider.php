@@ -58,6 +58,11 @@ class RoomsServiceProvider extends ServiceProvider
 		\Master\Rooms\Repositories\Eloquent\LocationsRepository::class
 		);
 
+		$this->app->bind(
+		'Master\Rooms\Interfaces\OwnersRepositoryInterface',
+		\Master\Rooms\Repositories\Eloquent\OwnersRepository::class
+		);
+
 		$this->app->register(\Master\Rooms\Providers\RouteServiceProvider::class);
 	}
 

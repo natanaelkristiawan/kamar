@@ -4,15 +4,15 @@ namespace Master\Rooms\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Rooms extends Model 
+class Owners extends Model 
 {
-	use SoftDeletes;
-	protected $table = 'rooms';
-	protected $fillable = [
-		'name',
-		'email',
+  use SoftDeletes;
+  protected $table = 'owners';
+  protected $fillable = [
+    'name',
     'photo',
+    'email',
     'phone',
-		'status',
-	];
+    'status'
+  ];
 }

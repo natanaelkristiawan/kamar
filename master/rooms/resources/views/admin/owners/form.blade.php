@@ -8,7 +8,7 @@
       <div class="col-sm-12">
         <div class="page-title-box">
           <h4 class="page-title">{!! Meta::get('title') !!}</h4>
-          {{ Breadcrumbs::render('ameneties.create') }}
+          {{ Breadcrumbs::render('owners.create') }}
         </div>
       </div>
     </div>
@@ -24,54 +24,35 @@
                 @csrf
                   <div class="form-group">
                     <label>Name <span class="required">*</span></label> 
-                    <input required="" data-error="Please enter name" type="text" value="{{ $data->name }}" placeholder="Name" id="name" name="name" class="form-control">
+                    <input required="" data-error="Please enter name" type="text" value="{{ $data->name }}" placeholder="Name" name="name" class="form-control">
                     <div class="help-block with-errors error"></div>
                   </div>
                   <div class="form-group">
-                    <label>Slug <span class="required">*</span></label> 
-                    <input required="" data-error="Please enter slug" type="text" value="{{ $data->slug }}" placeholder="Slug" id="slug" name="slug" class="form-control">
+                    <label>Email <span class="required">*</span></label> 
+                    <input required="" data-error="Please enter email" type="text" value="{{ $data->email }}" placeholder="Email" name="email" class="form-control">
                     <div class="help-block with-errors error"></div>
                   </div>
 
-                   <div class="form-group">
-                    <label>Icon</label>
+                  <div class="form-group">
+                    <label>Phone <span class="required">*</span></label> 
+                    <input required="" data-error="Please enter phone" type="tel" value="{{ $data->phone }}" placeholder="Phone" name="phone" class="form-control">
+                    <div class="help-block with-errors error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Photo</label>
                     <div style="position: relative; max-width: 128px;">
                       <a href="javascript:;" id="upload-now">
-                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->icon) || empty($data->icon)) ? 'https://via.placeholder.com/128x128' : url('image/profile/'.$data->icon) }}" class="card-img-top img-fluid icon-pic">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo) || empty($data->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo) }}" class="card-img-top img-fluid photo-pic">
                       </a>
-                      <a href="javascript:;" onclick="$('.icon-path').val(); $('.file-upload').val(''); $('.icon-pic').attr('src', 'https://via.placeholder.com/128x128')" class="remove-image">
+                      <a href="javascript:;" onclick="$('.photo-path').val(); $('.file-upload').val(''); $('.photo-pic').attr('src', 'https://via.placeholder.com/360x360')" class="remove-image">
                         <i class="fa fa-times"></i>
                       </a>
                       <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
-                      <input type="hidden" value="{{ $data->icon }}" name="icon" class="icon-path">
-                    </div>
-                     
-                  </div>
-
-                  <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#content-id" role="tab">ID</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#content-en" role="tab">EN</a>
-                    </li>
-                  </ul>
-
-                  <!-- Tab panes -->
-                  <div class="tab-content">
-                    <div class="tab-pane active p-3" id="content-id" role="tabpanel">
-                       <div class="form-group">
-                        <label>Content</label> 
-                        <input type="text" value="{{ (bool)count((array)$data->content) ? $data->content['id'] : '' }}" placeholder="Content" name="content[id]" class="form-control">
-                      </div>
-                    </div>
-                    <div class="tab-pane p-3" id="content-en" role="tabpanel">
-                       <div class="form-group">
-                        <label>Content</label> 
-                        <input type="text" value="{{ (bool)count((array)$data->content) ? $data->content['en'] : '' }}" placeholder="Content" name="content[en]" class="form-control">
-                      </div>
+                      <input type="hidden" name="photo" value="{{ $data->photo }}" class="photo-path">
                     </div>
                   </div>
+
 
 
                   <div class="form-group">
@@ -85,7 +66,7 @@
                     <div class="col-sm-4 col-sm-offset-2">
                       <button class="btn btn-primary btn-sm" name="submit" value="submit" type="submit">Save</button>
                       <button class="btn btn-primary btn-sm" name="submit" value="submit_exit" type="submit">Save & Exit</button>
-                      <a href="{{ route('admin.ameneties') }}" class="btn btn-danger btn-sm" >Cancel</a>
+                      <a href="{{ route('admin.owners') }}" class="btn btn-danger btn-sm" >Cancel</a>
                     </div>
                   </div>
                 </form>
@@ -126,16 +107,8 @@
   var elem = document.querySelector('.js-switch');
   var switchery = new Switchery(elem, { color: '#1AB394' });
 
-  $(document).ready(function(){
-    $('#name').on('keyup', function(){
-      var name = $(this).val();
-      var slug = slugify(name);
-      $('#slug').val(slug);
-    });
-  });
 
-
-   function readURL(input) {
+  function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
       
@@ -146,7 +119,7 @@
       formData.append('file', real);
 
       $.ajax({
-        url: "{{ route('public.upload', array('config'=> 'master.rooms.ameneties')).'/'.date('Y/m/d').'/file/file' }}",   
+        url: "{{ route('public.upload', array('config'=> 'master.rooms.owners')).'/'.date('Y/m/d').'/file/file' }}",   
         data : formData,
         dataType : 'json',
         type : 'post',
@@ -154,8 +127,8 @@
         cache: false,             // To unable request pages to be cached
         processData:false,
         success : function(result){
-          $('.icon-pic').attr('src', "{{ url('image/profile/') }}/"+result.path);
-          $('.icon-path').val(result.path);
+          $('.photo-pic').attr('src', "{{ url('image/profile/') }}/"+result.path);
+          $('.photo-path').val(result.path);
         }
       });
     }

@@ -30,3 +30,14 @@ Breadcrumbs::for('locations.create', function ($trail) {
   $trail->parent('locations');
   $trail->push('Create', route('admin.locations.create'));
 });
+
+
+Breadcrumbs::for('owners', function ($trail) {
+  $trail->parent('dashboard');
+  $trail->push('Owners', route('admin.owners'));
+});
+
+Breadcrumbs::for('owners.create', function ($trail) {
+  $trail->parent('owners');
+  $trail->push('Create', route('admin.owners.create'));
+});

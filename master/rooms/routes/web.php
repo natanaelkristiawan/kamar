@@ -38,5 +38,14 @@ $route->group(['prefix' => env('ADMIN_URL', 'admin')], function ($route) {
 			$route->post('/edit/{id}', 'LocationsResourceController@update');
 			$route->get('delete/{id}', 'LocationsResourceController@delete')->name('admin.locations.delete');
 		});
+
+		$route->group(['prefix' => 'owners'], function($route) {
+			$route->get('/', 'OwnersResourceController@index')->name('admin.owners');
+			$route->get('/create', 'OwnersResourceController@create')->name('admin.owners.create');
+			$route->post('/create', 'OwnersResourceController@store');
+			$route->get('/edit/{id}', 'OwnersResourceController@edit')->name('admin.owners.edit');
+			$route->post('/edit/{id}', 'OwnersResourceController@update');
+			$route->get('delete/{id}', 'OwnersResourceController@delete')->name('admin.owners.delete');
+		});
 	});
 });

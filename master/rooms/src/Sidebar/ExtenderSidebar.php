@@ -29,6 +29,10 @@ class ExtenderSidebar implements SidebarExtender
           $item->url(route('admin.locations'));
         });
 
+        $item->item('Owners', function(Item $item){
+          $item->url(route('admin.owners'));
+        });
+
         $item->item('Rooms', function(Item $item){
           $item->url('#');
         });

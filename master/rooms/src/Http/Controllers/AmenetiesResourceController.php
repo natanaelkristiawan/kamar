@@ -59,6 +59,7 @@ class AmenetiesResourceController extends Controller
     $dataInsert = array(
       'name'    => $request->name,
       'slug'      => $request->slug,
+      'icon'    => $request->icon,
       'status'    => $request->status,
       'content'   => $request->content
     );
@@ -94,8 +95,9 @@ class AmenetiesResourceController extends Controller
     $dataInsert = array(
       'name'    => $request->name,
       'slug'      => $request->slug,
+      'content'   => $request->content,
+      'icon'    => $request->icon,
       'status'    => $request->status,
-      'content'   => $request->content
     );
 
     $data = $this->repository->update($dataInsert, $data->id);

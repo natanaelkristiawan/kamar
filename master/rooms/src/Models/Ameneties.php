@@ -11,6 +11,7 @@ class Ameneties extends Model
   protected $fillable = [
     'name',
     'slug',
+    'icon',
     'status',
     'content'
   ];

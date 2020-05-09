@@ -13,6 +13,7 @@ class CreateAmenetiesTable extends Migration
 			$table->bigIncrements('id');
 			$table->string('name');
 			$table->string('slug');
+			$table->text('icon');
 			$table->text('content');
 			$table->string('status');
 			$table->softDeletes();

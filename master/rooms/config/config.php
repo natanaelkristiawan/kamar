@@ -1,3 +1,7 @@
 <?php 
 
-return [];
+return [
+  'ameneties' => [
+    'upload_folder' => 'icons'
+  ]
+];

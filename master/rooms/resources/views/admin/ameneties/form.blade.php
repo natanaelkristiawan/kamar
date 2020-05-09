@@ -37,7 +37,7 @@
                     <label>Icon</label>
                     <div style="position: relative; max-width: 128px;">
                       <a href="javascript:;" id="upload-now">
-                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ is_null($data->icon) ? 'https://via.placeholder.com/128x128' : url('image/profile/'.$data->icon) }}" class="card-img-top img-fluid icon-pic">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->icon) || empty($data->icon)) ? 'https://via.placeholder.com/128x128' : url('image/profile/'.$data->icon) }}" class="card-img-top img-fluid icon-pic">
                       </a>
                       <a href="javascript:;" onclick="$('.icon-path').val(); $('.file-upload').val(''); $('.icon-pic').attr('src', 'https://via.placeholder.com/128x128')" class="remove-image">
                         <i class="fa fa-times"></i>

@@ -262,7 +262,7 @@
                 <div class="col-sm-4 col-sm-offset-2">
                   <button class="btn btn-primary btn-sm" name="submit" value="submit" type="submit">Save</button>
                   <button class="btn btn-primary btn-sm" name="submit" value="submit_exit" type="submit">Save & Exit</button>
-                  <a href="{{ route('admin.articles') }}" class="btn btn-danger btn-sm" >Cancel</a>
+                  <a href="{{ route('admin.rooms') }}" class="btn btn-danger btn-sm" >Cancel</a>
                 </div>
               </div>
             </div>

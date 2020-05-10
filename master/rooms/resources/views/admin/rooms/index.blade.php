@@ -10,7 +10,7 @@
       <div class="col-sm-12">
         <div class="page-title-box">
           <h4 class="page-title">{!! Meta::get('title') !!}</h4>
-          {{ Breadcrumbs::render('types') }}
+          {{ Breadcrumbs::render('rooms') }}
         </div>
       </div>
     </div>
@@ -26,12 +26,12 @@
                   <h4 class="mt-0 header-title">Data</h4>
                 </div>
                 <div class="col-lg-6 text-right">
-                  <a href="{{ route('admin.types.create') }}" class="btn btn-sm btn-primary">New</a>
+                  <a href="{{ route('admin.rooms.create') }}" class="btn btn-sm btn-primary">New</a>
                   <button type="button" data-toggle="modal" data-target="#modal-filter" class="btn btn-sm btn-neutral">Filter</button>
                 </div>
               </div>
 
-              @include('rooms::admin.types.partials.table')
+              @include('rooms::admin.rooms.partials.table')
 
               
             </div>
@@ -51,7 +51,7 @@
 
 @section('script')
 @parent
-<script type="text/javascript">
+<!-- <script type="text/javascript"> 
 var oTable;
 var page = 1;
 $(document).ready(function() {
@@ -107,6 +107,6 @@ $(document).ready(function() {
   });
 });
 
-</script>
+</script>-->
 
 @stop

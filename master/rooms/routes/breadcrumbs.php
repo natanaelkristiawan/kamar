@@ -41,3 +41,13 @@ Breadcrumbs::for('owners.create', function ($trail) {
   $trail->parent('owners');
   $trail->push('Create', route('admin.owners.create'));
 });
+
+Breadcrumbs::for('rooms', function ($trail) {
+  $trail->parent('dashboard');
+  $trail->push('Rooms', route('admin.rooms'));
+});
+
+Breadcrumbs::for('rooms.create', function ($trail) {
+  $trail->parent('rooms');
+  $trail->push('Create', route('admin.rooms.create'));
+});

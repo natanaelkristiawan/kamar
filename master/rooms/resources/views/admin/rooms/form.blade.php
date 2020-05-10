@@ -329,7 +329,6 @@
   }
 </style>
 <script type="text/javascript">
-  $('.same-heigh').matchHeight();
   var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
   elems.forEach(function(html) {

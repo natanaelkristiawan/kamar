@@ -34,7 +34,7 @@ class ExtenderSidebar implements SidebarExtender
         });
 
         $item->item('Rooms', function(Item $item){
-          $item->url('#');
+          $item->url(route('admin.rooms'));
         });
 			});
 		});

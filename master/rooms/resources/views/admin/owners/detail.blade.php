@@ -16,13 +16,13 @@
 
     <div class="page-content-wrapper">
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3 order-lg-2">
           <!-- Simple card -->
           <div class="card m-b-30">
             <a href="javascript:;" id="upload-now">
               <img alt="Card image cap" src="{{ (is_null($data->photo) || empty($data->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo) }}" class="card-img-top img-fluid photo-pic">
             </a>
-            <a href="javascript:;" onclick="$('.photo-path').val(); $('.file-upload').val(''); $('.photo-pic').attr('src', 'https://via.placeholder.com/360x360')" class="remove-image">
+            <a href="javascript:;" onclick="$('.photo-path').val(); $('.file-upload').val(''); $('.photo-pic').attr('src', 'https://via.placeholder.com/360x360')" class="remove-image-single">
               <i class="fa fa-times"></i>
             </a>
             <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
@@ -69,11 +69,21 @@
             </div>
           </div>
         </div><!-- end col -->
-        <div class="col-lg-8">
+        <div class="col-lg-9 order-lg-1">
           <div class="card mb-4">
             <!-- Card body -->
             <div class="card-body">
-              <h4 class="card-title font-16 mt-0">Properties</h4>
+              <div class="row">
+                <div class="col-lg-6">
+                  <h4 class="mt-0 header-title">Properties</h4>
+                </div>
+                <div class="col-lg-6 text-right">
+                  <a href="javascript:;" class="btn btn-sm btn-primary">New</a>
+                  <button type="button" data-toggle="modal" data-target="#modal-filter" class="btn btn-sm btn-neutral">Filter</button>
+                </div>
+              </div>
+              @include('rooms::admin.owners.partials.table-properties')
+
 
             </div>
           </div>
@@ -88,25 +98,6 @@
 
 @section('script')
 @parent
-
-<style type="text/css">
-  .remove-image {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    box-shadow: 0 14px 26px -12px rgba(0, 188, 212, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 188, 212, 0.2);
-    background-color: #00bcd4;
-    color: #fff;
-    text-align: center;
-    font-size: 12px;
-    line-height: 20px;
-    opacity: 1;
-    background-color: #f44336;
-    box-shadow: 0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2);
-    position: absolute;top: -10px;right: -10px
-  }
-</style>
 
 <script type="text/javascript">
 

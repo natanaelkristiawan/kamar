@@ -70,7 +70,7 @@
                 <div class="help-block with-errors error"></div>
               </div>
               <div class="form-group row">
-                <div class="col-sm-4 col-sm-offset-2">
+                <div class="col-lg-4 col-sm-offset-2">
                   <button class="btn btn-danger" name="submit" value="submit" type="submit">Save</button>
                 </div>
               </div>

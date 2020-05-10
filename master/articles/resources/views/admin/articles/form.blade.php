@@ -182,7 +182,7 @@
                   </div>
                   <div class="hr-line-dashed"></div>
                   <div class="form-group row">
-                    <div class="col-sm-4 col-sm-offset-2">
+                    <div class="col-lg-4 col-sm-offset-2">
                       <button class="btn btn-primary btn-sm" name="submit" value="submit" type="submit">Save</button>
                       <button class="btn btn-primary btn-sm" name="submit" value="submit_exit" type="submit">Save & Exit</button>
                       <a href="{{ route('admin.articles') }}" class="btn btn-danger btn-sm" >Cancel</a>

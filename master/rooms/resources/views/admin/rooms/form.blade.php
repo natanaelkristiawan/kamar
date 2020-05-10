@@ -33,7 +33,7 @@
              
               <div class="form-group">
                 <label>Owner</label>
-                <select class="form-control col-6" required="" data-error="Please enter slug">
+                <select class="form-control col-lg-6" required="" data-error="Please select owner">
                   <option value="">Select Owner</option>
                  
                 </select>
@@ -41,7 +41,7 @@
               </div>
               <div class="form-group">
                 <label>Type</label>
-                <select class="form-control col-6" required="">
+                <select class="form-control col-lg-6" required="">
                   <option value="">Select Type</option>
                  
                 </select>
@@ -186,10 +186,14 @@
           <div class="card">
             <div class="card-body">
               <h4 class="mt-0 header-title">Details</h4>
-
+              <div class="form-group">
+                <label>Total Room</label>
+                <input required="" data-error="Please enter total room" type="number" value="{{ $data->total_room }}" placeholder="Total Room" name="total_room" class="form-control col-lg-4">
+                <div class="help-block with-errors error"></div>
+              </div>
               <div class="form-group">
                 <label>Locations</label>
-                <select class="form-control col-4" required="" data-error="Please enter slug">
+                <select class="form-control col-lg-4" required="" data-error="Please enter slug">
                   <option value="">Select Location</option>
                  
                 </select>
@@ -245,7 +249,7 @@
               </div>
               <div class="form-group">
                 <label>Youtube</label>
-                <div class="bootstrap-filestyle input-group col-4 pl-0">
+                <div class="bootstrap-filestyle input-group col-lg-4 pl-0">
                   <input type="text" class="form-control" id="youtube" name="youtube" placeholder="">
                   <span class="group-span-filestyle input-group-append preview-youtube" tabindex="0">
                     <label for="filestyle-0" class="btn btn-secondary">
@@ -259,7 +263,7 @@
 
               <div class="hr-line-dashed"></div>
               <div class="form-group row">
-                <div class="col-sm-4 col-sm-offset-2">
+                <div class="col-lg-4 col-sm-offset-2">
                   <button class="btn btn-primary btn-sm" name="submit" value="submit" type="submit">Save</button>
                   <button class="btn btn-primary btn-sm" name="submit" value="submit_exit" type="submit">Save & Exit</button>
                   <a href="{{ route('admin.rooms') }}" class="btn btn-danger btn-sm" >Cancel</a>

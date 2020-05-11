@@ -12,12 +12,28 @@ use Meta;
 class OwnersResourceController extends Controller
 {
   protected $repository;
+  protected $bank;
 
   public function __construct(OwnersRepositoryInterface $repository)
   {
     $this->middleware('auth:admin');
     $this->repository = $repository;
     $this->repository->pushCriteria(\Master\Core\Repositories\Criteria\RequestCriteria::class);
+
+    $dataBank = json_decode(file_get_contents(base_path('master/rooms/files/bank.json')));
+    $bank[] = array();
+    // send to format select2 
+
+    foreach ($dataBank as $list) {
+      $bank[] = array(
+        'id'  => $list->code,
+        'text'=> $list->name.' - '.$list->code
+      );
+    }
+
+    $this->bank = $bank;
+
+
     Meta::title('Owners');
   }
 
@@ -39,7 +55,9 @@ class OwnersResourceController extends Controller
   public function create(Request $request)
   {
     $data = $this->repository->newInstance([]);
-    return view('rooms::admin.owners.form', compact('data'));
+    $bank = $this->bank;
+
+    return view('rooms::admin.owners.form', compact('data', 'bank'));
   }
 
   public function store(Request $request)
@@ -58,10 +76,16 @@ class OwnersResourceController extends Controller
     }
 
     $dataInsert = array(
-      'name'    => $request->name,
-      'email'    => $request->email,
-      'phone'      => $request->phone,
-      'photo'      => $request->photo,
+      'name'          => $request->name,
+      'email'         => $request->email,
+      'bank'          => $request->bank,
+      'bank_code'     => $request->bank_code,
+      'bank_account'  => $request->bank_account,
+      'bank_account_photo' => $request->bank_account_photo,
+      'photo'         => $request->photo,
+      'card_id'       => $request->card_id,
+      'selfie_with_card_id'=> $request->selfie_with_card_id,
+      'phone'     => $request->phone,
       'status'    => $request->status,
       'content'   => $request->content
     );
@@ -77,7 +101,8 @@ class OwnersResourceController extends Controller
 
   public function edit(Request $request, Owners $data)
   {
-    return view('rooms::admin.owners.detail', compact('data'));
+    $bank = $this->bank;
+    return view('rooms::admin.owners.form', compact('data', 'bank'));
   }
 
   public function update(Request $request, Owners $data)
@@ -96,10 +121,16 @@ class OwnersResourceController extends Controller
     }
 
     $dataInsert = array(
-      'name'    => $request->name,
-      'email'    => $request->email,
-      'photo'      => $request->photo,
-      'phone'      => $request->phone,
+      'name'          => $request->name,
+      'email'         => $request->email,
+      'bank'          => $request->bank,
+      'bank_account'  => $request->bank_account,
+      'bank_code'  => $request->bank_code,
+      'bank_account_photo' => $request->bank_account_photo,
+      'photo'         => $request->photo,
+      'card_id'       => $request->card_id,
+      'selfie_with_card_id'=> $request->selfie_with_card_id,
+      'phone'     => $request->phone,
       'status'    => $request->status,
       'content'   => $request->content
     );

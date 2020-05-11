@@ -16,6 +16,12 @@ class CreateOwnersTable extends Migration
       $table->string('email')->nullable();
       $table->string('phone')->nullable();
       $table->text('photo')->nullable();
+      $table->text('card_id')->nullable();
+      $table->text('selfie_with_card_id')->nullable();
+      $table->string('bank')->nullable();
+      $table->string('bank_code')->nullable();
+      $table->string('bank_account')->nullable();
+      $table->text('bank_account_photo')->nullable();
       $table->string('status');
       $table->softDeletes();
       $table->timestamps();

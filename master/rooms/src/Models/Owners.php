@@ -10,9 +10,15 @@ class Owners extends Model
   protected $table = 'owners';
   protected $fillable = [
     'name',
-    'photo',
     'email',
     'phone',
-    'status'
+    'photo',
+    'card_id',
+    'selfie_with_card_id',
+    'bank',
+    'bank_code',
+    'bank_account',
+    'bank_account_photo',
+    'status',
   ];
 }

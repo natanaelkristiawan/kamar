@@ -36,14 +36,14 @@
                    <div class="form-group">
                     <label>Icon</label>
                     <div style="position: relative; max-width: 128px;">
-                      <a href="javascript:;" id="upload-now">
-                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->icon) || empty($data->icon)) ? 'https://via.placeholder.com/128x128' : url('image/profile/'.$data->icon) }}" class="card-img-top img-fluid icon-pic">
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->icon) || empty($data->icon)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->icon) }}" class="card-img-top img-fluid image-preview">
                       </a>
-                      <a href="javascript:;" onclick="$('.icon-path').val(); $('.file-upload').val(''); $('.icon-pic').attr('src', 'https://via.placeholder.com/128x128')" class="remove-image-single">
+                      <a href="javascript:;"  class="remove-image-single">
                         <i class="fa fa-times"></i>
                       </a>
                       <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
-                      <input type="hidden" value="{{ $data->icon }}" name="icon" class="icon-path">
+                      <input type="hidden" name="icon" value="{{ $data->icon }}" class="image-path">
                     </div>
                      
                   </div>
@@ -106,49 +106,12 @@
 
   var elem = document.querySelector('.js-switch');
   var switchery = new Switchery(elem, { color: '#1AB394' });
-
+  var uploadPath = "{{ route('public.upload', array('config'=> 'master.rooms.ameneties')).'/'.date('Y/m/d').'/file/file' }}";
   $(document).ready(function(){
     $('#name').on('keyup', function(){
       var name = $(this).val();
       var slug = slugify(name);
       $('#slug').val(slug);
-    });
-  });
-
-
-   function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      
-      reader.readAsDataURL(input.files[0]);
-
-      var formData = new FormData($('#upload-picture')[0]);
-      var real = $('.file-upload').prop('files')[0];
-      formData.append('file', real);
-
-      $.ajax({
-        url: "{{ route('public.upload', array('config'=> 'master.rooms.ameneties')).'/'.date('Y/m/d').'/file/file' }}",   
-        data : formData,
-        dataType : 'json',
-        type : 'post',
-        contentType: false,       // The content type used when sending data to the server.
-        cache: false,             // To unable request pages to be cached
-        processData:false,
-        success : function(result){
-          $('.icon-pic').attr('src', "{{ url('image/profile/') }}/"+result.path);
-          $('.icon-path').val(result.path);
-        }
-      });
-    }
-  }
-
-  $(".file-upload").change(function() {
-    readURL(this);
-  });
-
-  $(document).ready(function() {
-    $('#upload-now').on('click', function(){
-      $('.file-upload').click();
     });
   });
 </script>

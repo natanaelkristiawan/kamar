@@ -38,23 +38,71 @@
                     <input required="" data-error="Please enter phone" type="tel" value="{{ $data->phone }}" placeholder="Phone" name="phone" class="form-control">
                     <div class="help-block with-errors error"></div>
                   </div>
+                  
+                  <div class="form-group">
+                    <label>Bank</label> 
+                    <input type="hidden" name="bank" class="select-name" value="{{ $data->bank }}">
+                    <select class="form-control select-bank" name="bank_code"></select>  
+                  </div>
+                  <div class="form-group">
+                    <label>Bank Account</label>
+                    <input type="text" value="{{ $data->bank_account }}" placeholder="Bank Account" name="bank_account" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Bank Account Photo</label>
+                    <div style="position: relative; max-width: 128px;">
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->bank_account_photo) || empty($data->bank_account_photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->bank_account_photo) }}" class="card-img-top img-fluid image-preview">
+                      </a>
+                      <a href="javascript:;"  class="remove-image-single">
+                        <i class="fa fa-times"></i>
+                      </a>
+                      <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
+                      <input type="hidden" name="bank_account_photo" value="{{ $data->bank_account_photo }}" class="image-path">
+                    </div>
+                  </div>
 
                   <div class="form-group">
                     <label>Photo</label>
                     <div style="position: relative; max-width: 128px;">
-                      <a href="javascript:;" id="upload-now">
-                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo) || empty($data->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo) }}" class="card-img-top img-fluid photo-pic">
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo) || empty($data->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo) }}" class="card-img-top img-fluid image-preview">
                       </a>
-                      <a href="javascript:;" onclick="$('.photo-path').val(); $('.file-upload').val(''); $('.photo-pic').attr('src', 'https://via.placeholder.com/360x360')" class="remove-image-single">
+                      <a href="javascript:;"  class="remove-image-single">
                         <i class="fa fa-times"></i>
                       </a>
                       <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
-                      <input type="hidden" name="photo" value="{{ $data->photo }}" class="photo-path">
+                      <input type="hidden" name="photo" value="{{ $data->photo }}" class="image-path">
+                    </div>
+                  </div>
+                  <div class="form-group" >
+                    <label>Card ID (KTP/SIM)</label>
+                    <div style="position: relative; max-width: 128px;">
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->card_id) || empty($data->card_id)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->card_id) }}" class="card-img-top img-fluid image-preview">
+                      </a>
+                      <a href="javascript:;" class="remove-image-single">
+                        <i class="fa fa-times"></i>
+                      </a>
+                      <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
+                      <input type="hidden" name="card_id" value="{{ $data->card_id }}" class="image-path">
                     </div>
                   </div>
 
-
-
+                  <div class="form-group" >
+                    <label>Selfie With Card ID</label>
+                    <div style="position: relative; max-width: 128px;">
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->selfie_with_card_id) || empty($data->selfie_with_card_id)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->selfie_with_card_id) }}" class="card-img-top img-fluid image-preview">
+                      </a>
+                      <a href="javascript:;"  class="remove-image-single">
+                        <i class="fa fa-times"></i>
+                      </a>
+                      <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
+                      <input type="hidden" name="selfie_with_card_id" value="{{ $data->selfie_with_card_id }}" class="image-path">
+                    </div>
+                  </div>
                   <div class="form-group">
                     <label>Status</label> 
                     <div>
@@ -87,41 +135,27 @@
 
   var elem = document.querySelector('.js-switch');
   var switchery = new Switchery(elem, { color: '#1AB394' });
+  var uploadPath = "{{ route('public.upload', array('config'=> 'master.rooms.owners')).'/'.date('Y/m/d').'/file/file' }}"
+  var bank = {!! json_encode($bank) !!}
 
-
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      
-      reader.readAsDataURL(input.files[0]);
-
-      var formData = new FormData($('#upload-picture')[0]);
-      var real = $('.file-upload').prop('files')[0];
-      formData.append('file', real);
-
-      $.ajax({
-        url: "{{ route('public.upload', array('config'=> 'master.rooms.owners')).'/'.date('Y/m/d').'/file/file' }}",   
-        data : formData,
-        dataType : 'json',
-        type : 'post',
-        contentType: false,       // The content type used when sending data to the server.
-        cache: false,             // To unable request pages to be cached
-        processData:false,
-        success : function(result){
-          $('.photo-pic').attr('src', "{{ url('image/profile/') }}/"+result.path);
-          $('.photo-path').val(result.path);
-        }
+  async function initSelect2(selector, collection) {
+    var action = new Promise((resolve, error) => {
+      var data =  $(selector).select2({
+        placeholder: "Select Option",
+        data: collection,
       });
-    }
+      resolve(data)
+    });
+    return await action;
   }
 
-  $(".file-upload").change(function() {
-    readURL(this);
-  });
-
   $(document).ready(function() {
-    $('#upload-now').on('click', function(){
-      $('.file-upload').click();
+    initSelect2('.select-bank', bank).then((result) => {
+      result.val("{{ $data->bank_code }}").trigger('change');
+      result.on('select2:select', function (e) {
+        var data = e.params.data;
+        $('.select-name').val(data.text)
+      });
     });
   });
 </script>

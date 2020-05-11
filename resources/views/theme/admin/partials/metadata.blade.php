@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="{{ asset('themes') }}/additionals/summernote/summernote-bs4.css">
 <link rel="stylesheet" href="{{ asset('themes') }}/additionals/style/additional.css">
 
-
+ <link href="{{ asset('themes') }}/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
 <link href="{{ asset('themes/vertical') }}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="{{ asset('themes/vertical') }}/assets/css/metismenu.min.css" rel="stylesheet" type="text/css">

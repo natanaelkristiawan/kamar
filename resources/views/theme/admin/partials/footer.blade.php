@@ -22,6 +22,8 @@
 <!-- Required datatable js -->
 <script src="{{ asset('themes') }}/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="{{ asset('themes') }}/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- select2 -->
+<script src="{{ asset('themes') }}/plugins/select2/js/select2.min.js"></script>
 <!-- Buttons examples -->
 <script src="{{ asset('themes') }}/plugins/datatables/dataTables.buttons.min.js"></script>
 <script src="{{ asset('themes') }}/plugins/datatables/buttons.bootstrap4.min.js"></script>
@@ -127,6 +129,54 @@
 @if(session()->has('status_error'))
   toastr.error("{{session()->get('status_error')}}");
 @endif
+
+
+async function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.readAsDataURL(input.files[0]);
+    var formData = new FormData($('#upload-picture')[0]);
+    var real = $(input).prop('files')[0];
+    formData.append('file', real);
+    var response = new Promise((resolve, errors) => {
+      $.ajax({
+        url: uploadPath,   
+        data : formData,
+        dataType : 'json',
+        type : 'post',
+        contentType: false,       // The content type used when sending data to the server.
+        cache: false,             // To unable request pages to be cached
+        processData:false,
+        success : function(result){
+          resolve(result);
+        }
+      });
+    });
+    return await response
+  }
+}
+
+$(".file-upload").change(function() {
+  var response = readURL(this);
+  var path = this;
+  response.then((result) => {
+    $(path).parent().find('.image-preview').attr('src', "{{ url('image/profile/') }}/"+result.path);
+    $(path).parent().find('.image-path').val(result.path);
+
+  })
+});
+
+$(document).ready(function() {
+  $('.upload-now').on('click', function(){
+    $(this).parent().find('.file-upload').click();
+  });
+
+  $('.remove-image-single').on('click', function(){
+    $(this).parent().find('.image-path').val(''); 
+    $(this).parent().find('.file-upload').val(''); 
+    $(this).parent().find('.image-preview').attr('src', 'https://via.placeholder.com/360x360')
+  });
+});
 </script>
 @section('script')
 @show

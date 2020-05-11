@@ -142,6 +142,9 @@ async function readURL(input) {
       $.ajax({
         url: uploadPath,   
         data : formData,
+        beforeSend: function(){
+          $(input).parent().find('.lds-dual-ring').removeClass('hide')
+        },
         dataType : 'json',
         type : 'post',
         contentType: false,       // The content type used when sending data to the server.
@@ -149,6 +152,9 @@ async function readURL(input) {
         processData:false,
         success : function(result){
           resolve(result);
+        },
+        complete : function(){
+          $(input).parent().find('.lds-dual-ring').addClass('hide')
         }
       });
     });

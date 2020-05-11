@@ -52,6 +52,7 @@
                   <div class="form-group">
                     <label>Bank Account Photo</label>
                     <div style="position: relative; max-width: 128px;">
+                      <div class="lds-dual-ring hide"></div>
                       <a href="javascript:;" class="upload-now">
                         <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->bank_account_photo) || empty($data->bank_account_photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->bank_account_photo) }}" class="card-img-top img-fluid image-preview">
                       </a>
@@ -66,6 +67,7 @@
                   <div class="form-group">
                     <label>Photo</label>
                     <div style="position: relative; max-width: 128px;">
+                      <div class="lds-dual-ring hide"></div>
                       <a href="javascript:;" class="upload-now">
                         <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo) || empty($data->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo) }}" class="card-img-top img-fluid image-preview">
                       </a>
@@ -79,6 +81,7 @@
                   <div class="form-group" >
                     <label>Card ID (KTP/SIM)</label>
                     <div style="position: relative; max-width: 128px;">
+                      <div class="lds-dual-ring hide"></div>
                       <a href="javascript:;" class="upload-now">
                         <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->card_id) || empty($data->card_id)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->card_id) }}" class="card-img-top img-fluid image-preview">
                       </a>
@@ -93,6 +96,7 @@
                   <div class="form-group" >
                     <label>Selfie With Card ID</label>
                     <div style="position: relative; max-width: 128px;">
+                      <div class="lds-dual-ring hide"></div>
                       <a href="javascript:;" class="upload-now">
                         <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->selfie_with_card_id) || empty($data->selfie_with_card_id)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->selfie_with_card_id) }}" class="card-img-top img-fluid image-preview">
                       </a>

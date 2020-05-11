@@ -152,9 +152,6 @@ async function readURL(input) {
         processData:false,
         success : function(result){
           resolve(result);
-        },
-        complete : function(){
-          $(input).parent().find('.lds-dual-ring').addClass('hide')
         }
       });
     });
@@ -168,7 +165,7 @@ $(".file-upload").change(function() {
   response.then((result) => {
     $(path).parent().find('.image-preview').attr('src', "{{ url('image/profile/') }}/"+result.path);
     $(path).parent().find('.image-path').val(result.path);
-
+    $(path).parent().find('.lds-dual-ring').addClass('hide')
   })
 });
 

@@ -12,6 +12,7 @@
       </div>
     </div>
       <!-- end row -->
+    <form style="display: none;" id="upload-picture">@csrf</form>
     <form role="form" method="POST" action="" data-toggle="validator" role="form" data-disable="false">
     @csrf
     <div class="page-content-wrapper">
@@ -230,17 +231,18 @@
           <div class="card">
             <div class="card-body">
               <h4 class="mt-0 header-title">Media</h4>
-              <div class="form-group">
+              <div class="form-group" >
                 <label>Photo Primary</label>
-                 <div style="position: relative; max-width: 128px;">
-                  <a href="javascript:;" id="upload-now">
-                    <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo_primary) || empty($data->photo_primary)) ? 'https://via.placeholder.com/128x128' : url('image/profile/'.$data->photo_primary) }}" class="card-img-top img-fluid photo_primary-pic">
+                <div style="position: relative; max-width: 128px;">
+                  <div class="lds-dual-ring hide"></div>
+                  <a href="javascript:;" class="upload-now">
+                    <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo_primary) || empty($data->photo_primary)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo_primary) }}" class="card-img-top img-fluid image-preview">
                   </a>
-                  <a href="javascript:;" onclick="$('.photo_primary-path').val(); $('.file-upload').val(''); $('.photo_primary-pic').attr('src', 'https://via.placeholder.com/128x128')" class="remove-image-single">
+                  <a href="javascript:;" class="remove-image-single">
                     <i class="fa fa-times"></i>
                   </a>
                   <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
-                  <input type="hidden" value="{{ $data->photo_primary }}" name="photo_primary" class="photo_primary-path">
+                  <input type="hidden" name="photo_primary" value="{{ $data->photo_primary }}" class="image-path">
                 </div>
               </div>
               <div class="form-group">
@@ -330,7 +332,7 @@
 </style>
 <script type="text/javascript">
   var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
+  var uploadPath = "{{ route('public.upload', array('config'=> 'master.rooms.rooms')).'/'.date('Y/m/d').'/file/file' }}"
   elems.forEach(function(html) {
     var switchery = new Switchery(html, { color: '#1AB394' });
   });

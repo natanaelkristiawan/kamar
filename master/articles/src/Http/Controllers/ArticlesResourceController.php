@@ -183,7 +183,7 @@ class ArticlesResourceController extends Controller {
 
 	public function delete(Request $request, Articles $data)
 	{
-		$this->articlesToCategory->deleteWhere(array('article_id'=>$article->id));
+		$this->articlesToCategory->deleteWhere(array('article_id'=>$data->id));
 		
 		$data = $this->repository->delete($data->id);
 		$request->session()->flash('status', 'Success Delete Data!');

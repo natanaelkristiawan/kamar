@@ -2931,8 +2931,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Master\\Rooms\\Repositories\\Presenter\\LocationsTransformer' => __DIR__ . '/..' . '/master/rooms/src/Repositories/Presenter/LocationsTransformer.php',
         'Master\\Rooms\\Repositories\\Presenter\\OwnersPresenter' => __DIR__ . '/..' . '/master/rooms/src/Repositories/Presenter/OnwersPresenter.php',
         'Master\\Rooms\\Repositories\\Presenter\\OwnersTransformer' => __DIR__ . '/..' . '/master/rooms/src/Repositories/Presenter/OwnersTransformer.php',
-        'Master\\Rooms\\Repositories\\Presenter\\RoomsPresenter' => __DIR__ . '/..' . '/master/rooms/src/Repositories/Presenter/RoomsPresenter.php',
-        'Master\\Rooms\\Repositories\\Presenter\\RoomsTransformer' => __DIR__ . '/..' . '/master/rooms/src/Repositories/Presenter/RoomsTransformer.php',
         'Master\\Rooms\\Repositories\\Presenter\\TypesPresenter' => __DIR__ . '/..' . '/master/rooms/src/Repositories/Presenter/TypesPresenter.php',
         'Master\\Rooms\\Repositories\\Presenter\\TypesTransformer' => __DIR__ . '/..' . '/master/rooms/src/Repositories/Presenter/TypesTransformer.php',
         'Master\\Rooms\\Rooms' => __DIR__ . '/..' . '/master/rooms/src/Rooms.php',

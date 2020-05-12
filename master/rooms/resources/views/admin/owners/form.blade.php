@@ -142,17 +142,6 @@
   var uploadPath = "{{ route('public.upload', array('config'=> 'master.rooms.owners')).'/'.date('Y/m/d').'/file/file' }}"
   var bank = {!! json_encode($bank) !!}
 
-  async function initSelect2(selector, collection) {
-    var action = new Promise((resolve, error) => {
-      var data =  $(selector).select2({
-        placeholder: "Select Option",
-        data: collection,
-      });
-      resolve(data)
-    });
-    return await action;
-  }
-
   $(document).ready(function() {
     initSelect2('.select-bank', bank).then((result) => {
       result.val("{{ $data->bank_code }}").trigger('change');

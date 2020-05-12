@@ -8,16 +8,20 @@ use Master\Rooms\Interfaces\RoomsRepositoryInterface;
 use Master\Rooms\Models\Rooms;
 use Validator;
 use Meta;
-
+use Master\Rooms\Facades\Rooms as Facade;
 class RoomsResourceController extends Controller
 {
   protected $repository;
-
-  public function __construct(RoomsRepositoryInterface $repository)
+  protected $owners;
+  protected $facade;
+  public function __construct(
+    RoomsRepositoryInterface $repository
+  )
   {
     $this->middleware('auth:admin');
     $this->repository = $repository;
     $this->repository->pushCriteria(\Master\Core\Repositories\Criteria\RequestCriteria::class);
+
     Meta::title('Rooms');
   }
 
@@ -26,13 +30,76 @@ class RoomsResourceController extends Controller
     if($request->ajax()){
      
     }
+
     return view('rooms::admin.rooms.index');  
+  }
+
+
+  protected function getOwners()
+  {
+    $data = Facade::getOwners();
+    $response[] = array();
+    foreach ($data as $key => $list) {
+      $response[] = array(
+        'id' => $list->id,
+        'text' =>  $list->name.' - '.$list->phone,
+        'phone' => $list->phone
+      );
+    } 
+    return $response;
+  }
+
+  protected function getTypes()
+  {
+    $data = Facade::getTypes();
+
+    $response[] = array();
+    foreach ($data as $key => $list) {
+      $response[] = array(
+        'id' => $list->id,
+        'text' => $list->name,
+      );
+    } 
+    return $response;
+  }
+
+  protected function getLocations()
+  {
+    $data = Facade::getLocations();
+
+
+    $response[] = array();
+    foreach ($data as $key => $list) {
+      $response[] = array(
+        'id' => $list->id,
+        'text' => $list->name,
+      );
+    } 
+    return $response;
+  }
+
+  public function getAmeneties()
+  {
+    $data = Facade::getAmeneties();
+    $response = array();
+    foreach ($data as $key => $list) {
+      $response[] = array(
+        'value' => $list->id,
+        'text'  => $list->name,
+        'index' => $key
+      );
+    } 
+    return $response;
   }
 
   public function create(Request $request)
   {
+    $owners = self::getOwners();
+    $types = self::getTypes();
+    $locations = self::getLocations();
+    $ameneties = self::getAmeneties();
     $data = $this->repository->newInstance([]);
-    return view('rooms::admin.rooms.form', compact('data'));
+    return view('rooms::admin.rooms.form', compact('data', 'owners', 'types', 'locations', 'ameneties'));
   }
 
   public function store(Request $request)

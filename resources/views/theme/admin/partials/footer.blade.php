@@ -86,10 +86,7 @@
       .replace(/-+$/, '');            // Trim - from end of text
   }
   $(window).on('load', function(){
-
     $('.chosen-select').chosen({width: "100%"}).change(function(event, info) {
-
-
       if (info.selected) {
         var allSelected = this.querySelectorAll('option[selected]');
         var lastSelected = allSelected[allSelected.length - 1];
@@ -109,8 +106,6 @@
     $('.tagsinput').tagsinput({
       tagClass: 'btn btn-sm mb-2 btn-primary'
     });
-
-
     $('.bootstrap-tagsinput input').keydown(function( event ) {
       if ( event.which == 13 ) {
           $(this).blur();
@@ -130,6 +125,17 @@
   toastr.error("{{session()->get('status_error')}}");
 @endif
 
+
+async function initSelect2(selector, collection) {
+  var action = new Promise((resolve, error) => {
+    var data =  $(selector).select2({
+      placeholder: "Select Option",
+      data: collection
+    });
+    resolve(data)
+  });
+  return await action;
+}
 
 async function readURL(input) {
   if (input.files && input.files[0]) {

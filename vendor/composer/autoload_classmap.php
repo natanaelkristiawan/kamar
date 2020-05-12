@@ -2375,8 +2375,6 @@ return array(
     'Master\\Rooms\\Repositories\\Presenter\\LocationsTransformer' => $vendorDir . '/master/rooms/src/Repositories/Presenter/LocationsTransformer.php',
     'Master\\Rooms\\Repositories\\Presenter\\OwnersPresenter' => $vendorDir . '/master/rooms/src/Repositories/Presenter/OnwersPresenter.php',
     'Master\\Rooms\\Repositories\\Presenter\\OwnersTransformer' => $vendorDir . '/master/rooms/src/Repositories/Presenter/OwnersTransformer.php',
-    'Master\\Rooms\\Repositories\\Presenter\\RoomsPresenter' => $vendorDir . '/master/rooms/src/Repositories/Presenter/RoomsPresenter.php',
-    'Master\\Rooms\\Repositories\\Presenter\\RoomsTransformer' => $vendorDir . '/master/rooms/src/Repositories/Presenter/RoomsTransformer.php',
     'Master\\Rooms\\Repositories\\Presenter\\TypesPresenter' => $vendorDir . '/master/rooms/src/Repositories/Presenter/TypesPresenter.php',
     'Master\\Rooms\\Repositories\\Presenter\\TypesTransformer' => $vendorDir . '/master/rooms/src/Repositories/Presenter/TypesTransformer.php',
     'Master\\Rooms\\Rooms' => $vendorDir . '/master/rooms/src/Rooms.php',

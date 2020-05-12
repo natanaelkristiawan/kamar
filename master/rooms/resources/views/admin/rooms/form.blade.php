@@ -33,19 +33,13 @@
               </div>
              
               <div class="form-group">
-                <label>Owner</label>
-                <select class="form-control col-lg-6" required="" data-error="Please select owner">
-                  <option value="">Select Owner</option>
-                 
-                </select>
+                <label>Owner <span class="required">*</span></label>
+                <select class="form-control select-owner" required="" data-error="Please select owner"></select>
                 <div class="help-block with-errors error"></div>
               </div>
               <div class="form-group">
-                <label>Type</label>
-                <select class="form-control col-lg-6" required="">
-                  <option value="">Select Type</option>
-                 
-                </select>
+                <label>Type <span class="required">*</span></label>
+                <select class="form-control select-type" required="" data-error="Please select type"></select>
                 <div class="help-block with-errors error"></div>
               </div>
 
@@ -145,6 +139,10 @@
                     <label>Description</label>
                     <textarea name="description[id]" class="textarea form-control">{{ (bool)count((array)$data->description) ? $data->description['id'] : '' }}</textarea>
                   </div>
+                  <div class="form-group">
+                    <label>House Rules</label>
+                    <textarea name="house_rules[id]" class="textarea form-control">{{ (bool)count((array)$data->house_rules) ? $data->house_rules['id'] : '' }}</textarea>
+                  </div>
                 </div>
                 <div class="tab-pane p-3" id="content-en" role="tabpanel">
                   <div class="form-group">
@@ -155,11 +153,13 @@
                     <label>Abstract</label>
                     <textarea name="abstract[en]" class="textarea form-control">{{ (bool)count((array)$data->abstract) ? $data->abstract['en'] : '' }}</textarea>
                   </div>
-
-
                   <div class="form-group">
                     <label>Description</label>
                     <textarea name="description[en]" class="textarea form-control">{{ (bool)count((array)$data->description) ? $data->description['en'] : '' }}</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>House Rules</label>
+                    <textarea name="house_rules[en]" class="textarea form-control">{{ (bool)count((array)$data->house_rules) ? $data->house_rules['en'] : '' }}</textarea>
                   </div>
                 </div>
 
@@ -188,16 +188,18 @@
             <div class="card-body">
               <h4 class="mt-0 header-title">Details</h4>
               <div class="form-group">
-                <label>Total Room</label>
+                <label>Total Room <span class="required">*</span></label>
                 <input required="" data-error="Please enter total room" type="number" value="{{ $data->total_room }}" placeholder="Total Room" name="total_room" class="form-control col-lg-4">
+                <div class="help-block with-errors error"></div>
+              </div> 
+              <div class="form-group">
+                <label>Price <span class="required">*</span></label>
+                <input required="" data-error="Please enter total room" type="number" value="{{ $data->price }}" placeholder="Price" name="price" class="form-control col-lg-4">
                 <div class="help-block with-errors error"></div>
               </div>
               <div class="form-group">
-                <label>Locations</label>
-                <select class="form-control col-lg-4" required="" data-error="Please enter slug">
-                  <option value="">Select Location</option>
-                 
-                </select>
+                <label>Locations <span class="required">*</span></label>
+                <select class="form-control select-location" required="" data-error="Please enter location"></select>
               </div>
 
               <div class="form-group">
@@ -212,15 +214,13 @@
                 <textarea class="form-control" name="address" id="address"></textarea>
               </div>
               <div class="form-group">
+                <label>Address Detail</label>
+                <textarea class="form-control" name="address_detail"></textarea>
+              </div>
+              <div class="form-group">
                 <label>Ameneties</label> 
                 <div>
-                  <select id='custom-headers' class="searchable" multiple='multiple'>
-                    <option value='elem_1' selected>elem 1</option>
-                    <option value='elem_2'>elem 2</option>
-                    <option value='elem_3'>elem 3</option>
-                    <option value='elem_4' selected>elem 4</option>
-                    <option value='elem_100'>elem 100</option>
-                  </select>
+                  <select id='custom-headers' class="searchable" name="ameneties_ids[]" multiple='multiple'></select>
                 </div>
               </div>
             </div>
@@ -330,6 +330,41 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 </style>
+
+<!-- khusus select2 -->
+<script type="text/javascript">
+  var owners = {!! json_encode($owners) !!}
+  var types = {!! json_encode($types) !!}
+  var locations = {!! json_encode($locations) !!}
+  var ameneties = {!! json_encode($ameneties) !!}
+  $(document).ready(function(){
+    initSelect2('.select-owner', owners).then((result) => {
+      result.val("{{ $data->owner_id }}").trigger('change');
+      result.on('select2:select', function (e) {
+        var data = e.params.data;
+      });
+    });
+
+    initSelect2('.select-type', types).then((result) => {
+      result.val("{{ $data->type_id }}").trigger('change');
+      result.on('select2:select', function (e) {
+        var data = e.params.data;
+      });
+    });
+
+    initSelect2('.select-location', locations).then((result) => {
+      result.val("{{ $data->location_id }}").trigger('change');
+      result.on('select2:select', function (e) {
+        var data = e.params.data;
+        search_by_city(true, data.text);
+      });
+    });
+  });
+
+</script>
+
+
+
 <script type="text/javascript">
   var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
   var uploadPath = "{{ route('public.upload', array('config'=> 'master.rooms.rooms')).'/'.date('Y/m/d').'/file/file' }}"
@@ -375,6 +410,8 @@
             $selectionSearch = that.$selectionUl.prev(),
             selectableSearchString = '#'+that.$container.attr('id')+' .ms-elem-selectable:not(.ms-selected)',
             selectionSearchString = '#'+that.$container.attr('id')+' .ms-elem-selection.ms-selected';
+        this.addOption(ameneties)
+        this.select({!! json_encode($data->ameneties_ids) !!}, 'init');
 
         that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
         .on('keydown', function(e){
@@ -465,10 +502,16 @@ def_value = {
   lat: def_lat,
   lng: def_lng
 };
-
+$("#pac-input").keypress(function(event) {
+ if (event.keyCode == 13 ){
+  return false;
+ }
+})
 
 function generateInputSearch() {
   var input = document.getElementById('pac-input');
+
+
   var searchBox = new google.maps.places.SearchBox(input);
   map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
@@ -497,13 +540,13 @@ function generateInputSearch() {
 
 if (typeof def_lat == 'undefined') {
   if (def_lat != '') {
-    def_value.lat = -6.209933;
+    def_value.lat = -8.669513;
   }
 }
 
 if (typeof def_lng == 'undefined') {
   if (def_lng != '') {
-    def_value.lng = 106.843239;
+    def_value.lng = 115.21500;
   }
 }
 
@@ -511,7 +554,7 @@ if (typeof def_lng == 'undefined') {
 function initMap(zoom, data) {
   if ($('#map').length == 1) {
     if (typeof zoom == 'undefined') {
-      zoom = 14;
+      zoom = 15;
     }
 
     latest_lat = $('#latitude').val();
@@ -599,12 +642,6 @@ function mapIsDragged(evt) {
 
   $('#latitude').val(lat);
   $('#longitude').val(lng);
-}
-
-function generateAll() {
-  initMap();
-  search_by_city(true, 'denpasar');
-  generateInputSearch();
 }
 
 

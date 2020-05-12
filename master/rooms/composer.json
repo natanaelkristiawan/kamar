@@ -14,7 +14,10 @@
         "laravel": {
             "providers": [
                 "Master\\Rooms\\RoomsServiceProvider"
-            ]
+            ],
+            "aliases" : {
+                "Rooms": "Master\\Rooms\\Facades\\Rooms"
+            }
         }
     },
     "minimum-stability": "dev"

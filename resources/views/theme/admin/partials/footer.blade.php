@@ -38,6 +38,9 @@
 <script src="{{ asset('themes') }}/plugins/datatables/responsive.bootstrap4.min.js"></script>
 
 
+<!-- datepicker -->
+<script type="text/javascript" src="{{ asset('themes/additionals') }}/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js"></script>
+
 <!-- App js -->
 <script src="{{ asset('themes/vertical') }}/assets/js/app.js"></script>
 

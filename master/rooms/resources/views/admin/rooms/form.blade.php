@@ -176,9 +176,21 @@
                   <h4 class="mt-0 header-title">Date Off</h4>
                 </div>
                 <div class="col-lg-6 text-right">
-                  <a href="javascript:;" class="btn btn-sm btn-primary">Add</a>
+                  <a href="javascript:;" id="addDateOff" class="btn btn-sm btn-primary">Add</a>
                 </div>
               </div>
+              <table id="table-date-off" class="table table-bordered nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead class="thead-light">
+                  <tr>
+                    <th>Date Start</th>
+                    <th>Date End</th>
+                    <th width="10%">Status</th>
+                    <th width="10%">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -306,6 +318,28 @@
 
 @section('script')
 @parent
+
+<script type="x-tmpl-mustache" id="date-off-template">
+<tr id="dateoff_@{{ counter }}">
+  <td>
+    <input type="text" name="dateoff[@{{counter}}][date_start]" id="datestart@{{counter}}" class="datetime form-control datestart" >
+  </td>
+  <td>
+    <input type="text" name="dateoff[@{{counter}}][date_start]" id="dateend@{{counter}}" class="datetime form-control dateend" >
+  </td>
+  <td>
+    <div>
+      <input type="hidden" name="dateoff[@{{counter}}][status]" value="0">
+      <input type="checkbox" id="status@{{counter}}" class="js-switch" name="dateoff[@{{counter}}][status]" value="1"  />
+    </div>
+  </td>
+  <td>
+    <button type="button" onclick="onclick($('#dateoff_@{{ counter }}').remove())" class="btn btn-danger btn-sm">Delete</button>
+  </td>
+</tr>
+</script>
+
+
 <link href="{{ asset('themes/additionals/lou-multi-select/css') }}/multi-select.css" media="screen" rel="stylesheet" type="text/css">
 <script src="{{ asset('themes/additionals/lou-multi-select/js') }}/jquery.multi-select.js" type="text/javascript"></script>
 <script src="{{ asset('themes/additionals/lou-multi-select/js') }}/jquery.quicksearch.js" type="text/javascript"></script>
@@ -329,7 +363,71 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
+  td.disabled.day::after {
+    width: 100%;
+    display: block;
+    content: "";
+    border-top: 1px solid #999;
+    transform: rotate(-25deg) translate(4px, -8px);
+  }
+  .switchery-small {
+    border-radius: 20px;
+    height: 20px;
+    width: 33px;
+  }
+  .switchery-small > small {
+    height: 20px;
+    width: 20px;
+  }
+
+  .has-danger .select2-selection--single {
+    border-color: #f16c69 !important
+  }
 </style>
+
+<script type="text/javascript">
+  var counter = 0;
+  $(document).ready(function(){
+    $('#addDateOff').on('click', function(){
+      var template = $('#date-off-template').html()
+      var data = {
+        counter : counter
+      }
+      htmlBody = Mustache.render(template, data);
+      $('#table-date-off tbody').append(htmlBody);
+
+      $('#datestart'+counter).datepicker({
+        format: 'yyyy-mm-dd',
+        autoclose : true,
+        startDate: new Date(),
+        clearBtn: true
+      }).on('changeDate', function (selected) {
+        var that = $($(selected.currentTarget).parents()[1]).find('.dateend');
+        if (typeof selected.date == 'undefined') {
+          that.val('');
+          return;
+        }
+        var minDate = new Date(selected.date.valueOf());
+
+        that.datepicker('setStartDate', minDate);
+        that.datepicker('setDate', minDate);
+      });
+
+      $('#dateend'+counter).datepicker({
+        format: 'yyyy-mm-dd',
+        autoclose : true,
+        startDate: new Date(),
+        clearBtn: true
+      });
+
+      var elem = document.querySelector('#status'+counter);
+      var switchery = new Switchery(elem, { color: '#1AB394', size: 'small' });
+
+
+      counter++;
+    })
+  });
+</script>
 
 <!-- khusus select2 -->
 <script type="text/javascript">
@@ -360,11 +458,7 @@
       });
     });
   });
-
 </script>
-
-
-
 <script type="text/javascript">
   var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
   var uploadPath = "{{ route('public.upload', array('config'=> 'master.rooms.rooms')).'/'.date('Y/m/d').'/file/file' }}"
@@ -380,10 +474,7 @@
       }
     }
   });
-
-
   $(document).ready(function(){
-
     $('.preview-youtube').on('click', function(){
       var videoID = $('#youtube').val();
       if (videoID == '') {
@@ -399,8 +490,6 @@
       var slug = slugify(name);
       $('#slug').val(slug);
     });
-
-
     $('.searchable').multiSelect({
       selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='Select Ameneties'>",
       selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='Select Ameneties'>",
@@ -440,13 +529,9 @@
     });
   });
 </script>
-
-
 <!-- youtube -->
-
 <script type="text/javascript">
 var player;
-
 function renderFirst(videoID) {
   player = new YT.Player('player', {
     height: '100%',
@@ -458,28 +543,19 @@ function renderFirst(videoID) {
     playerVars: {rel: 0},
   });
 }
-
-
 function onPlayerReady(event) {
   event.target.playVideo();
 }
-
 function playerLoadById(videoID) {
-
   if (typeof player == 'undefined') {
     renderFirst(videoID);
     return;
   }
-
   player.loadVideoById(videoID);
 }
-
 </script>
-
-
 <!-- gmaps -->
 <script type="text/javascript">
-
 function similarity(s1, s2) {
   var longer = s1;
   var shorter = s2;
@@ -493,8 +569,6 @@ function similarity(s1, s2) {
   }
   return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
 }
-
-
 var map,
 def_lat,
 def_lng,
@@ -510,8 +584,6 @@ $("#pac-input").keypress(function(event) {
 
 function generateInputSearch() {
   var input = document.getElementById('pac-input');
-
-
   var searchBox = new google.maps.places.SearchBox(input);
   map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
@@ -537,20 +609,16 @@ function generateInputSearch() {
     })
   });  
 }
-
 if (typeof def_lat == 'undefined') {
   if (def_lat != '') {
     def_value.lat = -8.669513;
   }
 }
-
 if (typeof def_lng == 'undefined') {
   if (def_lng != '') {
     def_value.lng = 115.21500;
   }
 }
-
-
 function initMap(zoom, data) {
   if ($('#map').length == 1) {
     if (typeof zoom == 'undefined') {
@@ -577,8 +645,6 @@ function initMap(zoom, data) {
     });
   }
 }
-
-
 function search_by_city(reset, address) {
   if (typeof reset == 'undefined') {
     reset = false;
@@ -626,7 +692,6 @@ function search_by_city(reset, address) {
     }
   });
 }
-
 function mapIsDragged(evt) {
   lat = evt.latLng.lat();
   lng = evt.latLng.lng(); 
@@ -643,13 +708,9 @@ function mapIsDragged(evt) {
   $('#latitude').val(lat);
   $('#longitude').val(lng);
 }
-
-
 $(document).ready(function(){
   initMap();
   generateInputSearch();
 });
-
-
 </script>
 @stop

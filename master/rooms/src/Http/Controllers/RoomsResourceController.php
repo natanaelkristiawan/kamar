@@ -104,11 +104,9 @@ class RoomsResourceController extends Controller
 
   public function store(Request $request)
   {
+    dd($request->all());
     $validator = Validator::make($request->all(), [
       'name'      => 'required',
-      'email'      => 'required',
-      'phone'      => 'required',
-      'status'    => 'required',
     ]);
 
     if ($validator->fails()) {
@@ -116,6 +114,11 @@ class RoomsResourceController extends Controller
           ->withErrors($validator)
           ->withInput();
     }
+
+
+
+
+    // nnti di cek disini
 
     $dataInsert = array(
       'name'    => $request->name,

@@ -10,7 +10,7 @@ class RoomsTransformer extends TransformerAbstract
   {
     return [
       'id'   => $model->id,
-      'photo' => $model->photo,
+      'photo' => '<a href="#" data-featherlight="'.url('image/original/'.$model->photo_primary).'"><img style="max-width:100px;border-radius:5px;" class="img-fluid"  src="'.url('image/profile/'.$model->photo_primary).'" /></a>',
       'name' => $model->name,
       'owner' => $model->owner->name,
       'type' => $model->type->name,

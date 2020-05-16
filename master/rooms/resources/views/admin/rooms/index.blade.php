@@ -51,6 +51,8 @@
 
 @section('script')
 @parent
+<link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+<script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript"> 
 var oTable;
 var page = 1;

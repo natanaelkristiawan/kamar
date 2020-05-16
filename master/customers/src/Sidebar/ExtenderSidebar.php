@@ -16,7 +16,7 @@ class ExtenderSidebar implements SidebarExtender
 		$menu->group('Main Navigator', function(Group $group) {
 			$group->item('Customers', function(Item $item){
 				$item->icon('mdi mdi-account-box');
-				$item->url('javascript:;');
+				$item->url(route('admin.customers'));
 			});
 		});
 		return $menu;

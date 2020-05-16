@@ -11,6 +11,11 @@ class CustomersRepository extends BaseRepository implements CustomersRepositoryI
 
 	protected $fieldSearchable = [
 		'name'      => 'like',
+		'email'      => 'like',
+		'created_at' => [
+      'default' => array(),
+      'condition' => 'between'
+    ],
 		'status'    => '='
 	];
 

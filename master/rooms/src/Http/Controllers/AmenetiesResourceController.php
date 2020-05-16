@@ -66,7 +66,7 @@ class AmenetiesResourceController extends Controller
 
 
     $data = $this->repository->create($dataInsert);
-
+    $request->session()->flash('status', 'Success Insert Data!');
     if ($request->submit == 'submit_exit') {
       return redirect()->route('admin.ameneties');
     }
@@ -101,7 +101,7 @@ class AmenetiesResourceController extends Controller
     );
 
     $data = $this->repository->update($dataInsert, $data->id);
-
+    $request->session()->flash('status', 'Success Update Data!');
     if ($request->submit == 'submit_exit') {
       return redirect()->route('admin.ameneties');
     }

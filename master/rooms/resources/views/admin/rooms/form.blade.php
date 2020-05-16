@@ -363,13 +363,6 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
-  td.disabled.day::after {
-    width: 100%;
-    display: block;
-    content: "";
-    border-top: 1px solid #999;
-    transform: rotate(-25deg) translate(4px, -8px);
-  }
   .switchery-small {
     border-radius: 20px;
     height: 20px;
@@ -402,6 +395,8 @@
         var that = $($(selected.currentTarget).parents()[1]).find('.dateend');
         if (typeof selected.date == 'undefined') {
           that.val('');
+          that.datepicker('setStartDate', new Date());
+          that.datepicker('setDate', false);
           return;
         }
         var minDate = new Date(selected.date.valueOf());

@@ -1,3 +1,4 @@
 <?php 
-
-return [];
+return [
+  'upload_folder' => 'customers'
+];

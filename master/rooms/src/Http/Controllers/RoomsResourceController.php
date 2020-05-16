@@ -104,9 +104,13 @@ class RoomsResourceController extends Controller
 
   public function store(Request $request)
   {
-    dd($request->all());
     $validator = Validator::make($request->all(), [
-      'name'      => 'required',
+      'name'    => 'required',
+      'slug'    => 'required',
+      'owner_id'=> 'required',
+      'type_id' => 'required',
+      'total_room' => 'required',
+      'price' => 'required'
     ]);
 
     if ($validator->fails()) {
@@ -114,19 +118,31 @@ class RoomsResourceController extends Controller
           ->withErrors($validator)
           ->withInput();
     }
-
-
-
-
     // nnti di cek disini
-
     $dataInsert = array(
-      'name'    => $request->name,
-      'email'    => $request->email,
-      'phone'      => $request->phone,
-      'photo'      => $request->photo,
-      'status'    => $request->status,
-      'content'   => $request->content
+      'name' => $request->name,
+      'slug' => $request->slug,
+      'owner_id' => $request->owner_id,
+      'type_id' => $request->type_id,
+      'is_featured' => $request->is_featured,
+      'status' => $request->status,
+      'meta' => is_null($request->meta) ? array() : $request->meta,
+      'title' => is_null($request->title) ? array() : $request->title,
+      'abstract' => is_null($request->abstract) ? array() : $request->abstract,
+      'description' => is_null($request->description) ? array() : $request->description,
+      'house_rules' => is_null($request->house_rules) ? array() : $request->house_rules,
+      'date_off' => is_null($request->date_off) ? array() : $request->date_off,
+      'total_room' => $request->total_room,
+      'price' => $request->price,
+      'latitude' => $request->latitude,
+      'longitude' => $request->longitude,
+      'location_id' => $request->location_id,
+      'address' => $request->address,
+      'address_detail' => $request->address_detail,
+      'ameneties_ids' => is_null($request->ameneties_ids) ? array() : array_values($request->ameneties_ids),
+      'photo_primary' => $request->photo_primary,
+      'gallery' => is_null($request->gallery) ? array() : array_values($request->gallery),
+      'youtube' => $request->youtube,
     );
 
 
@@ -140,16 +156,22 @@ class RoomsResourceController extends Controller
 
   public function edit(Request $request, Rooms $data)
   {
-    return view('rooms::admin.rooms.detail', compact('data'));
+    $owners = self::getOwners();
+    $types = self::getTypes();
+    $locations = self::getLocations();
+    $ameneties = self::getAmeneties();
+    return view('rooms::admin.rooms.form', compact('data', 'owners', 'types', 'locations', 'ameneties'));
   }
 
   public function update(Request $request, Rooms $data)
   {
     $validator = Validator::make($request->all(), [
-      'name'      => 'required',
-      'email'      => 'required',
-      'phone'      => 'required',
-      'status'    => 'required',
+      'name'    => 'required',
+      'slug'    => 'required',
+      'owner_id'=> 'required',
+      'type_id' => 'required',
+      'total_room' => 'required',
+      'price' => 'required'
     ]);
 
     if ($validator->fails()) {
@@ -158,14 +180,32 @@ class RoomsResourceController extends Controller
           ->withInput();
     }
 
-    $dataInsert = array(
-      'name'    => $request->name,
-      'email'    => $request->email,
-      'photo'      => $request->photo,
-      'phone'      => $request->phone,
-      'status'    => $request->status,
-      'content'   => $request->content
+     $dataInsert = array(
+      'name' => $request->name,
+      'slug' => $request->slug,
+      'owner_id' => $request->owner_id,
+      'type_id' => $request->type_id,
+      'is_featured' => $request->is_featured,
+      'status' => $request->status,
+      'meta' => is_null($request->meta) ? array() : $request->meta,
+      'title' => is_null($request->title) ? array() : $request->title,
+      'abstract' => is_null($request->abstract) ? array() : $request->abstract,
+      'description' => is_null($request->description) ? array() : $request->description,
+      'house_rules' => is_null($request->house_rules) ? array() : $request->house_rules,
+      'date_off' => is_null($request->date_off) ? array() : $request->date_off,
+      'total_room' => $request->total_room,
+      'price' => $request->price,
+      'latitude' => $request->latitude,
+      'longitude' => $request->longitude,
+      'location_id' => $request->location_id,
+      'address' => $request->address,
+      'address_detail' => $request->address_detail,
+      'ameneties_ids' => is_null($request->ameneties_ids) ? array() : array_values($request->ameneties_ids),
+      'photo_primary' => $request->photo_primary,
+      'gallery' => is_null($request->gallery) ? array() : array_values($request->gallery),
+      'youtube' => $request->youtube,
     );
+
 
     $data = $this->repository->update($dataInsert, $data->id);
 

@@ -34,12 +34,12 @@
              
               <div class="form-group">
                 <label>Owner <span class="required">*</span></label>
-                <select class="form-control select-owner" required="" data-error="Please select owner"></select>
+                <select class="form-control select-owner" name="owner_id" required="" data-error="Please select owner"></select>
                 <div class="help-block with-errors error"></div>
               </div>
               <div class="form-group">
                 <label>Type <span class="required">*</span></label>
-                <select class="form-control select-type" required="" data-error="Please select type"></select>
+                <select class="form-control select-type" name="type_id" required="" data-error="Please select type"></select>
                 <div class="help-block with-errors error"></div>
               </div>
 
@@ -211,23 +211,23 @@
               </div>
               <div class="form-group">
                 <label>Locations <span class="required">*</span></label>
-                <select class="form-control select-location" required="" data-error="Please enter location"></select>
+                <select class="form-control select-location" name="location_id" required="" data-error="Please enter location"></select>
               </div>
 
               <div class="form-group">
                 <label>Maps</label>
                 <input id="pac-input" class="form-control" type="text" placeholder="Search Address">
                 <div id="map" style="min-height: 30em"></div>
-                <input type="hidden" name="latitude" id="latitude">
-                <input type="hidden" name="longitude" id="longitude">
+                <input type="hidden" value="{{ $data->latitude }}" name="latitude" id="latitude">
+                <input type="hidden" value="{{ $data->longitude }}" name="longitude" id="longitude">
               </div>
               <div class="form-group">
                 <label>Address</label>
-                <textarea class="form-control" name="address" id="address"></textarea>
+                <textarea class="form-control" name="address" id="address">{!! $data->address !!}</textarea>
               </div>
               <div class="form-group">
                 <label>Address Detail</label>
-                <textarea class="form-control" name="address_detail"></textarea>
+                <textarea class="form-control" name="address_detail">{!! $data->address_detail !!}</textarea>
               </div>
               <div class="form-group">
                 <label>Ameneties</label> 
@@ -264,7 +264,7 @@
               <div class="form-group">
                 <label>Youtube</label>
                 <div class="bootstrap-filestyle input-group col-lg-4 pl-0">
-                  <input type="text" class="form-control" id="youtube" name="youtube" placeholder="">
+                  <input type="text" class="form-control" value="{{ $data->youtube }}" id="youtube" name="youtube" placeholder="">
                   <span class="group-span-filestyle input-group-append preview-youtube" tabindex="0">
                     <label for="filestyle-0" class="btn btn-secondary">
                       <span class="icon-span-filestyle fas fa-play"></span> 
@@ -322,19 +322,19 @@
 <script type="x-tmpl-mustache" id="date-off-template">
 <tr id="dateoff_@{{ counter }}">
   <td>
-    <input type="text" name="dateoff[@{{counter}}][date_start]" id="datestart@{{counter}}" class="datetime form-control datestart" >
+    <input type="text" value="@{{ date_start }}" name="date_off[@{{counter}}][date_start]" id="datestart@{{counter}}" class="datetime form-control datestart" >
   </td>
   <td>
-    <input type="text" name="dateoff[@{{counter}}][date_start]" id="dateend@{{counter}}" class="datetime form-control dateend" >
+    <input type="text"  value="@{{ date_end }}" name="date_off[@{{counter}}][date_end]" id="dateend@{{counter}}" class="datetime form-control dateend" >
   </td>
   <td>
     <div>
-      <input type="hidden" name="dateoff[@{{counter}}][status]" value="0">
-      <input type="checkbox" id="status@{{counter}}" class="js-switch" name="dateoff[@{{counter}}][status]" value="1"  />
+      <input type="hidden" name="date_off[@{{counter}}][status]" value="0">
+      <input type="checkbox" id="status@{{counter}}" class="js-switch" name="date_off[@{{counter}}][status]" value="1"  />
     </div>
   </td>
   <td>
-    <button type="button" onclick="onclick($('#dateoff_@{{ counter }}').remove())" class="btn btn-danger btn-sm">Delete</button>
+    <button type="button" onclick="$('#dateoff_@{{ counter }}').remove()" class="btn btn-danger btn-sm">Delete</button>
   </td>
 </tr>
 </script>
@@ -387,16 +387,13 @@
 
 <script type="text/javascript">
   var counter = 0;
-  $(document).ready(function(){
-    $('#addDateOff').on('click', function(){
+  async function generateDateTime(counter, data) {
+    var response = new Promise((resolve, error)=> {
       var template = $('#date-off-template').html()
-      var data = {
-        counter : counter
-      }
       htmlBody = Mustache.render(template, data);
       $('#table-date-off tbody').append(htmlBody);
 
-      $('#datestart'+counter).datepicker({
+      var dateStart = $('#datestart'+counter).datepicker({
         format: 'yyyy-mm-dd',
         autoclose : true,
         startDate: new Date(),
@@ -413,18 +410,57 @@
         that.datepicker('setDate', minDate);
       });
 
-      $('#dateend'+counter).datepicker({
+      var dateEndStart = (typeof data.date_start == 'undefined' ? new Date() : new Date(data.date_start));
+
+      var dateEnd = $('#dateend'+counter).datepicker({
         format: 'yyyy-mm-dd',
         autoclose : true,
-        startDate: new Date(),
-        clearBtn: true
+        startDate: dateEndStart,
       });
 
       var elem = document.querySelector('#status'+counter);
+
+      if (typeof data.status != 'undefined') {
+        if (Boolean(data.status) == true) {
+          $('#status'+counter).attr('checked', true)
+        }
+      }
       var switchery = new Switchery(elem, { color: '#1AB394', size: 'small' });
 
+      resolve({
+        dateStart: dateStart,
+        dateEnd: dateEnd
+      });
+    });
 
-      counter++;
+    return await response;
+
+  }
+  $(document).ready(function(){
+
+
+    var dateOff = {!! json_encode($data->date_off) !!}
+
+    $.each(dateOff, function(){
+      var data = {
+        counter : counter,
+        date_start  : this.date_start,
+        date_end : this.date_end,
+        status: this.status
+      }
+      generateDateTime(counter, data).then((response)=> {
+        counter++;
+      })
+    })
+
+
+    $('#addDateOff').on('click', function(){
+      var data = {
+        counter : counter
+      }
+      generateDateTime(counter, data).then((response)=> {
+        counter++;
+      })
     })
   });
 </script>
@@ -643,6 +679,15 @@ function initMap(zoom, data) {
       zoom: 14,
       textSearch: true
     });
+
+    map.addMarker({
+      lat: latest_lat,
+      lng: latest_lng,
+      draggable: true,
+      dragend: function(e) {
+        mapIsDragged(e);
+      }
+    });
   }
 }
 function search_by_city(reset, address) {
@@ -662,6 +707,7 @@ function search_by_city(reset, address) {
     address: address,
     callback: function(results, status) {
       if (status == 'OK') {
+       $('#address').val(results[0].formatted_address)
         var latlng = results[0].geometry.location;
         map.removeMarkers();
         dataTest = results;

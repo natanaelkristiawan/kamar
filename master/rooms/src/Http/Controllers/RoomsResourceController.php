@@ -27,11 +27,22 @@ class RoomsResourceController extends Controller
 
   public function index(Request $request)
   {
+    $owners = self::getOwners();
+    $types = self::getTypes();
+    $locations = self::getLocations();
+    $ameneties = self::getAmeneties();
+    
     if($request->ajax()){
-     
+      $pageLimit = $request->length;
+      $data = $this->repository
+          ->setPresenter(\Master\Rooms\Repositories\Presenter\RoomsPresenter::class)
+          ->setPageLimit($pageLimit)
+          ->getDataTable();
+
+      return response()->json($data);
     }
 
-    return view('rooms::admin.rooms.index');  
+    return view('rooms::admin.rooms.index', compact('owners', 'types', 'locations', 'ameneties'));  
   }
 
 

@@ -46,4 +46,20 @@ class Rooms extends Model
     'meta' => 'array',
     'date_off' => 'array'
   );
+
+
+  public function owner()
+  {
+    return $this->belongsTo(\Master\Rooms\Models\Owners::class, 'owner_id', 'id');
+  }
+  
+  public function location()
+  {
+    return $this->belongsTo(\Master\Rooms\Models\Locations::class, 'location_id', 'id');
+  }
+
+  public function type()
+  {
+    return $this->belongsTo(\Master\Rooms\Models\Types::class, 'type_id', 'id');
+  }
 }

@@ -46,12 +46,12 @@
 
 @section('modal')
 @parent
-@include('rooms::admin.types.partials.filter')
+@include('rooms::admin.rooms.partials.filter')
 @stop
 
 @section('script')
 @parent
-<!-- <script type="text/javascript"> 
+<script type="text/javascript"> 
 var oTable;
 var page = 1;
 $(document).ready(function() {
@@ -60,9 +60,14 @@ $(document).ready(function() {
     responsive: false,
     scrollX: true,
     dom: 'lrtip',
-    order: [[ 0, "asc" ]],
+    order: [[ 1, "asc" ]],
     columnDefs: [
+      { orderable: false, targets: 0 },
       { orderable: false, targets: 2 },
+      { orderable: false, targets: 3 },
+      { orderable: false, targets: 4 },
+      { orderable: false, targets: 6 },
+      { orderable: false, targets: 7 },
     ],
     processing: true,
     serverSide: true,
@@ -73,7 +78,7 @@ $(document).ready(function() {
       }
     },
     ajax: {
-      url: "{{ route('admin.types') }}",
+      url: "{{ route('admin.rooms') }}",
       dataType: "json",
       type: "GET",
       data: function ( d ) {
@@ -91,7 +96,12 @@ $(document).ready(function() {
       page = parseInt(api.rows().page()) + 1;
     },
     columns: [
+      {data : 'photo'},
       {data : 'name'},
+      {data : 'owner'},
+      {data : 'type'},
+      {data : 'location'},
+      {data : 'address'},
       {data : 'status'},
       {data : 'action'},
     ],
@@ -107,6 +117,6 @@ $(document).ready(function() {
   });
 });
 
-</script>-->
+</script>
 
 @stop

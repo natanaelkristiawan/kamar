@@ -133,7 +133,8 @@ async function initSelect2(selector, collection) {
   var action = new Promise((resolve, error) => {
     var data =  $(selector).select2({
       placeholder: "Select Option",
-      data: collection
+      data: collection,
+      allowClear: true
     });
     resolve(data)
   });
@@ -190,5 +191,13 @@ $(document).ready(function() {
   });
 });
 </script>
+
+<style type="text/css">
+  .select2-selection__clear{
+    position: relative !important;
+    right: 20px;
+    color: #f16c69
+  }
+</style>
 @section('script')
 @show

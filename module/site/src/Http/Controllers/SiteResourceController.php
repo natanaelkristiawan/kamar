@@ -20,7 +20,7 @@ class SiteResourceController extends Controller
 
 	public function index(Request $request)
 	{
-
+		return view('site::admin.site.index');
 	}
 
 	public function create(Request $request)

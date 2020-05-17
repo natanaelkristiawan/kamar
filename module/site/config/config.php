@@ -1,3 +1,5 @@
 <?php 
 
-return [];
+return [
+  'upload_folder' => 'site'
+];

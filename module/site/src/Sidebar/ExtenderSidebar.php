@@ -18,6 +18,17 @@ class ExtenderSidebar implements SidebarExtender
 				$item->icon('mdi mdi-cloud-sync');
 				$item->url(route('admin.site'));
 			});
+
+			$group->item('FAQs', function(Item $item){
+				$item->icon('mdi mdi-comment-question-outline');
+				$item->item('Categories', function(Item $item){
+          $item->url('javascript:;');
+        });
+        
+        $item->item('Questions', function(Item $item){
+          $item->url('javascript:;');
+        });
+			});
 		});
 		return $menu;
 	}

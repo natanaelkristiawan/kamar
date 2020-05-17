@@ -17,7 +17,6 @@ class Preview implements FilterInterface
             $constraint->upsize();
         });
         
-
         if (!empty(config('image.size.sm.watermark'))) {
             $image->insert(config('image.size.sm.watermark'), 'center');
         }

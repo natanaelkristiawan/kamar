@@ -17,11 +17,11 @@ class ExtenderSidebar implements SidebarExtender
 			$group->item('Articles', function(Item $item){
 				$item->icon('mdi mdi-book');
         $item->url('articles');
-				$item->item('Category', function(Item $item){
+				$item->item('Categories', function(Item $item){
           $item->url(route('admin.categories'));
         });
         
-        $item->item('Article', function(Item $item){
+        $item->item('Articles', function(Item $item){
           $item->url(route('admin.articles'));
         });
 			});

@@ -10,8 +10,9 @@ class Blur implements FilterInterface
     public function applyFilter(Image $image)
     {
         $action = config('image.size.sm.action', 'fit');
-        $width = 400;
-        $height = 258;
+        $width = (int)((20/100) * $image->width());
+        $height = (int)((20/100) * $image->height());
+        
         $dataFile =  explode('/', $image->mime());
 
         $image->fit($width, $height, function ($constraint) {

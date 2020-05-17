@@ -13,7 +13,7 @@ class ExtenderSidebar implements SidebarExtender
 {
 	public function extendWith(Menu $menu)
 	{
-		$menu->group('Main Navigator', function(Group $group) {
+		$menu->group('ADMINISTRATOR', function(Group $group) {
 			$group->item('Books', function(Item $item){
 				$item->icon('mdi mdi-calendar-clock');
 				$item->url('books');

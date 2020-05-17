@@ -13,7 +13,7 @@ class ExtenderSidebar implements SidebarExtender
 {
 	public function extendWith(Menu $menu)
 	{
-		$menu->group('Main Navigator', function(Group $group) {
+		$menu->group('ADMINISTRATOR', function(Group $group) {
 			$group->item('Customers', function(Item $item){
 				$item->icon('mdi mdi-account-box');
 				$item->url(route('admin.customers'));

@@ -73,7 +73,8 @@ return [
         'xl' => 'Master\Upload\Templates\ExtraLarge',
         'preview' => 'Master\Upload\Templates\Preview',
         'profile' => 'Master\Upload\Templates\Profile',
-        'mobile' => 'Master\Upload\Templates\Mobile'
+        'mobile' => 'Master\Upload\Templates\Mobile',
+        'blur'  => 'Master\Upload\Templates\Blur'
     ],
 
     /*
@@ -85,7 +86,7 @@ return [
     |
      */
 
-    'lifetime'  => 43200,
+    'lifetime'  => 0,
 
     // Image size
     'size'      => [

@@ -64,6 +64,13 @@
             "options"   : {
                 "symlink" : true
             }
+        },
+        {
+            "type"      : "path",
+            "url"       : "module/site",
+            "options"   : {
+                "symlink" : true
+            }
         }
     ],
 
@@ -81,7 +88,8 @@
         "master/payments": "@dev",
         "master/rooms": "@dev",
         "master/books": "@dev",
-        "master/reviews": "@dev"
+        "master/reviews": "@dev",
+        "public/site": "@dev"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

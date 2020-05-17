@@ -18,7 +18,7 @@ class ConfigSidebar implements Sidebar
 
 	public function build()
 	{
-		$this->menu->group('Main Navigator');
+		$this->menu->group('ADMINISTRATOR');
 		$this->extendMenu();
 	}
 

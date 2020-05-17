@@ -1,0 +1,21 @@
+{
+    "name": "public/site",
+    "description": "This module additional",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Module\\Site\\": "src"
+        },
+        "classmap": [ "src" ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Module\\Site\\SiteServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

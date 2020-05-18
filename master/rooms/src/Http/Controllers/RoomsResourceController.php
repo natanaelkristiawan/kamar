@@ -12,8 +12,6 @@ use Master\Rooms\Facades\Rooms as Facade;
 class RoomsResourceController extends Controller
 {
   protected $repository;
-  protected $owners;
-  protected $facade;
   public function __construct(
     RoomsRepositoryInterface $repository
   )

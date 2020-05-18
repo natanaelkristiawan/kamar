@@ -11,23 +11,23 @@
   <div class="tab-pane p-3 active" id="ourmission-id" role="tabpanel">
     <div class="form-group">
       <label>Title</label> 
-      <input type="text" placeholder="Our mission title" name="" value="" class="form-control">
+      <input type="text" placeholder="Our mission title" name="mission[id][title]" value="{{ $mission['id']['title'] }}" class="form-control">
     </div>
 
     <div class="form-group">
       <label>Description</label> 
-      <input type="text" placeholder="Our mission description" name="" value="" class="form-control">
+      <input type="text" placeholder="Our mission description" name="mission[id][description]" value="{{ $mission['id']['description'] }}" class="form-control">
     </div>
   </div> 
   <div class="tab-pane p-3" id="ourmission-en" role="tabpanel">
     <div class="form-group">
       <label>Title</label> 
-      <input type="text" placeholder="Our mission title" name="" value="" class="form-control">
+      <input type="text" placeholder="Our mission title" name="mission[en][title]" value="{{ $mission['en']['title'] }}" class="form-control">
     </div>
 
     <div class="form-group">
       <label>Description</label> 
-      <input type="text" placeholder="Our mission description" name="" value="" class="form-control">
+      <input type="text" placeholder="Our mission description" name="mission[en][description]" value="{{ $mission['en']['description'] }}" class="form-control">
     </div>
   </div>
 </div>
@@ -36,13 +36,13 @@
   <div style="position: relative; max-width: 128px;">
     <div class="lds-dual-ring hide"></div>
     <a href="javascript:;" class="upload-now">
-      <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="https://via.placeholder.com/360x360" class="card-img-top img-fluid image-preview">
+      <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($missionBanner) || empty($missionBanner)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$missionBanner) }}" class="card-img-top img-fluid image-preview">
     </a>
     <a href="javascript:;" class="remove-image-single">
       <i class="fa fa-times"></i>
     </a>
     <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
-    <input type="hidden" name="image_ourmission" value="" class="image-path">
+    <input type="hidden" name="mission_banner" value="{{ $missionBanner }}" class="image-path">
   </div>
 </div>
 <div class="form-group">

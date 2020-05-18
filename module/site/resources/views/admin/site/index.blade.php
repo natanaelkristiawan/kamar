@@ -17,50 +17,54 @@
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <h4 class="mt-0 header-title">Site Setting</h4>
+            <form style="display: none;" id="upload-picture">@csrf</form>
+            <form role="form" method="POST" action="">
+              @csrf
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h4 class="mt-0 header-title">Site Setting</h4>
+                  </div>
+                  <div class="col-lg-6 text-right">
+                    <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                    <a href="{{ route('admin.site') }}" class="btn btn-sm btn-neutral">Reset</a>
+                  </div>
                 </div>
-                <div class="col-lg-6 text-right">
-                  <button type="button" class="btn btn-sm btn-primary">Save</button>
-                  <button type="button" class="btn btn-sm btn-neutral">Reset</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12 mt-5"> 
-                  <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#main" role="tab">Main</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#our-mission" role="tab">Our Mission</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#partners" role="tab">Partners</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#privacy-policy" role="tab">Privacy & Policy</a>
-                    </li>
-                  </ul>
-                  <!-- Tab panes -->
-                  <div class="tab-content">
-                    <div class="tab-pane active p-3" id="main" role="tabpanel">
-                      @include('site::admin.site.partials.main')
-                    </div>
-                    <div class="tab-pane p-3" id="our-mission" role="tabpanel">
-                      @include('site::admin.site.partials.ourmission')
-                    </div>
-                    <div class="tab-pane p-3" id="partners" role="tabpanel">
-                      @include('site::admin.site.partials.partners')
-                    </div>
-                    <div class="tab-pane p-3" id="privacy-policy" role="tabpanel">
-                      @include('site::admin.site.partials.privacypolicy')
+                <div class="row">
+                  <div class="col-lg-12 mt-5"> 
+                    <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#main" role="tab">Main</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#our-mission" role="tab">Our Mission</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#partners" role="tab">Partners</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#privacy-policy" role="tab">Privacy & Policy</a>
+                      </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane active p-3" id="main" role="tabpanel">
+                        @include('site::admin.site.partials.main')
+                      </div>
+                      <div class="tab-pane p-3" id="our-mission" role="tabpanel">
+                        @include('site::admin.site.partials.ourmission')
+                      </div>
+                      <div class="tab-pane p-3" id="partners" role="tabpanel">
+                        @include('site::admin.site.partials.partners')
+                      </div>
+                      <div class="tab-pane p-3" id="privacy-policy" role="tabpanel">
+                        @include('site::admin.site.partials.privacypolicy')
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -77,6 +81,7 @@
 @parent
 
 <script type="text/javascript">
+  var uploadPath = "{{ route('public.upload', array('config'=> 'module.site')).'/'.date('Y/m/d').'/site/file' }}"
   $('.textarea').summernote({
     tabsize: 2,
     height: 300,

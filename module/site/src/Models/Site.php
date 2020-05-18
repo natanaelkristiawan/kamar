@@ -11,6 +11,11 @@ class Site extends Model
 	protected $fillable = [
 		'name',
 		'slug',
+    'value',
 		'status',
 	];
+
+  protected $casts = array(
+    'value' => 'array'
+  );
 }

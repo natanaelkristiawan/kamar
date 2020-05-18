@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use Module\Site\Interfaces\SiteRepositoryInterface;
 use Module\Site\Models\Site;
 use Validator;
-
+use Module\Site\Http\Traits\MainTrait;
+use Illuminate\Support\Str;
 class SiteResourceController extends Controller
 {
+	// use MainTrait;
 	protected $repository;
 
 	public function __construct(SiteRepositoryInterface $repository)
@@ -20,32 +22,66 @@ class SiteResourceController extends Controller
 
 	public function index(Request $request)
 	{
-		return view('site::admin.site.index');
-	}
-
-	public function create(Request $request)
-	{
-
+		$meta = self::getMeta('array');
+		$mainBanner = self::getMainBanner();
+		$phone = self::getPhone();
+		$email = self::getEmail();
+		$address = self::getAddress();
+		$mission = self::getMission('array');
+		$missionBanner = self::getMissionBanner();
+		$privacy = self::getPrivacy('array');
+		$privacyBanner = self::getPrivacyBanner();
+		return view('site::admin.site.index', compact(
+			'meta', 
+			'mainBanner', 
+			'phone', 
+			'email',
+			'address',
+			'mission',
+			'missionBanner',
+			'privacy',
+			'privacyBanner'
+		));
 	}
 
 	public function store(Request $request)
 	{
-	 
+		/*main group*/
+		self::setMainBanner($request);
+		self::setMeta($request, 'array');
+		self::setPhone($request);
+		self::setEmail($request);
+		self::setAddress($request);
+		self::setMission($request, 'array');
+		self::setMissionBanner($request);
+		self::setPrivacy($request, 'array');
+		self::setPrivacyBanner($request);
+		$request->session()->flash('status', 'Success Insert Data!');
+		return redirect()->route('admin.site');
 	}
 
-	public function edit(Request $request, Site $data)
+	public function __call($method, $argument)
 	{
-	  
-	}
+		// set or get
+		$action = explode('_', Str::snake($method));
+		$request = count($argument) ? $argument[0] : '';
+		if ($action[0] == 'set') {
 
-	public function update(Request $request, Site $data)
-	{
-	  
-	}
+			unset($action[0]);
+			$params = array(
+	      'name' => ucwords( implode(' ', $action) ),
+	      'slug' => implode('-', $action),
+	      'status' => 1
+	    );
+	    $value = is_null($request->{implode('_', $action)}) ? ((isset($argument[1]) && $argument[1]) == 'array' ? array() : '') : $request->{implode('_', $action)}; 
+	    return $this->repository->updateOrCreate($params, ($params + array('value' => $value)));
+		}
 
-	public function delete(Request $request, Site $data)
-	{
-
+		if ($action[0] == 'get') {
+			unset($action[0]);
+			$query = $this->repository->findWhere(array('slug'=>implode('-', $action)))->first();
+			return is_null($query) ? ((isset($argument[0]) && $argument[0]) == 'array' ? $this->repository->newInstance([]) : '') : $query->value;
+		}
 	}
 
 }

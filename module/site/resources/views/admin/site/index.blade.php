@@ -33,28 +33,28 @@
                 <div class="row">
                   <div class="col-lg-12 mt-5"> 
                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
-                      <li class="nav-item">
+                      <li class="nav-item active">
                         <a class="nav-link" data-toggle="tab" href="#main" role="tab">Main</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#our-mission" role="tab">Our Mission</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#partners" role="tab">Partners</a>
+                        <a class="nav-link" data-toggle="tab" href="#partners" role="tab">Partners</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#privacy-policy" role="tab">Privacy & Policy</a>
                       </li>
                     </ul>
                     <!-- Tab panes -->
-                    <div class="tab-content">
-                      <div class="tab-pane p-3" id="main" role="tabpanel">
+                    <div class="tab-content ">
+                      <div class="tab-pane p-3 active" id="main" role="tabpanel">
                         @include('site::admin.site.partials.main')
                       </div>
                       <div class="tab-pane p-3" id="our-mission" role="tabpanel">
                         @include('site::admin.site.partials.ourmission')
                       </div>
-                      <div class="tab-pane p-3 active" id="partners" role="tabpanel">
+                      <div class="tab-pane p-3" id="partners" role="tabpanel">
                         @include('site::admin.site.partials.partners')
                       </div>
                       <div class="tab-pane p-3" id="privacy-policy" role="tabpanel">

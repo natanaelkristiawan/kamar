@@ -33,8 +33,8 @@
                 <div class="row">
                   <div class="col-lg-12 mt-5"> 
                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
-                      <li class="nav-item active">
-                        <a class="nav-link" data-toggle="tab" href="#main" role="tab">Main</a>
+                      <li class="nav-item ">
+                        <a class="nav-link active" data-toggle="tab" href="#main" role="tab">Main</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#our-mission" role="tab">Our Mission</a>

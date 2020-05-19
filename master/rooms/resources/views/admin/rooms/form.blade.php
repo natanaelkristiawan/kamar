@@ -245,7 +245,7 @@
               <h4 class="mt-0 header-title">Media</h4>
               <div class="form-group" >
                 <label>Photo Primary</label>
-                <div style="position: relative; max-width: 128px;">
+                <div style="position: relative; width: 128px;">
                   <div class="lds-dual-ring hide"></div>
                   <a href="javascript:;" class="upload-now">
                     <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo_primary) || empty($data->photo_primary)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo_primary) }}" class="card-img-top img-fluid image-preview">

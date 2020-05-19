@@ -16,7 +16,7 @@ class CustomersTransformer extends TransformerAbstract
       'gender' => $model->gender,
       'dob' => $model->dob,
       'phone' => $model->phone,
-      'photo' => '<a href="#" data-featherlight="'.url('image/original/'.$model->photo).'"><img style="max-width:100px;border-radius:5px;" class="img-fluid"  src="'.url('image/profile/'.$model->photo).'" /></a>',
+      'photo' => '<a href="#" data-featherlight="'.url('image/original/'.$model->photo).'"><img style="width:100px;border-radius:5px;" class="img-fluid"  src="'.url('image/profile/'.$model->photo).'" /></a>',
       'status' => $model->status == 0 ? 'Draft' : 'Live',
 		  'action'=> '<div class="btn-group">
                 <a href="'.route('admin.customers.edit', ['id'=>$model->id]).'" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-fw fa-pencil-alt"></i></a>

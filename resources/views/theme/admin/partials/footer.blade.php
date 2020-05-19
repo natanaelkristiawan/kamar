@@ -169,7 +169,7 @@ async function readURL(input) {
   }
 }
 
-$(".file-upload").change(function() {
+$(document).on('change', '.file-upload', function() {
   var response = readURL(this);
   var path = this;
   response.then((result) => {
@@ -179,16 +179,14 @@ $(".file-upload").change(function() {
   })
 });
 
-$(document).ready(function() {
-  $('.upload-now').on('click', function(){
-    $(this).parent().find('.file-upload').click();
-  });
+$(document).on('click', '.upload-now',function(){
+  $(this).parent().find('.file-upload').click();
+});
 
-  $('.remove-image-single').on('click', function(){
-    $(this).parent().find('.image-path').val(''); 
-    $(this).parent().find('.file-upload').val(''); 
-    $(this).parent().find('.image-preview').attr('src', 'https://via.placeholder.com/360x360')
-  });
+$(document).on('click', '.remove-image-single', function(){
+  $(this).parent().find('.image-path').val(''); 
+  $(this).parent().find('.file-upload').val(''); 
+  $(this).parent().find('.image-preview').attr('src', 'https://via.placeholder.com/360x360')
 });
 </script>
 

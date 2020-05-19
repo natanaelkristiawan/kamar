@@ -26,7 +26,7 @@
                     <h4 class="mt-0 header-title">Site Setting</h4>
                   </div>
                   <div class="col-lg-6 text-right">
-                    <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                    <button type="submit" class="btn btn-sm btn-primary" id="submit-button">Save</button>
                     <a href="{{ route('admin.site') }}" class="btn btn-sm btn-neutral">Reset</a>
                   </div>
                 </div>
@@ -34,13 +34,13 @@
                   <div class="col-lg-12 mt-5"> 
                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#main" role="tab">Main</a>
+                        <a class="nav-link" data-toggle="tab" href="#main" role="tab">Main</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#our-mission" role="tab">Our Mission</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#partners" role="tab">Partners</a>
+                        <a class="nav-link active" data-toggle="tab" href="#partners" role="tab">Partners</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#privacy-policy" role="tab">Privacy & Policy</a>
@@ -48,13 +48,13 @@
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                      <div class="tab-pane active p-3" id="main" role="tabpanel">
+                      <div class="tab-pane p-3" id="main" role="tabpanel">
                         @include('site::admin.site.partials.main')
                       </div>
                       <div class="tab-pane p-3" id="our-mission" role="tabpanel">
                         @include('site::admin.site.partials.ourmission')
                       </div>
-                      <div class="tab-pane p-3" id="partners" role="tabpanel">
+                      <div class="tab-pane p-3 active" id="partners" role="tabpanel">
                         @include('site::admin.site.partials.partners')
                       </div>
                       <div class="tab-pane p-3" id="privacy-policy" role="tabpanel">
@@ -79,7 +79,10 @@
 @stop
 @section('script')
 @parent
-
+<link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+<script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('themes/additionals') }}/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.min.css">
+<script type="text/javascript" src="{{ asset('themes/additionals') }}/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.min.js"></script>
 <script type="text/javascript">
   var uploadPath = "{{ route('public.upload', array('config'=> 'module.site')).'/'.date('Y/m/d').'/site/file' }}"
   $('.textarea').summernote({

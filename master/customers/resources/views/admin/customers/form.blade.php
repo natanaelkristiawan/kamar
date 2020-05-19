@@ -53,7 +53,7 @@
                   </div>
                   <div class="form-group">
                     <label>Photo</label>
-                    <div style="position: relative; max-width: 128px;">
+                    <div style="position: relative; width: 128px;">
                       <div class="lds-dual-ring hide"></div>
                       <a href="javascript:;" class="upload-now">
                         <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo) || empty($data->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo) }}" class="card-img-top img-fluid image-preview">

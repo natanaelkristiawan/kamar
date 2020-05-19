@@ -29,8 +29,10 @@ class SiteResourceController extends Controller
 		$address = self::getAddress();
 		$mission = self::getMission('array');
 		$missionBanner = self::getMissionBanner();
+		$missionData = self::getMissionData('array');
 		$privacy = self::getPrivacy('array');
 		$privacyBanner = self::getPrivacyBanner();
+		$partner = self::getPartner('array');
 		return view('site::admin.site.index', compact(
 			'meta', 
 			'mainBanner', 
@@ -40,7 +42,9 @@ class SiteResourceController extends Controller
 			'mission',
 			'missionBanner',
 			'privacy',
-			'privacyBanner'
+			'privacyBanner',
+			'missionData',
+			'partner'
 		));
 	}
 
@@ -54,8 +58,10 @@ class SiteResourceController extends Controller
 		self::setAddress($request);
 		self::setMission($request, 'array');
 		self::setMissionBanner($request);
+		self::setMissionData($request, 'array');
 		self::setPrivacy($request, 'array');
 		self::setPrivacyBanner($request);
+		self::setPartner($request, 'array');
 		$request->session()->flash('status', 'Success Insert Data!');
 		return redirect()->route('admin.site');
 	}

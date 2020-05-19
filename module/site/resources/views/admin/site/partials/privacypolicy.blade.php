@@ -32,7 +32,7 @@
 
 <div class="form-group" >
   <label>Banner</label>
-  <div style="position: relative; max-width: 128px;">
+  <div style="position: relative; width: 128px;">
     <div class="lds-dual-ring hide"></div>
     <a href="javascript:;" class="upload-now">
       <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($privacyBanner) || empty($privacyBanner)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$privacyBanner) }}" class="card-img-top img-fluid image-preview">

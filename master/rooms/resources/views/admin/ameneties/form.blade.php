@@ -35,7 +35,7 @@
 
                    <div class="form-group">
                     <label>Icon</label>
-                    <div style="position: relative; max-width: 128px;">
+                    <div style="position: relative; width: 128px;">
                       <div class="lds-dual-ring hide"></div>
                       <a href="javascript:;" class="upload-now">
                         <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->icon) || empty($data->icon)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->icon) }}" class="card-img-top img-fluid image-preview">

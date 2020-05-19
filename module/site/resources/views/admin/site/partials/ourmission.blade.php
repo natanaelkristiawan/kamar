@@ -192,6 +192,7 @@
     renderModal(data).then((response) => {
       $('.icon').iconpicker({
         placement: 'top',
+         hideOnSelect: true,
       }).on('iconpickerSelected', function(event){
         $('#changeClass').attr('class',event.iconpickerValue);
       });
@@ -258,6 +259,7 @@
       renderModal({icon : 'fas fa-check'}).then((response) => {
         $('.icon').iconpicker({
           placement: 'top',
+          hideOnSelect: true,
         }).on('iconpickerSelected', function(event){
           $('#changeClass').attr('class',event.iconpickerValue);
         });

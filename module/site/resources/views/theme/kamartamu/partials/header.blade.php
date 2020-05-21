@@ -112,15 +112,19 @@
         </ul>
         
         <ul class="nav-menu nav-menu-social align-to-right">
-          
+          @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+              @if(App::getLocale() == $localeCode)
+              @continue
+              @endif
+          <li>
+            <a class="second-nav-link" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [] , false) }}">
+              {{ $properties['name'] }}
+            </a>
+          </li>  
+          @endforeach
           <li>
             <a href="#" data-toggle="modal" data-target="#login">
-              <i class="ti-user mr-1"></i><span class="dn-lg">Login/Signup</span>
-            </a>
-          </li>
-          <li class="add-listing theme-bg">
-            <a href="submit-property.html">
-               <i class="ti-plus"></i> Submit Property
+              <i class="ti-user mr-1"></i><span class="dn-lg">{{ trans('site::default.login')}}/{{ trans('site::default.signup')}}</span>
             </a>
           </li>
         </ul>

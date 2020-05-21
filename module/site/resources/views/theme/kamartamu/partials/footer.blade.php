@@ -14,7 +14,7 @@
             
           </div>
         </div>    
-        <div class="col-lg-2 col-md-2">
+        <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
             <h4 class="widget_title">Navigations</h4>
             <ul class="footer-menu">
@@ -27,7 +27,7 @@
           </div>
         </div>
             
-        <div class="col-lg-2 col-md-2">
+        <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
             <h4 class="widget_title">The Highlights</h4>
             <ul class="footer-menu">
@@ -40,7 +40,7 @@
           </div>
         </div>
         
-        <div class="col-lg-2 col-md-2">
+        <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
             <h4 class="widget_title">My Account</h4>
             <ul class="footer-menu">
@@ -51,36 +51,7 @@
               <li><a href="#">Cart</a></li>
             </ul>
           </div>
-        </div>
-        
-        <div class="col-lg-3 col-md-3">
-          <div class="footer_widget">
-            <h4 class="widget_title">Download Apps</h4>
-            <a href="#" class="other-store-link">
-              <div class="other-store-app">
-                <div class="os-app-icon">
-                  <i class="lni-playstore theme-cl"></i>
-                </div>
-                <div class="os-app-caps">
-                  Google Play
-                  <span>Get It Now</span>
-                </div>
-              </div>
-            </a>
-            <a href="#" class="other-store-link">
-              <div class="other-store-app">
-                <div class="os-app-icon">
-                  <i class="lni-apple theme-cl"></i>
-                </div>
-                <div class="os-app-caps">
-                  App Store
-                  <span>Now it Available</span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        
+        </div>       
       </div>
     </div>
   </div>

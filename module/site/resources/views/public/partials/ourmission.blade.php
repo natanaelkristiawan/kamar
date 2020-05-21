@@ -39,6 +39,7 @@
                               {{ url('image/md/'.$missionBanner) }} 600w,
                               {{ url('image/lg/'.$missionBanner) }} 690w,
                               {{ url('image/original/'.$missionBanner) }} 1380w"
+            data-sizes="100vw"
            class="progressive replace img-fluid w-100 rounded rounded-lg-right-0">
              <img src="{{ url('image/blur/'.$missionBanner) }}" class="preview" alt="image description" />
           </a>

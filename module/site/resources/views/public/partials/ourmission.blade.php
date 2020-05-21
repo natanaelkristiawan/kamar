@@ -54,8 +54,13 @@
       </div>
       
       <div class="col-lg-6 col-md-6">
-        <div class="position-relative hts-100 vw-lg-50">
-          <img class="img-fluid w-100 rounded rounded-lg-right-0" src="https://via.placeholder.com/680x625" alt="Image Description">
+        <div class="position-relative hts-100 vw-lg-50 js--lazyload js--lazyload--loading">
+          <img class="img-fluid w-100 rounded rounded-lg-right-0" alt="image description"
+               src="{{ url('image/blur/'.$missionBanner) }}"
+               data-lazyload="{{ url('image/sm/'.$missionBanner) }} 300w,
+                              {{ url('image/md/'.$missionBanner) }} 600w,
+                              {{ url('image/lg/'.$missionBanner) }} 690w,
+                              {{ url('image/original/'.$missionBanner) }} 1380w">
         </div>
       </div>
       

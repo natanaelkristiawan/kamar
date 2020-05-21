@@ -1,5 +1,5 @@
 <!-- ============================ Hero Banner  Start================================== -->
-<div class="image-cover hero_banner" style="background:url(https://via.placeholder.com/1920x950) no-repeat;" data-overlay="4">
+<div class="image-cover hero_banner" style="background:url({{ url('image/original/'.$mainBanner) }}) no-repeat;" data-overlay="4">
   <div class="container">
     
     <h1 class="big-header-capt mb-4">{{ trans('site::default.quote')}} </h1>

@@ -10,3 +10,12 @@
 <script src="{{ asset('themes/landing') }}/assets/js/imagesloaded.js"></script>
 <script src="{{ asset('themes/landing') }}/assets/js/daterangepicker.js"></script>
 <script src="{{ asset('themes/landing') }}/assets/js/custom.js"></script>
+<!-- Lazy Load -->
+<script src="https://unpkg.com/responsive-lazyload/dist/responsive-lazyload.umd.js"></script>
+
+<script>
+  responsiveLazyload();
+</script>
+
+@section('script')
+@show

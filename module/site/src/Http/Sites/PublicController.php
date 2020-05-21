@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App;
 use Meta;
 use Mail;
+use Module\Site\Facades\Site;
 
 class PublicController extends Controller
 {
@@ -17,10 +18,11 @@ class PublicController extends Controller
     $this->lang = App::getLocale();
   }
 
-
   public function index()
-  {
-    return view('site::public.index');
+  { 
+    $mainBanner = Site::getDataSite('main-banner');
+    $missionBanner = Site::getDataSite('mission-banner');
+    return view('site::public.index', compact('mainBanner', 'missionBanner'));
   }
 
 

@@ -86,8 +86,8 @@ return [
     |
      */
 
-    'lifetime'  => 0,
-    // 'lifetime'  => 43200,
+    // 'lifetime'  => 0,
+    'lifetime'  => 43200,
 
     // Image size
     'size'      => [

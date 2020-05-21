@@ -10,12 +10,7 @@
 <script src="{{ asset('themes/landing') }}/assets/js/imagesloaded.js"></script>
 <script src="{{ asset('themes/landing') }}/assets/js/daterangepicker.js"></script>
 <script src="{{ asset('themes/landing') }}/assets/js/custom.js"></script>
-<!-- Lazy Load -->
-<script src="https://unpkg.com/responsive-lazyload/dist/responsive-lazyload.umd.js"></script>
-
-<script>
-  responsiveLazyload();
-</script>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
+<script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script>
 @section('script')
 @show

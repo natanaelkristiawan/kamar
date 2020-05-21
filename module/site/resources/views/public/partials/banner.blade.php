@@ -1,5 +1,5 @@
 <!-- ============================ Hero Banner  Start================================== -->
-<div class="image-cover hero_banner" style="background:url({{ url('image/original/'.$mainBanner) }}) no-repeat;" data-overlay="4">
+<div class="image-cover hero_banner bgimg  progressive replace d-flex" data-overlay="4">
   <div class="container">
     
     <h1 class="big-header-capt mb-4">{{ trans('site::default.quote')}} </h1>
@@ -35,3 +35,19 @@
   </div>
 </div>
 <!-- ============================ Hero Banner End ================================== -->
+
+@section('style')
+@parent
+
+<style type="text/css">
+  .bgimg {
+    background:url({{ url('image/original/'.$mainBanner) }}) no-repeat;
+    background-size: cover;
+  }
+
+  .bgimg.replace {
+    background: url({{ url('image/blur/'.$mainBanner) }}) no-repeat;
+    background-size: cover;
+  }
+</style>
+@stop

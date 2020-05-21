@@ -12,47 +12,14 @@
     
     <div class="row">
       
+      @foreach($partner as $list)
       <!-- Single Partner -->
       <div class="col-md-3 col-sm-4 col-lg">
         <div class="partner-grid">
-          <img src="https://via.placeholder.com/150x80" class="img-fluid" alt="" />
+          <img src="{{ url('image/xs/'.$list['logo']) }}" class="img-fluid" alt="" />
         </div>
       </div>
-      
-      <!-- Single Partner -->
-      <div class="col-md-3 col-sm-4 col-lg">
-        <div class="partner-grid">
-          <img src="https://via.placeholder.com/150x80" class="img-fluid" alt="" />
-        </div>
-      </div>
-      
-      <!-- Single Partner -->
-      <div class="col-md-3 col-sm-4 col-lg">
-        <div class="partner-grid">
-          <img src="https://via.placeholder.com/150x80" class="img-fluid" alt="" />
-        </div>
-      </div>
-      
-      <!-- Single Partner -->
-      <div class="col-md-3 col-sm-4 col-lg">
-        <div class="partner-grid">
-          <img src="https://via.placeholder.com/150x80" class="img-fluid" alt="" />
-        </div>
-      </div>
-      
-      <!-- Single Partner -->
-      <div class="col-md-3 col-sm-4 col-lg">
-        <div class="partner-grid">
-          <img src="https://via.placeholder.com/150x80" class="img-fluid" alt="" />
-        </div>
-      </div>
-      
-      <!-- Single Partner -->
-      <div class="col-md-3 col-sm-4 col-lg">
-        <div class="partner-grid">
-          <img src="https://via.placeholder.com/150x80" class="img-fluid" alt="" />
-        </div>
-      </div>
+      @endforeach
       
     </div>
     

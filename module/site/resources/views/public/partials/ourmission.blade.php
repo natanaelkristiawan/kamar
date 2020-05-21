@@ -32,13 +32,17 @@
       </div>
       
       <div class="col-lg-6 col-md-6">
-        <div class="position-relative hts-100 vw-lg-50 js--lazyload js--lazyload--loading">
-          <img class="img-fluid w-100 rounded rounded-lg-right-0" alt="image description"
-               src="{{ url('image/blur/'.$missionBanner) }}"
-               data-lazyload="{{ url('image/sm/'.$missionBanner) }} 300w,
+        <div class="position-relative hts-100 vw-lg-50 vw-md-80">
+
+          <a href="javascript:;"
+            data-srcset = "{{ url('image/sm/'.$missionBanner) }} 300w,
                               {{ url('image/md/'.$missionBanner) }} 600w,
                               {{ url('image/lg/'.$missionBanner) }} 690w,
-                              {{ url('image/original/'.$missionBanner) }} 1380w">
+                              {{ url('image/original/'.$missionBanner) }} 1380w"
+           class="progressive replace img-fluid w-100 rounded rounded-lg-right-0">
+             <img src="{{ url('image/blur/'.$missionBanner) }}" class="preview" alt="image description" />
+          </a>
+       
         </div>
       </div>
       

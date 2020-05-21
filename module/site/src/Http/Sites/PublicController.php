@@ -31,9 +31,10 @@ class PublicController extends Controller
     $missionBanner = Site::getDataSite('mission-banner');
     $mission = Site::getDataSite('mission', true)[$this->lang];
     $missionData = Site::getDataSite('mission-data', true);
+    $partner = Site::getDataSite('partner', true);
 
     $lang = $this->lang;
-    return view('site::public.index', compact('mainBanner', 'missionBanner', 'mission', 'missionData', 'lang'));
+    return view('site::public.index', compact('mainBanner', 'missionBanner', 'mission', 'missionData', 'partner', 'lang'));
   }
 
 

@@ -15,41 +15,19 @@
       <div class="col-lg-6 col-md-6">
         
         <div class="why-ch">
-          <h4>Why Choose Us?</h4>
-          <p>Whether through commerce or just an experience to tell your brand's story, the time has come to start using development languages that fit your projects needs.</p>
+          <h4>{{ $mission['title'] }}</h4>
+          <p>{{ $mission['description'] }}</p>
         </div>
         
+        @foreach($missionData as $list)
         <div class="icon-mi-left">
-          <i class="ti-lock theme-cl"></i>
+          <i style="color: #FC6E51" class="{{ $list['icon'] }}"></i>
           <div class="icon-mi-left-content">
-            <h4>Fully Secure & Support</h4>
-            <p>If you are an individual client, or just a business startup looking for good backlinks for your website.</p>
+            <h4>{{ $list[$lang]['title'] }}</h4>
+            <p>{{ $list[$lang]['description'] }}</p>
           </div>
         </div>
-        
-        <div class="icon-mi-left">
-          <i class="ti-twitter theme-cl"></i>
-          <div class="icon-mi-left-content">
-            <h4>Manage your Social & Busness Account</h4>
-            <p>If you are an individual client, or just a business startup looking for good backlinks for your website.</p>
-          </div>
-        </div>
-        
-        <div class="icon-mi-left">
-          <i class="ti-layers theme-cl"></i>
-          <div class="icon-mi-left-content">
-            <h4>We work Hard with Love</h4>
-            <p>If you are an individual client, or just a business startup looking for good backlinks for your website.</p>
-          </div>
-        </div>
-        
-        <div class="icon-mi-left">
-          <i class="ti-credit-card theme-cl"></i>
-          <div class="icon-mi-left-content">
-            <h4>Flexible Price & Support</h4>
-            <p>If you are an individual client, or just a business startup looking for good backlinks for your website.</p>
-          </div>
-        </div>
+        @endforeach
         
       </div>
       

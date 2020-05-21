@@ -19,8 +19,7 @@
 
 <!-- Custom Color Option -->
 <link href="{{ asset('themes/landing') }}/assets/css/colors.css" rel="stylesheet">
-
-
+<link rel="stylesheet" type="text/css" href="{{ asset('themes/vertical') }}/assets/icons/fontawesome/css/fontawesome-all.css">
 <link rel="stylesheet" href="https://unpkg.com/responsive-lazyload/dist/responsive-lazyload.min.css">
 <style>
 

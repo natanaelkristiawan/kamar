@@ -5,7 +5,7 @@
         
         <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
-            <img src="assets/img/logo-light.png" class="img-footer" alt="" />
+            <img src="{{ asset('themes/landing') }}/assets/img/logo-light.png" class="img-footer" alt="" />
             <div class="footer-add">
               <p>4967  Sardis Sta, Victoria 8007, Montreal.</p>
               <p>+1 246-345-0695</p>

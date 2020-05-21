@@ -90,12 +90,12 @@
      border-radius: .25rem!important
   }
 
-  .js--lazyload:not(img) {
+  .vw-lg-50.js--lazyload:not(img) {
     height: 0;
     padding-bottom: 100% !important;
   }
   @media (min-width: 992px){
-    .js--lazyload:not(img) {
+    .vw-lg-50.js--lazyload:not(img) {
       padding-bottom: 50vw !important;
     }
   }

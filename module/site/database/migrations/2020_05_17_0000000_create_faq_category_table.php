@@ -12,6 +12,7 @@ class CreateFaqCategoryTable extends Migration
     $table->increments('id');
     $table->string('name')->nullable();
     $table->string('slug')->nullable();
+    $table->text('content')->nullable();
     $table->tinyinteger('status')->default(0);
     $table->timestamps();
     $table->softDeletes();

@@ -22,11 +22,11 @@ class ExtenderSidebar implements SidebarExtender
 			$group->item('FAQs', function(Item $item){
 				$item->icon('mdi mdi-comment-question-outline');
 				$item->item('Categories', function(Item $item){
-          $item->url('javascript:;');
+          $item->url(route('admin.faqcategories'));
         });
         
-        $item->item('Questions', function(Item $item){
-          $item->url('javascript:;');
+        $item->item('FAQ', function(Item $item){
+          $item->url(route('admin.faq'));
         });
 			});
 		});

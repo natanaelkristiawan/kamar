@@ -20,6 +20,20 @@ class RouteServiceProvider extends ServiceProvider
 				return $model->find($id);
 			});
 		}
+
+		if (Request::is('*/faq/edit/*') || Request::is('*/faq/delete/*')) {
+			Route::bind('id', function ($id) {
+				$model = $this->app->make('Module\Site\Interfaces\FaqRepositoryInterface');
+				return $model->find($id);
+			});
+		}
+
+		if (Request::is('*/faq-categories/edit/*') || Request::is('*/faq-categories/delete/*')) {
+			Route::bind('id', function ($id) {
+				$model = $this->app->make('Module\Site\Interfaces\FaqCategoriesRepositoryInterface');
+				return $model->find($id);
+			});
+		}
 	}
 
 	public function map()

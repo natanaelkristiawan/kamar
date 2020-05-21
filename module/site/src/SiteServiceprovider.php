@@ -43,6 +43,16 @@ class SiteServiceProvider extends ServiceProvider
 		\Module\Site\Repositories\Eloquent\SiteRepository::class
 		);
 
+		$this->app->bind(
+		'Module\Site\Interfaces\FaqRepositoryInterface',
+		\Module\Site\Repositories\Eloquent\FaqRepository::class
+		);
+
+		$this->app->bind(
+		'Module\Site\Interfaces\FaqCategoriesRepositoryInterface',
+		\Module\Site\Repositories\Eloquent\FaqCategoriesRepository::class
+		);
+
 		$this->app->register(\Module\Site\Providers\RouteServiceProvider::class);
 	}
 

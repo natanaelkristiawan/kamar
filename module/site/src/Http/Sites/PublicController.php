@@ -11,11 +11,18 @@ class PublicController extends Controller
 {
   function __construct()
   {
-    Meta::title();
-    Meta::set('robots', ''); 
-    Meta::set('keywords', '');
-    Meta::set('description', '');
     $this->lang = App::getLocale();
+    self::setMeta();
+  }
+
+
+  public function setMeta()
+  {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title']);
+    Meta::set('robots', $meta['tag']); 
+    Meta::set('keywords', $meta['tag']);
+    Meta::set('description', $meta['description']);
   }
 
   public function index()

@@ -6,10 +6,12 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Routing\Router;
 use Request;
 use Route;
+use LaravelLocalization;
 
 class RouteServiceProvider extends ServiceProvider
 {
 	protected $namespace = 'Module\Site\Http\Controllers';
+	protected $siteNamespace = 'Module\Site\Http\Sites';
 
 	public function boot()
 	{
@@ -47,6 +49,14 @@ class RouteServiceProvider extends ServiceProvider
 		'namespace'  => $this->namespace,
 		], function ($route) {
 			require (__DIR__ . '/../../routes/web.php');
+		});
+
+		Route::group([
+			'middleware' => ['web', 'bilingual'],
+			'prefix' => LaravelLocalization::setLocale(),
+			'namespace'  => $this->siteNamespace,
+		], function($route) {
+			require (__DIR__ . '/../../routes/site.php');
 		});
 	}
 

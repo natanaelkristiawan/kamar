@@ -13,6 +13,11 @@
 {!! Meta::tag('description') !!}
 {!! Meta::tag('keywords') !!}
 
+<style type="text/css">
+  .red-skin {
+    opacity: 0;
+  }
+</style>
 
 <!-- Custom CSS -->
 <link href="{{ asset('themes/landing') }}/assets/css/styles.min.css" rel="preload">

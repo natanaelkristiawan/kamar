@@ -55,6 +55,10 @@
   background-color: #232323;
 }
 
+.red-skin {
+  opacity: 1 !important;
+}
+
 i.req {
     color: #e41515;
 }

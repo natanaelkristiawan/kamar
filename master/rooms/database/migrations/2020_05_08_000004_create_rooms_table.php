@@ -33,7 +33,7 @@ class CreateRoomsTable extends Migration
       $table->text('date_off')->nullable();
       $table->integer('total_room')->nullable();
       $table->tinyInteger('is_featured')->nullable();
-      $table->string('status');
+      $table->tinyinteger('status')->default(0);
       $table->softDeletes();
       $table->timestamps();
     });

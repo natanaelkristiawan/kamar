@@ -59,6 +59,13 @@
 
 
                   <div class="form-group">
+                    <label>Featured</label> 
+                    <div>
+                      <input type="hidden" name="is_featured" value="0">
+                      <input type="checkbox" class="js-switch" name="is_featured" value="1" {{ (bool)$data->is_featured ?  'checked' : ''}} />
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label>Status</label> 
                     <div>
                       <input type="hidden" name="status" value="0">
@@ -87,8 +94,10 @@
 @parent
 <script type="text/javascript">
 
-  var elem = document.querySelector('.js-switch');
-  var switchery = new Switchery(elem, { color: '#1AB394' });
+  var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+  elems.forEach(function(html) {
+    var switchery = new Switchery(html, { color: '#1AB394' });
+  });
 
   $(document).ready(function(){
     $('#name').on('keyup', function(){

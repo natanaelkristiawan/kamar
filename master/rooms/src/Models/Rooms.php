@@ -9,29 +9,29 @@ class Rooms extends Model
 	use SoftDeletes;
 	protected $table = 'rooms';
 	protected $fillable = [
-        'meta',
-        'name',
-        'slug',
-        'location_id',
-        'owner_id',
-        'type_id',
-        'address',
-        'address_detail',
-        'latitude',
-        'longitude',
-        'photo_primary',
-        'gallery',
-        'youtube',
-        'ameneties_ids',
-        'title',
-        'abstract',
-        'description',
-        'house_rules',
-        'price',
-        'date_off',
-        'total_room',
-        'is_featured',
-        'status',
+    'meta',
+    'name',
+    'slug',
+    'location_id',
+    'owner_id',
+    'type_id',
+    'address',
+    'address_detail',
+    'latitude',
+    'longitude',
+    'photo_primary',
+    'gallery',
+    'youtube',
+    'ameneties_ids',
+    'title',
+    'abstract',
+    'description',
+    'house_rules',
+    'price',
+    'date_off',
+    'total_room',
+    'is_featured',
+    'status',
 	];
 
 
@@ -44,7 +44,8 @@ class Rooms extends Model
     'description' => 'array',
     'house_rules' => 'array',
     'meta' => 'array',
-    'date_off' => 'array'
+    'date_off' => 'array',
+    'address_detail' => 'array'
   );
 
 

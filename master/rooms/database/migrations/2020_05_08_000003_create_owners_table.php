@@ -22,7 +22,7 @@ class CreateOwnersTable extends Migration
       $table->string('bank_code')->nullable();
       $table->string('bank_account')->nullable();
       $table->text('bank_account_photo')->nullable();
-      $table->string('status');
+      $table->tinyinteger('status')->default(0);
       $table->softDeletes();
       $table->timestamps();
     });

@@ -13,7 +13,7 @@ class CreateLocationsTable extends Migration
       $table->bigIncrements('id');
       $table->string('name')->nullable();
       $table->string('slug')->nullable();
-      $table->string('status');
+      $table->tinyinteger('status')->default(0);
       $table->softDeletes();
       $table->timestamps();
     });

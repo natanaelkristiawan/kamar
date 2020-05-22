@@ -59,6 +59,7 @@ class TypesResourceController extends Controller
     $dataInsert = array(
       'name'    => $request->name,
       'slug'      => $request->slug,
+      'is_featured'=> $request->is_featured,
       'status'    => $request->status,
       'content'   => $request->content
     );
@@ -92,8 +93,9 @@ class TypesResourceController extends Controller
     }
 
     $dataInsert = array(
-      'name'    => $request->name,
+      'name'      => $request->name,
       'slug'      => $request->slug,
+      'is_featured'=> $request->is_featured,
       'status'    => $request->status,
       'content'   => $request->content
     );

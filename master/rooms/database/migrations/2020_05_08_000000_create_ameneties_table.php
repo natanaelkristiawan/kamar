@@ -15,7 +15,7 @@ class CreateAmenetiesTable extends Migration
 			$table->string('slug')->nullable();
 			$table->text('icon')->nullable();
 			$table->text('content')->nullable();
-			$table->string('status');
+			$table->tinyinteger('status')->default(0);
 			$table->softDeletes();
 			$table->timestamps();
 		});

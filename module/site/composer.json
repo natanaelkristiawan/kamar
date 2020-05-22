@@ -14,7 +14,10 @@
         "laravel": {
             "providers": [
                 "Module\\Site\\SiteServiceProvider"
-            ]
+            ],
+            "aliases" : {
+                "Site": "Module\\Site\\Facades\\Site"
+            }
         }
     },
     "minimum-stability": "dev"

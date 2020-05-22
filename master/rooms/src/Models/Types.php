@@ -11,6 +11,7 @@ class Types extends Model
   protected $fillable = [
     'name',
     'slug',
+    'is_featured',
     'status',
     'content'
   ];
@@ -18,4 +19,10 @@ class Types extends Model
   protected $casts = array(
     'content' => 'array'
   );
+
+
+  public function rooms()
+  {
+    return $this->hasMany(\Master\Rooms\Models\Rooms::class, 'type_id', 'id');
+  }
 }

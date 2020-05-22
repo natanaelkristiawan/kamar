@@ -15,10 +15,12 @@
 
 
 <!-- Custom CSS -->
-<link href="{{ asset('themes/landing') }}/assets/css/styles.css" rel="stylesheet">
+<link href="{{ asset('themes/landing') }}/assets/css/styles.min.css" rel="preload">
+<link rel="stylesheet" href="{{ asset('themes/landing') }}/assets/css/styles.min.css" media="print" onload="this.media='all'">
+
 <!-- Custom Color Option -->
-<link href="{{ asset('themes/landing') }}/assets/css/colors.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ asset('themes/vertical') }}/assets/icons/fontawesome/css/fontawesome-all.css">
+<link href="{{ asset('themes/landing') }}/assets/css/colors.min.css" rel="preload">
+<link rel="stylesheet" href="{{ asset('themes/landing') }}/assets/css/colors.min.css" media="print" onload="this.media='all'">
 
 
 @section('style')

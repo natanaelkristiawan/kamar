@@ -136,7 +136,7 @@ p {
 .gray-bg{
 	background:#f7f7f7 url(../img/pat.png);
 	background-repeat:repeat;
-    background-position: center;
+  background-position: center;
 }
 .gray{
 	background:#f7f7f7;

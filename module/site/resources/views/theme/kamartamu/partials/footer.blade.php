@@ -7,9 +7,9 @@
           <div class="footer_widget">
             <img src="{{ asset('themes/landing') }}/assets/img/logo-light.png" class="img-footer" alt="" />
             <div class="footer-add">
-              <p>4967  Sardis Sta, Victoria 8007, Montreal.</p>
-              <p>+1 246-345-0695</p>
-              <p>info@drizvato.com</p>
+              <p>{{ Site::getDataSite('address') }}</p>
+              <p>{{ Site::getDataSite('phone') }}</p>
+              <p>{{ Site::getDataSite('email') }}</p>
             </div>
             
           </div>

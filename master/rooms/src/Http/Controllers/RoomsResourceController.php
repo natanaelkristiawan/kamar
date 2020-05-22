@@ -147,7 +147,7 @@ class RoomsResourceController extends Controller
       'longitude' => $request->longitude,
       'location_id' => $request->location_id,
       'address' => $request->address,
-      'address_detail' => $request->address_detail,
+      'address_detail' => is_null($request->address_detail) ? array() : $request->address_detail,
       'ameneties_ids' => is_null($request->ameneties_ids) ? array() : array_values($request->ameneties_ids),
       'photo_primary' => $request->photo_primary,
       'gallery' => is_null($request->gallery) ? array() : array_values($request->gallery),

@@ -5,6 +5,8 @@ return [
   'search' => 'Search',
   'signup' => 'Signup',
   'login' => 'Login',
+  'night' => 'night',
+  'featured' => 'Featured',
   'signup_today' => 'Signup Today',
   'signup_quote' => 'Signup & Build Your Dream House',
   'signup_quote_sub' => 'We\'ll help you to grow your career and growth.',

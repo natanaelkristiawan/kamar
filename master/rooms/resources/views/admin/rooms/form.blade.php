@@ -225,9 +225,28 @@
                 <label>Address</label>
                 <textarea class="form-control" name="address" id="address">{!! $data->address !!}</textarea>
               </div>
-              <div class="form-group">
-                <label>Address Detail</label>
-                <textarea class="form-control" name="address_detail">{!! $data->address_detail !!}</textarea>
+               <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item ">
+                    <a class="nav-link active" data-toggle="tab" href="#addressDetail-id" role="tab">ID</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#addressDetail-en" role="tab">EN</a>
+                  </li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane p-3 active" id="addressDetail-id" role="tabpanel">
+                  <div class="form-group">
+                    <label>Address Detail</label>
+                    <textarea class="form-control" name="address_detail[id]">{!! (bool)count((array)$data->address_detail) ? $data->address_detail['id'] : '' !!}</textarea>
+                  </div>
+                </div>
+                <div class="tab-pane p-3" id="addressDetail-en" role="tabpanel">
+                  <div class="form-group">
+                    <label>Address Detail</label>
+                    <textarea class="form-control" name="address_detail[en]">{!! (bool)count((array)$data->address_detail) ? $data->address_detail['en'] : '' !!}</textarea>
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <label>Ameneties</label> 

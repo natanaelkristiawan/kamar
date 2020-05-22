@@ -14,7 +14,8 @@ class CreateTypesTable extends Migration
       $table->string('name')->nullable();
       $table->string('slug')->nullable();
       $table->text('content')->nullable();
-      $table->string('status');
+      $table->tinyinteger('is_featured')->default(0);
+      $table->tinyinteger('status')->default(0);
       $table->softDeletes();
       $table->timestamps();
     });

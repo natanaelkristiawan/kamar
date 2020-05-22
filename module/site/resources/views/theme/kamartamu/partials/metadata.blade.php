@@ -23,5 +23,11 @@
 <link rel="stylesheet" href="{{ asset('themes/landing') }}/assets/css/colors.min.css" media="print" onload="this.media='all'">
 
 
+<style type="text/css">
+  .property_gallery_slide-thumb:before {
+    z-index: 0 !important;
+  }
+</style>
+
 @section('style')
 @show

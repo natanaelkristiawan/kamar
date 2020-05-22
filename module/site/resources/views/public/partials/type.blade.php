@@ -27,20 +27,20 @@
             <!-- Single Property -->
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="single_property_style property_style_2 modern">
-            
+              
                 <div class="listing_thumb_wrapper">
                   <div class="modern-pro-wrap">
                     <span class="property-type rent">{{ $type->name }}</span>
                   </div>
                   <div class="property_gallery_slide-thumb">
-                    <a href=""
-                    data-srcset = "{{ url('image/sm/'.$room->photo_primary) }} 300w,
+                    <a href="single-property-3.htm"
+                      data-href="single-property-3.htm"
+                      data-srcset = "{{ url('image/sm/'.$room->photo_primary) }} 300w,
                             {{ url('image/md/'.$room->photo_primary) }} 600w,
                             {{ url('image/lg/'.$room->photo_primary) }} 690w,
                             {{ url('image/original/'.$room->photo_primary) }} 1380w"
-                    class="progressive replace img-fluid mx-auto"
+                      class="progressive replace img-fluid mx-auto"
                     >
-                      
                       <img src="{{ url('image/blur/'.$room->photo_primary) }}" class="preview" alt="{{ $room->name }}" />
                     </a>
                   </div>
@@ -64,7 +64,7 @@
                 </div>
                 
                 <div class="modern_property_footer justify-content-center">
-                  <h4 class="mdr-price">Rp {{ number_format($room->price) }} </h4>/<span class=" text-muted">{{ trans('site::default.night') }}</span>
+                  <h4 class="mdr-price mb-0">Rp {{ number_format($room->price) }} </h4>/<span class=" text-muted">{{ trans('site::default.night') }}</span>
                 </div>
               </div>
             </div>

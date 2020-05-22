@@ -57,8 +57,8 @@ class Rooms
     $fractal = new Manager();
     $query = $this->type->with(['rooms'])->limit(3)->where(array('is_featured'=>1))
           ->get()
-          ->map(function( $query ){
-            $query->rooms = $query->rooms->take(3);
+          ->map(function( $query ) use ($dataLimit) {
+            $query->rooms = $query->rooms->take($dataLimit);
             return $query;
           });
     $resource = new Fractal\Resource\Collection($query, function(ModelTypes $model) use ($language) {

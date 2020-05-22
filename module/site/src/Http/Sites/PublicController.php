@@ -37,7 +37,6 @@ class PublicController extends Controller
     $partner = Site::getDataSite('partner', true);
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
     $featuredType = self::getTypesFeatured($this->lang)->data;
-
     $lang = $this->lang;
     return view('site::public.index', 
       compact(

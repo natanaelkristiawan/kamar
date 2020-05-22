@@ -55,9 +55,12 @@ class Rooms
       $this->type->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
     $fractal = new Manager();
-    $query = $this->type->with(['rooms' => function($q) use ($dataLimit) {
-      return $q->limit($dataLimit);
-    }])->limit(3)->where(array('is_featured'=>1))->get();
+    $query = $this->type->with(['rooms'])->limit(3)->where(array('is_featured'=>1))
+          ->get()
+          ->map(function( $query ){
+            $query->rooms = $query->rooms->take(3);
+            return $query;
+          });
     $resource = new Fractal\Resource\Collection($query, function(ModelTypes $model) use ($language) {
       $resource = array();
       if ((bool)count($model->rooms)) {  

@@ -46,7 +46,7 @@
                   </div>
                   <div class="property_price_compare">
                     <div class="property_price_reviess">
-                      <span><i class="lni lni-phone mr-2"></i>{{ Site::getDataSite('phone') }}</span>
+                      <span style="color: #fff"><i class="lni lni-phone mr-2"></i>{{ Site::getDataSite('phone') }}</span>
                       <div class="prt_rates mr-2"><i class="fa fa-star mr-2"></i>4.8 <span>(33 reviews)</span></div>
                     </div>
                     <div class="lpc-right">

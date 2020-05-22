@@ -1,13 +1,14 @@
 <?php 
 
 return [
-  'about_us' => 'about-us',
-  'privacy_policy'  => 'privacy-policy',
-  'term_and_condition'=> 'term-condition',
+  'aboutUs' => 'about-us',
+  'privacyPolicy'  => 'privacy-policy',
+  'termAndCondition'=> 'term-condition',
   'faq'       => 'faq',
-  'contact_us'    => 'contact-us',
+  'contactUs'    => 'contact-us',
   'search' => 'search',
-  'search_input' => 'search/{inputSearch}',
+  'searchInput' => 'search/{inputSearch}',
   'article' => 'article',
-  'article_detail' => 'article/{slug}',
+  'articleDetail' => 'article/{slug}',
+  'roomDetail' => 'rooms/{slug}',
 ];

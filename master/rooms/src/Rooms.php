@@ -125,6 +125,17 @@ class Rooms
     return $response;
   }
 
+
+  public function getRoomBySlug($slug='', $language = 'id')
+  {
+    $this->type->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
+    $query = $this->rooms->findWhere(array('slug'=>$slug));
+    $fractal = new Manager();
+    $resource = self::renderRooms($query, $language);
+    $response = $fractal->createData($resource)->toJson();
+    return $response;
+  }
+
   public function getLocations($include_status = false)
   {
     if ($include_status) {

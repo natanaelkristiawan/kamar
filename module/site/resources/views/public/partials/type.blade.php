@@ -16,10 +16,7 @@
     <div class="row m-0">
       
       <div class="tab-content" id="pills-tabContent">
-        
-
         @foreach($featuredType as $key => $type)
-
         <div class="tab-pane fade {{ !(bool)$key ? 'show active' : '' }}" id="{{ $type->slug }}" role="tabpanel" aria-labelledby="{{ $type->slug }}-tab">
           <div class="row">
             
@@ -33,8 +30,8 @@
                     <span class="property-type rent">{{ $type->name }}</span>
                   </div>
                   <div class="property_gallery_slide-thumb">
-                    <a href="single-property-3.htm"
-                      data-href="single-property-3.htm"
+                    <a href="{{ route('public.roomDetail', array('slug'=>$room->slug)) }}"
+                      data-href="{{ url('image/blur/'.$room->photo_primary) }}"
                       data-srcset = "{{ url('image/sm/'.$room->photo_primary) }} 300w,
                             {{ url('image/md/'.$room->photo_primary) }} 600w,
                             {{ url('image/lg/'.$room->photo_primary) }} 690w,
@@ -46,7 +43,7 @@
                   </div>
                   <div class="property_price_compare">
                     <div class="property_price_reviess">
-                      <span style="color: #fff"><i class="lni lni-phone mr-2"></i>{{ Site::getDataSite('phone') }}</span>
+                      <span style="color: #fff !important"><i class="lni lni-phone mr-2"></i>{{ Site::getDataSite('phone') }}</span>
                       <div class="prt_rates mr-2"><i class="fa fa-star mr-2"></i>4.8 <span>(33 reviews)</span></div>
                     </div>
                     <div class="lpc-right">
@@ -58,7 +55,7 @@
                 
                 <div class="property_caption_wrappers pb-0">
                   <div class="property_short_detail">
-                    <h4 class="listing-name"><a href="single-property-1.html">{{ $room->name }}</a></h4>
+                    <h4 class="listing-name"><a href="{{ route('public.roomDetail', array('slug'=>$room->slug)) }}">{{ $room->name }}</a></h4>
                     <span class="property-locations"><i class="ti-location-pin"></i>{{ $room->address }}</span>
                   </div>
                 </div>

@@ -16,5 +16,5 @@ return [
   'our_mission' => 'Our Mission & <span class="theme-cl">Work Process</span>',
   'our_mission_sub' => 'Professional & Dedicated Team',
   'our_featured_partners' => 'Our Featured <span class="theme-cl">Partners</span>',
-  'our_featured_partners_sub' => 'See who will work with us'
+  'our_featured_partners_sub' => 'Proudly Present You "The Rising Stars" of Tourism Village in Bali'
 ];

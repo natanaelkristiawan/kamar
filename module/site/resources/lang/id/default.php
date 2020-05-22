@@ -16,5 +16,5 @@ return [
   'our_mission' => 'Misi & <span class="theme-cl">Proses Kerja</span> Kami',
   'our_mission_sub' => 'Tim Profesional & Berdedikasi',
   'our_featured_partners' => '<span class="theme-cl">Mitra</span> Utama Kami',
-  'our_featured_partners_sub' => 'Lihat siapa yang akan bekerja dengan kami',
+  'our_featured_partners_sub' => 'Dengan bangga memperkenalkan "The Rising Stars" desa wisata Bali',
 ];

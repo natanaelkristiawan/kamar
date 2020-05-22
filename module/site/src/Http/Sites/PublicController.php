@@ -14,9 +14,8 @@ class PublicController extends Controller
   function __construct()
   {
     $this->lang = App::getLocale();
-    self::setMeta();
-  }
 
+  }
 
   public function setMeta()
   {
@@ -27,9 +26,10 @@ class PublicController extends Controller
     Meta::set('description', $meta['description']);
   }
 
+  /*Landing*/
   public function index()
   { 
-
+    self::setMeta();
     $mainBanner = Site::getDataSite('main-banner');
     $missionBanner = Site::getDataSite('mission-banner');
     $mission = Site::getDataSite('mission', true)[$this->lang];
@@ -66,6 +66,26 @@ class PublicController extends Controller
     }
     $data = Rooms::getTypesFeatured(true, $dataLimit, $language);
     return json_decode($data);
+  }
+
+  /*Rooms*/
+  public function detailRoom(Request $request, $slug = '')
+  {
+    $data = Rooms::getRoomBySlug($slug, $this->lang);
+
+    $data = json_decode($data)->data;
+
+    if (!(bool)isset($data[0])) {
+      return abort(404);
+    }
+    $room = $data[0];
+
+    Meta::title('kamartamu.com - '.$room->meta->title);
+    Meta::set('robots', $room->meta->tag); 
+    Meta::set('keywords', $room->meta->tag);
+    Meta::set('description', $room->meta->tag);
+
+    return view('site::public.detail', compact('room'));
   }
 
 

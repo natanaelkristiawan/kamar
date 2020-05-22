@@ -1,12 +1,14 @@
 <?php 
 
 return [
-  'privacy_policy'  => 'kebijakan-privasi',
-  'term_and_condition'=> 'syarat-ketentuan',
+  'aboutUs' => 'tentang-kami',
+  'privacyPolicy'  => 'kebijakan-privasi',
+  'termAndCondition'=> 'syarat-ketentuan',
   'faq'       => 'faq',
-  'contact_us'    => 'kontak-kami',
+  'contactUs'    => 'kontak-kami',
   'search'      => 'cari',
-  'search_input'    => 'cari/{inputSearch}',
+  'searchInput'    => 'cari/{inputSearch}',
   'article' => 'artikel',
-  'article_detail' => 'artikel/{slug}',
+  'articleDetail' => 'artikel/{slug}',
+  'roomDetail' => 'kamar/{slug}',
 ];

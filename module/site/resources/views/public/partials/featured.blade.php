@@ -20,8 +20,8 @@
             <div class="list-badge now-close">{!! trans('site::default.featured') !!}</div>
             <div class="grid-category-thumb">
           
-              <a href="single-property-3.htm"
-                data-href="single-property-3.htm"
+              <a href="{{ route('public.roomDetail', array('slug'=>$room->slug)) }}"
+                data-href="{{ url('image/blur/'.$room->photo_primary) }}"
                 class="overlay-cate img-responsive progressive replace"
                 data-srcset = "{{ url('image/sm/'.$room->photo_primary) }} 300w,
                             {{ url('image/md/'.$room->photo_primary) }} 600w,
@@ -32,7 +32,7 @@
               </a>
       
               <div class="property_meta simple">
-                <a href="#" class="cate-trix theme-cl">{{ $room->type_content }}</a>
+                <a href="{{ route('public.roomDetail', array('slug'=>$room->slug)) }}" class="cate-trix theme-cl">{{ $room->type_content }}</a>
               </div>
             </div>
             <div class="modern-list-content">

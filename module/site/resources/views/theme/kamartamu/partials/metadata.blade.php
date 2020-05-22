@@ -26,6 +26,18 @@
 <style type="text/css">
   .property_gallery_slide-thumb:before {
     z-index: 0 !important;
+  } 
+  .property_gallery_slide-thumb a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    z-index: 1;
+    opacity: .15;
+    background: linear-gradient(to bottom,transparent 5%,#1e2a4c);
   }
 </style>
 

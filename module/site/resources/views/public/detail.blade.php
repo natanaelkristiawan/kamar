@@ -8,6 +8,15 @@
         <div class="property3-slide single-advance-property">
       
           <div class="slider-for">
+            <a href="{{ url('image/original/'.$room->photo_primary) }}"
+              data-href="{{ url('image/original/'.$room->photo_primary) }}"
+              data-srcset = "{{ url('image/sm/'.$room->photo_primary) }} 300w,
+                            {{ url('image/md/'.$room->photo_primary) }} 600w,
+                            {{ url('image/lg/'.$room->photo_primary) }} 690w,
+                            {{ url('image/original/'.$room->photo_primary) }} 1380w"
+              class="item-slick progressive replace">
+              <img src="{{ url('image/blur/'.$room->photo_primary) }}"  class="preview" >
+            </a>
             @foreach($room->gallery as $photo)
             <a href="{{ url('image/original/'.$photo->path) }}"
               data-href="{{ url('image/original/'.$photo->path) }}"
@@ -16,12 +25,23 @@
                             {{ url('image/lg/'.$photo->path) }} 690w,
                             {{ url('image/original/'.$photo->path) }} 1380w"
               class="item-slick progressive replace">
-              <img src="{{ url('image/blur/'.$photo->path) }}"  class="preview" alt="{{ $photo->title }}">
+              <img src="{{ url('image/blur/'.$photo->path) }}"  class="preview" >
             </a>
             @endforeach
 
           </div>
           <div class="slider-nav style-2">
+            <div class="item-slick">
+              <a href=""
+                  data-href=""
+                  data-srcset = "{{ url('image/sm/'.$room->photo_primary) }} 300w,
+                                {{ url('image/md/'.$room->photo_primary) }} 600w,
+                                {{ url('image/lg/'.$room->photo_primary) }} 690w,
+                                {{ url('image/original/'.$room->photo_primary) }} 1380w"
+                  class="progressive replace">
+                <img src="{{ url('image/blur/'.$room->photo_primary) }}" class="preview" alt="Alt">
+              </a>
+            </div>
             @foreach($room->gallery as $photo)
             <div class="item-slick">
               <a href=""

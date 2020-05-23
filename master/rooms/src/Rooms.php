@@ -81,6 +81,7 @@ class Rooms
 
   protected function renderRooms($query, $language)
   {
+
     return new Fractal\Resource\Collection($query, function(ModelRooms $model) use ($language) {
       return [
         'id' => (int) $model->id,

@@ -294,7 +294,7 @@
                   <div class="form-group">
                     <div class="cld-box">
                       <i class="ti-calendar"></i>
-                      <input type="text" name="checkin" class="form-control" value="10/24/2020" />
+                      <input type="text" class="form-control" placeholder="Checkin Start" id="date-input-start" value="" />
                     </div>
                   </div>
                 </div>
@@ -302,7 +302,7 @@
                   <div class="form-group">
                     <div class="cld-box">
                       <i class="ti-calendar"></i>
-                      <input type="text" name="checkout" class="form-control" value="10/24/2020" />
+                      <input type="text" class="form-control" placeholder="Checkin End" id="date-input-end" value="" />
                     </div>
                   </div>
                 </div>
@@ -419,5 +419,23 @@
 @parent
 <!-- Date Booking Script -->
 <script src="{{ asset('themes/landing') }}/assets/js/moment.min.js"></script>
-<script src="{{ asset('themes/landing') }}/assets/js/daterangepicker.js"></script>
+<script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+     $('#date-input-start').dateDropper({
+      large: true,
+      largeOnly: true,
+       lock: 'from'
+     });
+
+     $('#date-input-end').dateDropper({
+      large: true,
+      largeOnly: true,
+       lock: 'from'
+     });
+  })
+</script>
+
+
+
 @stop

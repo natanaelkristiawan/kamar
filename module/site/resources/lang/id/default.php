@@ -20,5 +20,6 @@ return [
   'book_it_now' => 'Pesan Sekarang',
   'description' => 'Deskripsi',
   'house_rules' => 'Aturan Tempat Tinggal',
-  'ameneties' => 'Fasilitas'
+  'ameneties' => 'Fasilitas',
+  'location' => 'Lokasi'
 ];

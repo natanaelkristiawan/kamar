@@ -20,5 +20,6 @@ return [
   'book_it_now' => 'Book it now',
   'description' => 'Description',
   'house_rules' => 'House Rules',
-  'ameneties' => 'Ameneties'
+  'ameneties' => 'Ameneties',
+  'location' => 'Location'
 ];

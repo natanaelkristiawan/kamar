@@ -67,7 +67,6 @@ class ArticlesResourceController extends Controller {
 		$validator = Validator::make($request->all(), [
 			'name' 			=> 'required',
 			'slug' 			=> 'required',
-			'order' 		=> 'required',
 			'status' 		=> 'required',
 		]);
 
@@ -82,6 +81,7 @@ class ArticlesResourceController extends Controller {
 			'slug'			=> $request->slug,
 			'order'			=> $request->order,
 			'status'		=> $request->status,
+			'is_featured'		=> $request->is_featured,
 			'meta'			=> $request->meta,
 			'images' 		=> is_null($request->images) ? array() : array_values($request->images),
 			'banners' 		=> is_null($request->banners) ? array() : array_values($request->banners),
@@ -134,7 +134,6 @@ class ArticlesResourceController extends Controller {
 	  $validator = Validator::make($request->all(), [
 			'name' 			=> 'required',
 			'slug' 			=> 'required',
-			'order' 		=> 'required',
 			'status' 		=> 'required',
 		]);
 
@@ -149,6 +148,7 @@ class ArticlesResourceController extends Controller {
 			'slug'			=> $request->slug,
 			'order'			=> $request->order,
 			'status'		=> $request->status,
+			'is_featured'		=> $request->is_featured,
 			'meta'			=> $request->meta,
 			'images' 		=> is_null($request->images) ? array() : array_values($request->images),
 			'banners' 		=> is_null($request->banners) ? array() : array_values($request->banners),

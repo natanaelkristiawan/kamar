@@ -12,6 +12,7 @@
         
           <li class= "{{ Meta::get('active') == 'home' ? 'active' : ''  }}"><a href="{{ route('public.index') }}">Home</a></li>
           <li class= "{{ Meta::get('active') == 'rooms' ? 'active' : ''  }}"><a href="{{ route('public.rooms') }}">Rooms</a></li>
+          <li class= "{{ Meta::get('active') == 'blogs' ? 'active' : ''  }}"><a href="{{ route('public.blogs') }}">Blogs</a></li>
           
         </ul>
         

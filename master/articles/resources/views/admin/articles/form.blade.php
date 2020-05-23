@@ -30,10 +30,9 @@
                     <input required="" data-error="Please enter slug" type="text" value="{{ $data->slug }}" placeholder="Slug" id="slug" name="slug" class="form-control">
                     <div class="help-block with-errors error"></div>
                   </div>
-                  <div class="form-group">
-                    <label>Order <span class="required">*</span></label> 
-                    <input required="" type="number" data-error="Please enter order"  placeholder="Order" value="{{ $data->order }}" name="order" class="form-control">
-                    <div class="help-block with-errors error"></div>
+                  <div class="form-group" style="display: none">
+                    <label>Order</label> 
+                    <input type="number" data-error="Please enter order"  placeholder="Order" value="0" name="order" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>Category</label>
@@ -44,6 +43,14 @@
                     </select>
                     
                   </div>
+                  <div class="form-group">
+                    <label>Featured</label> 
+                    <div>
+                      <input type="hidden" name="is_featured" value="0">
+                      <input type="checkbox" class="js-switch" name="is_featured" value="1" {{ (bool)$data->is_featured ?  'checked' : ''}} />
+                    </div>
+                  </div>
+
                   <div class="form-group">
                     <label>Status</label> 
                     <div>
@@ -204,8 +211,10 @@
 @parent
 <script type="text/javascript">
 
-  var elem = document.querySelector('.js-switch');
-  var switchery = new Switchery(elem, { color: '#1AB394' });
+  var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+  elems.forEach(function(html) {
+    var switchery = new Switchery(html, { color: '#1AB394' });
+  });
 
   $('.textarea').summernote({
     tabsize: 2,

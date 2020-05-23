@@ -21,7 +21,8 @@ class ArticlesTable extends Migration
       $table->text('abstract')->nullable();
       $table->text('title')->nullable();
       $table->text('content')->nullable();
-			$table->tinyinteger('status')->default(0);
+			$table->tinyinteger('is_featured')->default(0);
+      $table->tinyinteger('status')->default(0);
 			$table->timestamps();
 			$table->softDeletes();
 		});

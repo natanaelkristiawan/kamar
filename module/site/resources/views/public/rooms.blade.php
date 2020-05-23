@@ -4,19 +4,14 @@
   <div class="container">
     <!-- Onclick Sidebar -->
     @include('site::public.rooms.filter')
-    
     <!-- Breadcrumbs -->
     @include('site::public.rooms.breadcrumb')
-
-    
     <div class="row">
-      
       <!-- property Sidebar -->
       <div class="col-lg-4 col-md-12 col-sm-12">
         @include('site::public.rooms.filterMobile')
         @include('site::public.rooms.featured')
       </div>
-      
       <div class="col-lg-8 col-md-12 col-sm-12">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -30,7 +25,7 @@
                   </a>
                   <div class="drp-select dropdown-menu">
                     <a class="dropdown-item" href="JavaScript:Void(0);">Most Rated</a>
-                    <a class="dropdown-item" href="JavaScript:Void(0);">Most Viewd</a>
+                    <a class="dropdown-item" href="JavaScript:Void(0);">Most View</a>
                     <a class="dropdown-item" href="JavaScript:Void(0);">News Listings</a>
                     <a class="dropdown-item" href="JavaScript:Void(0);">High Rated</a>
                   </div>
@@ -42,11 +37,7 @@
         @include('site::public.rooms.list')
         <!-- Pagination -->
         @include('site::public.rooms.pagination')
-
-    
       </div>
-      
-      
     </div>
   </div>  
 </section>

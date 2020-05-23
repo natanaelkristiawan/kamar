@@ -95,9 +95,18 @@ class PublicController extends Controller
     $rooms = $data->data;
     $pagination = $data->meta->pagination;
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
-
-
     return view('site::public.rooms', compact('rooms', 'pagination', 'featuredRooms'));
+  }
+
+  /*Blogs*/
+
+  public function blogs(Request $request)
+  {
+    self::setMeta();
+    Meta::title('kamartamu.com - blogs');
+    Meta::set('active', 'blogs');
+
+    return view('site::public.blogs');
   }
 
 

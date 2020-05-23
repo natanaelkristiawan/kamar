@@ -8,6 +8,7 @@ class ArticlesCriteria implements CriteriaInterface {
 
 	public function apply($model, RepositoryInterface $repository)
 	{
-		return $model;
+    $model = $model->where('status', 1);
+    return $model;
 	}
 }

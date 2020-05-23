@@ -510,8 +510,8 @@
   });
 </script>
 <script type="text/javascript">
-  var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
   var uploadPath = "{{ route('public.upload', array('config'=> 'master.rooms.rooms')).'/'.date('Y/m/d').'/file/file' }}"
+  var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
   elems.forEach(function(html) {
     var switchery = new Switchery(html, { color: '#1AB394' });
   });

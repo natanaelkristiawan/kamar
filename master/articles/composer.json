@@ -14,7 +14,10 @@
         "laravel": {
             "providers": [
                 "Master\\Articles\\ArticlesServiceProvider"
-            ]
+            ],
+            "aliases" : {
+                "Articles": "Master\\Articles\\Facades\\Articles"
+            }
         }
     },
     "minimum-stability": "dev"

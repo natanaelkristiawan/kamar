@@ -19,7 +19,8 @@ class Articles extends Model
 		'abstract',
     'title',
 		'content',
-		'status',
+		'is_featured',
+    'status',
 	];
 
   protected $casts = [

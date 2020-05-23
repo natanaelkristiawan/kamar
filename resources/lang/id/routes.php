@@ -11,4 +11,5 @@ return [
   'article' => 'artikel',
   'articleDetail' => 'artikel/{slug}',
   'roomDetail' => 'kamar/{slug}',
+  'rooms' => 'kamar'
 ];

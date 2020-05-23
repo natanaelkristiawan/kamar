@@ -52,7 +52,7 @@
     
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-        <a href="#" class="btn btn-theme arrow-btn">{{ trans('site::default.browse_all_property') }}<span><i class="ti-arrow-right"></i></span></a>
+        <a href="{{ route('public.rooms') }}" class="btn btn-theme arrow-btn">{{ trans('site::default.browse_all_property') }}<span><i class="ti-arrow-right"></i></span></a>
       </div>
     </div>
     

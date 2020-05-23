@@ -14,13 +14,10 @@ class PublicController extends Controller
   function __construct()
   {
     $this->lang = App::getLocale();
-
   }
-
   public function setMeta()
   {
     $meta = Site::getDataSite('meta')[$this->lang];
-    Meta::title($meta['title']);
     Meta::set('robots', $meta['tag']); 
     Meta::set('keywords', $meta['tag']);
     Meta::set('description', $meta['description']);
@@ -30,6 +27,8 @@ class PublicController extends Controller
   public function index()
   { 
     self::setMeta();
+    Meta::title('kamartamu.com');
+    Meta::set('active', 'home');
     $mainBanner = Site::getDataSite('main-banner');
     $missionBanner = Site::getDataSite('mission-banner');
     $mission = Site::getDataSite('mission', true)[$this->lang];
@@ -52,6 +51,24 @@ class PublicController extends Controller
     );
   }
 
+  /*Rooms Details*/
+  public function detailRoom(Request $request, $slug = '')
+  {
+    $data = Rooms::getRoomBySlug($slug, $this->lang);
+    $data = json_decode($data)->data;
+    if (!(bool)isset($data[0])) {
+      return abort(404);
+    }
+    $room = $data[0];
+    $ameneties = json_decode(Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang))->data;
+    Meta::title('kamartamu.com - '.$room->meta->title);
+    Meta::set('robots', $room->meta->tag); 
+    Meta::set('keywords', $room->meta->tag);
+    Meta::set('description', $room->meta->tag);
+    Meta::set('active', 'rooms');
+    return view('site::public.detail', compact('room', 'ameneties'));
+  }
+
   protected function getFeaturedRooms($limit = 6, $language = 'id'){
     $data = Rooms::getFeaturedRooms(true, $limit, $language);
     return json_decode($data);
@@ -69,25 +86,18 @@ class PublicController extends Controller
   }
 
   /*Rooms*/
-  public function detailRoom(Request $request, $slug = '')
+  public function rooms(Request $request)
   {
-    $data = Rooms::getRoomBySlug($slug, $this->lang);
+    self::setMeta();
+    Meta::title('kamartamu.com - '.trans('routes.rooms'));
+    Meta::set('active', 'rooms');
+    $data = json_decode(Rooms::getRooms($request, 8, $this->lang));
+    $rooms = $data->data;
+    $pagination = $data->meta->pagination;
+    $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
 
-    $data = json_decode($data)->data;
 
-
-    if (!(bool)isset($data[0])) {
-      return abort(404);
-    }
-    $room = $data[0];
-    $ameneties = json_decode(Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang))->data;
-
-    Meta::title('kamartamu.com - '.$room->meta->title);
-    Meta::set('robots', $room->meta->tag); 
-    Meta::set('keywords', $room->meta->tag);
-    Meta::set('description', $room->meta->tag);
-
-    return view('site::public.detail', compact('room', 'ameneties'));
+    return view('site::public.rooms', compact('rooms', 'pagination', 'featuredRooms'));
   }
 
 

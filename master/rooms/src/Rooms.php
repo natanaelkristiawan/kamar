@@ -8,9 +8,14 @@ use Master\Rooms\Interfaces\RoomsRepositoryInterface;
 use Master\Rooms\Models\Rooms as ModelRooms;
 use Master\Rooms\Models\Types as ModelTypes;
 use Master\Rooms\Models\Ameneties as ModelAmeneties;
-
 use League\Fractal;
 use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
+use League\Fractal\Pagination\IlluminatePaginatorAdapter;
+
+use Illuminate\Http\Request;
+
+
 class Rooms
 {
   protected $owners;
@@ -82,8 +87,7 @@ class Rooms
 
   protected function renderRooms($query, $language)
   {
-
-    return new Fractal\Resource\Collection($query, function(ModelRooms $model) use ($language) {
+    return new Collection($query, function(ModelRooms $model) use ($language) {
       return [
         'id' => (int) $model->id,
         'meta'=> $model->meta[$language],
@@ -121,7 +125,7 @@ class Rooms
   public function getFeaturedRooms($include_status = false, $limit = 6, $language = 'id')
   {
     if ($include_status) {
-      $this->type->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
+      $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
     $fractal = new Manager();
     $query =  $this->rooms->with(['location', 'type', 'owner'])->limit($limit)->where(array('is_featured'=>1))->get();
@@ -130,10 +134,9 @@ class Rooms
     return $response;
   }
 
-
   public function getRoomBySlug($slug='', $language = 'id')
   {
-    $this->type->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
+    $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     $query = $this->rooms->with(['owner'])->findWhere(array('slug'=>$slug));
     $fractal = new Manager();
     $resource = self::renderRooms($query, $language);
@@ -149,13 +152,12 @@ class Rooms
     return $this->location->all();
   }
 
-
   public function getAmenetiesByIds($ids = array(), $language = 'id')
   {
-    $this->location->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
+    $this->ameneties->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     $query = $this->ameneties->findWhereIn('id', $ids);
     $fractal = new Manager();
-    $resource = new Fractal\Resource\Collection($query, function(ModelAmeneties $model) use ($language) {
+    $resource = new Collection($query, function(ModelAmeneties $model) use ($language) {
       return [
         'id' => (int) $model->id,
         'content' => $model->content[$language],
@@ -173,5 +175,20 @@ class Rooms
     }
     return $this->ameneties->all();
   }
+
+
+  public function getRooms(Request $request, $limit = 4 ,$language = 'id')
+  {
+    $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
+    $data =  $this->rooms->with(['location', 'type', 'owner'])->paginate($limit);
+    $query = $data->getCollection();
+    $resource = self::renderRooms($query, $language);
+    $resource->setPaginator(new IlluminatePaginatorAdapter($data));
+    $fractal = new Manager();
+    $response = $fractal->createData($resource)->toJson();
+
+    return $response;
+  }
+
 
 }

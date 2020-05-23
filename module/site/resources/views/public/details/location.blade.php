@@ -1,7 +1,7 @@
 <div class="property_block_wrap">
   
   <div class="property_block_wrap_header">
-    <h4 class="property_block_title">{{ trans('site::default.lokasi') }}</h4>
+    <h4 class="property_block_title">{{ trans('site::default.location') }}</h4>
   </div>
   
   <div class="block-body">

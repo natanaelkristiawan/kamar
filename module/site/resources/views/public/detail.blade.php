@@ -422,17 +422,17 @@
 <script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-     $('#date-input-start').dateDropper({
-      large: true,
-      largeOnly: true,
-       lock: 'from'
-     });
 
-     $('#date-input-end').dateDropper({
-      large: true,
+    var options = {
+     large: true,
       largeOnly: true,
-       lock: 'from'
-     });
+      lock: 'from',
+      minYear: new Date().getFullYear(),
+      maxYear: new Date().getFullYear() + 5,
+      format: 'Y-m-d'
+    }
+    $('#date-input-start').dateDropper(options);
+    $('#date-input-end').dateDropper(options);
   })
 </script>
 

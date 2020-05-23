@@ -7,6 +7,7 @@ use Master\Rooms\Interfaces\AmenetiesRepositoryInterface;;
 use Master\Rooms\Interfaces\RoomsRepositoryInterface;
 use Master\Rooms\Models\Rooms as ModelRooms;
 use Master\Rooms\Models\Types as ModelTypes;
+use Master\Rooms\Models\Ameneties as ModelAmeneties;
 
 use League\Fractal;
 use League\Fractal\Manager;
@@ -109,6 +110,9 @@ class Rooms
         'date_off' => $model->date_off,
         'total_room' => $model->total_room,
         'is_featured' => $model->is_featured,
+        'owner_name'  => $model->owner->name,
+        'owner_phone'  => $model->owner->phone,
+        'owner_photo'  => $model->owner->photo,
         'status' => $model->status,
       ];
     });
@@ -120,7 +124,7 @@ class Rooms
       $this->type->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
     $fractal = new Manager();
-    $query =  $this->rooms->with(['location', 'type'])->limit($limit)->where(array('is_featured'=>1))->get();
+    $query =  $this->rooms->with(['location', 'type', 'owner'])->limit($limit)->where(array('is_featured'=>1))->get();
     $resource = self::renderRooms($query, $language);
     $response = $fractal->createData($resource)->toJson();
     return $response;
@@ -130,7 +134,7 @@ class Rooms
   public function getRoomBySlug($slug='', $language = 'id')
   {
     $this->type->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
-    $query = $this->rooms->findWhere(array('slug'=>$slug));
+    $query = $this->rooms->with(['owner'])->findWhere(array('slug'=>$slug));
     $fractal = new Manager();
     $resource = self::renderRooms($query, $language);
     $response = $fractal->createData($resource)->toJson();
@@ -143,6 +147,23 @@ class Rooms
       $this->location->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
     return $this->location->all();
+  }
+
+
+  public function getAmenetiesByIds($ids = array(), $language = 'id')
+  {
+    $this->location->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
+    $query = $this->ameneties->findWhereIn('id', $ids);
+    $fractal = new Manager();
+    $resource = new Fractal\Resource\Collection($query, function(ModelAmeneties $model) use ($language) {
+      return [
+        'id' => (int) $model->id,
+        'content' => $model->content[$language],
+        'icon'  => $model->icon
+      ];
+    });
+    $response = $fractal->createData($resource)->toJson();
+    return $response;
   }
 
   public function getAmeneties($include_status = false)

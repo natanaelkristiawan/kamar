@@ -75,17 +75,19 @@ class PublicController extends Controller
 
     $data = json_decode($data)->data;
 
+
     if (!(bool)isset($data[0])) {
       return abort(404);
     }
     $room = $data[0];
+    $ameneties = json_decode(Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang))->data;
 
     Meta::title('kamartamu.com - '.$room->meta->title);
     Meta::set('robots', $room->meta->tag); 
     Meta::set('keywords', $room->meta->tag);
     Meta::set('description', $room->meta->tag);
 
-    return view('site::public.detail', compact('room'));
+    return view('site::public.detail', compact('room', 'ameneties'));
   }
 
 

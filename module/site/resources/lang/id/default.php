@@ -17,4 +17,8 @@ return [
   'our_mission_sub' => 'Tim Profesional & Berdedikasi',
   'our_featured_partners' => '<span class="theme-cl">Mitra</span> Utama Kami',
   'our_featured_partners_sub' => 'Dengan bangga memperkenalkan "The Rising Stars" desa wisata Bali',
+  'book_it_now' => 'Pesan Sekarang',
+  'description' => 'Deskripsi',
+  'house_rules' => 'Aturan Tempat Tinggal',
+  'ameneties' => 'Fasilitas'
 ];

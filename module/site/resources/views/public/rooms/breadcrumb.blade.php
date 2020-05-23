@@ -2,10 +2,10 @@
   <div class="col-lg-6 col-md-6">
     <div class="breadcrumbs-wrap">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active theme-cl" aria-current="page">Grid Listing – Style View 4</li>
+        <li class="breadcrumb-item"><a href="{{ route('public.index') }}">{{ trans('site::default.home') }}</a></li>
+        <li class="breadcrumb-item active theme-cl" aria-current="page">{{ trans('site::default.rooms') }}</li>
       </ol>
-      <h2 class="breadcrumb-title">Grid Listing – Style View 4</h2>
+      <h2 class="breadcrumb-title">List Rooms</h2>
     </div>
   </div>
   

@@ -21,5 +21,7 @@ return [
   'description' => 'Description',
   'house_rules' => 'House Rules',
   'ameneties' => 'Ameneties',
-  'location' => 'Location'
+  'location' => 'Location',
+  'home'  => 'Home',
+  'rooms'  => 'Rooms',
 ];

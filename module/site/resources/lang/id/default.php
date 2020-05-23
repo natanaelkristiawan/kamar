@@ -21,5 +21,7 @@ return [
   'description' => 'Deskripsi',
   'house_rules' => 'Aturan Tempat Tinggal',
   'ameneties' => 'Fasilitas',
-  'location' => 'Lokasi'
+  'location' => 'Lokasi',
+  'home'  => 'Beranda',
+  'rooms'  => 'Kamar',
 ];

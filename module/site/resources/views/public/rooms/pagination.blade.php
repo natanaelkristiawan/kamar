@@ -1,3 +1,5 @@
+
+@if($pagination->total_pages > 1)
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12">
     <ul class="pagination p-center">
@@ -42,3 +44,4 @@
     </ul>
   </div>
 </div>
+@endif

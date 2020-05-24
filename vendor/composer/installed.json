@@ -2040,14 +2040,17 @@
         "dist": {
             "type": "path",
             "url": "master/articles",
-            "reference": "90acf06c76a1fe7ad3d1da67a7084eb5b41d996d"
+            "reference": "b261149e2ab70b53093f38a794a21f807192c9e8"
         },
         "type": "library",
         "extra": {
             "laravel": {
                 "providers": [
                     "Master\\Articles\\ArticlesServiceProvider"
-                ]
+                ],
+                "aliases": {
+                    "Articles": "Master\\Articles\\Facades\\Articles"
+                }
             }
         },
         "installation-source": "dist",
@@ -2064,7 +2067,8 @@
         ],
         "description": "This module additional",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -2074,7 +2078,7 @@
         "dist": {
             "type": "path",
             "url": "master/books",
-            "reference": "92293b69fd7e105788b03e4fe655d115edea2318"
+            "reference": "38222f25639ab3d8687656fec3c853e4c8706065"
         },
         "type": "library",
         "extra": {
@@ -2098,7 +2102,8 @@
         ],
         "description": "This module additional",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -2108,7 +2113,7 @@
         "dist": {
             "type": "path",
             "url": "master/core",
-            "reference": "4327196eda68e23b314af6d55582c5f49901a94c"
+            "reference": "3a17f0a595d2e549a15e081d5b70e1a20ecf5661"
         },
         "require": {
             "davejamesmiller/laravel-breadcrumbs": "^5.3",
@@ -2146,7 +2151,8 @@
         ],
         "description": "This is core of all module creator",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -2156,7 +2162,7 @@
         "dist": {
             "type": "path",
             "url": "master/customers",
-            "reference": "19f004798feacd92f561b021484c20197cbcc3a4"
+            "reference": "eb1416bf69b3859c235da40e4166e36bab2b68d9"
         },
         "type": "library",
         "extra": {
@@ -2180,7 +2186,8 @@
         ],
         "description": "This module additional",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -2190,7 +2197,7 @@
         "dist": {
             "type": "path",
             "url": "master/payments",
-            "reference": "5d67b4ea03db5c39799cfd93bd6b968d684d66b5"
+            "reference": "74683ef8f53cdd6f5b0f49b356187fa2aeeaa82f"
         },
         "type": "library",
         "extra": {
@@ -2214,7 +2221,8 @@
         ],
         "description": "This module additional",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -2224,7 +2232,7 @@
         "dist": {
             "type": "path",
             "url": "master/reviews",
-            "reference": "388869fbb7aafde341b9675f8c7d01d2549889a6"
+            "reference": "ea01f6f67b55b55b6574159a924ab9f56451719f"
         },
         "type": "library",
         "extra": {
@@ -2248,7 +2256,8 @@
         ],
         "description": "This module additional",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -2258,7 +2267,7 @@
         "dist": {
             "type": "path",
             "url": "master/rooms",
-            "reference": "c875964ebad2deab56c208a550aa82d171a43cde"
+            "reference": "9cfe0e0f3f93203b7a0ac936f0defd00c305d62e"
         },
         "type": "library",
         "extra": {
@@ -2285,7 +2294,8 @@
         ],
         "description": "This module additional",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -2295,7 +2305,7 @@
         "dist": {
             "type": "path",
             "url": "master/upload",
-            "reference": "5aaba06520b4a6bb8993d2684cdfb6fdc36e4b4f"
+            "reference": "1c9f76ae1c2e1bd05d53c1f3ca01af10697d653f"
         },
         "require": {
             "intervention/image": "^2.4",
@@ -2338,7 +2348,8 @@
             "master"
         ],
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -3670,17 +3681,17 @@
     },
     {
         "name": "phpunit/phpunit",
-        "version": "8.5.4",
-        "version_normalized": "8.5.4.0",
+        "version": "8.5.5",
+        "version_normalized": "8.5.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23"
+            "reference": "63dda3b212a0025d380a745f91bdb4d8c985adb7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8474e22d7d642f665084ba5ec780626cbd1efd23",
-            "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23",
+            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/63dda3b212a0025d380a745f91bdb4d8c985adb7",
+            "reference": "63dda3b212a0025d380a745f91bdb4d8c985adb7",
             "shasum": ""
         },
         "require": {
@@ -3718,7 +3729,7 @@
             "ext-xdebug": "*",
             "phpunit/php-invoker": "^2.0.0"
         },
-        "time": "2020-04-23T04:39:42+00:00",
+        "time": "2020-05-22T13:51:52+00:00",
         "bin": [
             "phpunit"
         ],
@@ -4207,7 +4218,7 @@
         "dist": {
             "type": "path",
             "url": "module/site",
-            "reference": "3b6c627896c851a318c474b34193b4396d4e7f64"
+            "reference": "92108d967e6ca3421fe5aed8d6b3d72480586adf"
         },
         "type": "library",
         "extra": {
@@ -4234,7 +4245,8 @@
         ],
         "description": "This module additional",
         "transport-options": {
-            "symlink": true
+            "symlink": true,
+            "relative": true
         }
     },
     {
@@ -7058,17 +7070,17 @@
     },
     {
         "name": "vlucas/phpdotenv",
-        "version": "v4.1.5",
-        "version_normalized": "4.1.5.0",
+        "version": "v4.1.6",
+        "version_normalized": "4.1.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/vlucas/phpdotenv.git",
-            "reference": "539bb6927c101a5605d31d11a2d17185a2ce2bf1"
+            "reference": "0b32505d67c1abbfa829283c86bfc0642a661bf6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/539bb6927c101a5605d31d11a2d17185a2ce2bf1",
-            "reference": "539bb6927c101a5605d31d11a2d17185a2ce2bf1",
+            "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/0b32505d67c1abbfa829283c86bfc0642a661bf6",
+            "reference": "0b32505d67c1abbfa829283c86bfc0642a661bf6",
             "shasum": ""
         },
         "require": {
@@ -7086,7 +7098,7 @@
             "ext-filter": "Required to use the boolean validator.",
             "ext-pcre": "Required to use most of the library."
         },
-        "time": "2020-05-02T14:08:57+00:00",
+        "time": "2020-05-23T09:43:32+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -7134,17 +7146,17 @@
     },
     {
         "name": "voku/portable-ascii",
-        "version": "1.4.10",
-        "version_normalized": "1.4.10.0",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/voku/portable-ascii.git",
-            "reference": "240e93829a5f985fab0984a6e55ae5e26b78a334"
+            "reference": "2d302cf7dc474d5f7f18b29b03e0e77d408922a4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/voku/portable-ascii/zipball/240e93829a5f985fab0984a6e55ae5e26b78a334",
-            "reference": "240e93829a5f985fab0984a6e55ae5e26b78a334",
+            "url": "https://api.github.com/repos/voku/portable-ascii/zipball/2d302cf7dc474d5f7f18b29b03e0e77d408922a4",
+            "reference": "2d302cf7dc474d5f7f18b29b03e0e77d408922a4",
             "shasum": ""
         },
         "require": {
@@ -7156,13 +7168,12 @@
         "suggest": {
             "ext-intl": "Use Intl for transliterator_transliterate() support"
         },
-        "time": "2020-03-13T01:23:26+00:00",
+        "time": "2020-05-23T23:15:19+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "voku\\": "src/voku/",
-                "voku\\tests\\": "tests/"
+                "voku\\": "src/voku/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",

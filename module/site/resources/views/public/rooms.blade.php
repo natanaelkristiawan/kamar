@@ -36,7 +36,7 @@
         </div>
         @include('site::public.rooms.list')
         <!-- Pagination -->
-        @include('site::public.rooms.pagination')
+        @include('site::public.general.pagination')
       </div>
     </div>
   </div>  

@@ -7,6 +7,7 @@ use Meta;
 use Mail;
 use Module\Site\Facades\Site;
 use Rooms;
+use Articles;
 use League\Fractal;
 use Module\Site\Library\Mobile_Detect;
 class PublicController extends Controller
@@ -95,18 +96,22 @@ class PublicController extends Controller
     $rooms = $data->data;
     $pagination = $data->meta->pagination;
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
-    return view('site::public.rooms', compact('rooms', 'pagination', 'featuredRooms'));
+    $route = 'rooms';
+
+    return view('site::public.rooms', compact('rooms', 'pagination', 'featuredRooms', 'route'));
   }
 
   /*Blogs*/
-
   public function blogs(Request $request)
   {
     self::setMeta();
     Meta::title('kamartamu.com - blogs');
     Meta::set('active', 'blogs');
-
-    return view('site::public.blogs');
+    $data = json_decode(Articles::getArticles($request, 1, $this->lang));
+    $articles = $data->data;
+    $pagination = $data->meta->pagination;
+    $route = 'blogs';
+    return view('site::public.blogs', compact('articles', 'pagination', 'route'));
   }
 
 

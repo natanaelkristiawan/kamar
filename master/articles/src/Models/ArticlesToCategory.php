@@ -10,4 +10,9 @@ class ArticlesToCategory extends Model
 		'article_id',
 		'category_id',
 	];
+
+	public function category()
+	{
+		return $this->belongsTo(\Master\Articles\Models\Categories::class, 'category_id', 'id');
+	}
 }

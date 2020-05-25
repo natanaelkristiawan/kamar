@@ -11,7 +11,8 @@
         </div>
       </div>
     </div>
-      <!-- end row -->
+    <!-- end row -->
+    <form style="display: none;" id="upload-picture">@csrf</form>
     <form role="form" method="POST" action="" data-toggle="validator" role="form" data-disable="false">
       @csrf
       <div class="page-content-wrapper">
@@ -116,24 +117,49 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="mt-0 header-title">Images</h4>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label>Banners Desktop</label>
-                          {!! Upload::setForm('banners', 'master.articles', $data->banners) !!}
-                      </div>
+                  <div class="form-group" >
+                    <label>Image Primary</label>
+                    <div style="position: relative; width: 128px;">
+                      <div class="lds-dual-ring hide"></div>
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->images) || empty($data->images)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->images) }}" class="card-img-top img-fluid image-preview">
+                      </a>
+                      <a href="javascript:;" class="remove-image-single">
+                        <i class="fa fa-times"></i>
+                      </a>
+                      <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
+                      <input type="hidden" name="images" value="{{ $data->images }}" class="image-path">
                     </div>
+                  </div>  
 
-                     <div class="col-lg-6">
-                      <div class="form-group">
-                        <label>Banners Mobile</label>
-                          {!! Upload::setForm('banners_mobile', 'master.articles', $data->banners_mobile) !!}
-                      </div>
+                  <div class="form-group" >
+                    <label>Banner</label>
+                    <div style="position: relative; width: 128px;">
+                      <div class="lds-dual-ring hide"></div>
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->banners) || empty($data->banners)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->banners) }}" class="card-img-top img-fluid image-preview">
+                      </a>
+                      <a href="javascript:;" class="remove-image-single">
+                        <i class="fa fa-times"></i>
+                      </a>
+                      <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
+                      <input type="hidden" name="banners" value="{{ $data->banners }}" class="image-path">
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label>Images</label>
-                    {!! Upload::setForm('images', 'master.articles', $data->images) !!}
+
+                  <div class="form-group" >
+                    <label>Banner Mobile</label>
+                    <div style="position: relative; width: 128px;">
+                      <div class="lds-dual-ring hide"></div>
+                      <a href="javascript:;" class="upload-now">
+                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->banners_mobile) || empty($data->banners_mobile)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->banners_mobile) }}" class="card-img-top img-fluid image-preview">
+                      </a>
+                      <a href="javascript:;" class="remove-image-single">
+                        <i class="fa fa-times"></i>
+                      </a>
+                      <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
+                      <input type="hidden" name="banners_mobile" value="{{ $data->banners_mobile }}" class="image-path">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -210,7 +236,7 @@
 @section('script')
 @parent
 <script type="text/javascript">
-
+  var uploadPath = "{{ route('public.upload', array('config'=> 'master.articles')).'/'.date('Y/m/d').'/articles/file' }}"
   var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
   elems.forEach(function(html) {
     var switchery = new Switchery(html, { color: '#1AB394' });

@@ -23,7 +23,7 @@
       @if ($i == $pagination->current_page)
           <li class="page-item active"><a class="page-link">{{ $i }}</a></li>
       @elseif ($i === $pagination->current_page + 1 || $i === $pagination->current_page + 2 || $i === $pagination->current_page - 1 || $i === $pagination->current_page - 2 || $i === $pagination->total_pages || $i === 1)
-          <li class="page-item"><a class="page-link" href="{{ route('public.rooms', array('page'=>$i)) }}">{{ $i }}</a></li>
+          <li class="page-item"><a class="page-link" href="{{ route('public.'.$route , array('page'=>$i)) }}">{{ $i }}</a></li>
       @endif
 
 

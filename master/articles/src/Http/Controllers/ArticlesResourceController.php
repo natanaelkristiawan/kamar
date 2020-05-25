@@ -83,9 +83,9 @@ class ArticlesResourceController extends Controller {
 			'status'		=> $request->status,
 			'is_featured'		=> $request->is_featured,
 			'meta'			=> $request->meta,
-			'images' 		=> is_null($request->images) ? array() : array_values($request->images),
-			'banners' 		=> is_null($request->banners) ? array() : array_values($request->banners),
-			'banners_mobile'=> is_null($request->banners_mobile) ? array() : array_values($request->banners_mobile),
+			'images' 		=> $request->images,
+			'banners' 		=> $request->banners,
+			'banners_mobile'=> $request->banners_mobile,
 			'title' 		=> $request->title,
 			'abstract'	=> $request->abstract,
 			'content'		=> $request->content
@@ -144,15 +144,15 @@ class ArticlesResourceController extends Controller {
 		}
 
 		$dataInsert = array(
-			'name' 		=> $request->name,
+		'name' 		=> $request->name,
 			'slug'			=> $request->slug,
 			'order'			=> $request->order,
 			'status'		=> $request->status,
 			'is_featured'		=> $request->is_featured,
 			'meta'			=> $request->meta,
-			'images' 		=> is_null($request->images) ? array() : array_values($request->images),
-			'banners' 		=> is_null($request->banners) ? array() : array_values($request->banners),
-			'banners_mobile'=> is_null($request->banners_mobile) ? array() : array_values($request->banners_mobile),
+			'images' 		=> $request->images,
+			'banners' 		=> $request->banners,
+			'banners_mobile'=> $request->banners_mobile,
 			'title' 		=> $request->title,
 			'abstract'	=> $request->abstract,
 			'content'		=> $request->content

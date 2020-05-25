@@ -186,7 +186,6 @@ class Rooms
     $resource->setPaginator(new IlluminatePaginatorAdapter($data));
     $fractal = new Manager();
     $response = $fractal->createData($resource)->toJson();
-
     return $response;
   }
 

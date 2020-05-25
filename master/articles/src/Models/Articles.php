@@ -27,10 +27,7 @@ class Articles extends Model
 		'meta' => 'array',
     'abstract' => 'array',
     'title' => 'array',
-    'content' => 'array',
-		'banners' => 'array',
-		'banners_mobile' => 'array',
-		'images' => 'array',
+    'content' => 'array'
   ];
 
 

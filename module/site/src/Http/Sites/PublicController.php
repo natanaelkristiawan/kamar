@@ -107,7 +107,7 @@ class PublicController extends Controller
     self::setMeta();
     Meta::title('kamartamu.com - blogs');
     Meta::set('active', 'blogs');
-    $data = json_decode(Articles::getArticles($request, 1, $this->lang));
+    $data = json_decode(Articles::getArticles($request, 8, $this->lang));
     $articles = $data->data;
     $pagination = $data->meta->pagination;
     $route = 'blogs';

@@ -127,6 +127,7 @@ class PublicController extends Controller
 
     $article = $data[0];
     Meta::set('active', 'blogs');
+    Meta::title('kamartamu.com - '.$article->meta->title);
     Meta::set('robots', $article->meta->tag); 
     Meta::set('keywords', $article->meta->tag);
     Meta::set('description', $article->meta->description);
@@ -141,5 +142,10 @@ class PublicController extends Controller
     return view('site::public.blog-detail', compact('article', 'prev', 'next', 'countArticle', 'latesArticle'));
   }
 
-
+  public function faq()
+  {
+    self::setMeta();
+    Meta::title('kamartamu.com - faq');
+    return view('site::public.faq');
+  }
 }

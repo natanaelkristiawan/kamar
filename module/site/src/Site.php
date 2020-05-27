@@ -1,11 +1,16 @@
 <?php
 namespace Module\Site;
 use Module\Site\Interfaces\SiteRepositoryInterface;
+use Module\Site\Interfaces\FaqCategoriesRepositoryInterface;
 class Site
 {
 
   protected $repository;
-  public function __construct(SiteRepositoryInterface $repository)
+  protected $faq;
+
+  public function __construct(
+    SiteRepositoryInterface $repository
+  )
   {
     $this->repository = $repository;
   }

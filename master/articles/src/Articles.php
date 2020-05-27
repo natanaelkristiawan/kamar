@@ -102,7 +102,7 @@ class Articles
   {
     $data = $this->articlesToCategory->scopeQuery(function($query){
       return $query->select(DB::raw('count(*) as `article_count`, `category_id`, `categories`.`title`, `categories`.`slug`'))->groupBy('category_id')
-      ->join('categories', 'article_to_category.category_id', '=', 'categories.id');
+      ->join('categories as categories', 'article_to_category.category_id', '=', 'categories.id');
     })->all();
     $this->articlesToCategory->resetModel();
     $this->articlesToCategory->resetCriteria();

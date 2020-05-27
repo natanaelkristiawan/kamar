@@ -18,7 +18,7 @@
           <div class="footer_widget">
             <h4 class="widget_title">Navigations</h4>
             <ul class="footer-menu">
-              <li><a href="faq.html">FAQs Page</a></li>
+              <li><a href="{{ route('public.faq') }}">FAQs Page</a></li>
               <li><a href="checkout.html">Term And Condition</a></li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="{{ route('public.blogs') }}">Blog</a></li>

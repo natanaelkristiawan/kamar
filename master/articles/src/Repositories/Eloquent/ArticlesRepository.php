@@ -11,7 +11,8 @@ class ArticlesRepository extends BaseRepository implements ArticlesRepositoryInt
 
 	protected $fieldSearchable = [
 		'name'      => 'like',
-		'status'    => '='
+		'status'    => '=',
+		'id'    => '=',
 	];
 
 	public function model()

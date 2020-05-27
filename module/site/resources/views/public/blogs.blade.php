@@ -8,7 +8,7 @@
         
         <div class="breadcrumbs-wrap">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('public.index') }}">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Blog</li>
           </ol>
           <h2 class="breadcrumb-title">Our Blogs</h2>
@@ -28,8 +28,8 @@
     <div class="row">
       <div class="col text-center">
         <div class="sec-heading center">
-          <h2>Latest News</h2>
-          <p>We post regulary most powerful articles for help and support.</p>
+          <h2>{{ trans('site::default.latest_news') }}</h2>
+          <p>{{ trans('site::default.latest_news_sub') }}</p>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
       <div class="col-lg-4 col-md-6">
         <div class="grid_blog_box">
           <div class="gtid_blog_thumb">
-            <a href="{{ url('image/original/'.$article->images) }}"
+            <a href="{{ route('public.blogDetail', array('slug'=>$article->slug)) }}"
               data-href="{{ url('image/original/'.$article->images) }}"
               data-srcset = "{{ url('image/sm/'.$article->images) }} 300w,
                             {{ url('image/md/'.$article->images) }} 600w,

@@ -65,7 +65,7 @@ class PublicController extends Controller
     Meta::title('kamartamu.com - '.$room->meta->title);
     Meta::set('robots', $room->meta->tag); 
     Meta::set('keywords', $room->meta->tag);
-    Meta::set('description', $room->meta->tag);
+    Meta::set('description', $room->meta->description);
     Meta::set('active', 'rooms');
     return view('site::public.detail', compact('room', 'ameneties'));
   }
@@ -97,7 +97,7 @@ class PublicController extends Controller
     $pagination = $data->meta->pagination;
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
     $route = 'rooms';
-
+    $requestParams = $request->input();
     return view('site::public.rooms', compact('rooms', 'pagination', 'featuredRooms', 'route'));
   }
 
@@ -111,7 +111,34 @@ class PublicController extends Controller
     $articles = $data->data;
     $pagination = $data->meta->pagination;
     $route = 'blogs';
-    return view('site::public.blogs', compact('articles', 'pagination', 'route'));
+    $requestParams = $request->input();
+    return view('site::public.blogs', compact('articles', 'pagination', 'route', 'requestParams'));
+  }
+
+
+  /*Blog Detail*/
+  public function blogDetail(Request $request, $slug = '')
+  {
+    $data = json_decode(Articles::getArticleBySlug($slug,$this->lang))->data;
+
+    if (!(bool)isset($data[0])) {
+      return abort(404);
+    }
+
+    $article = $data[0];
+    Meta::set('active', 'blogs');
+    Meta::set('robots', $article->meta->tag); 
+    Meta::set('keywords', $article->meta->tag);
+    Meta::set('description', $article->meta->description);
+
+    $prev = Articles::getArticleBefore($article->id);
+    $next = Articles::getArticleAfter($article->id);
+
+    $countArticle = Articles::countArticleByCategory();
+
+    // find latest Article
+    $latesArticle = json_decode(Articles::getLatestArticle(array($article->id), 5, $this->lang))->data;
+    return view('site::public.blog-detail', compact('article', 'prev', 'next', 'countArticle', 'latesArticle'));
   }
 
 

@@ -44,6 +44,8 @@ class Rooms
     if ($include_status) {
       $this->owners->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
+    $this->owners->resetModel();
+    $this->owners->resetCriteria();
     return $this->owners->all();
   }
 
@@ -52,6 +54,8 @@ class Rooms
     if ($include_status) {
       $this->type->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
+    $this->type->resetModel();
+    $this->type->resetCriteria();
     return $this->type->all();
   }
 
@@ -82,6 +86,8 @@ class Rooms
       ];
     });
     $response = $fractal->createData($resource)->toJson();
+    $this->type->resetModel();
+    $this->type->resetCriteria();
     return $response;
   }
 
@@ -131,6 +137,8 @@ class Rooms
     $query =  $this->rooms->with(['location', 'type', 'owner'])->limit($limit)->where(array('is_featured'=>1))->get();
     $resource = self::renderRooms($query, $language);
     $response = $fractal->createData($resource)->toJson();
+    $this->rooms->resetModel();
+    $this->rooms->resetCriteria();
     return $response;
   }
 
@@ -141,6 +149,8 @@ class Rooms
     $fractal = new Manager();
     $resource = self::renderRooms($query, $language);
     $response = $fractal->createData($resource)->toJson();
+    $this->rooms->resetModel();
+    $this->rooms->resetCriteria();
     return $response;
   }
 
@@ -149,6 +159,8 @@ class Rooms
     if ($include_status) {
       $this->location->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
+    $this->location->resetModel();
+    $this->location->resetCriteria();
     return $this->location->all();
   }
 
@@ -165,6 +177,8 @@ class Rooms
       ];
     });
     $response = $fractal->createData($resource)->toJson();
+    $this->ameneties->resetModel();
+    $this->ameneties->resetCriteria();
     return $response;
   }
 
@@ -173,6 +187,8 @@ class Rooms
     if ($include_status) {
       $this->ameneties->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
+    $this->ameneties->resetModel();
+    $this->ameneties->resetCriteria();
     return $this->ameneties->all();
   }
 
@@ -186,8 +202,8 @@ class Rooms
     $resource->setPaginator(new IlluminatePaginatorAdapter($data));
     $fractal = new Manager();
     $response = $fractal->createData($resource)->toJson();
+    $this->rooms->resetModel();
+    $this->rooms->resetCriteria();
     return $response;
   }
-
-
 }

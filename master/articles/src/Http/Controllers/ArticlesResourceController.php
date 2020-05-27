@@ -85,7 +85,7 @@ class ArticlesResourceController extends Controller {
 			'meta'			=> $request->meta,
 			'images' 		=> $request->images,
 			'banners' 		=> $request->banners,
-			'banners_mobile'=> $request->banners_mobile,
+			'banners_mobile'=> null,
 			'title' 		=> $request->title,
 			'abstract'	=> $request->abstract,
 			'content'		=> $request->content
@@ -152,7 +152,7 @@ class ArticlesResourceController extends Controller {
 			'meta'			=> $request->meta,
 			'images' 		=> $request->images,
 			'banners' 		=> $request->banners,
-			'banners_mobile'=> $request->banners_mobile,
+			'banners_mobile'=> null,
 			'title' 		=> $request->title,
 			'abstract'	=> $request->abstract,
 			'content'		=> $request->content

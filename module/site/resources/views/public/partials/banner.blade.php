@@ -14,7 +14,7 @@
               <div class="col-lg-9 col-md-9 col-sm-12 small-padd">
                 <div class="form-group">
                   <div class="input-with-icon">
-                    <input type="text" class="form-control b-0" placeholder="{{ trans('site::default.location')}} ">
+                    <select type="text" class="form-control b-0 location-list" placeholder="{{ trans('site::default.location')}} "></select>
                     <i class="ti-target"></i>
                   </div>
                 </div>
@@ -49,5 +49,34 @@
     background: url({{ url('image/blur/'.$mainBanner) }}) no-repeat;
     background-size: cover;
   }
+  .select2-selection.select2-selection--single, .select2-selection__arrow{
+    margin-top: 13px;
+  }
+
+  @media (min-width: 768px)
+  {
+    .select2-dropdown.select2-dropdown--below {
+      top: 10px;
+    }
+  }
 </style>
+
+
+@stop
+
+
+@section('script')
+@parent
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.location-list').select2({
+      placeholder : "Select Your Location",
+      data : {!! json_encode($locations) !!},
+      allowClear: true
+    });
+  });
+</script>
+
 @stop

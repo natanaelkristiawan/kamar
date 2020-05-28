@@ -3,13 +3,13 @@
 <section class="gray">
   <div class="container">
     <!-- Onclick Sidebar -->
-    @include('site::public.rooms.filter')
+    @include('site::public.rooms.filterMobile')
     <!-- Breadcrumbs -->
     @include('site::public.rooms.breadcrumb')
     <div class="row">
       <!-- property Sidebar -->
       <div class="col-lg-4 col-md-12 col-sm-12">
-        @include('site::public.rooms.filterMobile')
+        @include('site::public.rooms.filter')
         @include('site::public.rooms.featured')
       </div>
       <div class="col-lg-8 col-md-12 col-sm-12">

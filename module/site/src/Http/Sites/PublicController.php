@@ -38,6 +38,22 @@ class PublicController extends Controller
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
     $featuredType = self::getTypesFeatured($this->lang)->data;
     $lang = $this->lang;
+
+
+    $dataLocation = Rooms::getLocations(true);
+
+    $locations[] = array(
+      'id' => '',
+      'text' => ''
+    );
+
+    foreach ($dataLocation as $key => $value) {
+      $locations[] = array(
+        'id' => $value->slug,
+        'text' => $value->name
+      );
+    }
+
     return view('site::public.index', 
       compact(
         'mainBanner', 
@@ -47,7 +63,8 @@ class PublicController extends Controller
         'partner', 
         'lang',
         'featuredRooms',
-        'featuredType'
+        'featuredType',
+        'locations'
       )
     );
   }
@@ -92,13 +109,36 @@ class PublicController extends Controller
     self::setMeta();
     Meta::title('kamartamu.com - '.trans('routes.rooms'));
     Meta::set('active', 'rooms');
-    $data = json_decode(Rooms::getRooms($request, 8, $this->lang));
+    $data = json_decode(Rooms::getRooms($request, 6, $this->lang));
     $rooms = $data->data;
     $pagination = $data->meta->pagination;
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
     $route = 'rooms';
-    $requestParams = $request->input();
-    return view('site::public.rooms', compact('rooms', 'pagination', 'featuredRooms', 'route'));
+    $requestParams = array();
+
+
+    $dataLocation = Rooms::getLocations(true);
+
+    $locations[] = array(
+      'id' => '',
+      'text' => ''
+    );
+
+    foreach ($dataLocation as $key => $value) {
+      $locations[] = array(
+        'id' => $value->slug,
+        'text' => $value->name
+      );
+    }
+
+    return view('site::public.rooms', compact(
+      'rooms', 
+      'pagination', 
+      'featuredRooms', 
+      'route', 
+      'requestParams', 
+      'locations'
+    ));
   }
 
   /*Blogs*/

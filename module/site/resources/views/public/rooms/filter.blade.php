@@ -24,6 +24,11 @@
     border: 0px !important;
   }
 
+  .select2.select2-container.select2-container--default{
+    box-shadow: none;
+    border: 1px solid #e6eaf3;
+  }
+
   .select2-dropdown.select2-dropdown--below{
     top: 0px !important;
   }

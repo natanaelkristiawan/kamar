@@ -25,6 +25,26 @@ class PublicController extends Controller
   }
 
   /*Landing*/
+
+  protected function getLocations()
+  {
+    $dataLocation = Rooms::getLocations(true);
+    $locations[] = array(
+      'id' => '',
+      'text' => ''
+    );
+
+    foreach ($dataLocation as $key => $value) {
+      $locations[] = array(
+        'id' => $value->slug,
+        'text' => $value->name
+      );
+    }
+    return $locations;
+  }
+
+
+
   public function index()
   { 
     self::setMeta();
@@ -40,19 +60,8 @@ class PublicController extends Controller
     $lang = $this->lang;
 
 
-    $dataLocation = Rooms::getLocations(true);
+    $locations = self::getLocations();
 
-    $locations[] = array(
-      'id' => '',
-      'text' => ''
-    );
-
-    foreach ($dataLocation as $key => $value) {
-      $locations[] = array(
-        'id' => $value->slug,
-        'text' => $value->name
-      );
-    }
 
     return view('site::public.index', 
       compact(
@@ -79,12 +88,13 @@ class PublicController extends Controller
     }
     $room = $data[0];
     $ameneties = json_decode(Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang))->data;
+    $locations = self::getLocations();
     Meta::title('kamartamu.com - '.$room->meta->title);
     Meta::set('robots', $room->meta->tag); 
     Meta::set('keywords', $room->meta->tag);
     Meta::set('description', $room->meta->description);
     Meta::set('active', 'rooms');
-    return view('site::public.detail', compact('room', 'ameneties'));
+    return view('site::public.detail', compact('room', 'ameneties', 'locations'));
   }
 
   protected function getFeaturedRooms($limit = 6, $language = 'id'){
@@ -117,19 +127,7 @@ class PublicController extends Controller
     $requestParams = array();
 
 
-    $dataLocation = Rooms::getLocations(true);
-
-    $locations[] = array(
-      'id' => '',
-      'text' => ''
-    );
-
-    foreach ($dataLocation as $key => $value) {
-      $locations[] = array(
-        'id' => $value->slug,
-        'text' => $value->name
-      );
-    }
+    $locations = self::getLocations();
 
     return view('site::public.rooms', compact(
       'rooms', 

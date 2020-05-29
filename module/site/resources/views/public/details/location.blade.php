@@ -27,7 +27,7 @@
     latest_lng = $('#map').data('longitude');
     // Create the map.
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
+      zoom: 13,
       center: {lat: latest_lat, lng: latest_lng},
       mapTypeId: 'terrain'
     });
@@ -47,7 +47,7 @@
         lat : latest_lat,
         lng : latest_lng
       },
-      radius:  100
+      radius:  750
     });
  
   }

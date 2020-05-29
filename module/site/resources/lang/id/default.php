@@ -25,5 +25,6 @@ return [
   'home'  => 'Beranda',
   'rooms'  => 'Kamar',
   'latest_news' => 'Berita Terbaru',
-  'latest_news_sub' => 'Kami memposting secara teratur artikel paling relevan untuk bantuan dan dukungan.'
+  'latest_news_sub' => 'Kami memposting secara teratur artikel paling relevan untuk bantuan dan dukungan.',
+  'check_availability' => 'Cek Ketersediaan'
 ];

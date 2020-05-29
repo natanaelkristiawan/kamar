@@ -56,7 +56,7 @@
                 <div class="property_caption_wrappers pb-0">
                   <div class="property_short_detail">
                     <h4 class="listing-name"><a href="{{ route('public.roomDetail', array('slug'=>$room->slug)) }}">{{ $room->name }}</a></h4>
-                    <span class="property-locations"><i class="ti-location-pin"></i>{{ $room->address }}</span>
+                    <span class="property-locations"><i class="ti-location-pin"></i>{{ $room->location }}</span>
                   </div>
                 </div>
                 

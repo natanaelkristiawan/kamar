@@ -8,6 +8,30 @@
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
           <div class="cld-box">
+            <i class="ti-user"></i>
+            <input type="text" class="form-control" placeholder="Full Name"  value="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="form-group">
+          <div class="cld-box">
+            <i class="ti-email"></i>
+            <input type="email" class="form-control" placeholder="Email"  value="" />
+          </div>
+        </div>
+      </div> 
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="form-group">
+          <div class="cld-box">
+            <i class="ti-tablet"></i>
+            <input type="tel" class="form-control" placeholder="Phone"  value="" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="form-group">
+          <div class="cld-box">
             <i class="ti-calendar"></i>
             <input type="text" class="form-control" placeholder="Checkin Start" id="date-input-start" value="" />
           </div>
@@ -21,40 +45,10 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-        <div class="form-group">
-          <div class="guests">
-            <label for="guests">Adults</label>
-            <div class="guests-box">
-              <button class="counter-btn" type="button" id="cnt-down"><i class="ti-minus"></i></button>
-              <input type="text" id="guestNo" name="guests" value="2"/>
-              <button class="counter-btn" type="button" id="cnt-up"><i class="ti-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-        <div class="form-group">
-          <div class="guests">
-            <label for="guests">Kids</label>
-            <div class="guests-box">
-              <button class="counter-btn" type="button" id="kcnt-down"><i class="ti-minus"></i></button>
-              <input type="text" id="kidsNo" name="kids" value="0"/>
-              <button class="counter-btn" type="button" id="kcnt-up"><i class="ti-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="side-booking-foot">
-        <span class="sb-header-left">Total</span>
-        <h3 class="price theme-cl">$170</h3>
-      </div>
-      
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="stbooking-footer mt-1">
           <div class="form-group mb-0 pb-0">
-            <a href="#" class="btn full-width btn-theme">{{ trans('site::default.book_it_now') }}</a>
+            <button type="button" disabled="" class="btn full-width btn-theme">{{ trans('site::default.check_availability') }}</button>
           </div>
         </div>
       </div>

@@ -26,5 +26,6 @@ return [
   'rooms'  => 'Rooms',
   'latest_news' => 'Latest News',
   'latest_news_sub' => 'We post regulary most powerful articles for help and support.',
+  'check_availability' => 'Check Availability'
 
 ];

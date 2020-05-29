@@ -2,49 +2,55 @@
   <h4>Find New Property</h4>
   <div class="form-group">
     <div class="input-with-icon">
-      <input type="text" class="form-control" placeholder="Neighborhood">
+      <select type="text" class="form-control location-list" placeholder="{{ trans('site::default.location')}} "></select>
       <i class="ti-search"></i>
     </div>
   </div>
-  <div class="form-group">
-    <div class="input-with-icons">
-      <select id="bedrooms" class="form-control">
-        <option value="">&nbsp;</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="input-with-icons">
-      <select id="bathrooms" class="form-control">
-        <option value="">&nbsp;</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="input-with-icons">
-      <select id="cities" class="form-control">
-        <option value="">&nbsp;</option>
-        <option value="1">Los Angeles, CA</option>
-        <option value="2">New York City, NY</option>
-        <option value="3">Chicago, IL</option>
-        <option value="4">Houston, TX</option>
-        <option value="5">Philadelphia, PA</option>
-        <option value="6">San Antonio, TX</option>
-        <option value="7">San Jose, CA</option>
-      </select>
-    </div>
-  </div>
-  <button class="btn btn-theme full-width">Find New Home</button>
+  <button class="btn btn-theme full-width">Search</button>
 </div>
+
+
+@section('style')
+@parent
+
+<style type="text/css">
+  .select2-selection.select2-selection--single, .select2-selection__arrow{
+    margin-top: 13px;
+    border: 0px !important;
+  }
+
+  .select2.select2-container.select2-container--default{
+    box-shadow: none;
+    border: 1px solid #e6eaf3;
+  }
+
+  .select2-dropdown.select2-dropdown--below{
+    top: 0px !important;
+  }
+
+
+
+  @media (min-width: 768px)
+  {
+    .select2-dropdown.select2-dropdown--below {
+      top: 10px;
+    }
+  }
+</style>
+@stop
+
+@section('script')
+@parent
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.location-list').select2({
+      placeholder : "Select Your Location",
+      data : {!! json_encode($locations) !!},
+      allowClear: true
+    });
+  });
+</script>
+@stop

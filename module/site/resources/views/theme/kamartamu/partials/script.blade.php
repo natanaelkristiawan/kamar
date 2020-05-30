@@ -12,5 +12,14 @@
 <script src="{{ asset('themes/landing') }}/assets/js/custom.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
 <script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+@if(session()->has('status_notif'))
+<script type="text/javascript">
+  $(document).ready(function(){
+  	Swal.fire('Notification', "{{ session()->get('status_notif') }}", 'success');
+  });
+</script>
+@endif
+
 @section('script')
 @show

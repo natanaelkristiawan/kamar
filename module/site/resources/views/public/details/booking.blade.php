@@ -69,7 +69,6 @@
 <script src="{{ asset('themes/landing') }}/assets/js/moment.min.js"></script>
 <script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
 
   function changeDateEnd(response) {
@@ -111,14 +110,16 @@
   async function createBooking(params)
   {
     var response = new Promise((resolve, error) => {
-      $.ajax({
-        url : "{{ route('public.findCustomer') }}",
-        type : 'POST',
-        dataType : 'json',
-        data: $.extend(false, TOKEN, params),
-        success: function(result){
-          resolve(result)
-        }
+      grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
+        $.ajax({
+          url : "{{ route('public.findCustomer') }}",
+          type : 'POST',
+          dataType : 'json',
+          data: $.extend(false, TOKEN, {'g-recaptcha-response' : token}, params),
+          success: function(result){
+            resolve(result)
+          }
+        });
       });
     });
 
@@ -126,7 +127,27 @@
   }
 
 
+  async function resendActivateEmail(params) {
+    var response = new Promise((resolve, error) => {
+      grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
+        $.ajax({
+          url : "{{ route('public.resendActivate') }}",
+          type : 'POST',
+          dataType : 'json',
+          data: $.extend(false, TOKEN, {'g-recaptcha-response' : token}, params),
+          success: function(result){
+            resolve(result)
+          }
+        });
+      })
+    });
+
+    return await response;
+  }
+
+
   $(document).on('click', '.pick-submit', function(){
+    $('#loader').removeClass('hide');
     findDateInRange().then((response) => {
       if (response) {
         var dateSelected = $('#showDatePicker').val().split(" - ");
@@ -139,17 +160,43 @@
           dateEnd: dateSelected[1],
           roomID : "{{ $room->id }}"
         }
-
         createBooking(params).then((response) => {
-          console.log(response);
+          if (response.status) {
+            if (response.step == 'activate_account') {
+              Swal.fire('Notification', response.message, 'success')
+            }
+
+            if (response.step == 'account_exist_not_active') {
+              Swal.fire({
+                title: 'Notification',
+                icon: 'info',
+                html: response.message,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText: 'Resend Code',
+                cancelButtonText: 'Close'
+              }).then((result) => {
+                if (result.value) {
+                  $('#loader').removeClass('hide');
+                  resendActivateEmail(params).then((response)=>{
+                    if (response.status) {
+                      if (response.step == 'activate_account') {
+                        Swal.fire('Notification', response.message, 'success')
+                      }
+                    }
+                  }).then(()=>{
+                    $('#loader').addClass('hide')
+                  })
+                }
+              })
+            }
+          }
         })
-
-
-        return; 
+      } else {
+        Swal.fire('Notification', 'Your date selected is not available. Please change it', 'error');
       }
-      
-
-      Swal.fire('Notification', 'Your date selected is not available. Please change it', 'error')
+    }).then(()=>{
+      $('#loader').addClass('hide')
     }); 
   })
 

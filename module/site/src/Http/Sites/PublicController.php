@@ -11,6 +11,8 @@ use Articles;
 use League\Fractal;
 use Module\Site\Library\Mobile_Detect;
 use Customers;
+use Validator;
+use Illuminate\Support\Str;
 class PublicController extends Controller
 {
   function __construct()
@@ -187,21 +189,133 @@ class PublicController extends Controller
 
   public function findCustomer(Request $request)
   {
-    return response()->json($request->all());
+    $validator = Validator::make($request->all(), [
+      'email' => 'required|email',
+      'phone' => 'required',
+      'fullname'  => 'required',
+      'roomTotal' => 'required',
+      'dateStart' => 'required',
+      'dateEnd' => 'required',
+      'roomID' => 'required',
+      'g-recaptcha-response' => 'captcha'
+    ]);
+
+    if ($validator->fails()) {
+      return response()->json(
+        array(
+          'status' => false,
+          'error' => $validator->errors()
+        )
+      );
+    }
+
+
+    $customer = Customers::findByEmail($request->email);
+
+
+    if (is_null($customer)) {
+      // create account
+      $dataCustomer = array(
+        'email' => $request->email,
+        'name' => $request->fullname,
+        'phone' =>  $request->phone,
+        'token_verified' => Str::random(40),
+        'status' => 0,
+      );
+
+      $customer = Customers::createCustomer($dataCustomer);
+      // sendEmailActivate
+      self::sendEmailActivate($customer);
+
+      // send for check email to activate
+
+      return response()->json([
+        'status' => true,
+        'message' => 'Thank you for submit data, check your email to activate your kamartamu account',
+        'step' => 'activate_account'
+      ]);
+    }
+
+
+
+    if (!(bool)is_null($customer->token_verified)) {
+      return response()->json([
+        'status' => true,
+        'message' => 'Your account not active, please activate your account',
+        'step' => 'account_exist_not_active'
+      ]);
+    }
+    return response()->json($customer);
   }
 
 
-  public function sendEmail()
+  public function reSendEmailActivate(Request $request)
   {
-    $data = Mail::send('site::public.mails.activate', array(), function ($message)
+    $validator = Validator::make($request->all(), [
+      'email' => 'required|email',
+      'g-recaptcha-response' => 'captcha'
+    ]);
+
+    if ($validator->fails()) {
+      return response()->json(
+        array(
+          'status' => false,
+          'error' => $validator->errors()
+        )
+      );
+    }
+
+    $customer = Customers::findByEmail($request->email);
+    self::sendEmailActivate($customer);
+
+    // send for check email to activate
+    return response()->json([
+      'status' => true,
+      'message' => 'Check your email to activate your account',
+      'step' => 'activate_account'
+    ]);
+
+  }
+
+
+  protected function sendEmailActivate($customer)
+  {
+    Mail::send('site::public.mails.activate', array('name'=>$customer->name, 'token_verified'=>$customer->token_verified), function ($message) use ($customer)
     {
       $message->subject('Activate Account');
       $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
-      $message->to('natanaelkristiawan@hotmail.com');
+      $message->to($customer->email);
     });
+  }
 
-    return response()->json([
-      'status' => $data
-    ]);
+  public function sendPassword($customer)
+  {
+    Mail::send('site::public.mails.password', array('name'=>$customer->name, 'password'=>'123456'), function ($message) use ($customer)
+    {
+      $message->subject('Your Default Password');
+      $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
+      $message->to($customer->email);
+    });
+  }
+
+
+  public function activateAccount(Request $request, $token = '')
+  {
+    $customer = Customers::findByTokenActivate($token);
+
+    if (is_null($customer)) {
+      abort(404);
+    }
+
+    $customer->token_verified = null;
+    $customer->verified_at = date('Y-m-d H:i:s');
+    $customer->status = 1;
+    $customer->password = bcrypt('123456');
+    $customer->save();
+    self::sendPassword($customer);
+
+    $request->session()->flash('status_notif', 'Thank you for activate your account. Please check your email to get your password');
+
+    return redirect()->route('public.index');
   }
 }

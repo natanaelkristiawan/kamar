@@ -21,6 +21,32 @@ class SiteServiceProvider extends ServiceProvider
 		// Call pblish redources function
 		$this->publishResources();
 
+
+		$validator = app()->make(\Illuminate\Validation\Factory::class);
+    $validator->extend('captcha', function ($attribute, $value, $parameters, $validator) {
+    $url = 'https://www.google.com/recaptcha/api/siteverify?secret='.env('RECAPTCHA_SITE_SECRET').'&response='.$value;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL,$url);
+    $result=curl_exec($ch);
+    curl_close($ch);
+    $hasil = json_decode($result);
+
+
+
+    if (!$hasil->success) {
+        return false;
+    } else {
+        return true;
+    }
+    });
+
+    $validator->replacer('captcha', function ($message, $attribute, $rule, $parameters) {
+        return 'Captcha error';
+    });
+
+
 	}
 
 	/**

@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'customer',
         ],
 
         'admin' => [
@@ -48,7 +48,7 @@ return [
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'customer',
             'hash' => true,
         ],
     ],
@@ -71,9 +71,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'customer' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => Master\Customers\Models\Customers::class,
         ],
 
         'admin' => [

@@ -9,9 +9,9 @@ $route->get('faq', 'PublicController@faq')->name('public.faq');
 /*booking system*/
 $route->post('find-customer', 'PublicController@findCustomer')->name('public.findCustomer'); 
 
+/*activate account*/
+$route->get('activate-account/{token}', 'PublicController@activateAccount')->name('public.activateAccount');
+$route->post('resend-activate', 'PublicController@reSendEmailActivate')->name('public.resendActivate');
 
-
-/*send email*/
-$route->get('send-email', 'PublicController@sendEmail');
 $route->get('login', function(){
 })->name('login');

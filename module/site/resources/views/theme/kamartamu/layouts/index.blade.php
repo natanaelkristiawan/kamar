@@ -5,7 +5,13 @@
   </head>
   
   <body class="red-skin">
-    <div class="preloader"></div>
+    <div id="loader" class="hide">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+      <span class="please-wait">Please Wait</span>
+    </div>
     <div id="main-wrapper">
       @include('site::theme.kamartamu.partials.header')
       <div class="clearfix"></div>

@@ -44,6 +44,15 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#privacy-policy" role="tab">Privacy & Policy</a>
+                      </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#about-us" role="tab">About Us</a>
+                      </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#term-condition" role="tab">Term and Condition</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#payment-term" role="tab">Payment Terms </a>
                       </li>
                     </ul>
                     <!-- Tab panes -->
@@ -59,6 +68,18 @@
                       </div>
                       <div class="tab-pane p-3" id="privacy-policy" role="tabpanel">
                         @include('site::admin.site.partials.privacypolicy')
+                      </div>
+                      <div class="tab-pane p-3" id="about-us" role="tabpanel">
+                        <!-- nanti disini -->
+                        @include('site::admin.site.partials.aboutus')
+                      </div> 
+                      <div class="tab-pane p-3" id="term-condition" role="tabpanel">
+                        <!-- nanti disini -->
+                        @include('site::admin.site.partials.condition')
+                      </div> 
+                      <div class="tab-pane p-3" id="payment-term" role="tabpanel">
+                        <!-- nanti disini -->
+                        @include('site::admin.site.partials.payment')
                       </div>
                     </div>
                   </div>

@@ -2903,7 +2903,7 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Master\\Articles\\Models\\ArticlesToCategory' => __DIR__ . '/..' . '/master/articles/src/Models/ArticlesToCategory.php',
         'Master\\Articles\\Models\\Categories' => __DIR__ . '/..' . '/master/articles/src/Models/Categories.php',
         'Master\\Articles\\Providers\\RouteServiceProvider' => __DIR__ . '/..' . '/master/articles/src/Providers/RouteServiceProvider.php',
-        'Master\\Articles\\Repositories\\Criteria\\ArticlesCriteria' => __DIR__ . '/..' . '/master/articles/src/Repositories/Criteria/ArticlesCriteria.php',
+        'Master\\Articles\\Repositories\\Criteria\\LiveCriteria' => __DIR__ . '/..' . '/master/articles/src/Repositories/Criteria/LiveCriteria.php',
         'Master\\Articles\\Repositories\\Eloquent\\ArticlesRepository' => __DIR__ . '/..' . '/master/articles/src/Repositories/Eloquent/ArticlesRepository.php',
         'Master\\Articles\\Repositories\\Eloquent\\ArticlesToCategoryRepository' => __DIR__ . '/..' . '/master/articles/src/Repositories/Eloquent/ArticlesToCategoryRepository.php',
         'Master\\Articles\\Repositories\\Eloquent\\CategoriesRepository' => __DIR__ . '/..' . '/master/articles/src/Repositories/Eloquent/CategoriesRepository.php',

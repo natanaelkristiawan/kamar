@@ -33,6 +33,12 @@ class SiteResourceController extends Controller
 		$privacy = self::getPrivacy('array');
 		$privacyBanner = self::getPrivacyBanner();
 		$partner = self::getPartner('array');
+		$aboutus = self::getAboutus('array');
+		$aboutusBanner = self::getAboutusBanner();
+		$condition = self::getCondition('array');
+		$conditionBanner = self::getConditionBanner();
+		$payment = self::getPayment('array');
+		$paymentBanner = self::getPaymentBanner();
 		return view('site::admin.site.index', compact(
 			'meta', 
 			'mainBanner', 
@@ -44,7 +50,13 @@ class SiteResourceController extends Controller
 			'privacy',
 			'privacyBanner',
 			'missionData',
-			'partner'
+			'partner',
+			'aboutus',
+			'aboutusBanner',
+			'condition',
+			'conditionBanner',
+			'payment',
+			'paymentBanner',
 		));
 	}
 
@@ -62,6 +74,12 @@ class SiteResourceController extends Controller
 		self::setPrivacy($request, 'array');
 		self::setPrivacyBanner($request);
 		self::setPartner($request, 'array');
+		self::setAboutus($request, 'array');
+		self::setAboutusBanner($request);
+		self::setCondition($request, 'array');
+		self::setConditionBanner($request);
+		self::setPayment($request, 'array');
+		self::setPaymentBanner($request);
 		$request->session()->flash('status', 'Success Insert Data!');
 		return redirect()->route('admin.site');
 	}

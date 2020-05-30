@@ -14,7 +14,10 @@
         "laravel": {
             "providers": [
                 "Master\\Customers\\CustomersServiceProvider"
-            ]
+            ],
+            "aliases" : {
+                "Customers": "Master\\Customers\\Facades\\Customers"
+            }
         }
     },
     "minimum-stability": "dev"

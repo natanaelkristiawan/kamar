@@ -2,11 +2,11 @@
 @section('content')
 
 @include('site::public.details.gallery')
-<section>
+<section class="pt-5">
   <div class="container">
     <div class="row">
       <!-- property main detail -->
-      <div class="col-lg-8 col-md-12 col-sm-12">
+      <div class="col-lg-8 col-md-12 col-sm-12 mb-4">
         @include('site::public.details.info')
         <!-- Single Block Wrap -->
         @include('site::public.details.ameneties')
@@ -34,5 +34,11 @@
 @include('site::public.partials.signup')
 @stop
 
+
+@section('script')
+@parent
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+
+@stop
 
 

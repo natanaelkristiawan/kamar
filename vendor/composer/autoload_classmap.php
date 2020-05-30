@@ -2347,7 +2347,7 @@ return array(
     'Master\\Articles\\Models\\ArticlesToCategory' => $vendorDir . '/master/articles/src/Models/ArticlesToCategory.php',
     'Master\\Articles\\Models\\Categories' => $vendorDir . '/master/articles/src/Models/Categories.php',
     'Master\\Articles\\Providers\\RouteServiceProvider' => $vendorDir . '/master/articles/src/Providers/RouteServiceProvider.php',
-    'Master\\Articles\\Repositories\\Criteria\\ArticlesCriteria' => $vendorDir . '/master/articles/src/Repositories/Criteria/ArticlesCriteria.php',
+    'Master\\Articles\\Repositories\\Criteria\\LiveCriteria' => $vendorDir . '/master/articles/src/Repositories/Criteria/LiveCriteria.php',
     'Master\\Articles\\Repositories\\Eloquent\\ArticlesRepository' => $vendorDir . '/master/articles/src/Repositories/Eloquent/ArticlesRepository.php',
     'Master\\Articles\\Repositories\\Eloquent\\ArticlesToCategoryRepository' => $vendorDir . '/master/articles/src/Repositories/Eloquent/ArticlesToCategoryRepository.php',
     'Master\\Articles\\Repositories\\Eloquent\\CategoriesRepository' => $vendorDir . '/master/articles/src/Repositories/Eloquent/CategoriesRepository.php',

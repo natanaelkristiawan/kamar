@@ -10,6 +10,7 @@ use Rooms;
 use Articles;
 use League\Fractal;
 use Module\Site\Library\Mobile_Detect;
+use Customers;
 class PublicController extends Controller
 {
   function __construct()
@@ -25,7 +26,6 @@ class PublicController extends Controller
   }
 
   /*Landing*/
-
   protected function getLocations()
   {
     $dataLocation = Rooms::getLocations(true);
@@ -42,8 +42,6 @@ class PublicController extends Controller
     }
     return $locations;
   }
-
-
 
   public function index()
   { 
@@ -185,5 +183,25 @@ class PublicController extends Controller
     self::setMeta();
     Meta::title('kamartamu.com - faq');
     return view('site::public.faq');
+  }
+
+  public function findCustomer(Request $request)
+  {
+    return response()->json($request->all());
+  }
+
+
+  public function sendEmail()
+  {
+    $data = Mail::send('site::public.mails.activate', array(), function ($message)
+    {
+      $message->subject('Activate Account');
+      $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
+      $message->to('natanaelkristiawan@hotmail.com');
+    });
+
+    return response()->json([
+      'status' => $data
+    ]);
   }
 }

@@ -82,14 +82,15 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "master/articles": "@dev",
+        "master/books": "@dev",
         "master/core": "@dev",
-        "master/upload": "@dev",
         "master/customers": "@dev",
         "master/payments": "@dev",
-        "master/rooms": "@dev",
-        "master/books": "@dev",
         "master/reviews": "@dev",
-        "public/site": "@dev"
+        "master/rooms": "@dev",
+        "master/upload": "@dev",
+        "public/site": "@dev",
+        "ramsey/uuid": "^4.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

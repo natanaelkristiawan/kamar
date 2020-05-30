@@ -56,7 +56,7 @@ class SiteResourceController extends Controller
 			'condition',
 			'conditionBanner',
 			'payment',
-			'paymentBanner',
+			'paymentBanner'
 		));
 	}
 

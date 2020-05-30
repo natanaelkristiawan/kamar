@@ -191,13 +191,14 @@
               })
             }
           }
+        }).then(()=>{
+          $('#loader').addClass('hide')
         })
       } else {
         Swal.fire('Notification', 'Your date selected is not available. Please change it', 'error');
+        $('#loader').addClass('hide')
       }
-    }).then(()=>{
-      $('#loader').addClass('hide')
-    }); 
+    }) 
   })
 
 

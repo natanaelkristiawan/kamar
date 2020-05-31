@@ -31,11 +31,28 @@
           </div>
           <span class="helper error"></span>
         </div>
+      </div> 
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="form-group">
+          <div class="cld-box">
+            <i class="ti-agenda"></i>
+            <input type="text" class="form-control date-checkin is-required dateSelected" placeholder="Date Checkin"  value="" />
+          </div>
+          <span class="helper error"></span>
+        </div>
+      </div> 
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="form-group">
+          <div class="cld-box">
+            <i class="ti-agenda"></i>
+            <input type="text" class="form-control date-checkout is-required dateSelected" placeholder="Date Checkout"  value="" />
+          </div>
+          <span class="helper error"></span>
+        </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
-        <div class="form-group" style="position: relative">
-          <i style="position: absolute;top: 30px;left: 18px;" class="fas fa-bed"></i>
-          <select class="form-control room" style="border: 2px solid #e6eaf3; color: #707e9c">
+        <div class="form-group room-wrap">
+          <select class="form-control rooms">
             <option value="1">1room - 2people</option>
             <option value="2">2room - 4people</option>
             <option value="3">3room - 6people</option>
@@ -47,7 +64,7 @@
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
           <button id="showDatePicker" style="display: none"></button>
-          <button type="button" disabled="" class="btn btn-theme full-width" id="selectDate">Select Date Booking</button>
+          <button type="button" disabled="" class="btn btn-theme full-width" id="btnCheckRoom">Check Avaibility</button>
         </div>
       </div>
     </div>
@@ -62,6 +79,20 @@
   .error {
     color: #e74c3c
   }
+
+  .room-wrap .select2-selection.select2-selection--single {
+    margin: 10px 0px;
+  }
+  .room-wrap .select2-selection__arrow{
+    margin-top: 10px;
+  }
+
+  .room-wrap .select2.select2-container.select2-container--default{
+    border:2px solid #e6eaf3;
+    color: #707e9c,
+    background-color:rgb(230, 234, 243);
+    border-radius: 3px;
+  } 
 </style>
 
 
@@ -70,28 +101,13 @@
 <script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
 <script type="text/javascript">
-
-  function changeDateEnd(response) {
-    var dateStart = response.outward.y+'-'+response.outward.m+'-'+response.outward.d;
-    var dateEnd = response.return.y+'-'+response.return.m+'-'+response.return.d;
-    $('#dateStart').val(dateStart);
-    $('#dateEnd').val(dateEnd);
-  }
-
-
   var disabledDate = {!! json_encode(explode(',','2020-06-03,2020-06-04')) !!}
-
-
   async function findDateInRange() {
-
-    var dateSelected = $('#showDatePicker').val().split(" - ");
     var response = new Promise((resolve) => {
-
-
       var notError = true;
       $.each(disabledDate, function(key, value){
-        var dateCompareStart = new Date(dateSelected[0]);
-        var dateCompareEnd = new Date(dateSelected[1]);
+        var dateCompareStart = new Date($('.date-checkin').val());
+        var dateCompareEnd = new Date($('.date-checkout').val());
         if (+dateCompareStart == +dateCompareEnd) {
           notError = false;
         }
@@ -145,65 +161,8 @@
     return await response;
   }
 
-
-  $(document).on('click', '.pick-submit', function(){
-    $('#loader').removeClass('hide');
-    findDateInRange().then((response) => {
-      if (response) {
-        var dateSelected = $('#showDatePicker').val().split(" - ");
-        var params = {
-          email : $('.email').val(),
-          phone : $('.phone').val(),
-          fullname : $('.fullname').val(),
-          roomTotal : $('.room').val(),
-          dateStart: dateSelected[0],
-          dateEnd: dateSelected[1],
-          roomID : "{{ $room->id }}"
-        }
-        createBooking(params).then((response) => {
-          if (response.status) {
-            if (response.step == 'activate_account') {
-              Swal.fire('Notification', response.message, 'success')
-            }
-
-            if (response.step == 'account_exist_not_active') {
-              Swal.fire({
-                title: 'Notification',
-                icon: 'info',
-                html: response.message,
-                showCancelButton: true,
-                focusConfirm: false,
-                confirmButtonText: 'Resend Code',
-                cancelButtonText: 'Close'
-              }).then((result) => {
-                if (result.value) {
-                  $('#loader').removeClass('hide');
-                  resendActivateEmail(params).then((response)=>{
-                    if (response.status) {
-                      if (response.step == 'activate_account') {
-                        Swal.fire('Notification', response.message, 'success')
-                      }
-                    }
-                  }).then(()=>{
-                    $('#loader').addClass('hide')
-                  })
-                }
-              })
-            }
-          }
-        }).then(()=>{
-          $('#loader').addClass('hide')
-        })
-      } else {
-        Swal.fire('Notification', 'Your date selected is not available. Please change it', 'error');
-        $('#loader').addClass('hide')
-      }
-    }) 
-  })
-
-
-  $(document).on('keyup', '.is-required', function(){
-    if ($(this).hasClass('validate') == false) {
+  function setErrorCommand(path) {
+    if ($(path).hasClass('validate') == false) {
       var fillAll = true;
       $.each($('.is-required'), function(key, value) {
         if ($(value).val() == '') {
@@ -212,9 +171,9 @@
       })
 
       if (fillAll) {
-        $('#selectDate').removeAttr('disabled');
+        $('#btnCheckRoom').removeAttr('disabled');
       } else {
-        $('#selectDate').attr('disabled', 'disabled');
+        $('#btnCheckRoom').attr('disabled', 'disabled');
       }
     } else {
       resetError();
@@ -222,21 +181,43 @@
         {
           fullname : $('.fullname').val(),
           phone : $('.phone').val(),
-          email : $('.email').val()
+          email : $('.email').val(),
+          datecheckin : $('.date-checkin').val(),
+          datecheckout : $('.date-checkout').val(),
         }, 
         constraints)
       .then((response) => {
-        $('#selectDate').removeAttr('disabled');
+        $('#btnCheckRoom').removeAttr('disabled');
       })
       .catch((error) => {
         setErrors(error);
-        $('#selectDate').attr('disabled', 'disabled');
+        $('#btnCheckRoom').attr('disabled', 'disabled');
       });
     }
+  }
+
+  $(document).on('keyup', '.is-required', function(){
+    setErrorCommand(this)
+  });
+
+  $(document).on('change', '.dateSelected', function(){
+    setTimeout(function() {
+      setErrorCommand(this)
+    }, 100);
   })
 
   var constraints = {
     fullname : {
+      presence: {
+        allowEmpty: false
+      }
+    }, 
+    datecheckin : {
+      presence: {
+        allowEmpty: false
+      }
+    }, 
+    datecheckout : {
       presence: {
         allowEmpty: false
       }
@@ -279,22 +260,75 @@
   }
 
   $(document).ready(function() {
-    $('#selectDate').on('click', function(){
+    $('.rooms').select2()
+    $('#btnCheckRoom').on('click', function(){
       resetError();
       $('.is-required').addClass('validate');
       validate.async(
         {
           fullname : $('.fullname').val(),
           phone : $('.phone').val(),
-          email : $('.email').val()
+          email : $('.email').val(),
+          datecheckin : $('.date-checkin').val(),
+          datecheckout : $('.date-checkout').val()
         }, 
         constraints)
       .then((response) => {
-        $('#showDatePicker').dateDropper('show');
+        $('#loader').removeClass('hide');
+        findDateInRange().then((response) => {
+          if (response) {
+            var dateSelected = $('#showDatePicker').val().split(" - ");
+            var params = {
+              email : $('.email').val(),
+              phone : $('.phone').val(),
+              fullname : $('.fullname').val(),
+              roomTotal : $('.rooms').val(),
+              dateStart: $('.date-checkin').val(),
+              dateEnd: $('.date-checkout').val(),
+              roomID : "{{ $room->id }}"
+            }
+            createBooking(params).then((response) => {
+              if (response.status) {
+                if (response.step == 'activate_account') {
+                  Swal.fire('Notification', response.message, 'success')
+                }
+
+                if (response.step == 'account_exist_not_active') {
+                  Swal.fire({
+                    title: 'Notification',
+                    icon: 'info',
+                    html: response.message,
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText: 'Resend Code',
+                    cancelButtonText: 'Close'
+                  }).then((result) => {
+                    if (result.value) {
+                      $('#loader').removeClass('hide');
+                      resendActivateEmail(params).then((response)=>{
+                        if (response.status) {
+                          if (response.step == 'activate_account') {
+                            Swal.fire('Notification', response.message, 'success')
+                          }
+                        }
+                      }).then(()=>{
+                        $('#loader').addClass('hide')
+                      })
+                    }
+                  })
+                }
+              }
+            }).then(()=>{
+              $('#loader').addClass('hide')
+            })
+          } else {
+            Swal.fire('Notification', 'Your date selected is not available. Please change it', 'error');
+            $('#loader').addClass('hide')
+          }
+        }) 
       })
       .catch((error) => {
         setErrors(error)
-
       });
     });
     
@@ -305,11 +339,101 @@
       minYear: new Date().getFullYear(),
       maxYear: new Date().getFullYear() + 5,
       format: 'Y-m-d',
-      roundtrip: true,
       modal: true,
-      disabledDays: '2020-06-03,2020-06-04'
+      disabledDays: '2020-06-03,2020-06-04',
+      autofill: false,
+      eventSelector: 'click'
     }
-    $('#showDatePicker').dateDropper(options);
+    $('.date-checkin').dateDropper( $.extend(false,options,{
+      onChange: function(res) {
+        var dateSelected = new Date(res.date.formatted);
+
+        if ($('.date-checkout').val() == '') {
+          resetDateOut(dateSelected).then((response) => {
+            $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+          })
+        }else {
+          var compareDate = compare_dates($('.date-checkin').val(), $('.date-checkout').val());
+          if (compareDate == 'more' || compareDate == 'same') {
+            resetDateOut(dateSelected).then((response)=>{
+              $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+            })
+
+          }
+        }
+      }
+    }))
+
+
+    $('.date-checkout').dateDropper($.extend(false,options,{
+      onChange: function(res) {
+        var dateSelected = new Date(res.date.formatted);
+        if ($('.date-checkin').val() == '') {
+          resetDateIn(dateSelected).then((response)=>{
+            resetDateOut(dateSelected).then((response)=>{
+              $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+            })
+            $('.date-checkin').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+          })
+        }else {
+          var compareDate = compare_dates($('.date-checkin').val(), $('.date-checkout').val());
+          if (compareDate == 'more' || compareDate == 'same') {
+            resetDateIn(dateSelected).then((response)=>{
+              resetDateOut(dateSelected).then((response)=>{
+                $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+              })
+              $('.date-checkin').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+            })
+          }
+        }
+
+      }
+    }));
   })
+
+  function str_pad(n) {
+    return String("00" + n).slice(-2);
+  }
+
+  var compare_dates = function(date1, date2){
+    var first = new Date(date1);
+    var second = new Date(date2);
+    if (first>second) return ("more");
+    else if (first<second) return ("less");
+    else return ("same"); 
+  }
+
+  async function resetDateIn(dateSelected) {
+    var response =  new Promise((resolve) => {
+      var dd = str_pad(dateSelected.getDate());
+      var mm = str_pad(dateSelected.getMonth()+1); 
+      var yyyy = dateSelected.getFullYear();
+      $('.date-checkin').val(yyyy+'-'+mm+'-'+dd); 
+      resolve ({
+        d : dd,
+        m : mm,
+        y : yyyy
+      })
+    })
+
+    return await response;
+  }
+
+
+  async function resetDateOut(dateSelected) {
+    return await new Promise((resolve) => {
+      dateSelected.setDate(dateSelected.getDate() + 1);
+      var dd = str_pad(dateSelected.getDate());
+      var mm = str_pad(dateSelected.getMonth()+1); 
+      var yyyy = dateSelected.getFullYear();
+      $('.date-checkout').val(yyyy+'-'+mm+'-'+dd);
+      resolve ({
+        d : dd,
+        m : mm,
+        y : yyyy
+      })
+    })
+  }
+
 </script>
 @stop

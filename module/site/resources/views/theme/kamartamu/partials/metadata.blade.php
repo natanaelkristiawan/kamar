@@ -111,6 +111,20 @@
     font-weight: bold;
     letter-spacing: 5px;
   }
+  .hide-in-mobile {
+    display: none !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    #rightmenu {
+      display: none !important;
+    }
+
+   .hide-in-mobile {
+    display: block !important;
+    }
+
+  }
 </style>
 
 @section('style')

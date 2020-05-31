@@ -232,7 +232,7 @@ class PublicController extends Controller
 
       $customer = Customers::createCustomer($dataCustomer);
       // sendEmailActivate
-      self::sendEmailActivate($customer);
+      self::sendEmailActivate($request, $customer);
 
       // send for check email to activate
 
@@ -280,7 +280,7 @@ class PublicController extends Controller
     }
 
     $customer = Customers::findByEmail($request->email);
-    self::sendEmailActivate($customer);
+    self::sendEmailActivate($request, $customer);
 
     // send for check email to activate
     return response()->json([
@@ -288,13 +288,10 @@ class PublicController extends Controller
       'message' => 'Check your email to activate your account',
       'step' => 'activate_account'
     ]);
-
   }
-
-
-  protected function sendEmailActivate($customer)
+  protected function sendEmailActivate(Request $request, $customer)
   {
-    Mail::send('site::public.mails.activate', array('name'=>$customer->name, 'token_verified'=>$customer->token_verified), function ($message) use ($customer)
+    Mail::send('site::public.mails.activate', array('name'=>$customer->name, 'token_verified'=>$customer->token_verified, 'callback'=>$request->callback), function ($message) use ($customer)
     {
       $message->subject('Activate Account');
       $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
@@ -316,20 +313,21 @@ class PublicController extends Controller
   public function activateAccount(Request $request, $token = '')
   {
     $customer = Customers::findByTokenActivate($token);
-
     if (is_null($customer)) {
       abort(404);
     }
-
     $customer->token_verified = null;
     $customer->verified_at = date('Y-m-d H:i:s');
     $customer->status = 1;
     $customer->password = bcrypt('123456');
     $customer->save();
     self::sendPassword($customer);
-
     $request->session()->flash('status_notif', 'Thank you for activate your account. Please check your email to get your password');
-
+    
+    Auth::guard('web')->loginUsingId($customer->id);
+    if (!(bool)is_null($request->callback)) {
+      return redirect()->route('public.roomDetail', array('slug'=>$request->callback));
+    }
     return redirect()->route('public.index');
   }
 }

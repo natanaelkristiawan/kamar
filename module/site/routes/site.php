@@ -13,5 +13,8 @@ $route->post('find-customer', 'PublicController@findCustomer')->name('public.fin
 $route->get('activate-account/{token}', 'PublicController@activateAccount')->name('public.activateAccount');
 $route->post('resend-activate', 'PublicController@reSendEmailActivate')->name('public.resendActivate');
 
+/*logout*/ 
+$route->get('logout', 'CustomerController@logout')->name('public.logout');
+
 $route->get('login', function(){
 })->name('login');

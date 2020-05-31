@@ -356,7 +356,7 @@
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="{{ route('public.activateAccount', array('token' => $token_verified)) }}" target="_blank">Activate Account</a> </td>
+                                      <td> <a href="{{ route('public.activateAccount', array('token' => $token_verified, 'callback'=>$callback)) }}" target="_blank">Activate Account</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>

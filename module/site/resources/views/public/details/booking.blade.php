@@ -9,8 +9,10 @@
       <div class="col-12">
         <div class="px-4 py-3 mx-1 rounded" style="background-color: #e6eaf3">
           <p class="text-center">Welcome <span class="fullname-display"></span></p>
+          @if(!(bool)Auth::check())
           <p id="message-resend">your email not verified yet. Please check your email. Didn't receive? <a href="javascript:;" style="color: #fc6e51" id="resendActivate">Resend</a></p>
           <button data-toggle="collapse" href="#main-data" role="button" aria-expanded="false" aria-controls="main-data" class="btn btn-theme full-width">Change Data</button>
+          @endif
         </div>
       </div>
     </div>
@@ -99,7 +101,11 @@
 
       <div class="col-lg-12 col-md-12 col-sm-6 hide" id="checkout-button">
         <div class="form-group">
+          @if(Auth::check())
+          <button type="button" class="btn btn-theme full-width" id="booking-now">Booking Now</button>
+          @else
           <button type="button" disabled="" class="btn btn-theme full-width">Booking Now</button>
+          @endif
         </div>
       </div>
     </div>
@@ -155,11 +161,8 @@
       });
       resolve(notError)
     });
-
     return await response;
   }
-
-
   async function createBooking(params)
   {
     var response = new Promise((resolve, error) => {
@@ -175,11 +178,8 @@
         });
       });
     });
-
     return await response;
   }
-
-
   async function resendActivateEmail(params) {
     var response = new Promise((resolve, error) => {
       grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
@@ -194,10 +194,8 @@
         });
       })
     });
-
     return await response;
   }
-
   function setErrorCommand(path) {
     if ($(path).hasClass('validate') == false) {
       var fillAll = true;
@@ -206,7 +204,6 @@
           fillAll = false;
         }
       })
-
       if (fillAll) {
         $('#btnCheckRoom').removeAttr('disabled');
       } else {
@@ -232,7 +229,6 @@
       });
     }
   }
-
   $(document).on('keyup', '.is-required', function(){
     setErrorCommand(this)
   });
@@ -242,7 +238,6 @@
       setErrorCommand(this)
     }, 100);
   })
-
   var constraints = {
     fullname : {
       presence: {
@@ -283,25 +278,19 @@
       },
     }
   };
-
-
   function setErrors(params) {
     $.each(params, function(key, value){
       var path = $('.'+key).parents()[1]
       $(path).find('span').html(value[0])
     })
   }
-
   function resetError() {
     $('.helper').html('')
   }
-
-
   $(document).on('keyup', '.fullname', function(){
     var text = $(this).val();
     $('.fullname-display').html(text);
   })
-
   $(document).ready(function() {
     $('.rooms').select2()
     $('#btnCheckRoom').on('click', function(){
@@ -327,7 +316,8 @@
               roomTotal : $('.rooms').val(),
               dateStart: $('.date-checkin').val(),
               dateEnd: $('.date-checkout').val(),
-              roomID : "{{ $room->id }}"
+              roomID : "{{ $room->id }}",
+              callback: "{{ $room->slug }}"
             }
             createBooking(params).then((response) => {
               if (response.status) {
@@ -412,13 +402,10 @@
             resetDateOut(dateSelected).then((response)=>{
               $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
             })
-
           }
         }
       }
     }))
-
-
     $('.date-checkout').dateDropper($.extend(false,options,{
       onChange: function(res) {
         var dateSelected = new Date(res.date.formatted);
@@ -444,11 +431,9 @@
       }
     }));
   })
-
   function str_pad(n) {
     return String("00" + n).slice(-2);
   }
-
   var compare_dates = function(date1, date2){
     var first = new Date(date1);
     var second = new Date(date2);
@@ -456,7 +441,6 @@
     else if (first<second) return ("less");
     else return ("same"); 
   }
-
   async function resetDateIn(dateSelected) {
     var response =  new Promise((resolve) => {
       var dd = str_pad(dateSelected.getDate());
@@ -469,11 +453,8 @@
         y : yyyy
       })
     })
-
     return await response;
   }
-
-
   async function resetDateOut(dateSelected) {
     return await new Promise((resolve) => {
       dateSelected.setDate(dateSelected.getDate() + 1);
@@ -488,33 +469,36 @@
       })
     })
   }
-
   function setDefaultBooking(){
     if (typeof Cookies.get('booking-pending') != 'undefined') {
       var bookingPending = JSON.parse(Cookies.get('booking-pending'));
-
       if (bookingPending.roomID == {{ $room->id }}) {
         $('#checkout-message').removeClass('hide');
+        @if(Auth::check())
+        $('.email').val("{{Auth::user()->email}}")
+        $('.phone').val("{{Auth::user()->phone}}")
+        $('.fullname').val("{{Auth::user()->name}}")
+        @else
         $('.email').val(bookingPending.email)
         $('.phone').val(bookingPending.phone)
         $('.fullname').val(bookingPending.fullname)
+        @endif
         $('.date-checkin').val(bookingPending.dateStart)
         $('.date-checkout').val(bookingPending.dateEnd)
         $('.rooms').val(bookingPending.roomTotal).trigger('change'); 
         $('.fullname-display').html(bookingPending.fullname);
-
         var dateIn = bookingPending.dateStart.split("-");
         var dateOut = bookingPending.dateEnd.split("-");
-
         $('.date-checkin').dateDropper('setDate',{d: dateIn[2], m:dateIn[1], y:dateIn[0]});
         $('.date-checkout').dateDropper('setDate',{d: dateOut[2], m:dateOut[1], y:dateOut[0]});
-
         $('#main-data').removeClass('show');
         $('#btnCheckRoom').removeAttr('disabled');
-
         $('#checkout-detail').removeClass('hide');
         $('#checkout-button').removeClass('hide');
 
+        @if(Auth::check())
+          bookingPending.userExist = true;
+        @endif
 
         if(bookingPending.userExist) {
           $('#message-resend').addClass('hide')
@@ -529,7 +513,6 @@
       }
     }
   }
-
   async function calculateBooking(params) {
     var pricePerNight = parseInt("{{ $room->price }}");
     var rooms = parseInt(params.roomTotal);
@@ -545,24 +528,30 @@
         grandTotal : grandTotal
       })
     });
-
     return await response;
   }
-
   function daysBetween(StartDate, EndDate) {
     // The number of milliseconds in all UTC days (no DST)
     const oneDay = 1000 * 60 * 60 * 24;
-
     // A day in UTC always lasts 24 hours (unlike in other time formats)
     const start = Date.UTC(EndDate.getFullYear(), EndDate.getMonth(), EndDate.getDate());
     const end = Date.UTC(StartDate.getFullYear(), StartDate.getMonth(), StartDate.getDate());
-
     // so it's safe to divide by 24 hours
     return (start - end) / oneDay;
   }
-
   /*for cookies*/
   $(document).ready(function(){
+
+    /*set default if login*/ 
+    @if(Auth::check())
+    $('.email').val("{{Auth::user()->email}}")
+    $('.phone').val("{{Auth::user()->phone}}")
+    $('.fullname').val("{{Auth::user()->name}}")
+    $('#main-data').removeClass('show');
+    $('#checkout-message').removeClass('hide');
+    $('.fullname-display').html("{{Auth::user()->name}}");
+    @endif
+
     setDefaultBooking();
     $('#resendActivate').on('click', function(){
       if (typeof Cookies.get('booking-pending') != 'undefined') {
@@ -580,6 +569,5 @@
       }
     })
   }); 
-
 </script>
 @stop

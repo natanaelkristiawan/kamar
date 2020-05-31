@@ -13,6 +13,9 @@ use Module\Site\Library\Mobile_Detect;
 use Customers;
 use Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cookie;
+use Ramsey\Uuid\Uuid;
+use Auth;
 class PublicController extends Controller
 {
   function __construct()
@@ -89,12 +92,16 @@ class PublicController extends Controller
     $room = $data[0];
     $ameneties = json_decode(Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang))->data;
     $locations = self::getLocations();
+
+
+    // pengen tau uuid tetap sama atau beda
+    $uuid = Uuid::uuid3(Uuid::NAMESPACE_URL, route('public.roomDetail', array('slug'=>$slug)));
     Meta::title('kamartamu.com - '.$room->meta->title);
     Meta::set('robots', $room->meta->tag); 
     Meta::set('keywords', $room->meta->tag);
     Meta::set('description', $room->meta->description);
     Meta::set('active', 'rooms');
-    return view('site::public.detail', compact('room', 'ameneties', 'locations'));
+    return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid'));
   }
 
   protected function getFeaturedRooms($limit = 6, $language = 'id'){
@@ -243,6 +250,13 @@ class PublicController extends Controller
         'status' => true,
         'message' => 'Your account not active, please activate your account',
         'step' => 'account_exist_not_active'
+      ]);
+    }
+
+    if (!(bool)Auth::guard('web')->check()) {
+      return response()->json([
+        'status' => true,
+        'step' => 'account_need_login'
       ]);
     }
     return response()->json($customer);

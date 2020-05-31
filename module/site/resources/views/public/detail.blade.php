@@ -1,6 +1,5 @@
 @extends('site::theme.kamartamu.layouts.index')
 @section('content')
-
 @include('site::public.details.gallery')
 <section class="pt-5">
   <div class="container">

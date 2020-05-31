@@ -4,34 +4,48 @@
     <h3 class="price">Rp {{number_format($room->price)}}<sub>/{{ trans('site::default.night') }}</sub></h3>
   </div>
   <div class="side-booking-body">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-6">
-        <div class="form-group">
-          <div class="cld-box">
-            <i class="ti-user"></i>
-            <input type="text" class="form-control fullname is-required" placeholder="Full Name"  value="" />
-          </div>
-          <span class="helper error"></span>
+
+    <div class="row mb-3 hide" id="checkout-message">
+      <div class="col-12">
+        <div class="px-4 py-3 mx-1 rounded" style="background-color: #e6eaf3">
+          <p class="text-center">Welcome <span class="fullname-display"></span></p>
+          <p id="message-resend">your email not verified yet. Please check your email. Didn't receive? <a href="javascript:;" style="color: #fc6e51" id="resendActivate">Resend</a></p>
+          <button data-toggle="collapse" href="#main-data" role="button" aria-expanded="false" aria-controls="main-data" class="btn btn-theme full-width">Change Data</button>
         </div>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-6">
-        <div class="form-group">
-          <div class="cld-box">
-            <i class="ti-email"></i>
-            <input type="email" class="form-control email is-required" placeholder="Email"  value="" />
+    </div>
+
+
+    <div class="row">
+      <div id="main-data" class="collapse show"  style="width:100%;">
+        <div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="form-group">
+            <div class="cld-box">
+              <i class="ti-user"></i>
+              <input type="text" class="form-control fullname is-required" placeholder="Full Name"  value="" />
+            </div>
+            <span class="helper error"></span>
           </div>
-          <span class="helper error"></span>
         </div>
-      </div> 
-      <div class="col-lg-12 col-md-12 col-sm-6">
-        <div class="form-group">
-          <div class="cld-box">
-            <i class="ti-tablet"></i>
-            <input type="tel" class="form-control phone is-required" placeholder="Phone"  value="" />
+        <div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="form-group">
+            <div class="cld-box">
+              <i class="ti-email"></i>
+              <input type="email" class="form-control email is-required" placeholder="Email"  value="" />
+            </div>
+            <span class="helper error"></span>
           </div>
-          <span class="helper error"></span>
+        </div> 
+        <div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="form-group">
+            <div class="cld-box">
+              <i class="ti-tablet"></i>
+              <input type="tel" class="form-control phone is-required" placeholder="Phone"  value="" />
+            </div>
+            <span class="helper error"></span>
+          </div>
         </div>
-      </div> 
+      </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
           <div class="cld-box">
@@ -63,8 +77,29 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
-          <button id="showDatePicker" style="display: none"></button>
           <button type="button" disabled="" class="btn btn-theme full-width" id="btnCheckRoom">Check Avaibility</button>
+        </div>
+      </div>
+
+      <div class="col-lg-12 px-4 py-3 hide" id="checkout-detail">
+        <div class="detail-wrap d-flex">
+          <span class="tag">Total :</span>
+          <span class="detail ml-auto">Rp. <span id="total"></span></span>
+        </div>
+        <div class="detail-wrap d-flex">
+          <span class="tag">Service Charger :</span>
+          <span class="detail ml-auto">Rp. <span id="service"></span></span>
+        </div>
+        <div class="defer pb-1 mb-1 d-block" style="border-bottom: 1px dashed #e6eaf3 "></div>
+        <div class="detail-wrap  d-flex font-weight-bold">
+          <span class="tag">Total:</span>
+          <span class="detail ml-auto">Rp. <span id="grandTotal"></span></span>
+        </div>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-6 hide" id="checkout-button">
+        <div class="form-group">
+          <button type="button" disabled="" class="btn btn-theme full-width">Booking Now</button>
         </div>
       </div>
     </div>
@@ -99,9 +134,11 @@
 <!-- Date Booking Script -->
 <script src="{{ asset('themes/landing') }}/assets/js/moment.min.js"></script>
 <script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
+<script src="{{ asset('themes/additionals/') }}/number/jquery.number.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
 <script type="text/javascript">
   var disabledDate = {!! json_encode(explode(',','2020-06-03,2020-06-04')) !!}
+  var uuid = "{{ $uuid }}"
   async function findDateInRange() {
     var response = new Promise((resolve) => {
       var notError = true;
@@ -259,6 +296,12 @@
     $('.helper').html('')
   }
 
+
+  $(document).on('keyup', '.fullname', function(){
+    var text = $(this).val();
+    $('.fullname-display').html(text);
+  })
+
   $(document).ready(function() {
     $('.rooms').select2()
     $('#btnCheckRoom').on('click', function(){
@@ -277,7 +320,6 @@
         $('#loader').removeClass('hide');
         findDateInRange().then((response) => {
           if (response) {
-            var dateSelected = $('#showDatePicker').val().split(" - ");
             var params = {
               email : $('.email').val(),
               phone : $('.phone').val(),
@@ -289,11 +331,17 @@
             }
             createBooking(params).then((response) => {
               if (response.status) {
+
+                // setcookies di sini supaya datanya gak ilang, set aja sehari
                 if (response.step == 'activate_account') {
-                  Swal.fire('Notification', response.message, 'success')
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 2});
+                  Swal.fire('Notification', response.message, 'success');
+                  setDefaultBooking();
                 }
 
                 if (response.step == 'account_exist_not_active') {
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 2});
+                  setDefaultBooking();
                   Swal.fire({
                     title: 'Notification',
                     icon: 'info',
@@ -316,6 +364,13 @@
                       })
                     }
                   })
+                }
+
+                if (response.step == 'account_need_login') {
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 2});
+                  $('#message-resend').addClass('hide');
+                  setDefaultBooking();
+                  $('#login').modal('show')
                 }
               }
             }).then(()=>{
@@ -341,8 +396,7 @@
       format: 'Y-m-d',
       modal: true,
       disabledDays: '2020-06-03,2020-06-04',
-      autofill: false,
-      eventSelector: 'click'
+      autofill: false
     }
     $('.date-checkin').dateDropper( $.extend(false,options,{
       onChange: function(res) {
@@ -434,6 +488,98 @@
       })
     })
   }
+
+  function setDefaultBooking(){
+    if (typeof Cookies.get('booking-pending') != 'undefined') {
+      var bookingPending = JSON.parse(Cookies.get('booking-pending'));
+
+      if (bookingPending.roomID == {{ $room->id }}) {
+        $('#checkout-message').removeClass('hide');
+        $('.email').val(bookingPending.email)
+        $('.phone').val(bookingPending.phone)
+        $('.fullname').val(bookingPending.fullname)
+        $('.date-checkin').val(bookingPending.dateStart)
+        $('.date-checkout').val(bookingPending.dateEnd)
+        $('.rooms').val(bookingPending.roomTotal).trigger('change'); 
+        $('.fullname-display').html(bookingPending.fullname);
+
+        var dateIn = bookingPending.dateStart.split("-");
+        var dateOut = bookingPending.dateEnd.split("-");
+
+        $('.date-checkin').dateDropper('setDate',{d: dateIn[2], m:dateIn[1], y:dateIn[0]});
+        $('.date-checkout').dateDropper('setDate',{d: dateOut[2], m:dateOut[1], y:dateOut[0]});
+
+        $('#main-data').removeClass('show');
+        $('#btnCheckRoom').removeAttr('disabled');
+
+        $('#checkout-detail').removeClass('hide');
+        $('#checkout-button').removeClass('hide');
+
+
+        if(bookingPending.userExist) {
+          $('#message-resend').addClass('hide')
+        } else {
+          $('#message-resend').removeClass('hide')
+        }
+        calculateBooking(bookingPending).then((response)=>{
+          $('#total').html($.number(response.total,0,',', '.' ))
+          $('#service').html($.number(response.service,0,',', '.' ))
+          $('#grandTotal').html($.number(response.grandTotal,0,',', '.' ))
+        })
+      }
+    }
+  }
+
+  async function calculateBooking(params) {
+    var pricePerNight = parseInt("{{ $room->price }}");
+    var rooms = parseInt(params.roomTotal);
+    var nights = parseInt(daysBetween(new Date(params.dateStart), new Date(params.dateEnd)));
+
+    var response = new Promise((resolve) => {
+      var total = pricePerNight * rooms * nights;
+      var service = (total * 10) / 100;
+      var grandTotal = total + service;
+      resolve({
+        total : total,
+        service : service,
+        grandTotal : grandTotal
+      })
+    });
+
+    return await response;
+  }
+
+  function daysBetween(StartDate, EndDate) {
+    // The number of milliseconds in all UTC days (no DST)
+    const oneDay = 1000 * 60 * 60 * 24;
+
+    // A day in UTC always lasts 24 hours (unlike in other time formats)
+    const start = Date.UTC(EndDate.getFullYear(), EndDate.getMonth(), EndDate.getDate());
+    const end = Date.UTC(StartDate.getFullYear(), StartDate.getMonth(), StartDate.getDate());
+
+    // so it's safe to divide by 24 hours
+    return (start - end) / oneDay;
+  }
+
+  /*for cookies*/
+  $(document).ready(function(){
+    setDefaultBooking();
+    $('#resendActivate').on('click', function(){
+      if (typeof Cookies.get('booking-pending') != 'undefined') {
+        var bookingPending = JSON.parse(Cookies.get('booking-pending'));
+        $('#loader').removeClass('hide');
+        resendActivateEmail(bookingPending).then((response)=>{
+          if (response.status) {
+            if (response.step == 'activate_account') {
+              Swal.fire('Notification', response.message, 'success')
+            }
+          }
+        }).then(()=>{
+          $('#loader').addClass('hide')
+        })
+      }
+    })
+  }); 
 
 </script>
 @stop

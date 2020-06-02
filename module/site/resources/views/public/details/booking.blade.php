@@ -79,7 +79,7 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
-          <button type="button" disabled="" class="btn btn-theme full-width" id="btnCheckRoom">Check Avaibility</button>
+          <button type="button" disabled="" class="btn btn-theme full-width" id="btnCheckRoom">Check Availability</button>
         </div>
       </div>
 
@@ -102,7 +102,7 @@
       <div class="col-lg-12 col-md-12 col-sm-6 hide" id="checkout-button">
         <div class="form-group">
           @if(Auth::check() && (bool)Auth::user()->status)
-          <button type="button" class="btn btn-theme full-width" id="booking-now">Booking Now</button>
+          <button type="button" class="btn btn-theme full-width" id="bookingNow">Booking Now</button>
           @else
           <button type="button" disabled="" class="btn btn-theme full-width">Booking Now</button>
           @endif
@@ -133,7 +133,7 @@
           notError = false;
         }
         var dateCompare = new Date(value);
-        if (dateCompare > dateCompareStart && dateCompare < dateCompareEnd) {
+        if (dateCompare >= dateCompareStart && dateCompare <= dateCompareEnd) {
           notError = false
         }
       });
@@ -141,7 +141,7 @@
     });
     return await response;
   }
-  async function createBooking(params)
+  async function checkAvailability(params)
   {
     var response = new Promise((resolve, error) => {
       grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
@@ -297,16 +297,14 @@
               roomID : "{{ $room->id }}",
               callback: "{{ $room->slug }}"
             }
-            createBooking(params).then((response) => {
+            checkAvailability(params).then((response) => {
               if (response.status) {
-
                 // setcookies di sini supaya datanya gak ilang, set aja sehari
                 if (response.step == 'activate_account') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 2});
                   Swal.fire('Notification', response.message, 'success');
                   setDefaultBooking();
                 }
-
                 if (response.step == 'account_exist_not_active') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 2});
                   setDefaultBooking();
@@ -333,12 +331,16 @@
                     }
                   })
                 }
-
                 if (response.step == 'account_need_login') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 2});
                   $('#message-resend').addClass('hide');
                   setDefaultBooking();
                   $('.modalLogin').click();
+                }
+                if (response.step == 'calculate_booking') {
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 2});
+                  $('#message-resend').addClass('hide');
+                  setDefaultBooking();
                 }
               }
             }).then(()=>{
@@ -524,10 +526,15 @@
     @if(Auth::check())
     $('.email').val("{{Auth::user()->email}}")
     $('.fullname').val("{{Auth::user()->name}}")
+    $('.phone').val("{{Auth::user()->phone}}")
     $('#main-data').removeClass('show');
     $('#checkout-message').removeClass('hide');
     $('.fullname-display').html("{{Auth::user()->name}}");
+    @if((bool)Auth::user()->status)
+    $('#message-resend').addClass('hide')
     @endif
+    @endif
+
 
     setDefaultBooking();
     $('#resendActivate').on('click', function(){
@@ -546,5 +553,92 @@
       }
     })
   }); 
+</script>
+
+<!-- for booking -->
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}" defer></script>
+<script type="text/javascript">
+
+  async function getSnapToken(params) {
+    var response = new Promise((resolve, reject) => {
+      grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
+        $.ajax({
+          url : "{{ route('public.getSnapToken') }}",
+          type : 'POST',
+          dataType : 'json',
+          data: $.extend(false, TOKEN, {'g-recaptcha-response' : token}, {uuid : uuid}, params),
+          success: function(result){
+            resolve(result)
+          },
+          error: function (request, status, error) {
+            reject(request)
+          }
+        });
+      })
+    });
+
+    return await response;
+  }
+
+
+  async function callMidtrans(token) {
+    var response = new Promise((resolve, error) => {
+      snap.pay(token, {
+        // Optional
+        onSuccess: function(result){
+          resolve(result);
+        },
+        // Optional
+        onPending: function(result){
+          resolve(result)
+        },
+        // Optional
+        onError: function(result){
+          error(resolve)
+        }
+      });
+    });
+
+    return await response;
+  }
+
+
+  function callPayment(){
+    $('#loader').removeClass('hide');
+    findDateInRange().then((response)=>{
+      if (response) {
+        var params = {
+          email : $('.email').val(),
+          phone : $('.phone').val(),
+          fullname : $('.fullname').val(),
+          roomTotal : $('.rooms').val(),
+          dateStart: $('.date-checkin').val(),
+          dateEnd: $('.date-checkout').val(),
+          roomID : "{{ $room->id }}",
+          callback: "{{ $room->slug }}",
+          nights: parseInt(daysBetween(new Date($('.date-checkin').val()), new Date($('.date-checkout').val())))
+        }
+
+        getSnapToken(params).then((response)=>{
+          if (response.status) {
+            $('#loader').addClass('hide');
+            callMidtrans(response.snapToken).then((response)=>{
+              console.log(response)
+            }).catch((error) => {
+              console.log(error);
+            })
+          }
+        })
+
+      }
+    })
+  }
+
+
+  $(document).ready(function(){
+    $('#bookingNow').on('click', function(){
+      callPayment()
+    })
+  })
 </script>
 @stop

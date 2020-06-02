@@ -26,5 +26,10 @@ $route->get('fb-connect', 'PublicController@fbConnect');
 $route->get('google-login', 'PublicController@googleLogin')->name('public.googleLogin');
 $route->get('google-connect', 'PublicController@googleConnect'); 
 
+
+
+/*booking*/
+$route->post('get-snap-token', 'CustomerController@getSnapToken')->name('public.getSnapToken');
+
 $route->get('login', function(){
 })->name('login');

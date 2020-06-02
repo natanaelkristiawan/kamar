@@ -14,7 +14,10 @@
         "laravel": {
             "providers": [
                 "Master\\Payments\\PaymentsServiceProvider"
-            ]
+            ],
+            "aliases" : {
+                "Payments": "Master\\Payments\\Facades\\Payments"
+            }
         }
     },
     "minimum-stability": "dev"

@@ -90,6 +90,7 @@
         "master/reviews": "@dev",
         "master/rooms": "@dev",
         "master/upload": "@dev",
+        "midtrans/midtrans-php": "^2.2",
         "public/site": "@dev",
         "ramsey/uuid": "^4.0"
     },

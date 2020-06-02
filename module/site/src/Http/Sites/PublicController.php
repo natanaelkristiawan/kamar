@@ -96,7 +96,7 @@ class PublicController extends Controller
 
 
     // pengen tau uuid tetap sama atau beda
-    $uuid = Uuid::uuid3(Uuid::NAMESPACE_URL, route('public.roomDetail', array('slug'=>$slug)));
+    $uuid = Uuid::uuid4();
     Meta::title('kamartamu.com - '.$room->meta->title);
     Meta::set('robots', $room->meta->tag); 
     Meta::set('keywords', $room->meta->tag);
@@ -251,7 +251,10 @@ class PublicController extends Controller
         'step' => 'account_need_login'
       ]);
     }
-    return response()->json($customer);
+    return response()->json([
+      'status' => true,
+      'step' => 'calculate_booking'
+    ]);
   }
 
 

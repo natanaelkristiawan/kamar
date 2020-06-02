@@ -202,6 +202,15 @@ class Rooms
     $resource->setPaginator(new IlluminatePaginatorAdapter($data));
     $fractal = new Manager();
     $response = $fractal->createData($resource)->toJson();
+    $this->rooms->resetCriteria();
+    return $response;
+  }
+
+
+  public function findByField($field, $value)
+  {
+    $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
+    $response = $this->rooms->findByField($field, $value)->first();
     $this->rooms->resetModel();
     $this->rooms->resetCriteria();
     return $response;

@@ -18,7 +18,7 @@ class CreateCustomersTable extends Migration
     $table->date('dob')->nullable();
     $table->string('phone')->nullable();
     $table->string('photo')->nullable();
-    $table->string('fb_id')->nullable();
+    $table->string('facebook_id')->nullable();
     $table->string('google_id')->nullable();
     $table->string('remember_token')->nullable();
     $table->string('token_forgot_password')->nullable();

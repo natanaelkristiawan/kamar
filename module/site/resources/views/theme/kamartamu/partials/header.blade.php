@@ -9,11 +9,15 @@
       </div>
       <div class="nav-menus-wrapper" style="transition-property: none;">
         <ul class="nav-menu">
+          @if(Auth::check())
           <li class="hide-in-mobile"><a href="">Dashboard</a></li>
+          @endif
           <li class= "{{ Meta::get('active') == 'home' ? 'active' : ''  }}"><a href="{{ route('public.index') }}">Home</a></li>
           <li class= "{{ Meta::get('active') == 'rooms' ? 'active' : ''  }}"><a href="{{ route('public.rooms') }}">Rooms</a></li>
           <li class= "{{ Meta::get('active') == 'blogs' ? 'active' : ''  }}"><a href="{{ route('public.blogs') }}">Blogs</a></li>
+          @if(Auth::check())
           <li class="hide-in-mobile"><a href="{{ route('public.logout') }}">Logout</a></li>
+          @endif
         </ul>
 
         <ul class="nav-menu nav-menu-social align-to-right hidden-sm" >
@@ -40,7 +44,7 @@
           </li>
           @else
           <li>
-            <a href="#" data-toggle="modal" data-target="#login">
+            <a href="#" class="modalLogin">
               <i class="ti-user mr-1"></i><span class="dn-lg">{{ trans('site::default.login')}}/{{ trans('site::default.signup')}}</span>
             </a>
           </li>

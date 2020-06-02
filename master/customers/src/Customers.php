@@ -28,6 +28,21 @@ class Customers
 	}
 
 
+	public function findByField($field = '', $value = '')
+	{
+		$query = $this->customer->findByField($field, $value)->first();
+		$this->customer->resetModel();
+		return $query;
+	}
+
+	public function updateOrCreate($attributes = array(), $params = array())
+	{
+		$query = $this->customer->updateOrCreate($attributes, $params);
+		$this->customer->resetModel();
+		return $query;
+	}
+
+
 	public function createCustomer($params)
 	{
 		$query = $this->customer->create($params);

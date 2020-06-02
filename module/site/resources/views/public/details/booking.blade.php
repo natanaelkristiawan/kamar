@@ -8,9 +8,9 @@
     <div class="row mb-3 hide" id="checkout-message">
       <div class="col-12">
         <div class="px-4 py-3 mx-1 rounded" style="background-color: #e6eaf3">
-          <p class="text-center">Welcome <span class="fullname-display"></span></p>
+          <p class="text-center mb-0">Welcome <span class="fullname-display" style="font-weight: bold;"></span></p>
+          <p class="text-center" id="message-resend">your email not verified yet. Please check your email. Didn't receive? <a href="javascript:;" style="color: #fc6e51" id="resendActivate">Resend</a></p>
           @if(!(bool)Auth::check())
-          <p id="message-resend">your email not verified yet. Please check your email. Didn't receive? <a href="javascript:;" style="color: #fc6e51" id="resendActivate">Resend</a></p>
           <button data-toggle="collapse" href="#main-data" role="button" aria-expanded="false" aria-controls="main-data" class="btn btn-theme full-width">Change Data</button>
           @endif
         </div>
@@ -38,14 +38,14 @@
             <span class="helper error"></span>
           </div>
         </div> 
-        <div class="col-lg-12 col-md-12 col-sm-6">
-          <div class="form-group">
-            <div class="cld-box">
-              <i class="ti-tablet"></i>
-              <input type="tel" class="form-control phone is-required" placeholder="Phone"  value="" />
-            </div>
-            <span class="helper error"></span>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="form-group">
+          <div class="cld-box">
+            <i class="ti-tablet"></i>
+            <input type="tel" class="form-control phone is-required" placeholder="Phone"  value="" />
           </div>
+          <span class="helper error"></span>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
@@ -101,7 +101,7 @@
 
       <div class="col-lg-12 col-md-12 col-sm-6 hide" id="checkout-button">
         <div class="form-group">
-          @if(Auth::check())
+          @if(Auth::check() && (bool)Auth::user()->status)
           <button type="button" class="btn btn-theme full-width" id="booking-now">Booking Now</button>
           @else
           <button type="button" disabled="" class="btn btn-theme full-width">Booking Now</button>
@@ -116,32 +116,10 @@
 
 @section('script')
 @parent
-<style type="text/css">
-  .error {
-    color: #e74c3c
-  }
-
-  .room-wrap .select2-selection.select2-selection--single {
-    margin: 10px 0px;
-  }
-  .room-wrap .select2-selection__arrow{
-    margin-top: 10px;
-  }
-
-  .room-wrap .select2.select2-container.select2-container--default{
-    border:2px solid #e6eaf3;
-    color: #707e9c,
-    background-color:rgb(230, 234, 243);
-    border-radius: 3px;
-  } 
-</style>
-
-
 <!-- Date Booking Script -->
 <script src="{{ asset('themes/landing') }}/assets/js/moment.min.js"></script>
 <script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
 <script src="{{ asset('themes/additionals/') }}/number/jquery.number.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
 <script type="text/javascript">
   var disabledDate = {!! json_encode(explode(',','2020-06-03,2020-06-04')) !!}
   var uuid = "{{ $uuid }}"
@@ -360,7 +338,7 @@
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 2});
                   $('#message-resend').addClass('hide');
                   setDefaultBooking();
-                  $('#login').modal('show')
+                  $('.modalLogin').click();
                 }
               }
             }).then(()=>{
@@ -476,13 +454,12 @@
         $('#checkout-message').removeClass('hide');
         @if(Auth::check())
         $('.email').val("{{Auth::user()->email}}")
-        $('.phone').val("{{Auth::user()->phone}}")
         $('.fullname').val("{{Auth::user()->name}}")
         @else
         $('.email').val(bookingPending.email)
-        $('.phone').val(bookingPending.phone)
         $('.fullname').val(bookingPending.fullname)
         @endif
+        $('.phone').val(bookingPending.phone)
         $('.date-checkin').val(bookingPending.dateStart)
         $('.date-checkout').val(bookingPending.dateEnd)
         $('.rooms').val(bookingPending.roomTotal).trigger('change'); 
@@ -496,7 +473,7 @@
         $('#checkout-detail').removeClass('hide');
         $('#checkout-button').removeClass('hide');
 
-        @if(Auth::check())
+        @if(Auth::check() && (bool)Auth::user()->status)
           bookingPending.userExist = true;
         @endif
 
@@ -505,6 +482,7 @@
         } else {
           $('#message-resend').removeClass('hide')
         }
+
         calculateBooking(bookingPending).then((response)=>{
           $('#total').html($.number(response.total,0,',', '.' ))
           $('#service').html($.number(response.service,0,',', '.' ))
@@ -545,7 +523,6 @@
     /*set default if login*/ 
     @if(Auth::check())
     $('.email').val("{{Auth::user()->email}}")
-    $('.phone').val("{{Auth::user()->phone}}")
     $('.fullname').val("{{Auth::user()->name}}")
     $('#main-data').removeClass('show');
     $('#checkout-message').removeClass('hide');

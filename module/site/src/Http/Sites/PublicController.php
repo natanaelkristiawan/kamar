@@ -16,6 +16,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cookie;
 use Ramsey\Uuid\Uuid;
 use Auth;
+use Socialite;
 class PublicController extends Controller
 {
   function __construct()
@@ -215,11 +216,7 @@ class PublicController extends Controller
         )
       );
     }
-
-
     $customer = Customers::findByEmail($request->email);
-
-
     if (is_null($customer)) {
       // create account
       $dataCustomer = array(
@@ -233,18 +230,13 @@ class PublicController extends Controller
       $customer = Customers::createCustomer($dataCustomer);
       // sendEmailActivate
       self::sendEmailActivate($request, $customer);
-
       // send for check email to activate
-
       return response()->json([
         'status' => true,
         'message' => 'Thank you for submit data, check your email to activate your kamartamu account',
         'step' => 'activate_account'
       ]);
     }
-
-
-
     if (!(bool)is_null($customer->token_verified)) {
       return response()->json([
         'status' => true,
@@ -330,4 +322,153 @@ class PublicController extends Controller
     }
     return redirect()->route('public.index');
   }
+
+
+  /*login*/
+  public function doLogin(Request $request)
+  {
+    $this->middleware('guard:web');
+    $validator = Validator::make($request->all(), [
+      'email' => 'required|email',
+      'password'  => 'required|min:6',
+      'g-recaptcha-response' => 'captcha'
+    ]);
+
+    if ($validator->fails()) {
+      if($request->ajax()){
+        return response()->json([
+          'status' => false,
+          'message' => 'Failed to login, check your email or password'
+        ], 401);
+      }
+      return redirect()->back()
+                    ->withErrors(array('message' => 'Failed to login, check your email or password'))
+                    ->withInput();
+    }
+    $credentials = $request->only('email', 'password');
+    $remember = $request->remember;
+
+    if (Auth::guard('web')->attempt($credentials, $remember)) {
+      $customer = Customers::findByEmail($request->email);
+      session()->flash('status_notif', 'Welcome back '.$customer->name);
+      
+
+      if($request->ajax()){
+        return response()->json(['status' => true]);
+      }
+
+      return redirect()->route('public');
+    }
+    if($request->ajax()){
+      return response()->json([
+        'status' => false,
+        'message' => 'Failed to login, check your email or password'
+      ], 401);
+    }
+    return redirect()->back()
+                  ->withErrors(array('message' => 'Failed to login, check your email or password'))
+                  ->withInput();
+  }
+
+
+  public function fbLogin()
+  {
+    $this->middleware('guard:web');
+    return Socialite::driver('facebook')->redirect();
+  }
+
+
+  public function googleLogin()
+  {
+    $this->middleware('guard:web');
+    return Socialite::driver('google')->redirect();
+  }
+
+
+  public function googleConnect(Request $request)
+  {
+    $google = Socialite::driver('google')->stateless()->user();
+    $customer = Customers::findByField('google_id', $google->id);
+    if (is_null($customer)) {
+      // coba cek emailnya udah terdaftar apa belum
+      $emailCustomer = Customers::findByField('email', $google->email);
+      // belum pernah daftar sama sekali waktunya save session
+      if (is_null($emailCustomer)) {
+         $dataCustomer = array(
+          'email' => $google->email,
+          'name' => $google->name,
+          'phone' => null,
+          'google_id' => $google->id,
+          'token_verified' => Str::random(40),
+          'status' => 0,
+        );
+        $customer = Customers::createCustomer($dataCustomer);
+        // sendEmailActivate
+        self::sendEmailActivate($request, $customer);
+        Auth::guard('web')->loginUsingId($customer->id);
+        $request->session()->flash('status_notif', 'Thank you for registration. Please check your email to activate your account');
+        return redirect()->route('public.index');
+        
+      }
+
+      // kalau udah daftar tinggal update aja
+      $dataInsert = array(
+        'google_id' => $google->id,
+        'email'       => $emailCustomer->email,
+        'status'      => 1
+      );
+
+      // update data
+      $customer = Customers::updateOrCreate(array('email'=>$emailCustomer->email, 'id' => $emailCustomer->id), $dataInsert);
+    }
+    // force login
+    Auth::guard('web')->loginUsingId($customer->id);
+    return redirect()->route('public.index');
+  }
+
+  public function fbConnect(Request $request)
+  {
+    $this->middleware('guard:web');
+    session()->put('state', $request->input('state'));
+    $facebook = Socialite::driver('facebook')->user();
+    // cari user idnya dulu di database ada apa kagak
+
+    $customer = Customers::findByField('facebook_id', $facebook->id);
+    // ini usernya belum pernah login pakai fb
+    if (is_null($customer)) {
+      // coba cek emailnya udah terdaftar apa belum
+      $emailCustomer = Customers::findByField('email', $facebook->email);
+
+      // belum pernah daftar sama sekali waktunya save session
+      if (is_null($emailCustomer)) {
+        $dataCustomer = array(
+          'email' => $facebook->user['email'],
+          'name' => $facebook->user['name'],
+          'phone' => null,
+          'facebook_id' => $facebook->id,
+          'token_verified' => Str::random(40),
+          'status' => 0,
+        );
+        $customer = Customers::createCustomer($dataCustomer);
+        // sendEmailActivate
+        self::sendEmailActivate($request, $customer);
+        Auth::guard('web')->loginUsingId($customer->id);
+        $request->session()->flash('status_notif', 'Thank you for registration. Please check your email to activate your account');
+        return redirect()->route('public.index');
+      }
+      // kalau udah daftar tinggal update aja
+      $dataInsert = array(
+        'facebook_id' => $facebook->id,
+        'email'       => $emailCustomer->email,
+        'status'      => 1
+      );
+      // update data
+      $customer = Customers::updateOrCreate(array('email'=>$emailCustomer->email, 'id' => $emailCustomer->id), $dataInsert);
+    }
+    // force login
+    Auth::guard('web')->loginUsingId($customer->id);
+    return redirect()->route('public.index');
+  }
+
+
 }

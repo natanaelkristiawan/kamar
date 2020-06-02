@@ -16,5 +16,15 @@ $route->post('resend-activate', 'PublicController@reSendEmailActivate')->name('p
 /*logout*/ 
 $route->get('logout', 'CustomerController@logout')->name('public.logout');
 
+
+/*login*/ 
+$route->post('login', 'PublicController@doLogin')->name('public.login');
+
+/*social media*/
+$route->get('fb-login', 'PublicController@fbLogin')->name('public.fbLogin');
+$route->get('fb-connect', 'PublicController@fbConnect');
+$route->get('google-login', 'PublicController@googleLogin')->name('public.googleLogin');
+$route->get('google-connect', 'PublicController@googleConnect'); 
+
 $route->get('login', function(){
 })->name('login');

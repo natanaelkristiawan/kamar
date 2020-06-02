@@ -125,6 +125,26 @@
     }
 
   }
+  .modal-open{
+    padding-right: 0px !important;
+  }
+  .error {
+    color: #e74c3c
+  }
+
+  .room-wrap .select2-selection.select2-selection--single {
+    margin: 10px 0px;
+  }
+  .room-wrap .select2-selection__arrow{
+    margin-top: 10px;
+  }
+
+  .room-wrap .select2.select2-container.select2-container--default{
+    border:2px solid #e6eaf3;
+    color: #707e9c,
+    background-color:rgb(230, 234, 243);
+    border-radius: 3px;
+  } 
 </style>
 
 @section('style')

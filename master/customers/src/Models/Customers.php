@@ -25,7 +25,7 @@ class Customers extends Authenticatable
     'dob',
     'phone',
     'photo',
-    'fb_id',
+    'facebook_id',
     'google_id',
     'token_forgot_password',
     'token_verified',

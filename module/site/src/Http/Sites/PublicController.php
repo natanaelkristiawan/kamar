@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Cookie;
 use Ramsey\Uuid\Uuid;
 use Auth;
 use Socialite;
+use Storage;
 class PublicController extends Controller
 {
   function __construct()
@@ -475,6 +476,6 @@ class PublicController extends Controller
 
   public function captureMidtrans(Request $request)
   {
-    
+    Storage::disk('local')->append('public/data.json', json_encode($request->all()));
   }
 }

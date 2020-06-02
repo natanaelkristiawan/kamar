@@ -12,7 +12,7 @@
         <div class="social-login mb-3">
           <ul>
             <li><a href="{{ route('public.fbLogin') }}" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
-            <li><a href="#" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
+            <li><a href="{{ route('public.googleLogin') }}" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
           </ul>
         </div>
         
@@ -49,7 +49,7 @@
         <div class="social-login mb-3">
           <ul>
             <li><a href="{{ route('public.fbLogin') }}" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
-            <li><a href="#" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
+            <li><a href="{{ route('public.googleLogin') }}" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
           </ul>
         </div>
         <div class="text-center">

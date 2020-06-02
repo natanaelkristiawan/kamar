@@ -473,5 +473,8 @@ class PublicController extends Controller
     return redirect()->route('public.index');
   }
 
-
+  public function captureMidtrans(Request $request)
+  {
+    
+  }
 }

@@ -52,6 +52,12 @@ class RouteServiceProvider extends ServiceProvider
 		});
 
 		Route::group([
+		'namespace'  => $this->siteNamespace,
+		], function ($route) {
+			require (__DIR__ . '/../../routes/midtrans.php');
+		});
+
+		Route::group([
 			'middleware' => ['web', 'bilingual'],
 			'prefix' => LaravelLocalization::setLocale(),
 			'namespace'  => $this->siteNamespace,

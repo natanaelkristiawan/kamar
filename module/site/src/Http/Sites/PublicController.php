@@ -18,6 +18,9 @@ use Ramsey\Uuid\Uuid;
 use Auth;
 use Socialite;
 use Storage;
+use Curl;
+use Payments;
+use Books;
 class PublicController extends Controller
 {
   function __construct()
@@ -52,6 +55,9 @@ class PublicController extends Controller
 
   public function index()
   { 
+
+   
+
     self::setMeta();
     Meta::title('kamartamu.com');
     Meta::set('active', 'home');
@@ -200,7 +206,6 @@ class PublicController extends Controller
   {
     $validator = Validator::make($request->all(), [
       'email' => 'required|email',
-      'phone' => 'required',
       'fullname'  => 'required',
       'roomTotal' => 'required',
       'dateStart' => 'required',
@@ -477,5 +482,65 @@ class PublicController extends Controller
   public function captureMidtrans(Request $request)
   {
     Storage::disk('local')->append('public/data.json', json_encode($request->all()));
+
+
+    $dataMidtrans = array(
+      'order_id'=> $request->order_id,
+      'status_code'=> $request->status_code,
+      'status_message'=> $request->status_message,
+      'transaction_id'=> $request->transaction_id,
+      'transaction_status'=> $request->transaction_status,
+      'details'=> $request->all(),
+    );
+
+    // create history payment
+    $midtrans = Payments::createHistoryPayment($dataMidtrans);
+
+    // booking waiting for payment
+    if ($request->transaction_status == 'pending' && $request->status_code == 201) {
+      // find data detail from book history
+      $history = Books::findHistory($request->order_id);
+      $dataBooking = $history->data;
+      // create Book pending
+      Books::createBookPending($dataBooking);
+    }
+
+    // booking success to payment
+    if ($request->transaction_status == 'settlement' && $request->status_code == 200) {
+      $book = Books::findBook($request->order_id);
+      // update data
+      $bookUpdate = array(
+        'payment_id' => $midtrans->id,
+        'status' => 1,
+        'updated_at' => date('Y-m-d H:i:s')
+      );
+      Books::updateBook($book->id, $bookUpdate);
+    }
+
+    // booking using credit card
+    if ($request->transaction_status == 'capture' && $request->status_code == 200) {
+      $history = Books::findHistory($request->order_id);
+      $dataBooking = $history->data;
+      $dataBooking['payment_id'] = $midtrans->id;
+      $dataBooking['status'] = 1;
+      Books::createBookPending($dataBooking);
+    }
+
+    // booking expired
+    if ($request->transaction_status == 'expire' && $request->status_code == 202) {
+      $book = Books::findBook($request->order_id);
+      // update data
+      $bookUpdate = array(
+        'payment_id' => $midtrans->id,
+        'status' => 2,
+        'updated_at' => date('Y-m-d H:i:s')
+      );
+      Books::updateBook($book->id, $bookUpdate);
+    }
+
+  }
+  public function callbackSuccess(Request $request)
+  {
+
   }
 }

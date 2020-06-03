@@ -3,7 +3,9 @@
     "description": "This module additional",
     "license": "MIT",
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "ramsey/uuid": "^4.0"
+    },
     "autoload": {
         "psr-4": {
             "Module\\Site\\": "src"

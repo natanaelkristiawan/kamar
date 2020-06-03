@@ -9,19 +9,13 @@ class CreatePaymentTable extends Migration
 
 	public function up()
 	{
-		Schema::create('payment', function (Blueprint $table) {
+		Schema::create('payments', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->text('finish_redirect_url')->nullable();
-			$table->text('fraud_status')->nullable();
-			$table->text('gross_amount')->nullable();
 			$table->text('order_id')->nullable();
-			$table->text('payment_type')->nullable();
-			$table->text('pdf_url')->nullable();
 			$table->text('status_code')->nullable();
 			$table->text('status_message')->nullable();
 			$table->text('transaction_id')->nullable();
 			$table->text('transaction_status')->nullable();
-			$table->text('transaction_time')->nullable();
 			$table->text('details')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
@@ -31,6 +25,6 @@ class CreatePaymentTable extends Migration
 
 	public function down()
 	{
-		Schema::dropIfExists('payment');
+		Schema::dropIfExists('payments');
 	}
 }

@@ -43,6 +43,11 @@ class BooksServiceProvider extends ServiceProvider
 		\Master\Books\Repositories\Eloquent\BooksRepository::class
 		);
 
+		$this->app->bind(
+		'Master\Books\Interfaces\HistoryRepositoryInterface',
+		\Master\Books\Repositories\Eloquent\HistoryRepository::class
+		);
+
 		$this->app->register(\Master\Books\Providers\RouteServiceProvider::class);
 	}
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3a4259370d95d90e50380b8da854751",
+    "content-hash": "0bb9f7fed0835d58acb5f39fc389680f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1083,16 +1083,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6fa69bfbd57744a5bbec5538ce483919b3fd625f"
+                "reference": "469b7719a8dca40841a74f59f2e9f30f01d3a106"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6fa69bfbd57744a5bbec5538ce483919b3fd625f",
-                "reference": "6fa69bfbd57744a5bbec5538ce483919b3fd625f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/469b7719a8dca40841a74f59f2e9f30f01d3a106",
+                "reference": "469b7719a8dca40841a74f59f2e9f30f01d3a106",
                 "shasum": ""
             },
             "require": {
@@ -1103,7 +1103,7 @@
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
                 "league/commonmark": "^1.3",
-                "league/flysystem": "^1.0.8",
+                "league/flysystem": "^1.0.34",
                 "monolog/monolog": "^2.0",
                 "nesbot/carbon": "^2.17",
                 "opis/closure": "^3.1",
@@ -1128,6 +1128,9 @@
             },
             "conflict": {
                 "tightenco/collect": "<5.5.33"
+            },
+            "provide": {
+                "psr/container-implementation": "1.0"
             },
             "replace": {
                 "illuminate/auth": "self.version",
@@ -1232,33 +1235,34 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-05-26T14:32:43+00:00"
+            "time": "2020-06-02T22:34:18+00:00"
         },
         {
             "name": "laravel/socialite",
-            "version": "v4.3.2",
+            "version": "v4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "4bd66ee416fea04398dee5b8c32d65719a075db4"
+                "reference": "80951df0d93435b773aa00efe1fad6d5015fac75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/4bd66ee416fea04398dee5b8c32d65719a075db4",
-                "reference": "4bd66ee416fea04398dee5b8c32d65719a075db4",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/80951df0d93435b773aa00efe1fad6d5015fac75",
+                "reference": "80951df0d93435b773aa00efe1fad6d5015fac75",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/guzzle": "~6.0",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
                 "illuminate/http": "~5.7.0|~5.8.0|^6.0|^7.0",
                 "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0",
-                "league/oauth1-client": "~1.0",
+                "league/oauth1-client": "^1.0",
                 "php": "^7.1.3"
             },
             "require-dev": {
                 "illuminate/contracts": "~5.7.0|~5.8.0|^6.0|^7.0",
                 "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.7|^3.8|^4.0|^5.0",
                 "phpunit/phpunit": "^7.0|^8.0"
             },
             "type": "library",
@@ -1296,7 +1300,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2020-02-04T15:30:01+00:00"
+            "time": "2020-06-03T13:30:03+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1815,14 +1819,17 @@
             "dist": {
                 "type": "path",
                 "url": "master/books",
-                "reference": "38222f25639ab3d8687656fec3c853e4c8706065"
+                "reference": "57e131710f9a9be50a89b6310b2a127d29b8fbdf"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
                         "Master\\Books\\BooksServiceProvider"
-                    ]
+                    ],
+                    "aliases": {
+                        "Books": "Master\\Books\\Facades\\Books"
+                    }
                 }
             },
             "autoload": {
@@ -2379,16 +2386,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.4.0",
+            "version": "v4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "bd43ec7152eaaab3bd8c6d0aa95ceeb1df8ee120"
+                "reference": "53c2753d756f5adb586dca79c2ec0e2654dd9463"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/bd43ec7152eaaab3bd8c6d0aa95ceeb1df8ee120",
-                "reference": "bd43ec7152eaaab3bd8c6d0aa95ceeb1df8ee120",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/53c2753d756f5adb586dca79c2ec0e2654dd9463",
+                "reference": "53c2753d756f5adb586dca79c2ec0e2654dd9463",
                 "shasum": ""
             },
             "require": {
@@ -2427,7 +2434,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-04-10T16:34:50+00:00"
+            "time": "2020-06-03T07:24:19+00:00"
         },
         {
             "name": "opis/closure",
@@ -3078,7 +3085,10 @@
             "dist": {
                 "type": "path",
                 "url": "module/site",
-                "reference": "92108d967e6ca3421fe5aed8d6b3d72480586adf"
+                "reference": "6a813ba2a10701854cff1eeba03dcaf61995a822"
+            },
+            "require": {
+                "ramsey/uuid": "^4.0"
             },
             "type": "library",
             "extra": {

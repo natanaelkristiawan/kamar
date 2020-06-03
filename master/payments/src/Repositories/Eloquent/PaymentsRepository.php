@@ -31,8 +31,7 @@ class PaymentsRepository extends BaseRepository implements PaymentsRepositoryInt
 		$this->pageLimit = $pageLimit;
 		return  $this;
 	}
-
-
+	
 	public function getDataTable()
 	{        
 		$data = $this->paginate($this->pageLimit);

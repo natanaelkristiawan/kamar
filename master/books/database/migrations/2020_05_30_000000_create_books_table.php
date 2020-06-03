@@ -27,7 +27,6 @@ class CreateBooksTable extends Migration
     $table->text('notes')->nullable();
     $table->tinyinteger('status')->default(0);
     $table->timestamps();
-    $table->softDeletes();
     });
   }
   public function down()

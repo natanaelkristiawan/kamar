@@ -9,8 +9,20 @@ class Books extends Model
 	use SoftDeletes;
 	protected $table = 'books';
 	protected $fillable = [
-		'name',
-		'slug',
+		'uuid',
+		'customer_id',
+		'room_id',
+		'payment_id',
+		'rooms',
+		'guests',
+		'nights',
+		'price',
+		'total',
+		'service',
+		'grand_total',
+		'date_checkin',
+		'date_checkout',
+		'notes',
 		'status',
 	];
 }

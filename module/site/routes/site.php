@@ -31,5 +31,6 @@ $route->get('google-connect', 'PublicController@googleConnect');
 /*booking*/
 $route->post('get-snap-token', 'CustomerController@getSnapToken')->name('public.getSnapToken');
 
+
 $route->get('login', function(){
 })->name('login');

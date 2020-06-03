@@ -53,6 +53,7 @@ class RouteServiceProvider extends ServiceProvider
 
 		Route::group([
 		'namespace'  => $this->siteNamespace,
+		'middleware' => ['web'],
 		], function ($route) {
 			require (__DIR__ . '/../../routes/midtrans.php');
 		});

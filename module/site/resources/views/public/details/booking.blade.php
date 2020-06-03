@@ -38,21 +38,21 @@
             <span class="helper error"></span>
           </div>
         </div> 
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-6">
-        <div class="form-group">
-          <div class="cld-box">
-            <i class="ti-tablet"></i>
-            <input type="tel" class="form-control phone is-required" placeholder="Phone"  value="" />
+        <div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="form-group">
+            <div class="cld-box">
+              <i class="ti-tablet"></i>
+              <input type="tel" class="form-control phone is-required" placeholder="Phone"  value="" />
+            </div>
+            <span class="helper error"></span>
           </div>
-          <span class="helper error"></span>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
           <div class="cld-box">
             <i class="ti-agenda"></i>
-            <input type="text" class="form-control date-checkin is-required dateSelected" placeholder="Date Checkin"  value="" />
+            <input type="text" class="form-control datecheckin is-required dateSelected" placeholder="Date Checkin"  value="" />
           </div>
           <span class="helper error"></span>
         </div>
@@ -61,7 +61,7 @@
         <div class="form-group">
           <div class="cld-box">
             <i class="ti-agenda"></i>
-            <input type="text" class="form-control date-checkout is-required dateSelected" placeholder="Date Checkout"  value="" />
+            <input type="text" class="form-control datecheckout is-required dateSelected" placeholder="Date Checkout"  value="" />
           </div>
           <span class="helper error"></span>
         </div>
@@ -79,7 +79,7 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
-          <button type="button" disabled="" class="btn btn-theme full-width" id="btnCheckRoom">Check Availability</button>
+          <button type="button" class="btn btn-theme full-width" id="btnCheckRoom">Check Availability</button>
         </div>
       </div>
 
@@ -127,8 +127,8 @@
     var response = new Promise((resolve) => {
       var notError = true;
       $.each(disabledDate, function(key, value){
-        var dateCompareStart = new Date($('.date-checkin').val());
-        var dateCompareEnd = new Date($('.date-checkout').val());
+        var dateCompareStart = new Date($('.datecheckin').val());
+        var dateCompareEnd = new Date($('.datecheckout').val());
         if (+dateCompareStart == +dateCompareEnd) {
           notError = false;
         }
@@ -175,27 +175,15 @@
     return await response;
   }
   function setErrorCommand(path) {
-    if ($(path).hasClass('validate') == false) {
-      var fillAll = true;
-      $.each($('.is-required'), function(key, value) {
-        if ($(value).val() == '') {
-          fillAll = false;
-        }
-      })
-      if (fillAll) {
-        $('#btnCheckRoom').removeAttr('disabled');
-      } else {
-        $('#btnCheckRoom').attr('disabled', 'disabled');
-      }
-    } else {
+    if ($(path).hasClass('validate') !== false) {
       resetError();
       validate.async(
         {
           fullname : $('.fullname').val(),
           phone : $('.phone').val(),
           email : $('.email').val(),
-          datecheckin : $('.date-checkin').val(),
-          datecheckout : $('.date-checkout').val(),
+          datecheckin : $('.datecheckin').val(),
+          datecheckout : $('.datecheckout').val(),
         }, 
         constraints)
       .then((response) => {
@@ -232,6 +220,7 @@
         allowEmpty: false
       }
     },
+    @if(!(bool)Auth::check())
     phone : {
       format: {
         pattern: /^(^\+62\s?|^0)(\d{3,4}-?){2}\d{3,4}$/,
@@ -242,6 +231,7 @@
         allowEmpty: false
       }
     },
+    @endif
     email : {
       presence: {
         allowEmpty: false
@@ -279,8 +269,8 @@
           fullname : $('.fullname').val(),
           phone : $('.phone').val(),
           email : $('.email').val(),
-          datecheckin : $('.date-checkin').val(),
-          datecheckout : $('.date-checkout').val()
+          datecheckin : $('.datecheckin').val(),
+          datecheckout : $('.datecheckout').val()
         }, 
         constraints)
       .then((response) => {
@@ -292,8 +282,8 @@
               phone : $('.phone').val(),
               fullname : $('.fullname').val(),
               roomTotal : $('.rooms').val(),
-              dateStart: $('.date-checkin').val(),
-              dateEnd: $('.date-checkout').val(),
+              dateStart: $('.datecheckin').val(),
+              dateEnd: $('.datecheckout').val(),
               roomID : "{{ $room->id }}",
               callback: "{{ $room->slug }}"
             }
@@ -301,12 +291,12 @@
               if (response.status) {
                 // setcookies di sini supaya datanya gak ilang, set aja sehari
                 if (response.step == 'activate_account') {
-                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 2});
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
                   Swal.fire('Notification', response.message, 'success');
                   setDefaultBooking();
                 }
                 if (response.step == 'account_exist_not_active') {
-                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 2});
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
                   setDefaultBooking();
                   Swal.fire({
                     title: 'Notification',
@@ -332,13 +322,13 @@
                   })
                 }
                 if (response.step == 'account_need_login') {
-                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 2});
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 1});
                   $('#message-resend').addClass('hide');
                   setDefaultBooking();
                   $('.modalLogin').click();
                 }
                 if (response.step == 'calculate_booking') {
-                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 2});
+                  Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 1});
                   $('#message-resend').addClass('hide');
                   setDefaultBooking();
                 }
@@ -353,6 +343,7 @@
         }) 
       })
       .catch((error) => {
+        console.log(error);
         setErrors(error)
       });
     });
@@ -368,42 +359,42 @@
       disabledDays: '2020-06-03,2020-06-04',
       autofill: false
     }
-    $('.date-checkin').dateDropper( $.extend(false,options,{
+    $('.datecheckin').dateDropper( $.extend(false,options,{
       onChange: function(res) {
         var dateSelected = new Date(res.date.formatted);
 
-        if ($('.date-checkout').val() == '') {
+        if ($('.datecheckout').val() == '') {
           resetDateOut(dateSelected).then((response) => {
-            $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+            $('.datecheckout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
           })
         }else {
-          var compareDate = compare_dates($('.date-checkin').val(), $('.date-checkout').val());
+          var compareDate = compare_dates($('.datecheckin').val(), $('.datecheckout').val());
           if (compareDate == 'more' || compareDate == 'same') {
             resetDateOut(dateSelected).then((response)=>{
-              $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+              $('.datecheckout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
             })
           }
         }
       }
     }))
-    $('.date-checkout').dateDropper($.extend(false,options,{
+    $('.datecheckout').dateDropper($.extend(false,options,{
       onChange: function(res) {
         var dateSelected = new Date(res.date.formatted);
-        if ($('.date-checkin').val() == '') {
+        if ($('.datecheckin').val() == '') {
           resetDateIn(dateSelected).then((response)=>{
             resetDateOut(dateSelected).then((response)=>{
-              $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+              $('.datecheckout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
             })
-            $('.date-checkin').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+            $('.datecheckin').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
           })
         }else {
-          var compareDate = compare_dates($('.date-checkin').val(), $('.date-checkout').val());
+          var compareDate = compare_dates($('.datecheckin').val(), $('.datecheckout').val());
           if (compareDate == 'more' || compareDate == 'same') {
             resetDateIn(dateSelected).then((response)=>{
               resetDateOut(dateSelected).then((response)=>{
-                $('.date-checkout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+                $('.datecheckout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
               })
-              $('.date-checkin').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
+              $('.datecheckin').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
             })
           }
         }
@@ -426,7 +417,7 @@
       var dd = str_pad(dateSelected.getDate());
       var mm = str_pad(dateSelected.getMonth()+1); 
       var yyyy = dateSelected.getFullYear();
-      $('.date-checkin').val(yyyy+'-'+mm+'-'+dd); 
+      $('.datecheckin').val(yyyy+'-'+mm+'-'+dd); 
       resolve ({
         d : dd,
         m : mm,
@@ -441,7 +432,7 @@
       var dd = str_pad(dateSelected.getDate());
       var mm = str_pad(dateSelected.getMonth()+1); 
       var yyyy = dateSelected.getFullYear();
-      $('.date-checkout').val(yyyy+'-'+mm+'-'+dd);
+      $('.datecheckout').val(yyyy+'-'+mm+'-'+dd);
       resolve ({
         d : dd,
         m : mm,
@@ -462,14 +453,14 @@
         $('.fullname').val(bookingPending.fullname)
         @endif
         $('.phone').val(bookingPending.phone)
-        $('.date-checkin').val(bookingPending.dateStart)
-        $('.date-checkout').val(bookingPending.dateEnd)
+        $('.datecheckin').val(bookingPending.dateStart)
+        $('.datecheckout').val(bookingPending.dateEnd)
         $('.rooms').val(bookingPending.roomTotal).trigger('change'); 
         $('.fullname-display').html(bookingPending.fullname);
         var dateIn = bookingPending.dateStart.split("-");
         var dateOut = bookingPending.dateEnd.split("-");
-        $('.date-checkin').dateDropper('setDate',{d: dateIn[2], m:dateIn[1], y:dateIn[0]});
-        $('.date-checkout').dateDropper('setDate',{d: dateOut[2], m:dateOut[1], y:dateOut[0]});
+        $('.datecheckin').dateDropper('setDate',{d: dateIn[2], m:dateIn[1], y:dateIn[0]});
+        $('.datecheckout').dateDropper('setDate',{d: dateOut[2], m:dateOut[1], y:dateOut[0]});
         $('#main-data').removeClass('show');
         $('#btnCheckRoom').removeAttr('disabled');
         $('#checkout-detail').removeClass('hide');
@@ -572,17 +563,17 @@
           },
           error: function (request, status, error) {
             reject(request)
-          }
+          },
+
         });
       })
     });
 
     return await response;
   }
-
-
+  
   async function callMidtrans(token) {
-    var response = new Promise((resolve, error) => {
+    var response = new Promise((resolve, reject) => {
       snap.pay(token, {
         // Optional
         onSuccess: function(result){
@@ -594,7 +585,16 @@
         },
         // Optional
         onError: function(result){
-          error(resolve)
+          reject({
+            status : false,
+            message : 'midtrans_error'
+          })
+        },
+        onClose: function(){
+          reject({
+            status : false,
+            message : 'close_midtrans'
+          })
         }
       });
     });
@@ -612,24 +612,31 @@
           phone : $('.phone').val(),
           fullname : $('.fullname').val(),
           roomTotal : $('.rooms').val(),
-          dateStart: $('.date-checkin').val(),
-          dateEnd: $('.date-checkout').val(),
+          dateStart: $('.datecheckin').val(),
+          dateEnd: $('.datecheckout').val(),
           roomID : "{{ $room->id }}",
           callback: "{{ $room->slug }}",
-          nights: parseInt(daysBetween(new Date($('.date-checkin').val()), new Date($('.date-checkout').val())))
+          nights: parseInt(daysBetween(new Date($('.datecheckin').val()), new Date($('.datecheckout').val())))
         }
+        Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 1});
+        calculateBooking(params).then((response) => {
+          $('#total').html($.number(response.total,0,',', '.' ))
+          $('#service').html($.number(response.service,0,',', '.' ))
+          $('#grandTotal').html($.number(response.grandTotal,0,',', '.' ))
+          getSnapToken(params).then((response)=>{
+            if (response.status) {
+              $('#loader').addClass('hide');
 
-        getSnapToken(params).then((response)=>{
-          if (response.status) {
-            $('#loader').addClass('hide');
-            callMidtrans(response.snapToken).then((response)=>{
-              console.log(response)
-            }).catch((error) => {
-              console.log(error);
-            })
-          }
+              var snapToken = response.snapToken;
+
+              callMidtrans(snapToken).then((response)=>{
+                console.log(response)
+              }).catch((error) => {
+                
+              })
+            }
+          })
         })
-
       }
     })
   }

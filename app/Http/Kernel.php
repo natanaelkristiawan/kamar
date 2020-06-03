@@ -51,6 +51,7 @@ class Kernel extends HttpKernel
             \Maatwebsite\Sidebar\Middleware\ResolveSidebars::class
         ],
 
+
         'bilingual' => [
             \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
             \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,

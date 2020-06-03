@@ -14,7 +14,10 @@
         "laravel": {
             "providers": [
                 "Master\\Books\\BooksServiceProvider"
-            ]
+            ],
+            "aliases" : {
+                "Books": "Master\\Books\\Facades\\Books"
+            }
         }
     },
     "minimum-stability": "dev"

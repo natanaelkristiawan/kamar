@@ -10,7 +10,7 @@
       <div class="nav-menus-wrapper" style="transition-property: none;">
         <ul class="nav-menu">
           @if(Auth::check())
-          <li class="hide-in-mobile"><a href="">Dashboard</a></li>
+          <li class="hide-in-mobile"><a href="{{ route('public.dashboard') }}">Dashboard</a></li>
           @endif
           <li class= "{{ Meta::get('active') == 'home' ? 'active' : ''  }}"><a href="{{ route('public.index') }}">Home</a></li>
           <li class= "{{ Meta::get('active') == 'rooms' ? 'active' : ''  }}"><a href="{{ route('public.rooms') }}">Rooms</a></li>
@@ -38,7 +38,7 @@
               {{Auth::user()->name}}
             </a>
             <div class="dropdown-menu" aria-labelledby="profileCustomer">
-              <a class="dropdown-item" href="#">Dashboard</a>
+              <a class="dropdown-item" href="{{ route('public.dashboard') }}">Dashboard</a>
               <a class="dropdown-item" href="{{ route('public.logout') }}"">Logout</a>
             </div>
           </li>

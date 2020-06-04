@@ -8,7 +8,7 @@ use Payments;
 use Validator;
 use Rooms;
 use Books;
-
+use Hash;
 class CustomerController extends Controller
 {
   protected $customer;
@@ -17,6 +17,88 @@ class CustomerController extends Controller
     $this->lang = App::getLocale();
     $this->middleware('auth:web');
     $this->customer = Auth::user();
+  }
+
+  public function dashboard()
+  {
+    $customer = Auth::user();
+    return view('site::public.dashboard.index', compact('customer'));
+  }
+  
+  public function bookingHistory(Request $request)
+  {
+    $customer = Auth::user();
+
+    $data = Books::findPendingBookByCustomer($request, $customer->id);
+
+    dd($data);
+
+
+    return view('site::public.dashboard.history', compact('customer'));
+  }
+
+  public function updateProfile(Request $request)
+  {
+    $validator = Validator::make($request->all(), [
+      'name' => 'required',
+      'phone' => 'required',
+      'g-recaptcha-response' => 'captcha'
+    ]);
+
+    if ($validator->fails()) {
+      return response()->json(
+        array(
+          'status' => false,
+          'error' => $validator->errors()
+        )
+      );
+    }
+    $customer = Auth::user();
+    /*check old password*/ 
+
+    $changePassword = false;
+
+
+    if (!(bool)empty($request->old_password)) {
+      $validator  = Validator::make($request->all(), [
+        'old_password'=> 'required',
+        'password' => 'required|min:6|confirmed',
+      ]);
+
+      // check apakah password old nya sama apa g?
+      if (!(bool)Hash::check($request->old_password, $customer->password)) {
+        return response()->json(
+          array(
+            'status' => false,
+            'error' => array('old_password' => array('Old Password Wrong'))
+          ),401
+        );
+      }
+      if ($validator->fails()) {
+        return response()->json(
+          array(
+            'status' => false,
+            'error' => $validator->errors()
+          ),401
+        );
+      }
+      $customer->password = bcrypt($request->password);
+      $changePassword = true;
+    }
+
+    $customer->name = $request->name;
+    $customer->phone = $request->phone;
+    $customer->save();
+     if ($changePassword) {
+      $request->session()->flash('status_notif', 'Success, your data update with change password');
+    } else {
+      $request->session()->flash('status_notif', 'Success, your data update');
+    }
+
+    return response()->json(array(
+      'status' => true
+    ));
+
   }
 
   public function getSnapToken(Request $request)
@@ -57,8 +139,6 @@ class CustomerController extends Controller
       'unit'=> 'minutes',
       'duration'=> 60
     );
-
-
 
     $params = array(
       'transaction_details' => array(

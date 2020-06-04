@@ -55,9 +55,6 @@ class PublicController extends Controller
 
   public function index()
   { 
-
-   
-
     self::setMeta();
     Meta::title('kamartamu.com');
     Meta::set('active', 'home');
@@ -538,8 +535,6 @@ class PublicController extends Controller
   public function captureMidtrans(Request $request)
   {
     Storage::disk('local')->append('public/data.json', json_encode($request->all()));
-
-
     $dataMidtrans = array(
       'order_id'=> $request->order_id,
       'status_code'=> $request->status_code,

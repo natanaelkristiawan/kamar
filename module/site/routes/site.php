@@ -22,6 +22,8 @@ $route->post('login', 'PublicController@doLogin')->name('public.login');
 /*register*/
 $route->post('register', 'PublicController@doRegister')->name('public.register');
 
+
+
 /*social media*/
 $route->get('fb-login', 'PublicController@fbLogin')->name('public.fbLogin');
 $route->get('fb-connect', 'PublicController@fbConnect');
@@ -32,7 +34,11 @@ $route->get('google-connect', 'PublicController@googleConnect');
 
 /*booking*/
 $route->post('get-snap-token', 'CustomerController@getSnapToken')->name('public.getSnapToken');
-
+/*dashboard*/
+$route->get('dashboard', 'CustomerController@dashboard')->name('public.dashboard');
+$route->get('booking-history', 'CustomerController@bookingHistory')->name('public.bookingHistory');
+/*update profile*/
+$route->post('update-profile', 'CustomerController@updateProfile')->name('public.updateProfile');
 
 $route->get('login', function(){
 })->name('login');

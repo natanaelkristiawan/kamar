@@ -38,6 +38,6 @@ class Payments
 	public function cancelPayment($order_id = '')
 	{
 		$cancel = Transaction::cancel($order_id);						
-		var_dump($cancel);
+		return true;
 	}
 }

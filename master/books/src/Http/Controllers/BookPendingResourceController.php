@@ -38,10 +38,12 @@ class BookPendingResourceController extends Controller
 		return view('books::admin.pending.index');  
 	}
 
-	public function cancelBooking($order_id = '')
+	public function cancelBooking(Request $request, $order_id = '')
 	{
-		Payments::cancelPayment($order_id);
-		$request->session()->flash('status', 'Success Delete Order!');
-		return redirect()->route('admin.bookPending');
+		$response = Payments::cancelPayment($order_id);
+		if ($response) {
+			$request->session()->flash('status', 'Success Delete Order!');
+			return redirect()->route('admin.bookPending');
+		}
 	}
 }

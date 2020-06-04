@@ -18,11 +18,11 @@ class ExtenderSidebar implements SidebarExtender
 				$item->icon('mdi mdi-calendar-clock');
 				$item->url('books');
 				$item->item('Pending', function(Item $item){
-          $item->url('#');
+          $item->url(route('admin.bookPending'));
         });
         
         $item->item('Success', function(Item $item){
-          $item->url('#');
+          $item->url(route('admin.bookSuccess'));
         });
 			});
 		});

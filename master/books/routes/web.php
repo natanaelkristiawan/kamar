@@ -2,13 +2,13 @@
 
 $route->group(['prefix' => env('ADMIN_URL', 'admin')], function ($route) {
 	$route->group(['middleware' => ['admin']], function ($route) {
-		$route->group(['prefix' => 'books'], function($route) {
-			$route->get('/', 'BooksResourceController@index')->name('admin.books');
-			$route->get('/create', 'BooksResourceController@create')->name('admin.books.create');
-			$route->post('/create', 'BooksResourceController@store');
-			$route->get('/edit/{id}', 'BooksResourceController@edit')->name('admin.books.edit');
-			$route->post('/edit/{id}', 'BooksResourceController@update');
-			$route->get('delete/{id}', 'BooksResourceController@delete')->name('admin.books.delete');
+		$route->group(['prefix' => 'book-success'], function($route) {
+			$route->get('/', 'BookSuccessResourceController@index')->name('admin.bookSuccess');
+		});	
+
+		$route->group(['prefix' => 'book-pending'], function($route) {
+			$route->get('/', 'BookPendingResourceController@index')->name('admin.bookPending');
+			$route->get('cancel-booking/{order_id}', 'BookPendingResourceController@cancelBooking')->name('admin.bookPending.cancel');
 		});
 	});
 });

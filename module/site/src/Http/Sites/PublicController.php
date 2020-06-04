@@ -317,13 +317,22 @@ class PublicController extends Controller
     if (is_null($customer)) {
       abort(404);
     }
+    // password before
+    $exist = $customer->password;
     $customer->token_verified = null;
     $customer->verified_at = date('Y-m-d H:i:s');
     $customer->status = 1;
-    $customer->password = bcrypt('123456');
+
+    if(is_null($exist)){
+      $customer->password = bcrypt('123456');
+    }
     $customer->save();
-    self::sendPassword($customer);
-    $request->session()->flash('status_notif', 'Thank you for activate your account. Please check your email to get your password');
+    if (is_null($exist)) {
+      self::sendPassword($customer);
+      $request->session()->flash('status_notif', 'Thank you for activate your account. Please check your email to get your password');
+    } else {
+      $request->session()->flash('status_notif', 'Thank you for activate your account.');
+    }
     
     Auth::guard('web')->loginUsingId($customer->id);
     if (!(bool)is_null($request->callback)) {
@@ -378,6 +387,53 @@ class PublicController extends Controller
                   ->withErrors(array('message' => 'Failed to login, check your email or password'))
                   ->withInput();
   }
+
+  /*register*/
+
+  public function doRegister(Request $request)
+  {
+    $this->middleware('guard:web');
+    $validator = Validator::make($request->all(), [
+      'email' => 'required|email|unique:customers',
+      'password'  => 'required|min:6|confirmed',
+      'name'  => 'required',
+      'phone'  => 'required',
+      'g-recaptcha-response' => 'captcha'
+    ]);
+
+    if ($validator->fails()) {
+      if($request->ajax()){
+        return response()->json([
+          'status' => false,
+          'message' => 'Email has been registered with another account'
+        ], 401);
+      }
+      return redirect()->back()
+                    ->withErrors(array('message' => 'Failed to login, check your email or password'))
+                    ->withInput();
+    }
+
+
+    $dataCustomer = array(
+      'email'   => $request->email,
+      'phone'   => $request->phone,
+      'name' => $request->name,
+      'password'  => bcrypt($request->input('password')),
+      'token_verified'  =>  Str::random(40),
+      'status' => 1
+    );
+
+    $customer = Customers::createCustomer($dataCustomer);
+    // sendEmailActivate
+    self::sendEmailActivate($request, $customer);
+    Auth::guard('web')->loginUsingId($customer->id);
+    $request->session()->flash('status_notif', 'Thank you for registration. Please check your email to activate your account');
+    
+    if($request->ajax()){
+      return response()->json(['status' => true]);
+    }
+    return redirect()->route('public.index');
+  } 
 
 
   public function fbLogin()
@@ -528,6 +584,17 @@ class PublicController extends Controller
 
     // booking expired
     if ($request->transaction_status == 'expire' && $request->status_code == 202) {
+      $book = Books::findBook($request->order_id);
+      // update data
+      $bookUpdate = array(
+        'payment_id' => $midtrans->id,
+        'status' => 2,
+        'updated_at' => date('Y-m-d H:i:s')
+      );
+      Books::updateBook($book->id, $bookUpdate);
+    }
+
+    if ($request->transaction_status == 'cancel' && $request->status_code == 202) {
       $book = Books::findBook($request->order_id);
       // update data
       $bookUpdate = array(

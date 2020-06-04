@@ -55,8 +55,11 @@ class CustomerController extends Controller
     $expired = array(
       'start_time'=> $date->format('Y-m-d H:i:s O'),
       'unit'=> 'minutes',
-      'duration'=> 3
+      'duration'=> 60
     );
+
+
+
     $params = array(
       'transaction_details' => array(
         'order_id' => $request->uuid,
@@ -64,7 +67,11 @@ class CustomerController extends Controller
       ),
       'item_details'        => $calculatePayment['items'],
       'customer_details'    => $customer_details,
-      'expiry' => $expired
+      'expiry' => $expired,
+      'enabled_payments' => 
+      ['credit_card', 'mandiri_clickpay',
+      'bca_klikbca', 'bca_klikpay', 'bri_epay', 'echannel', 'permata_va',
+      'bca_va', 'bni_va', 'other_va', 'gopay'],
     );
     $snapToken = Payments::getSnapToken($params);
     // set cookies buat save sementara bookingnya nnti panggil kalau success update, set 30menit saja

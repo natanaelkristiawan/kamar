@@ -9,6 +9,7 @@ class Payments extends Model
 	use SoftDeletes;
 	protected $table = 'payments';
 	protected $fillable = [
+		'id',
 		'order_id',
 		'status_code',
 		'status_message',

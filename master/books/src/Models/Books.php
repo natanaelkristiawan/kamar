@@ -25,4 +25,18 @@ class Books extends Model
 		'notes',
 		'status',
 	];
+	public function customer()
+	{
+		return $this->belongsTo(\Master\Customers\Models\Customers::class, 'customer_id', 'id');
+	}
+	
+	public function room()
+	{
+		return $this->belongsTo(\Master\Rooms\Models\Rooms::class, 'room_id', 'id');
+	}
+
+	public function payment()
+	{
+		return $this->belongsTo(\Master\Payments\Models\Payments::class, 'payment_id', 'id');
+	}
 }

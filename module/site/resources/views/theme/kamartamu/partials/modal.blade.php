@@ -65,25 +65,27 @@
 @section('script')
 @parent
 <script type="x-tmpl-mustache" id="form-login">
-<div class="form-group">
-  <label>Email</label>
-  <div class="input-with-icon">
-    <input type="text" class="form-control form-login is-validate" id="email-login" value="@{{email}}" placeholder="Email">
-    <i class="ti-user"></i>
+
+  <div class="form-group">
+    <label>Email</label>
+    <div class="input-with-icon">
+      <input type="text" class="form-control form-login is-validate" id="email-login" value="@{{email}}" placeholder="Email">
+      <i class="ti-user"></i>
+    </div>
+    <span class="helper-login error" id="callbackmessageLogin"></span>
   </div>
-  <span class="helper-login error" id="callbackmessage"></span>
-</div>
-<div class="form-group">
-  <label>Password</label>
-  <div class="input-with-icon">
-    <input type="password" class="form-control form-login is-validate" id="password-login"  placeholder="Password">
-    <i class="ti-unlock"></i>
+  <div class="form-group">
+    <label>Password</label>
+    <div class="input-with-icon">
+      <input type="password" class="form-control form-login is-validate" id="password-login"  placeholder="Password">
+      <i class="ti-unlock"></i>
+    </div>
+    <span class="helper-login error"></span>
   </div>
-  <span class="helper-login error"></span>
-</div>
-<div class="form-group">
-  <button type="button" disabled id="doLogin" class="btn btn-md full-width pop-login">Login</button>
-</div>
+  <div class="form-group">
+    <button type="button" id="doLogin" class="btn btn-md full-width pop-login">Login</button>
+  </div>
+
 </script>
 
 <script type="x-tmpl-mustache" id="form-signup">
@@ -91,48 +93,64 @@
   <div class="col-lg-12 col-md-12">
     <div class="form-group">
       <div class="input-with-icon">
-        <input type="text" class="form-control" placeholder="Full Name">
-        <i class="ti-user"></i>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-lg-12 col-md-12">
-    <div class="form-group">
-      <div class="input-with-icon">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" class="form-control form-register is-validate" id="email-register" placeholder="Email">
         <i class="ti-email"></i>
       </div>
+      <span class="helper-register error" id="callbackmessageRegister"></span>
     </div>
   </div>
-  
+
   <div class="col-lg-12 col-md-12">
     <div class="form-group">
       <div class="input-with-icon">
-        <input type="tel" class="form-control" placeholder="Phone">
+        <input type="text" class="form-control form-register is-validate" id="fullname-register" placeholder="Full Name">
         <i class="ti-user"></i>
       </div>
+      <span class="helper-register error"></span>
+    </div>
+  </div>
+  
+  
+  <div class="col-lg-12 col-md-12">
+    <div class="form-group">
+      <div class="input-with-icon">
+        <input type="tel" class="form-control form-register is-validate" id="phone-register"  placeholder="Phone">
+        <i class="ti-tablet"></i>
+      </div>
+      <span class="helper-register error"></span>
     </div>
   </div>
   
   <div class="col-lg-12 col-md-12">
     <div class="form-group">
       <div class="input-with-icon">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" class="form-control form-register is-validate" id="password-register" placeholder="Password">
         <i class="ti-unlock"></i>
       </div>
+      <span class="helper-register error"></span>
+    </div>
+  </div> 
+  <div class="col-lg-12 col-md-12">
+    <div class="form-group">
+      <div class="input-with-icon">
+        <input type="password" class="form-control form-register is-validate" id="password_confirmation-register" placeholder="Password Confirmation">
+        <i class="ti-unlock"></i>
+      </div>
+      <span class="helper-register error"></span>
     </div>
   </div> 
 </div>
 <div class="form-group">
-  <button type="submit" class="btn btn-md full-width pop-login">Sign Up</button>
+  <button type="button" id="doRegister" class="btn btn-md full-width pop-login">Sign Up</button>
 </div>
 </script>
 
-
-
 <script type="text/javascript">
   $(document).on('click', '.connect-fb', function(){
+    $('#loader').removeClass('hide');
+     $('.modal').modal('hide')
+  }) 
+  $(document).on('click', '.connect-google', function(){
     $('#loader').removeClass('hide');
      $('.modal').modal('hide')
   })
@@ -204,19 +222,7 @@
   }
 
   $(document).on('keyup', '.form-login', function(){
-    if ($(this).hasClass('validateLogin') == false) {
-      var fillAll = true;
-      $.each($('.is-validate'), function(key, value) {
-        if ($(value).val() == '') {
-          fillAll = false;
-        }
-      })
-      if (fillAll) {
-        $('#doLogin').removeAttr('disabled');
-      } else {
-        $('#doLogin').attr('disabled', 'disabled');
-      }
-    } else {
+    if ($(this).hasClass('validateLogin') == true) {
       $('.helper-login').html('')
       validate.async({
         email : $('#email-login').val(),
@@ -231,7 +237,6 @@
           var path = $('#'+key+'-login').parents()[1];
           $(path).find('span').html(value[0])
         })
-        $('#doLogin').attr('disabled', 'disabled');
       });
     }
   });
@@ -245,12 +250,14 @@
     }, 
     loginValidate)
     .then((response) => {
+      $('#loader').removeClass('hide');
       doLogin(response).then((response) => {
         if (response.status == true) {
           location.reload();
         }
       }).catch((error) => {
-        $('#callbackmessage').html(error.responseJSON.message);
+        $('#loader').addClass('hide');
+        $('#callbackmessageLogin').html(error.responseJSON.message);
       })
     }).catch((error) => {
       $.each(error, function(key, value){
@@ -261,4 +268,129 @@
   })
 </script>
 
+
+<!-- script register -->
+<script type="text/javascript">
+  var registerValidate = {
+    email : {
+      presence: {
+        allowEmpty: false
+      },
+      email: {
+        message: "^Email is not valid"
+      },
+      format: {
+        pattern: /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/,
+        flags: "g",
+        message: "format wrong"
+      },
+    },
+    name : {
+      presence: {
+        allowEmpty: false
+      }
+    },
+    phone : {
+      format: {
+        pattern: /^(^\+62\s?|^0)(\d{3,4}-?){2}\d{3,4}$/,
+        flags: "g",
+        message: "format wrong, insert 0 or +62"
+      },
+      presence: {
+        allowEmpty: false
+      }
+    },
+    password : {
+      presence: {
+        allowEmpty: false
+      },
+      length: {
+        minimum: 6,
+        message: "must be at least 6 characters"
+      }
+    },
+    password_confirmation: {
+      presence: {
+        allowEmpty: false
+      },
+      equality: "password"
+    }
+  };
+
+  $(document).on('keyup', '.form-register', function(){
+    if ($(this).hasClass('validateRegister') == true) {
+      $('.helper-register').html('')
+      validate.async({
+        email : $('#email-register').val(),
+        name : $('#fullname-register').val(),
+        phone : $('#phone-register').val(),
+        password : $('#password-register').val(),
+        password_confirmation : $('#password_confirmation-register').val(),
+      }, 
+      registerValidate)
+      .then((response) => {
+
+      })
+      .catch((error) => {
+        $.each(error, function(key, value){
+          var path = $('#'+key+'-register').parents()[1];
+          $(path).find('span').html(value[0])
+        })
+      });
+    }
+  });
+
+  async function doRegister(params) {
+    var response = new Promise((resolve, reject) => {
+      grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
+        $.ajax({
+          url : "{{ route('public.register') }}",
+          type: 'POST',
+          dataType : 'json',
+          data: $.extend(false, TOKEN, {'g-recaptcha-response' : token}, params),
+          success : function(result) {
+            resolve(result)
+          },
+          error: function (request, status, error) {
+            reject(request)
+          }
+        });
+      });
+    });
+
+    return await response;
+  }
+
+
+  $(document).on('click', '#doRegister', function(){
+    $('.helper-login').html('')
+    $('.is-validate').addClass('validateRegister');
+    validate.async(
+    {
+      email : $('#email-register').val(),
+      name : $('#fullname-register').val(),
+      phone : $('#phone-register').val(),
+      password : $('#password-register').val(),
+      password_confirmation : $('#password_confirmation-register').val(),
+    }, 
+    registerValidate)
+    .then((response) => {
+      $('#loader').removeClass('hide');
+      doRegister(response).then((response) => {
+        if (response.status == true) {
+          location.reload();
+        }
+      }).catch((error) => {
+        $('#loader').addClass('hide');
+        $('#callbackmessageRegister').html(error.responseJSON.message);
+      })
+    }).catch((error) => {
+      $.each(error, function(key, value){
+        var path = $('#'+key+'-register').parents()[1];
+        $(path).find('span').html(value[0])
+      })
+    });
+  })
+
+</script>
 @stop

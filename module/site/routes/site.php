@@ -19,6 +19,8 @@ $route->get('logout', 'CustomerController@logout')->name('public.logout');
 
 /*login*/ 
 $route->post('login', 'PublicController@doLogin')->name('public.login');
+/*register*/
+$route->post('register', 'PublicController@doRegister')->name('public.register');
 
 /*social media*/
 $route->get('fb-login', 'PublicController@fbLogin')->name('public.fbLogin');

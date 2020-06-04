@@ -1,6 +1,7 @@
 <?php
 namespace Master\Payments;
 use Midtrans\Snap;
+use Midtrans\Transaction;
 use Midtrans\Config as MidtransConfig;
 use Master\Payments\Interfaces\PaymentsRepositoryInterface;
 class Payments
@@ -32,5 +33,11 @@ class Payments
 		$query = $this->payments->create($params);
 		$this->payments->resetModel();
 		return $query;
+	}
+
+	public function cancelPayment($order_id = '')
+	{
+		$cancel = Transaction::cancel($order_id);						
+		var_dump($cancel);
 	}
 }

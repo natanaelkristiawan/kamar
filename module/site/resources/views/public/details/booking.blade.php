@@ -455,8 +455,10 @@
         $('.phone').val(bookingPending.phone)
         $('.datecheckin').val(bookingPending.dateStart)
         $('.datecheckout').val(bookingPending.dateEnd)
-        $('.rooms').val(bookingPending.roomTotal).trigger('change'); 
+        $('.rooms').val(bookingPending.roomTotal).trigger('change');
+        @if(!(bool)Auth::check())
         $('.fullname-display').html(bookingPending.fullname);
+        @endif
         var dateIn = bookingPending.dateStart.split("-");
         var dateOut = bookingPending.dateEnd.split("-");
         $('.datecheckin').dateDropper('setDate',{d: dateIn[2], m:dateIn[1], y:dateIn[0]});

@@ -535,6 +535,11 @@ class PublicController extends Controller
   public function captureMidtrans(Request $request)
   {
     Storage::disk('local')->append('public/data.json', json_encode($request->all()));
+
+    // debug dulu
+    return response()->json(['status'=>true], 200);
+
+
     $dataMidtrans = array(
       'order_id'=> $request->order_id,
       'status_code'=> $request->status_code,

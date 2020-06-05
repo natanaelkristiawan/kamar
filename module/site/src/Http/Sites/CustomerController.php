@@ -64,7 +64,7 @@ class CustomerController extends Controller
       'books',
       'pagination',
       'route',
-      'requestParams',
+      'requestParams'
     ));
   }
 

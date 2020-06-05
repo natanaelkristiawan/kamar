@@ -12,7 +12,7 @@
           
           <div class="form-group">
             <div class="input-with-icon">
-              <input type="text" class="form-control" placeholder="Neighborhood">
+              <select type="text" class="form-control b-0 location-list" placeholder="{{ trans('site::default.location')}} "></select>
               <i class="ti-search"></i>
             </div>
           </div>
@@ -20,7 +20,7 @@
 
           <div class="ameneties-features">
           
-            <button class="btn btn-theme full-width">Find New Home</button>
+             <a href="{{ route('public.rooms') }}" class="btn search-btn search-room">{{trans('site::default.search')}} </a>
           
           </div>
         

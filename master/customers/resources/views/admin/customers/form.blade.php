@@ -41,30 +41,6 @@
                     <input required="" data-error="Please enter phone" type="tel" value="{{ $data->phone }}" placeholder="Phone"  name="phone" class="form-control">
                     <div class="help-block with-errors error"></div>
                   </div>
-                  <div class="form-group">
-                    <label>DOB<span class="required">*</span> <span class="text-muted d-block ">minimal 13 years</span></label> 
-                    <input required="" id="dob"  data-error="Please enter dob" type="text" value="{{ $data->dob }}" placeholder="DOB"  name="dob" class="form-control">
-                    <div class="help-block with-errors error"></div>
-                  </div>
-                  <div class="form-group">
-                    <label>Gender<span class="required">*</span></label>
-                    <select required="" name="gender" class="form-control select-gender"></select>
-                    <div class="help-block with-errors error"></div>
-                  </div>
-                  <div class="form-group">
-                    <label>Photo</label>
-                    <div style="position: relative; width: 128px;">
-                      <div class="lds-dual-ring hide"></div>
-                      <a href="javascript:;" class="upload-now">
-                        <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($data->photo) || empty($data->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$data->photo) }}" class="card-img-top img-fluid image-preview">
-                      </a>
-                      <a href="javascript:;"  class="remove-image-single">
-                        <i class="fa fa-times"></i>
-                      </a>
-                      <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
-                      <input type="hidden" name="photo" value="{{ $data->photo }}" class="image-path">
-                    </div> 
-                  </div>
                   @if($method == 'create')
                   <div class="form-group">
                     <label>Password<span class="required">*</span></label>
@@ -159,29 +135,5 @@
   var elem = document.querySelector('.js-switch');
   var switchery = new Switchery(elem, { color: '#1AB394' });
   var uploadPath = "{{ route('public.upload', array('config'=> 'master.customers')).'/'.date('Y/m/d').'/file/file' }}";
-
-  $(document).ready(function(){
-
-    var gender = [
-      {
-        id : 'male',
-        text : 'Male'
-      },
-      {
-        id : 'female',
-        text : 'Female'
-      }
-    ]
-    initSelect2('.select-gender', gender).then((result) => {
-      result.val("{{ $data->gender }}").trigger('change');
-    });
-
-    $('#dob').datepicker({
-      format: 'yyyy-mm-dd',
-      autoclose : true,
-      clearBtn: true,
-      endDate: new Date(new Date().setFullYear(new Date().getFullYear() - 13))
-    })
-  });
 </script>
 @stop

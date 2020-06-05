@@ -16,11 +16,12 @@
         </div>    
         <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
-            <h4 class="widget_title">Navigations</h4>
+            <h4 class="widget_title">Menu</h4>
             <ul class="footer-menu">
-              <li><a href="{{ route('public.faq') }}">FAQs Page</a></li>
-              <li><a href="checkout.html">Term And Condition</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="{{ route('public.faq') }}">{{ trans('site::default.faq')}}</a></li>
+              <li><a href="{{ route('public.privacyPolicy') }}">{{ trans('site::default.privacyPolicy')}}</a></li>
+              <li><a href="{{ route('public.condition') }}">{{ trans('site::default.termCondition')}}</a></li>
+              <li><a href="{{ route('public.aboutUs') }}">{{ trans('site::default.aboutUs')}}</a></li>
               <li><a href="{{ route('public.blogs') }}">Blog</a></li>
             </ul>
           </div>
@@ -28,13 +29,15 @@
             
         <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
-            <h4 class="widget_title">The Highlights</h4>
+            <h4 class="widget_title">Location</h4>
             <ul class="footer-menu">
-              <li><a href="#">Apartment</a></li>
-              <li><a href="#">My Houses</a></li>
-              <li><a href="#">Restaurant</a></li>
-              <li><a href="#">Nightlife</a></li>
-              <li><a href="#">Villas</a></li>
+
+              @foreach(Rooms::getLocations(true) as $key => $location)
+              @if($key > 4)
+              @continue
+              @endif
+              <li><a href="#">{{ $location->name }}</a></li>
+              @endforeach
             </ul>
           </div>
         </div>
@@ -43,11 +46,14 @@
           <div class="footer_widget">
             <h4 class="widget_title">My Account</h4>
             <ul class="footer-menu">
-              <li><a href="#">My Profile</a></li>
-              <li><a href="#">My account</a></li>
-              <li><a href="#">My Property</a></li>
-              <li><a href="#">Favorites</a></li>
-              <li><a href="#">Cart</a></li>
+              @if(Auth::check())
+              <li><a href="{{ route('public.dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ route('public.bookingHistory') }}">Booking Pending</a></li>
+              <li><a href="{{ route('public.bookingHistorySuccess') }}">Booking Success</a></li>
+              @else
+              <li><a class="modalLogin" href="javascript:;">{{ trans('site::default.login')}}</a></li>
+              <li><a class="modalSignup" href="javascript:;">{{ trans('site::default.signup')}}</a></li>
+              @endif
             </ul>
           </div>
         </div>       
@@ -60,7 +66,7 @@
       <div class="row align-items-center">
         
         <div class="col-lg-6 col-md-6">
-          <p class="mb-0">© 2020 HomeScout. Designd By <a href="https://bootstrapdesigns.net">BootstrapDesigns</a>.</p>
+          <p class="mb-0">© {{date('Y')}} kamartamu.com</p>
         </div>
         
         <div class="col-lg-6 col-md-6 text-right">

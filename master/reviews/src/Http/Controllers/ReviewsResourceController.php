@@ -20,7 +20,7 @@ class ReviewsResourceController extends Controller
 
 	public function index(Request $request)
 	{
-
+		
 	}
 
 	public function create(Request $request)

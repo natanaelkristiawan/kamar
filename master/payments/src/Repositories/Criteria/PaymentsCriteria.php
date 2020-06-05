@@ -8,6 +8,6 @@ class PaymentsCriteria implements CriteriaInterface {
 
 	public function apply($model, RepositoryInterface $repository)
 	{
-		return $model;
+		return $model->where('status_code', 200);
 	}
 }

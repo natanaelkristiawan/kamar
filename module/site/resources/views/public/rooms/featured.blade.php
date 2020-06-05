@@ -25,7 +25,7 @@
               <span class="rent">{{ $room->type_content }}</span>
             </div>
             <div class="uilist_view_thumb">
-              <a href="#" class="uilist-btn"><i class="ti-eye"></i></a>
+              <a href="{{ route('public.roomDetail', array('slug'=>$room->slug)) }}" class="uilist-btn"><i class="ti-eye"></i></a>
               <a href="#" class="uilist-btn"><i class="ti-share"></i></a>
             </div>
             

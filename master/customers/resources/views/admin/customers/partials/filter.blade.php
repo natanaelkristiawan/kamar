@@ -20,14 +20,14 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label>Date Start</label> 
-              <input type="text" placeholder="Search Date Start Registration" name="search[created_at][0]" class="form-control filter-field datestart">
+              <input type="text" placeholder="Search Date Start" name="search[created_at][0]" class="form-control filter-field datestart">
             </div>
           </div> 
 
           <div class="col-lg-6">
             <div class="form-group">
               <label>Date End</label> 
-              <input type="text" placeholder="Search Date End Registration" name="search[created_at][1]" class="form-control filter-field dateend">
+              <input type="text" placeholder="Search Date End" name="search[created_at][1]" class="form-control filter-field dateend">
             </div>
           </div> 
 

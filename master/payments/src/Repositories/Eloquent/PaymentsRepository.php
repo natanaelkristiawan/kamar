@@ -10,8 +10,12 @@ class PaymentsRepository extends BaseRepository implements PaymentsRepositoryInt
 	private $pageLimit;
 
 	protected $fieldSearchable = [
-		'name'      => 'like',
-		'status'    => '='
+		'order_id'      => 'like',
+		'transaction_id'      => 'like',
+		'created_at' => [
+      'default' => array(),
+      'condition' => 'between'
+    ],
 	];
 
 	public function model()

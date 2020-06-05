@@ -196,7 +196,20 @@ class Rooms
   public function getRooms(Request $request, $limit = 4 ,$language = 'id')
   {
     $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
-    $data =  $this->rooms->with(['location', 'type', 'owner'])->paginate($limit);
+    $data =  $this->rooms->scopeQuery(function($query) use($request) {
+      if (!(bool)is_null($request->price)) {
+        if ($request->price == 'high') {
+          # code...
+          return $query->orderBy('price','desc');
+        }
+      }
+      return $query->orderBy('price','asc');
+    })->with(['location', 'type', 'owner'])->whereHas('location', function($query) use($request) {
+      if (!(bool)is_null($request->location)) {
+        return $query->where('slug', $request->location);
+      }
+      return $query;
+    })->paginate($limit);
     $query = $data->getCollection();
     $resource = self::renderRooms($query, $language);
     $resource->setPaginator(new IlluminatePaginatorAdapter($data));

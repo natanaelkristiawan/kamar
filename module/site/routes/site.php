@@ -5,6 +5,9 @@ $route->get(LaravelLocalization::transRoute('routes.rooms'), 'PublicController@r
 $route->get('blogs', 'PublicController@blogs')->name('public.blogs');
 $route->get('blogs/{slug}', 'PublicController@blogDetail')->name('public.blogDetail');
 $route->get('faq', 'PublicController@faq')->name('public.faq');
+$route->get(LaravelLocalization::transRoute('routes.privacyPolicy'), 'PublicController@privacyPolicy')->name('public.privacyPolicy');
+$route->get(LaravelLocalization::transRoute('routes.aboutUs'), 'PublicController@aboutUs')->name('public.aboutUs');
+$route->get(LaravelLocalization::transRoute('routes.termAndCondition'), 'PublicController@condition')->name('public.condition');
 
 /*booking system*/
 $route->post('find-customer', 'PublicController@findCustomer')->name('public.findCustomer'); 
@@ -34,9 +37,11 @@ $route->get('google-connect', 'PublicController@googleConnect');
 
 /*booking*/
 $route->post('get-snap-token', 'CustomerController@getSnapToken')->name('public.getSnapToken');
+$route->post('save-response-midtrans', 'CustomerController@saveResponseMidtrans')->name('public.saveResponseMidtrans');
 /*dashboard*/
 $route->get('dashboard', 'CustomerController@dashboard')->name('public.dashboard');
 $route->get('booking-history', 'CustomerController@bookingHistory')->name('public.bookingHistory');
+$route->get('booking-history-success', 'CustomerController@bookingHistorySuccess')->name('public.bookingHistorySuccess');
 /*update profile*/
 $route->post('update-profile', 'CustomerController@updateProfile')->name('public.updateProfile');
 

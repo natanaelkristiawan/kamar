@@ -4,10 +4,7 @@
       <th>Created At</th>
       <th>Name</th>
       <th>Email</th>
-      <th>Gender</th>
-      <th>DOB</th>
       <th>Phone</th>
-      <th>Photo</th>
       <th>Status</th>
       <th>Action</th>
     </tr>

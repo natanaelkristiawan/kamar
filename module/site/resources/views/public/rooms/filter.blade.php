@@ -9,7 +9,7 @@
           <i class="ti-target"></i>
         </div>
       </div>
-      <button class="btn btn-theme full-width">Search</button>
+       <a href="{{ route('public.rooms') }}" class="btn search-btn search-room">{{trans('site::default.search')}} </a>
     </div> 
   </div>
 </div>
@@ -56,6 +56,23 @@
       data : {!! json_encode($locations) !!},
       allowClear: true
     });
+
+
+    $('.location-list').on('select2:select', function (e) {
+      var urlRoom = "{{ route('public.rooms') }}"
+
+      var withLocation = e.params.data.id;
+
+      var newLink = urlRoom+'?location='+withLocation;
+
+      $('.search-room').attr('href', newLink);
+    }); 
+
+    $('.location-list').on('select2:clearing', function (e) {
+      var urlRoom = "{{ route('public.rooms') }}"
+      $('.search-room').attr('href', urlRoom);
+    });
+
   });
 </script>
 @stop

@@ -10,21 +10,19 @@
           <div class="full_search_box nexio_search lightanic_search hero_search-radius style-2">
             <div class="search_hero_wrapping">
             <div class="row">
-              
-              <div class="col-lg-9 col-md-9 col-sm-12 small-padd">
-                <div class="form-group">
-                  <div class="input-with-icon">
-                    <select type="text" class="form-control b-0 location-list" placeholder="{{ trans('site::default.location')}} "></select>
-                    <i class="ti-target"></i>
+                <div class="col-lg-9 col-md-9 col-sm-12 small-padd">
+                  <div class="form-group">
+                    <div class="input-with-icon">
+                      <select type="text" class="form-control b-0 location-list" name="location" placeholder="{{ trans('site::default.location')}} "></select>
+                      <i class="ti-target"></i>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <div class="col-lg-3 col-md-3 col-sm-12 small-padd">
-                <div class="form-group">
-                  <a href="#" class="btn search-btn">{{trans('site::default.search')}} </a>
+                <div class="col-lg-3 col-md-3 col-sm-12 small-padd">
+                  <div class="form-group">
+                    <a href="{{ route('public.rooms') }}" class="btn search-btn" id="search-room">{{trans('site::default.search')}} </a>
+                  </div>
                 </div>
-              </div>
           
             </div>
           </div>
@@ -75,6 +73,21 @@
       placeholder : "Select Your Location",
       data : {!! json_encode($locations) !!},
       allowClear: true
+    });
+
+    $('.location-list').on('select2:select', function (e) {
+      var urlRoom = "{{ route('public.rooms') }}"
+
+      var withLocation = e.params.data.id;
+
+      var newLink = urlRoom+'?location='+withLocation;
+
+      $('#search-room').attr('href', newLink);
+    }); 
+
+    $('.location-list').on('select2:clearing', function (e) {
+      var urlRoom = "{{ route('public.rooms') }}"
+      $('#search-room').attr('href', urlRoom);
     });
   });
 </script>

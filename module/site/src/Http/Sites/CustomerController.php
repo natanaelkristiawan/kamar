@@ -29,12 +29,42 @@ class CustomerController extends Controller
   {
     $customer = Auth::user();
 
-    $data = Books::findPendingBookByCustomer($request, $customer->id);
+    $data = json_decode(Books::findPendingBookByCustomer($request, $customer->id));
 
-    dd($data);
+    $books = $data->data;
+    $pagination = $data->meta->pagination;
+    $route = 'bookingHistory';
+    $requestParams = $request->input();
 
 
-    return view('site::public.dashboard.history', compact('customer'));
+    return view('site::public.dashboard.history', compact(
+      'customer',
+      'books',
+      'pagination',
+      'route',
+      'requestParams',
+    ));
+  }
+
+  public function bookingHistorySuccess(Request $request)
+  {
+    $customer = Auth::user();
+
+    $data = json_decode(Books::findSuccessBookByCustomer($request, $customer->id));
+
+    $books = $data->data;
+    $pagination = $data->meta->pagination;
+    $route = 'bookingHistorySuccess';
+    $requestParams = $request->input();
+
+
+    return view('site::public.dashboard.history-success', compact(
+      'customer',
+      'books',
+      'pagination',
+      'route',
+      'requestParams',
+    ));
   }
 
   public function updateProfile(Request $request)
@@ -149,9 +179,9 @@ class CustomerController extends Controller
       'customer_details'    => $customer_details,
       'expiry' => $expired,
       'enabled_payments' => 
-      ['credit_card', 'mandiri_clickpay',
-      'bca_klikbca', 'bca_klikpay', 'bri_epay', 'echannel', 'permata_va',
-      'bca_va', 'bni_va', 'other_va', 'gopay'],
+      ['credit_card',
+      'bca_klikbca', 'bri_epay', 'echannel', 'permata_va',
+      'bca_va', 'bni_va', 'other_va'],
     );
     $snapToken = Payments::getSnapToken($params);
     // set cookies buat save sementara bookingnya nnti panggil kalau success update, set 30menit saja
@@ -211,6 +241,45 @@ class CustomerController extends Controller
       'grandTotal' => $grandTotal,
       'items' => $items
     ];
+  }
+
+
+  public function saveResponseMidtrans(Request $request)
+  {
+    $validator = Validator::make($request->all(), [
+      'g-recaptcha-response' => 'captcha'
+    ]);
+
+     if ($validator->fails()) {
+      return response()->json(
+        array(
+          'status' => false,
+          'error' => $validator->errors()
+        )
+      );
+    }
+     // find data detail from book history
+    $history = Books::findHistory($request->order_id);
+    $dataBooking = $history->data;
+    if ($request->status_code == 200) {
+      $dataBooking['status'] = 1;
+    }
+    $dataBooking['notes'] = $request->all();
+    // create Book pending
+    Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
+    $request->session()->flash('status_notif', 'Thank you for create booking in kamartamu.com, Complete your payment');
+    
+    if ($request->status_code == 200) {
+      return response()->json([
+        'status' => true,
+        'redirect' => route('public.bookingHistorySuccess')
+      ]);
+    }
+
+    return response()->json([
+      'status' => true,
+       'redirect' => route('public.bookingHistory')
+    ]);
   }
 
 

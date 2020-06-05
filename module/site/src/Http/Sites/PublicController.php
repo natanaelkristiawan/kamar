@@ -131,12 +131,12 @@ class PublicController extends Controller
     self::setMeta();
     Meta::title('kamartamu.com - '.trans('routes.rooms'));
     Meta::set('active', 'rooms');
-    $data = json_decode(Rooms::getRooms($request, 6, $this->lang));
+    $data = json_decode(Rooms::getRooms($request, 1, $this->lang));
     $rooms = $data->data;
     $pagination = $data->meta->pagination;
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;
     $route = 'rooms';
-    $requestParams = array();
+    $requestParams = $request->all();
 
 
     $locations = self::getLocations();
@@ -146,7 +146,8 @@ class PublicController extends Controller
       'pagination', 
       'featuredRooms', 
       'route', 
-      'requestParams', 
+      'requestParams',
+      'request',
       'locations'
     ));
   }
@@ -196,7 +197,9 @@ class PublicController extends Controller
   {
     self::setMeta();
     Meta::title('kamartamu.com - faq');
-    return view('site::public.faq');
+    $data = Site::getFaqData();
+    $lang = $this->lang;
+    return view('site::public.faq', compact('data', 'lang'));
   }
 
   public function findCustomer(Request $request)
@@ -534,10 +537,9 @@ class PublicController extends Controller
 
   public function captureMidtrans(Request $request)
   {
-    Storage::disk('local')->append('public/data.json', json_encode($request->all()));
-
+    Storage::disk('local')->append('public/midtrans.json', json_encode($request->all()));
     // debug dulu
-    return response()->json(['status'=>true], 200);
+    // return true;
 
 
     $dataMidtrans = array(
@@ -558,7 +560,7 @@ class PublicController extends Controller
       $history = Books::findHistory($request->order_id);
       $dataBooking = $history->data;
       // create Book pending
-      Books::createBookPending($dataBooking);
+      Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
     }
 
     // booking success to payment
@@ -579,7 +581,7 @@ class PublicController extends Controller
       $dataBooking = $history->data;
       $dataBooking['payment_id'] = $midtrans->id;
       $dataBooking['status'] = 1;
-      Books::createBookPending($dataBooking);
+      Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
     }
 
     // booking expired
@@ -604,8 +606,34 @@ class PublicController extends Controller
       );
       Books::updateBook($book->id, $bookUpdate);
     }
-
   }
+
+
+  public function privacyPolicy(Request $request)
+  {
+    $data = Site::getDataSite('privacy')[$this->lang];
+    $banner = Site::getDataSite('privacy-banner');
+
+    return view('site::public.page', compact('data', 'banner'));
+  }
+
+  public function aboutUs(Request $request)
+  {
+    $data = Site::getDataSite('aboutus')[$this->lang];
+    $banner = Site::getDataSite('aboutus-banner');
+
+    return view('site::public.page', compact('data', 'banner'));
+  }
+
+  public function condition(Request $request)
+  {
+    $data = Site::getDataSite('condition')[$this->lang];
+    $banner = Site::getDataSite('condition-banner');
+
+    return view('site::public.page', compact('data', 'banner'));
+  }
+
+
   public function callbackSuccess(Request $request)
   {
 

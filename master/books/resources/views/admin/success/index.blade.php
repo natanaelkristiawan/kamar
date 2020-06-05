@@ -57,7 +57,7 @@ $(document).ready(function() {
     responsive: false,
     scrollX: true,
     dom: 'lrtip',
-    order: [[ 0, "asc" ]],
+    order: [[ 0, "desc" ]],
     columnDefs: [
       { orderable: false, targets: 14 },
     ],

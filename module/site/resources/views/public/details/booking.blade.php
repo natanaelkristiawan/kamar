@@ -573,6 +573,29 @@
 
     return await response;
   }
+
+
+  async function saveResponseMidtrans(params) {
+    var response = new Promise((resolve, reject) => {
+      grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
+        $.ajax({
+          url : "{{ route('public.saveResponseMidtrans') }}",
+          type : 'POST',
+          dataType : 'json',
+          data: $.extend(false, TOKEN, {'g-recaptcha-response' : token}, params),
+          success: function(result){
+            resolve(result)
+          },
+          error: function (request, status, error) {
+            reject(request)
+          },
+
+        });
+      })
+    });
+
+    return await response;
+  }
   
   async function callMidtrans(token) {
     var response = new Promise((resolve, reject) => {
@@ -632,7 +655,12 @@
               var snapToken = response.snapToken;
 
               callMidtrans(snapToken).then((response)=>{
-                console.log(response)
+                Cookies.remove('booking-pending', { path: '/' })
+                saveResponseMidtrans(response).then((response)=>{
+                  if (response.status) {
+                    window.location.href = response.redirect;
+                  }
+                });
               }).catch((error) => {
                 
               })

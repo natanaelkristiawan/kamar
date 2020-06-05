@@ -1,3 +1,4 @@
+@if(!(bool)Auth::check())
 <!-- Log In Modal -->
 <div data-keyboard="false" data-backdrop="static" class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
@@ -394,3 +395,9 @@
 
 </script>
 @stop
+
+@endif
+
+
+@section('modal')
+@show

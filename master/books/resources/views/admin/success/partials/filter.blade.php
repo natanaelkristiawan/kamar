@@ -35,14 +35,14 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label>Date Start</label> 
-              <input type="text" placeholder="Search Code Booking" name="search[date_start]" class="form-control filter-field datepicker">
+              <input type="text" placeholder="Search Date Start" name="search[date_start]" class="form-control filter-field datepicker">
             </div>
           </div>  
 
           <div class="col-lg-6">
             <div class="form-group">
               <label>Date End</label> 
-              <input type="text" placeholder="Search Code Booking" name="search[date_end]" class="form-control filter-field datepicker">
+              <input type="text" placeholder="Search Date End" name="search[date_end]" class="form-control filter-field datepicker">
             </div>
           </div>
         </div>

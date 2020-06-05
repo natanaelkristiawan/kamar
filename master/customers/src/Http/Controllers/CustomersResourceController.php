@@ -58,8 +58,6 @@ class CustomersResourceController extends Controller
       'email' => 'required|email|unique:customers',
       'phone' => 'required',
       'name'  => 'required',
-      'dob'   => 'required',
-      'gender'   => 'required',
       'password'  => 'required|min:6|confirmed',
     ]);
 
@@ -72,9 +70,6 @@ class CustomersResourceController extends Controller
       'name' => $request->name,
       'email' => $request->email,
       'phone' => $request->phone,
-      'dob' => $request->dob,
-      'gender' => $request->gender,
-      'photo' => $request->photo,
       'password' => bcrypt($request->password),
       'status' => $request->status,
     );
@@ -101,8 +96,6 @@ class CustomersResourceController extends Controller
       'email' => 'required|email|unique:customers,email,'.$data->id,
       'phone' => 'required',
       'name'  => 'required',
-      'dob'   => 'required',
-      'gender'   => 'required',
     ]);
 
     if ($validator->fails()) {
@@ -127,9 +120,6 @@ class CustomersResourceController extends Controller
       'name' => $request->name,
       'email' => $request->email,
       'phone' => $request->phone,
-      'dob' => $request->dob,
-      'gender' => $request->gender,
-      'photo' => $request->photo,
       'status' => $request->status,
     );
 

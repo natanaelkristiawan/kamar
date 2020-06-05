@@ -21,13 +21,11 @@
                 <label>Short By:</label>
                 <div class="dropdown show">
                   <a class="btn btn-filter dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="selection">Most Rated</span>
+                    <span class="selection">{{ $request->price == 'high' ? 'High' : 'Low' }} Price</span>
                   </a>
                   <div class="drp-select dropdown-menu">
-                    <a class="dropdown-item" href="JavaScript:Void(0);">Most Rated</a>
-                    <a class="dropdown-item" href="JavaScript:Void(0);">Most View</a>
-                    <a class="dropdown-item" href="JavaScript:Void(0);">News Listings</a>
-                    <a class="dropdown-item" href="JavaScript:Void(0);">High Rated</a>
+                    <a class="dropdown-item" href="{{ route('public.rooms', array('price'=>'low', 'location' => $request->location )) }}">Low Price</a>
+                    <a class="dropdown-item" href="{{ route('public.rooms', array('price'=>'high', 'location' => $request->location)) }}">High Price</a>
                   </div>
                 </div>
               </div>

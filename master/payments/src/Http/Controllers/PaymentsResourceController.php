@@ -16,36 +16,23 @@ class PaymentsResourceController extends Controller
 	{
 		$this->middleware('auth:admin');
 		$this->repository = $repository;
+		$this->repository->pushCriteria(\Master\Core\Repositories\Criteria\RequestCriteria::class);
 	}
 
 	public function index(Request $request)
 	{
+		if($request->ajax()){
+      $pageLimit = $request->length;
 
+      $data = $this->repository
+					->pushCriteria(\Master\Payments\Repositories\Criteria\PaymentsCriteria::class)
+          ->setPresenter(\Master\Payments\Repositories\Presenter\PaymentsPresenter::class)
+          ->setPageLimit($pageLimit)
+          ->getDataTable();
+      return response()->json($data);
+    }
+
+
+		return view('payments::admin.payments.index');  
 	}
-
-	public function create(Request $request)
-	{
-
-	}
-
-	public function store(Request $request)
-	{
-	 
-	}
-
-	public function edit(Request $request, Payments $data)
-	{
-	  
-	}
-
-	public function update(Request $request, Payments $data)
-	{
-	  
-	}
-
-	public function delete(Request $request, Payments $data)
-	{
-
-	}
-
 }

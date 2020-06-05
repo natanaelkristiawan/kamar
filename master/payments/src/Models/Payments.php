@@ -21,4 +21,9 @@ class Payments extends Model
 	protected $casts = array(
 		'details' => 'array'
 	);
+
+	public function book()
+	{
+		return $this->belongsTo(\Master\Books\Models\Books::class, 'uuid', 'order_id');
+	}
 }

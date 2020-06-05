@@ -25,6 +25,10 @@ class Books extends Model
 		'notes',
 		'status',
 	];
+
+	protected $casts = [
+		'notes' => 'array'
+	];
 	public function customer()
 	{
 		return $this->belongsTo(\Master\Customers\Models\Customers::class, 'customer_id', 'id');

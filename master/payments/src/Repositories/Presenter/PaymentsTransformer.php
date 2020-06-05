@@ -10,9 +10,12 @@ class PaymentsTransformer extends TransformerAbstract
 	{
 		return [
 			'id'   => $model->id,
-			'name' => $model->name,
-			'status'=> '',
-			'action'=> ''
+			'created_at'   => date('Y-m-d H:i:s', strtotime($model->created_at)),
+			'order_id'   => $model->order_id,
+			'status_code'   => $model->status_code,
+			'status_message'   => $model->status_message,
+			'transaction_id'   => $model->transaction_id,
+			'transaction_status'   => $model->transaction_status,
 		];
 	}
 }

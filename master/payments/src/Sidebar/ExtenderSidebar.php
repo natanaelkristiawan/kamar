@@ -16,14 +16,7 @@ class ExtenderSidebar implements SidebarExtender
 		$menu->group('ADMINISTRATOR', function(Group $group) {
 			$group->item('Payments', function(Item $item){
 				$item->icon('mdi mdi-qrcode-scan');
-				$item->url('payments');
-				$item->item('Pending', function(Item $item){
-          $item->url('#');
-        });
-        
-        $item->item('Success', function(Item $item){
-          $item->url('#');
-        });
+				$item->url(route('admin.payments'));
 			});
 		});
 		return $menu;

@@ -18,4 +18,9 @@ class FaqCategories extends Model
   protected $casts = array(
     'content' => 'array'
   );
+
+  public function contents()
+  {
+    return $this->hasMany(\Module\Site\Models\Faq::class, 'faq_category_id', 'id');
+  }
 }

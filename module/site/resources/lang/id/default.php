@@ -26,5 +26,9 @@ return [
   'rooms'  => 'Kamar',
   'latest_news' => 'Berita Terbaru',
   'latest_news_sub' => 'Kami memposting secara teratur artikel paling relevan untuk bantuan dan dukungan.',
-  'check_availability' => 'Cek Ketersediaan'
+  'check_availability' => 'Cek Ketersediaan',
+  'faq' => 'FAQ',
+  'privacyPolicy' => 'Kebijakan & Privasi',
+  'termCondition' => 'Syarat & Ketentuan',
+  'aboutUs' => 'Tentang Kami',
 ];

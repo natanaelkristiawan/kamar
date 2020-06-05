@@ -43,6 +43,7 @@ class CustomerController extends Controller
       'pagination',
       'route',
       'requestParams',
+      'request'
     ));
   }
 

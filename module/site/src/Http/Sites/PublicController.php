@@ -131,7 +131,7 @@ class PublicController extends Controller
     self::setMeta();
     Meta::title('kamartamu.com - '.trans('routes.rooms'));
     Meta::set('active', 'rooms');
-    $data = json_decode(Rooms::getRooms($request, 1, $this->lang));
+    $data = json_decode(Rooms::getRooms($request, 8, $this->lang));
     $rooms = $data->data;
     $pagination = $data->meta->pagination;
     $featuredRooms = self::getFeaturedRooms(6, $this->lang)->data;

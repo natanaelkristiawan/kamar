@@ -59,7 +59,7 @@ $(document).ready(function() {
     dom: 'lrtip',
     order: [[ 0, "desc" ]],
     columnDefs: [
-      { orderable: false, targets: 14 },
+      { orderable: false, targets: 13 },
     ],
     processing: true,
     serverSide: true,
@@ -89,7 +89,6 @@ $(document).ready(function() {
     },
     columns: [
       {data : 'created_at'},
-      {data : 'payment'},
       {data : 'uuid'},
       {data : 'email'},
       {data : 'roomName'},

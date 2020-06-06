@@ -2,7 +2,6 @@
   <thead class="thead-light">
     <tr>
       <th>Created At</th>
-      <th>Payment</th>
       <th>Code Booking</th>
       <th>Email</th>
       <th>Room Name</th>

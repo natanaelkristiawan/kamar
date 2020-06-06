@@ -263,6 +263,7 @@ class CustomerController extends Controller
     $history = Books::findHistory($request->order_id);
     $dataBooking = $history->data;
     if ($request->status_code == 200) {
+      unset($dataBooking['payment_id']);
       $dataBooking['status'] = 1;
     }
     $dataBooking['notes'] = $request->all();

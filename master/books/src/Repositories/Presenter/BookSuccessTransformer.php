@@ -11,7 +11,7 @@ class BookSuccessTransformer extends TransformerAbstract
 		return [
 			'id'   => $model->id,
 			'uuid'   => $model->uuid,
-			'payment'   => $model->payment->id,
+			'payment'   => '',
 			'created_at' =>  date('Y-m-d H:i:s', strtotime($model->created_at)),
 			'email' => $model->email,
 			'roomName' => $model->roomName,

@@ -349,7 +349,7 @@
     });
     
     var options = {
-     large: true,
+      large: true,
       largeOnly: true,
       lock: 'from',
       minYear: new Date().getFullYear(),

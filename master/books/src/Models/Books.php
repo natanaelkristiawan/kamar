@@ -13,6 +13,7 @@ class Books extends Model
 		'customer_id',
 		'room_id',
 		'payment_id',
+		'review_id',
 		'rooms',
 		'guests',
 		'nights',

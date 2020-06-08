@@ -15,6 +15,7 @@ class CreateBooksTable extends Migration
       $table->integer('customer_id')->nullable();
       $table->integer('room_id')->nullable();
       $table->integer('payment_id')->nullable();
+      $table->integer('review_id')->nullable();
       $table->integer('rooms')->nullable();
       $table->integer('guests')->nullable();
       $table->integer('nights')->nullable();

@@ -34,7 +34,6 @@ $route->get('google-login', 'PublicController@googleLogin')->name('public.google
 $route->get('google-connect', 'PublicController@googleConnect'); 
 
 
-
 /*booking*/
 $route->post('get-snap-token', 'CustomerController@getSnapToken')->name('public.getSnapToken');
 $route->post('save-response-midtrans', 'CustomerController@saveResponseMidtrans')->name('public.saveResponseMidtrans');
@@ -42,8 +41,11 @@ $route->post('save-response-midtrans', 'CustomerController@saveResponseMidtrans'
 $route->get('dashboard', 'CustomerController@dashboard')->name('public.dashboard');
 $route->get('booking-history', 'CustomerController@bookingHistory')->name('public.bookingHistory');
 $route->get('booking-history-success', 'CustomerController@bookingHistorySuccess')->name('public.bookingHistorySuccess');
+$route->get('booking-receipt/{uuid}', 'CustomerController@bookingReceipt')->name('public.bookingReceipt');
+
 /*update profile*/
 $route->post('update-profile', 'CustomerController@updateProfile')->name('public.updateProfile');
+$route->post('send-review', 'CustomerController@sendReview')->name('public.sendReview');
 
 $route->get('login', function(){
 })->name('login');

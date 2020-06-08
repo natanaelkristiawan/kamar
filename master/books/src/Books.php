@@ -50,6 +50,13 @@ class Books
 		return $query;
 	}
 
+	public function findBookByID($id='')
+	{
+		$query = $this->book->findByField('id', $id)->first();
+		$this->book->resetModel();
+		return $query;
+	}
+
 	public function updateBook($id='', $params)
 	{
 		$query = $this->book->update($params, $id);
@@ -63,6 +70,7 @@ class Books
     return new Collection($query, function(ModelBooks $model) {
       return [
         'id' => $model->id,
+        'uuid' => $model->uuid,
         'created_at' =>  date('d F Y H:i:s', strtotime($model->created_at)),
         'room' => $model->room->name,
         'room_location' => $model->room->location->name,
@@ -74,6 +82,7 @@ class Books
         'guests' => $model->guests,
         'grand_total' => $model->grand_total,
         'notes' => $model->notes,
+        'review_id' => $model->review_id
       ];
     });
   }

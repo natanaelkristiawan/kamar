@@ -9,6 +9,7 @@ use Validator;
 use Rooms;
 use Books;
 use Hash;
+use Reviews;
 class CustomerController extends Controller
 {
   protected $customer;
@@ -282,6 +283,62 @@ class CustomerController extends Controller
       'status' => true,
        'redirect' => route('public.bookingHistory')
     ]);
+  }
+
+  public function bookingReceipt(Request $request, $uuid = '')
+  {
+    $book = Books::findBook($uuid);
+    if (is_null($book)) {
+      return abort(404);
+    }
+    return view('site::public.receipt', compact('book'));
+  }
+
+  public function sendReview(Request $request)
+  {
+
+    $customer = Auth::user();
+    $validator = Validator::make($request->all(), [
+      'g-recaptcha-response' => 'captcha',
+      'review' => 'required',
+      'book_id' => 'required',
+    ]);
+
+    // find data
+    if ($validator->fails()) {
+      return response()->json(
+        array(
+          'status' => false,
+          'message' => 'The field is mandatory'
+        )
+      );
+    }
+
+    $dataSend = array(
+      'book_id' => $request->book_id,
+      'room_id' => Books::findBookByID($request->book_id)->room_id,
+      'customer_id' => $customer->id,
+      'review' => $request->review,
+      'status' => 0
+    );
+
+    $review = Reviews::setReview($request->book_id, $customer->id,  $dataSend );
+
+    $response = false;
+    if ((bool)$review) {
+      $bookUpdate = array(
+        'review_id' => $review->id
+      );
+      Books::updateBook($request->book_id, $bookUpdate);
+      $response = true;
+    }
+
+    return response()->json(
+      array(
+        'status' => $response,
+        'message' => $response ? : 'The field is mandatory'
+      )
+    );
   }
 
 

@@ -79,7 +79,7 @@ class BooksRepository extends BaseRepository implements BooksRepositoryInterface
       }
       $query->whereHas('room', function ($query) use ($filter) {
         if (!(bool)empty($filter['roomName'])) {
-        	$query->where('name', 'like', '%'.$filter['name'].'%');
+        	$query->where('name', 'like', '%'.$filter['roomName'].'%');
         }
 			});
 			$dateFilter = $filter['date_filter'];

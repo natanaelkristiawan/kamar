@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Master\Books\Interfaces\BooksRepositoryInterface;
 use Master\Books\Models\Books;
 use Validator;
-use DB;
 use Payments;
 
 class BookPendingResourceController extends Controller

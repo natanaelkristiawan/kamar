@@ -16,7 +16,7 @@ class ExtenderSidebar implements SidebarExtender
 		$menu->group('ADMINISTRATOR', function(Group $group) {
 			$group->item('Reviews', function(Item $item){
 				$item->icon('mdi mdi-signal-variant');
-				$item->url('');
+				$item->url(route('admin.reviews'));
 			});
 		});
 		return $menu;

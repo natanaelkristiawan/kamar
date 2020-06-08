@@ -36,9 +36,11 @@
 													<div class="col-lg-6">
 														{{ $book->created_at }}
 													</div>
+													@if(is_null($book->review_id))
 													<div class="col-lg-6 text-right center">
-														
+														<button data-id="{{ $book->id }}" class="btn btn-outline-theme py-1 btn-review">Write Review</button>
 													</div>
+													@endif
 												</div>
 											</div>
 					            <div class="card-body">
@@ -78,7 +80,7 @@
 				                	        <h3>Rp {{ number_format($book->grand_total, 0, ',', '.') }}</h3>
 				                	        <small>Thank You For Payment*</small>
 				                	        <div class="sub-row">
-				                	        	<a target="_blank" href="" type="button" class="btn btn-theme">Receipt</a>
+				                	        	<a target="_blank" href="{{ route('public.bookingReceipt', array('uuid' => $book->uuid)) }}" type="button" class="btn btn-theme">Receipt</a>
 				                	        </div>
 				                	    </div>
 				                	</div>
@@ -109,4 +111,133 @@
 		}
 	}
 </style>
+@stop
+
+@section('modal')
+@parent
+<!-- Sign Up Modal -->
+<div data-keyboard="false" data-backdrop="static" class="modal fade" id="modal-review" tabindex="-1" role="dialog" aria-labelledby="sign-up" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+    <div class="modal-content" id="sign-up">
+      <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
+      <div class="modal-body">
+        <h4 class="modal-header-title">Review</h4>
+        <div class="login-form">
+        <div id="review-field">
+        	
+        </div>
+       	</div>
+      </div>
+      <div class="modal-footer">
+      	<button class="btn btn-theme" id="submit-preview">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal -->
+
+@stop
+
+@section('script')
+@parent
+
+<script type="x-tmpl-mustache" id="form-review">
+	<div class="form-group">
+		<label>Leave Review</label>
+		<textarea class="form-control" id="review-text" data-id="@{{id}}" name="review"></textarea>
+		<span class="helper error" id="error-review"></span>
+	</div>
+</script>
+
+
+
+<script type="text/javascript">
+	var reviewValidate = {
+    review : {
+      presence: {
+        allowEmpty: false
+      }
+    }
+  };
+
+  async function sendReview(params) {
+    var response = new Promise((resolve, reject) => {
+      grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contactForm' }).then((token) => {
+        $.ajax({
+          url : "{{ route('public.sendReview') }}",
+          type: 'POST',
+          dataType : 'json',
+          data: $.extend(false, TOKEN, {'g-recaptcha-response' : token}, params),
+          success : function(result) {
+            resolve(result)
+          },
+          error: function (request, status, error) {
+            reject(request)
+          }
+        });
+      });
+    });
+
+    return await response;
+  }
+
+  $(document).on('keyup', '.validate', function(){
+
+		validate.async(
+    {
+      review : $('#review-text').val(),
+    }, 
+    reviewValidate)
+    .then((response) => {
+  		$('#error-review').html('');
+    }).catch((error) => {
+    	$('#error-review').html('The field is mandatory')
+    });
+  })
+
+	$(document).ready(function() {
+		$('#submit-preview').on('click', function(){
+
+			$('#review-text').addClass('validate');
+
+			validate.async(
+	    {
+	      review : $('#review-text').val(),
+	    }, 
+	    reviewValidate)
+	    .then((response) => {
+	    	var dataSend = $.extend(false, response, {book_id : $('#review-text').data('id')})
+	    	sendReview(dataSend).then((response)=> {
+	    		if (response.status) {
+	    			$('#modal-review').modal('hide');
+	    			Swal.fire('Success',  'Thank you for submit your review', 'success');
+	    			deleteReviewButton( $('#review-text').data('id'));
+	    			return;
+	    		} else {
+	    			$('#error-review').html('The field is mandatory')
+	    		}
+	    	})
+	    }).catch((error) => {
+	    	$('#error-review').html('The field is mandatory')
+	    });
+		});
+	
+		$('.btn-review').on('click', function(){
+			var id = $(this).data('id');
+			var template = $('#form-review').html();
+	    htmlBody = Mustache.render(template, {id: id});
+	    $('#review-field').html(htmlBody);
+			$('#modal-review').modal('show');
+		})
+	});
+
+
+	function deleteReviewButton(id){
+		$.each($('.btn-review'), function(key, value){
+			if($(value).data('id') == id){
+				$(value).remove();
+			}
+		})
+	}
+</script>
 @stop

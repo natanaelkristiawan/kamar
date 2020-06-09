@@ -1,0 +1,1594 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"im",
+				"importfile"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"re",
+				"repository"
+			],
+			[
+				"vi",
+				"view"
+			],
+			[
+				"Book",
+				"Books"
+			],
+			[
+				"room",
+				"room"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"data",
+				"dataSend"
+			],
+			[
+				"req",
+				"required"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"RE",
+				"ReviewsRepositoryInterface"
+			],
+			[
+				"btn",
+				"btn-theme"
+			],
+			[
+				"te",
+				"textarea\tTag"
+			],
+			[
+				"paym",
+				"payment_id"
+			],
+			[
+				"list",
+				"listKey"
+			],
+			[
+				"com",
+				"compact"
+			],
+			[
+				"qu",
+				"query"
+			],
+			[
+				"url",
+				"urlRoom"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"reu",
+				"request"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"jso",
+				"json"
+			],
+			[
+				"cus",
+				"customer"
+			],
+			[
+				"for",
+				"form\tTag"
+			],
+			[
+				"h",
+				"h4\tTag"
+			],
+			[
+				"min",
+				"min-height\tproperty"
+			],
+			[
+				"date",
+				"dateFilter"
+			],
+			[
+				"token",
+				"token_verified"
+			],
+			[
+				"payme",
+				"payment_id"
+			],
+			[
+				"dta",
+				"dataBooking"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"upda",
+				"updateBook"
+			],
+			[
+				"findB",
+				"findByField"
+			],
+			[
+				"pa",
+				"payments"
+			],
+			[
+				"PA",
+				"Payments"
+			],
+			[
+				"Pa",
+				"Payments"
+			],
+			[
+				"boo",
+				"book"
+			],
+			[
+				"ord",
+				"order_id"
+			],
+			[
+				"toke",
+				"token"
+			],
+			[
+				"json",
+				"json"
+			],
+			[
+				"find",
+				"findOrder"
+			],
+			[
+				"cal",
+				"calculatePayment"
+			],
+			[
+				"C",
+				"CustomerExport"
+			],
+			[
+				"Re",
+				"Redeem"
+			],
+			[
+				"dat",
+				"datepicker"
+			],
+			[
+				"s",
+				"str"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"sl",
+				"slug"
+			],
+			[
+				"uui",
+				"uuid"
+			],
+			[
+				"ca",
+				"catch"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"PO",
+				"Promise"
+			],
+			[
+				"ser",
+				"service"
+			],
+			[
+				"call",
+				"callPayment"
+			],
+			[
+				"pos",
+				"post"
+			],
+			[
+				"uu",
+				"uuid"
+			],
+			[
+				"facebook",
+				"facebook_id"
+			],
+			[
+				"fon",
+				"font-weight\tproperty"
+			],
+			[
+				"A",
+				"Auth"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"con",
+				"connect_google"
+			],
+			[
+				"i",
+				"if\tif"
+			],
+			[
+				"fu",
+				"fun\tfunction …"
+			],
+			[
+				"his",
+				"history_redeem"
+			],
+			[
+				"e",
+				"error"
+			],
+			[
+				"email",
+				"email-login"
+			],
+			[
+				"hid",
+				"hideModal"
+			],
+			[
+				"html",
+				"htmlBody"
+			],
+			[
+				"redee",
+				"redeemWay"
+			],
+			[
+				"poin",
+				"pointVoucher"
+			],
+			[
+				"poi",
+				"pointCustomer"
+			],
+			[
+				"po",
+				"pointNow"
+			],
+			[
+				"inl",
+				"inline-block\tdisplay"
+			],
+			[
+				"full",
+				"fullname"
+			],
+			[
+				"isn",
+				"is_null"
+			],
+			[
+				"pric",
+				"pricePerNight"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"parse",
+				"parseInt"
+			],
+			[
+				"remo",
+				"removeClass"
+			],
+			[
+				"book",
+				"bookingPending"
+			],
+			[
+				"key",
+				"keyup"
+			],
+			[
+				"date-",
+				"date-checkin"
+			],
+			[
+				"date-ck",
+				"date-checkin"
+			],
+			[
+				"DATE",
+				"dateSelected"
+			],
+			[
+				"date-che",
+				"date-checkout"
+			],
+			[
+				"date-check",
+				"date-checkin"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"send",
+				"sendPassword"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"activate",
+				"activateAccount"
+			],
+			[
+				"to",
+				"token"
+			],
+			[
+				"no",
+				"notError"
+			],
+			[
+				"dateC",
+				"dateCompareEnd"
+			],
+			[
+				"dataC",
+				"dateCompareStart"
+			],
+			[
+				"rb",
+				"rgba()\tbackground-color"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"Cus",
+				"CustomersRepositoryInterface"
+			],
+			[
+				"fin",
+				"findDateInRange"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"dis",
+				"disabled"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"ph",
+				"phone"
+			],
+			[
+				"has",
+				"hashids"
+			],
+			[
+				"rede",
+				"redeemType"
+			],
+			[
+				"red",
+				"redeemed_voucher"
+			],
+			[
+				"as",
+				"async"
+			],
+			[
+				"box",
+				"box-shadow\tproperty"
+			],
+			[
+				"margin",
+				"margin-top\tproperty"
+			],
+			[
+				"loca",
+				"location"
+			],
+			[
+				"la",
+				"latest_lng"
+			],
+			[
+				"lat",
+				"latitude"
+			],
+			[
+				"catre",
+				"category_id"
+			],
+			[
+				"categ",
+				"categories"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"ar",
+				"article"
+			],
+			[
+				"id",
+				"ids"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"cu",
+				"customer"
+			],
+			[
+				"name",
+				"nameSplit"
+			],
+			[
+				"nam",
+				"nameSplit"
+			],
+			[
+				"goog",
+				"google"
+			],
+			[
+				"fea",
+				"featuredVoucher"
+			],
+			[
+				"vou",
+				"voucherCategory"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Searching 203 files for \"export\"\n\n/var/www/maxsolution/tclub/modules/Main/Config/module-setting.php:\n    6  \t'user' => [\n    7  \t\t'upload_path' => 'user',\n    8: \t\t'export_excel' => false,\n    9  \t\t'view' => [\n   10  \t\t\t'index' => 'main::master-table',\n\n/var/www/maxsolution/tclub/modules/Main/Console/StubModule/Config/module-setting.stub:\n    3  \t'blank' => [\n    4  \t\t'upload_path' => 'blank',\n    5: \t\t'export_excel' => false,\n    6  \t\t'lang_data' => [\n    7  \t\t\t'index.title' => 'Blank Data',\n\n/var/www/maxsolution/tclub/modules/Main/Console/StubModule/Http/Controllers/BlankController.stub:\n    5  use Module\\Main\\Http\\Controllers\\AdminBaseController;\n    6  use Module\\Blank\\Http\\Skeleton\\BlankSkeleton;\n    7: use Module\\Main\\Transformer\\Exportable;\n    8  \n    9  class BlankController extends AdminBaseController\n   10  {\n   11: \tuse Exportable;\n   12  \t//hint => used as route name, url name, view alias\n   13  \tpublic $hint = 'blank';\n\n/var/www/maxsolution/tclub/modules/Main/Console/StubModule/Http/Controllers/BlankControllerDual.stub:\n    5  use Module\\Main\\Http\\Controllers\\AdminBaseController;\n    6  use Module\\Blank\\Http\\Skeleton\\BlankSkeleton;\n    7: use Module\\Main\\Transformer\\Exportable;\n    8  \n    9  class BlankController extends AdminBaseController\n   10  {\n   11: \tuse Exportable;\n   12  \tpublic $multi_language = true; //set ke false kalau sedang tidak di dual language module\n   13  \t//hint => used as route name, url name, view alias\n\n/var/www/maxsolution/tclub/modules/Main/Excel/MainExport.php:\n    6  \n    7  \n    8: class MainExport implements FromView\n    9  {\n   10  \tpublic function __construct(View $view){\n\n/var/www/maxsolution/tclub/modules/Main/Http/Controllers/LogController.php:\n   87  \n   88  \n   89:     public function export(){\n   90          $active_log = $this->request->active_log;\n   91          $file_log = $this->logPath($active_log);\n\n/var/www/maxsolution/tclub/modules/Main/Http/Controllers/UserManagementController.php:\n    8  use Module\\Main\\Mail\\MainMail;\n    9  use Module\\Main\\Http\\Skeleton\\UserSkeleton;\n   10: use Module\\Main\\Transformer\\Exportable;\n   11  \n   12  class UserManagementController extends AdminBaseController\n   13  {\n   14: \tuse Exportable;\n   15  \tpublic $hint = 'user';\n   16  \n\n/var/www/maxsolution/tclub/modules/Main/Routes/base_route.php:\n    2  if(isset($bs_url) && isset($bs_controller) && isset($bs_route)){\n    3  \tRoute::post($bs_url.'/table', $bs_controller.'@table')->name('admin.'.$bs_route.'.datatable');\n    4: \tRoute::get($bs_url.'/export', $bs_controller.'@export')->name('admin.'.$bs_route.'.export');\n    5  \tRoute::post($bs_url.'/switch', $bs_controller.'@switch')->name('admin.'.$bs_route.'.switch');\n    6  \n\n/var/www/maxsolution/tclub/modules/Main/Routes/web.php:\n   38  \n   39  \n   40: Route::get('setting/user/export', 'UserManagementController@export')->name('admin.user.export');\n   41  Route::get('setting/user', 'UserManagementController@index')->name('admin.user.index');\n   42  Route::get('setting/user/create', 'UserManagementController@create')->name('admin.user.store');\n   ..\n   47  \n   48  Route::get('log', 'LogController@index')->name('admin.log.index');\n   49: Route::get('log/export', 'LogController@export')->name('admin.log.export');\n   50  Route::post('setting/log/delete/{id}', 'LogController@delete')->name('admin.log.delete');\n   51  \n\n/var/www/maxsolution/tclub/modules/Main/Transformer/Exportable.php:\n    4  use Module\\Main\\Http\\Repository\\CrudRepository;\n    5  use Maatwebsite\\Excel\\Facades\\Excel;\n    6: use Module\\Main\\Excel\\MainExport;\n    7  \n    8: trait Exportable\n    9  {\n   10  \n   11: \tpublic function export(){\n   12: \t\tif(!config('module-setting.'.$this->hint.'.export_excel')){\n   13  \t\t\treturn redirect()->route('admin.'.$this->hint.'.index')->withErrors([\n   14: \t\t\t\t'error' => 'This module cannot be exported'\n   15  \t\t\t]);\n   16  \t\t}\n   17: \t\t$this->exportConfig();\n   18: \t\t$data = $this->repo->filter($this->exportCondition);\n   19  \t\t$skeleton = $this->skeleton;\n   20  \n   21  \t\t$custom_field = isset($this->custom_field) ? $this->custom_field : [];\n   22  \n   23: \t\t$viewData = view('main::master-export', compact(\n   24  \t\t\t'data',\n   25  \t\t\t'skeleton',\n   ..\n   27  \t\t));\n   28  \n   29: \t\treturn Excel::download(new MainExport($viewData), $this->hint.'-export-'.date('YmdHis').'.xlsx');\n   30  \t}\n   31  \n   32  \n   33  \n   34: \tpublic function exportCondition($config=[]){\n   35: \t\t$this->exportCondition = $config;\n   36  \t}\n   37  \n   ..\n   46  \t}\n   47  \n   48: \tpublic function exportOrderBy($field='id', $arah='DESC'){\n   49: \t\t$this->exportOrder = $field;\n   50: \t\t$this->exportArah = $arah;\n   51  \t}\n   52  \n   ..\n   58  \n   59  \t//default use\n   60: \tpublic function exportConfig(){\n   61  \t\t$this->hintUsed();\n   62: \t\t$this->exportCondition();\n   63: \t\t$this->exportOrderBy();\n   64  \t\t$this->setCustomField();\n   65  \t}\n\n/var/www/maxsolution/tclub/modules/Main/Views/assets/datatable.blade.php:\n    1  <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/jquery.dataTables.js') !!}\"></script>\n    2: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/dataTables.buttons.min.js') !!}\"></script>\n    3: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/buttons.html5.min.js') !!}\"></script>\n    4: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/buttons.flash.min.js') !!}\"></script>\n    5: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/jszip.min.js') !!}\"></script>\n    6: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/pdfmake.min.js') !!}\"></script>\n    7  <script>\n    8  var tb_data;\n\n/var/www/maxsolution/tclub/modules/Main/Views/master-table.blade.php:\n   38  \n   39  \n   40: \t@if(Route::has('admin.'.$hint.'.export') && config('module-setting.'.$hint.'.export_excel'))\n   41  \t<div class=\"pull-right float-xs-right\">\n   42: \t\t<a href=\"{{ url()->route('admin.'.$hint.'.export') }}\" class=\"btn btn-info\">Export to Excel</a>\n   43  \t</div>\n   44  \t@endif\n\n/var/www/maxsolution/tclub/modules/Main/Views/module/log.blade.php:\n   25  \t\t<strong>Log File Size : {{ $log_size }}</strong>\n   26  \t\t@endif\n   27: \t\t<a href=\"{{ url()->route('admin.log.export') }}?active_log={{ $active_log }}\" class=\"btn btn-primary btn-block\">Export Log</a>\n   28  \t</div>\n   29  </div>\n\n/var/www/maxsolution/tclub/modules/Main/Views/ui.blade.php:\n  392  @push ('script')\n  393  <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/jquery.dataTables.js') !!}\"></script>\n  394: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/dataTables.buttons.min.js') !!}\"></script>\n  395: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/buttons.html5.min.js') !!}\"></script>\n  396: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/buttons.flash.min.js') !!}\"></script>\n  397: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/jszip.min.js') !!}\"></script>\n  398: <script type=\"text/javascript\" src=\"{!! admin_asset('vendors/jquery-datatable/extensions/export/pdfmake.min.js') !!}\"></script>\n  399  <script>\n  400  $(function(){\n\n53 matches across 14 files\n\n\nSearching 203 files for \"export_excel\"\n\n/var/www/maxsolution/tclub/modules/Main/Config/module-setting.php:\n    6  \t'user' => [\n    7  \t\t'upload_path' => 'user',\n    8: \t\t'export_excel' => false,\n    9  \t\t'view' => [\n   10  \t\t\t'index' => 'main::master-table',\n\n/var/www/maxsolution/tclub/modules/Main/Console/StubModule/Config/module-setting.stub:\n    3  \t'blank' => [\n    4  \t\t'upload_path' => 'blank',\n    5: \t\t'export_excel' => false,\n    6  \t\t'lang_data' => [\n    7  \t\t\t'index.title' => 'Blank Data',\n\n/var/www/maxsolution/tclub/modules/Main/Transformer/Exportable.php:\n   10  \n   11  \tpublic function export(){\n   12: \t\tif(!config('module-setting.'.$this->hint.'.export_excel')){\n   13  \t\t\treturn redirect()->route('admin.'.$this->hint.'.index')->withErrors([\n   14  \t\t\t\t'error' => 'This module cannot be exported'\n\n/var/www/maxsolution/tclub/modules/Main/Views/master-table.blade.php:\n   38  \n   39  \n   40: \t@if(Route::has('admin.'.$hint.'.export') && config('module-setting.'.$hint.'.export_excel'))\n   41  \t<div class=\"pull-right float-xs-right\">\n   42  \t\t<a href=\"{{ url()->route('admin.'.$hint.'.export') }}\" class=\"btn btn-info\">Export to Excel</a>\n\n4 matches across 4 files\n\n\nSearching 203 files for \"endpush\"\n\n/var/www/maxsolution/tclub/modules/Main/Views/assets/cropper.blade.php:\n   23  \t}\n   24  </style>\n   25: @endpush\n   26  \n   27  @push ('script')\n   ..\n  124  \n  125  </script>\n  126: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/assets/dropzone.blade.php:\n    1  @push ('style')\n    2      <link rel=\"stylesheet\" href=\"{{ admin_asset('vendors/dropzone/css/dropzone.css') }}\">\n    3: @endpush\n    4  \n    5  @push ('script')\n    .\n  231  \n  232  </script>\n  233: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/assets/fancybox.blade.php:\n    1  @push ('style')\n    2  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css\" />\n    3: @endpush\n    4  @push ('script')\n    5  <script src=\"https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js\"></script>\n    6: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/assets/scroll-overflow.blade.php:\n   35  \n   36  </style>\n   37: @endpush\n   38  \n   39  @push('script')\n   ..\n  178  });\n  179  </script>\n  180: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/assets/tinymce.blade.php:\n   60  loadTinyMce();\n   61  </script>\n   62: @endpush\n   63  \n\n/var/www/maxsolution/tclub/modules/Main/Views/auth/profile.blade.php:\n   72  });\n   73  </script>\n   74: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/master-crud.blade.php:\n   15  \t\t@push ('style')\n   16  \t\t<link rel=\"stylesheet\" href=\"{{ asset('admin_theme/vendors/laraberg/css/laraberg.css') }}\">\n   17: \t\t@endpush\n   18  \t\t@push ('script')\n   19  \t\t<script src=\"{{ asset('admin_theme/vendors/react/react.production.min.js') }}\"></script>\n   20  \t\t<script src=\"{{ asset('admin_theme/vendors/react/react-dom.production.min.js') }}\"></script>\n   21  \t\t<script src=\"{{ asset('admin_theme/vendors/laraberg/js/laraberg.js') }}\"></script>\n   22: \t\t@endpush\n   23  \t@endif\n   24  @endif\n   ..\n  161  }\n  162  </script>\n  163: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/master-table.blade.php:\n   50  \t@push('script')\n   51  \n   52: \t@endpush\n   53  \t@endif\n   54  \t<div class=\"clearfix\"></div>\n   ..\n  149  </script>\n  150  @endif\n  151: @endpush\n  152  \n\n/var/www/maxsolution/tclub/modules/Main/Views/module/permission.blade.php:\n  100  \t</div>\n  101  </div>\n  102: @endpush\n  103  \n  104  @push ('script')\n  ...\n  196  }\n  197  </script>\n  198: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/module/setting.blade.php:\n    9  \t}\n   10  </style>\n   11: @endpush\n   12  \n   13  @section ('content')\n   ..\n  244  })\n  245  </script>\n  246: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/module/user-crud.blade.php:\n  154  \n  155  </script>\n  156: @endpush\n\n/var/www/maxsolution/tclub/modules/Main/Views/ui.blade.php:\n  402  });\n  403  </script>\n  404: @endpush\n\n21 matches across 12 files\n",
+			"settings":
+			{
+				"buffer_size": 11522,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/tclub/modules/Main/Views/master-table.blade.php",
+			"settings":
+			{
+				"buffer_size": 3869,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/tclub/modules/Voucher/Config/module-setting.php",
+			"settings":
+			{
+				"buffer_size": 551,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/tclub/modules/Voucher/Routes/web.php",
+			"settings":
+			{
+				"buffer_size": 245,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/tclub/modules/Main/Helper/main.php",
+			"settings":
+			{
+				"buffer_size": 1549,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/tclub/modules/Main/Routes/base_route.php",
+			"settings":
+			{
+				"buffer_size": 1088,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/tclub/modules/Main/Config/module-setting.php",
+			"settings":
+			{
+				"buffer_size": 739,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/var/www/maxsolution/tclub/modules/Contactus/Config/module-setting.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Http/Controllers/ReviewsResourceController.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/views/admin/reviews/index.blade.php",
+		"/var/www/personal/buditama/kamar/master/articles/src/Http/Controllers/CategoriesResourcesController.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Providers/RouteServiceProvider.php",
+		"/var/www/personal/buditama/kamar/master/reviews/routes/web.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Repositories/Presenter/ReviewsTransformer.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/views/admin/reviews/form.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Eloquent/BooksRepository.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/views/admin/reviews/partials/filter.blade.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Repositories/Eloquent/ReviewsRepository.php",
+		"/var/www/personal/buditama/kamar/master/reviews/routes/breadcrumbs.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/views/admin/reviews/partials/table.blade.php",
+		"/var/www/personal/buditama/kamar/master/reviews/database/migrations/2020_06_07_000000_create_reviews_table.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Models/Reviews.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/CustomerController.php",
+		"/var/www/personal/buditama/kamar/master/core/config/config.php",
+		"/var/www/personal/buditama/kamar/config/breadcrumbs.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Http/Controllers/BookPendingResourceController.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Http/Controllers/BookSuccessResourceController.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/admin/reviews/partials/table.blade.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/admin/reviews/form.blade.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/admin/reviews/partials/filter.blade.php",
+		"/var/www/personal/buditama/kamar/master/reviews/resources/admin/reviews/index.blade.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Sidebar/ExtenderSidebar.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Reviews.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/history-success.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Books.php",
+		"/var/www/maxsolution/tclub/modules/Main/Views/template/footer.blade.php",
+		"/var/www/maxsolution/tclub/modules/Main/Views/master-table.blade.php",
+		"/var/www/maxsolution/tclub/modules/Customer/Http/Skeleton/CustomerSkeleton.php",
+		"/var/www/maxsolution/tclub/backup.sql",
+		"/var/www/maxsolution/tclub/modules/Main/SettingExtender/ModuleExtender.php",
+		"/var/www/maxsolution/tclub/modules/Customer/Config/module-setting.php",
+		"/var/www/maxsolution/tclub/modules/Customer/Http/Controllers/CustomerController.php",
+		"/var/www/maxsolution/tclub/modules/Customer/Routes/web.php",
+		"/var/www/maxsolution/tclub/modules/Site/Views/public/profile.blade.php",
+		"/var/www/maxsolution/tclub/config/excel.php",
+		"/var/www/personal/buditama/kamar/master/books/database/migrations/2020_05_30_000000_create_books_table.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Models/Books.php",
+		"/var/www/personal/buditama/kamar/master/reviews/composer.json",
+		"/var/www/maxsolution/tclub/modules/Voucher/Models/Voucher.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Http/Controllers/CategoryController.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Http/Skeleton/VoucherSkeleton.php",
+		"/var/www/maxsolution/tclub/modules/Site/Views/admins/index.blade.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Http/Controllers/VoucherController.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Views/voucher/form.blade.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Routes/web.php",
+		"/var/www/maxsolution/tclub/modules/History/Http/Skeleton/CheckinSkeleton.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Http/Skeleton/TypeSkeleton.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Config/model.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Http/Skeleton/CategorySkeleton.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Http/Controllers/TypeController.php",
+		"/var/www/maxsolution/tclub/modules/Site/Http/Traits/AdminSite.php",
+		"/var/www/maxsolution/tclub/modules/Main/Http/Repository/CrudRepository.php",
+		"/var/www/maxsolution/tclub/modules/Contactus/Http/Controllers/ContactusController.php",
+		"/var/www/maxsolution/tclub/modules/Main/Helper/main.php",
+		"/var/www/maxsolution/tester/themes/assets/scss/_variables.scss",
+		"/var/www/maxsolution/tclub/modules/News/Http/Skeleton/NewsCategorySkeleton.php",
+		"/var/www/maxsolution/tclub/modules/History/Http/Controllers/CheckinController.php",
+		"/var/www/maxsolution/tclub/modules/Main/DataTable/DataTable.php",
+		"/var/www/maxsolution/tclub/modules/Main/Http/Skeleton/UserSkeleton.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Config/cms.php",
+		"/var/www/maxsolution/tclub/modules/History/Views/checkin/index.blade.php",
+		"/var/www/personal/buditama/kamar/master/reviews/src/Interfaces/ReviewsRepositoryInterface.php",
+		"/var/www/personal/buditama/kamar/module/site/routes/site.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/modal.blade.php",
+		"/var/www/personal/buditama/kamar/master/customers/src/Models/Customers.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/receipt.blade.php",
+		"/home/natanael/Downloads/invoice_order_receipt.html",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/partials/table.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/index.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Presenter/BookSuccessTransformer.php",
+		"/var/www/personal/buditama/kamar/master/customers/resources/views/admin/customers/partials/table.blade.php",
+		"/var/www/personal/buditama/kamar/master/customers/resources/views/admin/customers/index.blade.php",
+		"/var/www/personal/buditama/kamar/master/customers/resources/views/admin/customers/form.blade.php",
+		"/var/www/personal/buditama/kamar/master/customers/resources/views/admin/customers/partials/filter.blade.php",
+		"/var/www/personal/buditama/kamar/master/customers/src/Http/Controllers/CustomersResourceController.php",
+		"/var/www/personal/buditama/kamar/master/payments/resources/views/admin/payments/index.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/pending/index.blade.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Repositories/Criteria/PaymentsCriteria.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Repositories/Eloquent/PaymentsRepository.php",
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/pending/partials/filter.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/partials/filter.blade.php",
+		"/var/www/personal/buditama/kamar/master/customers/src/Repositories/Eloquent/CustomersRepository.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Repositories/Presenter/PaymentsTransformer.php",
+		"/var/www/personal/buditama/kamar/master/payments/resources/views/admin/payments/partials/table.blade.php",
+		"/var/www/personal/buditama/kamar/master/payments/resources/views/admin/payments/partials/filter.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Http/Controllers/PaymentsResourceController.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Models/Payments.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/page.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/footer.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/header.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/lang/en/default.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/lang/id/default.php",
+		"/var/www/personal/buditama/kamar/resources/lang/id/routes.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Sidebar/ExtenderSidebar.php",
+		"/var/www/personal/buditama/kamar/master/payments/routes/breadcrumbs.php",
+		"/var/www/personal/buditama/kamar/master/payments/routes/web.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/partials/signup.blade.php",
+		"/var/www/maxsolution/tclub/public/admin_theme_pro/vendors/ace-builds/src-min/ext-split.js",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/filter.blade.php",
+		"/var/www/personal/buditama/kamar/master/rooms/src/Rooms.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/faq.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Site.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Models/FaqCategories.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/rooms.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/rooms/filter.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/index.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/partials/banner.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/rooms/filterMobile.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/history.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/database/migrations/2020_05_30_000001_create_histories_table.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/gallery.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/rooms/featured.blade.php",
+		"/var/www/personal/buditama/kamar/app/Http/Middleware/VerifyCsrfToken.php",
+		"/var/www/personal/buditama/kamar/master/articles/src/Articles.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/index.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/layouts/index.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/metadata.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/routes/web.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Presenter/BookPendingTransformer.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Payments.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Presenter/BookSuccessPresenter.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Criteria/BookSuccessCriteria.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Sidebar/ExtenderSidebar.php"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 110.0,
+		"where_history":
+		[
+			"/var/www/maxsolution/tclub/modules/Main",
+			"/var/www/maxsolution/tclub/modules/Contactus",
+			"/var/www/maxsolution/tclub",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub/modules/Voucher/Http",
+			"/var/www/maxsolution/tclub",
+			"/var/www/html/admin/agroxaadmin/agroxaadmin-10/Agroxa_v1.0/Admin/vertical-green/assets",
+			"/var/www/maxsolution/tclub/modules",
+			"/var/www/maxsolution/tclub/modules/Main",
+			"/var/www/personal/buditama/kamar/master",
+			"/var/www/personal/buditama/kamar/module/site/resources/views/public",
+			"/var/www/personal/buditama/kamar/module",
+			"/var/www/personal/buditama/kamar/module/site/resources/views/public/details",
+			"/var/www/personal/buditama/kamar/module",
+			"/var/www/maxsolution/tclub/modules",
+			"/var/www/personal/buditama/kamar",
+			"/var/www/maxsolution/tclub",
+			"/var/www/maxsolution/tclub/modules/Main/Views/module",
+			"/var/www/maxsolution/tclub/modules/Main",
+			"/var/www/maxsolution/tclub/modules/Site/Http/Controllers",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/personal/buditama/kamar/config",
+			"/var/www/maxsolution/tclub",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub/modules/Site/Http/Controllers",
+			"/var/www/personal/alfonso/melimal/admin",
+			"/var/www/maxsolution/tclub",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub/public/themes/tclub2020",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub",
+			"/var/www/maxsolution/tclub/public/themes",
+			"/var/www/maxsolution/tclub/public/themes/tclub2020",
+			"/var/www/maxsolution/tclub/modules/Site/Views",
+			"/var/www/maxsolution/tclub/modules/Site/Http",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub/modules/Site/Views",
+			"/var/www/maxsolution/tclub",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub/public",
+			"/var/www/maxsolution/tclub/public/themes",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub/modules/Site/Views/layouts",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/personal/buditama/kamar",
+			"/var/www/maxsolution/tclub/modules",
+			"/var/www/maxsolution/tclub/public/themes/tclub2020",
+			"/var/www/maxsolution/tclub/modules/Site",
+			"/var/www/maxsolution/tclub/modules"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"endpush",
+			"export_excel",
+			"export",
+			"contactus data",
+			"contactus",
+			"edit",
+			"create",
+			"books",
+			"categories",
+			"Books",
+			"pending",
+			"books",
+			"articles",
+			"Articles",
+			"articles",
+			"order_id",
+			"submit-preview",
+			"pull-right float-xs-right",
+			"Your Site Name",
+			"import_excel",
+			"gender",
+			"phone",
+			"email",
+			"import",
+			"Books",
+			"$request->description",
+			"contact_address",
+			"voucherListing",
+			"limit",
+			"CrudRepository",
+			"color",
+			"search",
+			"Slug",
+			"slug",
+			"searchable",
+			"review-field",
+			"payments",
+			">\n",
+			"\t\t\t\t\t\t\t\t\t\t<td class=\"text-center\">15</td>\n\t\t\t\t\t\t\t\t\t\t<td class=\"text-center\">$75</td>",
+			"date",
+			"between",
+			"->id",
+			"id",
+			"BookPending",
+			"success",
+			"books",
+			"payment",
+			"bookPending",
+			"aboutus",
+			"termAndC",
+			"privacyPolicy",
+			"privacy",
+			"->t",
+			"data->banners",
+			"Site",
+			"article",
+			"Privacy & Policy",
+			"content",
+			"headingOne",
+			"collapseOne",
+			"headingOne",
+			"endforeach",
+			"general",
+			"requestParams",
+			"rooms",
+			"#",
+			"href",
+			"location-list",
+			"stop",
+			"setDefaultBooking",
+			"createBookPending",
+			"pagination",
+			"ti-share",
+			"path",
+			"photo",
+			"H:i:s",
+			"article",
+			"IlluminatePaginatorAdapter",
+			"articles",
+			"register",
+			"helper",
+			"form-control",
+			"false",
+			"text",
+			"How To Pay",
+			"inline",
+			"form-control",
+			"form-control ",
+			"<i class=\"fa fa-comment-o\"></i> ",
+			"pngwave.png",
+			"Success",
+			"success",
+			"Pending",
+			".books",
+			"BookS",
+			"books",
+			"BooksResourceController",
+			"filtered",
+			"created_at",
+			"checkin_at",
+			"history_checkin",
+			"datepicker",
+			"query",
+			"uuid",
+			"\"",
+			"enjoy your",
+			"enjouy your",
+			"redeem your point",
+			"name",
+			"->",
+			"whereHas",
+			"MediaInstance",
+			"your message",
+			"resetPassword",
+			"your password has been",
+			"password change",
+			"Notification",
+			"sended",
+			"Reward Category",
+			"+",
+			"books",
+			"BooksResourceController",
+			"fullname-display",
+			"callbackmessageLogin",
+			"callbackmessageRegister",
+			"callbackmessageLogin",
+			"callbackmessage",
+			"Confirm"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"reward voucher"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/var/www/maxsolution/tclub"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11522,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										165,
+										171
+									],
+									[
+										407,
+										413
+									],
+									[
+										746,
+										752
+									],
+									[
+										844,
+										850
+									],
+									[
+										1199,
+										1205
+									],
+									[
+										1297,
+										1303
+									],
+									[
+										1561,
+										1567
+									],
+									[
+										1766,
+										1772
+									],
+									[
+										2101,
+										2107
+									],
+									[
+										2208,
+										2214
+									],
+									[
+										2527,
+										2533
+									],
+									[
+										2553,
+										2559
+									],
+									[
+										2589,
+										2595
+									],
+									[
+										2814,
+										2820
+									],
+									[
+										2849,
+										2855
+									],
+									[
+										2876,
+										2882
+									],
+									[
+										3195,
+										3201
+									],
+									[
+										3219,
+										3225
+									],
+									[
+										3245,
+										3251
+									],
+									[
+										3561,
+										3567
+									],
+									[
+										3590,
+										3596
+									],
+									[
+										3642,
+										3648
+									],
+									[
+										3704,
+										3710
+									],
+									[
+										3846,
+										3852
+									],
+									[
+										3897,
+										3903
+									],
+									[
+										3957,
+										3963
+									],
+									[
+										4149,
+										4155
+									],
+									[
+										4274,
+										4280
+									],
+									[
+										4307,
+										4313
+									],
+									[
+										4399,
+										4405
+									],
+									[
+										4444,
+										4450
+									],
+									[
+										4537,
+										4543
+									],
+									[
+										4595,
+										4601
+									],
+									[
+										4633,
+										4639
+									],
+									[
+										4731,
+										4737
+									],
+									[
+										4791,
+										4797
+									],
+									[
+										4826,
+										4832
+									],
+									[
+										5181,
+										5187
+									],
+									[
+										5327,
+										5333
+									],
+									[
+										5468,
+										5474
+									],
+									[
+										5609,
+										5615
+									],
+									[
+										5742,
+										5748
+									],
+									[
+										5944,
+										5950
+									],
+									[
+										5989,
+										5995
+									],
+									[
+										6104,
+										6110
+									],
+									[
+										6138,
+										6144
+									],
+									[
+										6376,
+										6382
+									],
+									[
+										6452,
+										6458
+									],
+									[
+										6800,
+										6806
+									],
+									[
+										6946,
+										6952
+									],
+									[
+										7087,
+										7093
+									],
+									[
+										7228,
+										7234
+									],
+									[
+										7361,
+										7367
+									],
+									[
+										7638,
+										7650
+									],
+									[
+										7880,
+										7892
+									],
+									[
+										8134,
+										8146
+									],
+									[
+										8458,
+										8470
+									],
+									[
+										8796,
+										8803
+									],
+									[
+										8875,
+										8882
+									],
+									[
+										9085,
+										9092
+									],
+									[
+										9164,
+										9171
+									],
+									[
+										9399,
+										9406
+									],
+									[
+										9551,
+										9558
+									],
+									[
+										9672,
+										9679
+									],
+									[
+										9753,
+										9760
+									],
+									[
+										9881,
+										9888
+									],
+									[
+										10004,
+										10011
+									],
+									[
+										10218,
+										10225
+									],
+									[
+										10554,
+										10561
+									],
+									[
+										10631,
+										10638
+									],
+									[
+										10751,
+										10758
+									],
+									[
+										10856,
+										10863
+									],
+									[
+										10985,
+										10992
+									],
+									[
+										11065,
+										11072
+									],
+									[
+										11180,
+										11187
+									],
+									[
+										11265,
+										11272
+									],
+									[
+										11381,
+										11388
+									],
+									[
+										11486,
+										11493
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								8655,
+								8655
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 3,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/var/www/maxsolution/tclub/modules/Main/Views/master-table.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1682,
+								1682
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 532.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/var/www/maxsolution/tclub/modules/Voucher/Config/module-setting.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								103,
+								103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/var/www/maxsolution/tclub/modules/Voucher/Routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								245,
+								245
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/var/www/maxsolution/tclub/modules/Main/Helper/main.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1549,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5,
+								5
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/var/www/maxsolution/tclub/modules/Main/Routes/base_route.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								289,
+								289
+							],
+							[
+								315,
+								315
+							],
+							[
+								351,
+								351
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/var/www/maxsolution/tclub/modules/Main/Config/module-setting.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 739,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"$createEditor"
+			]
+		],
+		"width": 1100.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

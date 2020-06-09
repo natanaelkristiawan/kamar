@@ -165,13 +165,6 @@ class CustomerController extends Controller
       'phone'            => $customer->phone
     );
 
-    $date = new \DateTime(date('Y-m-d H:i:s'), new \DateTimeZone('Asia/Jakarta'));
-    $expired = array(
-      'start_time'=> $date->format('Y-m-d H:i:s O'),
-      'unit'=> 'minutes',
-      'duration'=> 60
-    );
-
     $params = array(
       'transaction_details' => array(
         'order_id' => $request->uuid,
@@ -179,7 +172,6 @@ class CustomerController extends Controller
       ),
       'item_details'        => $calculatePayment['items'],
       'customer_details'    => $customer_details,
-      'expiry' => $expired,
       'enabled_payments' => 
       ['credit_card',
       'bca_klikbca', 'bri_epay', 'echannel', 'permata_va',

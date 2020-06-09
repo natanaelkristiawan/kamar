@@ -559,8 +559,29 @@ class PublicController extends Controller
       // find data detail from book history
       $history = Books::findHistory($request->order_id);
       $dataBooking = $history->data;
+      unset($dataBooking['notes']);
       // create Book pending
-      Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
+      $book = Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
+      $book->va_numbers = $request->va_numbers[0]['va_number'];
+      $book->bank = $request->va_numbers[0]['bank'];
+      // find customernya
+      $customer = $book->customer;
+
+      $params = array(
+        'customer' => $book->customer->name,
+        'room_photo' => $book->room->photo_primary,
+        'room_name' => $book->room->name,
+        'location_name' => $book->room->location->name,
+        'date_checkin' => $book->date_checkin,
+        'date_checkout' => $book->date_checkout,
+        'rooms' => $book->rooms,
+        'guests' => $book->guests,
+        'grand_total' => $book->grand_total,
+        'bank' => $request->va_numbers[0]['bank'],
+        'va_numbers' => $request->va_numbers[0]['va_number']
+      );
+
+      self::emailWaitPayment($customer->email, $params);
     }
 
     // booking success to payment
@@ -572,7 +593,30 @@ class PublicController extends Controller
         'status' => 1,
         'updated_at' => date('Y-m-d H:i:s')
       );
-      Books::updateBook($book->id, $bookUpdate);
+      $book = Books::updateBook($book->id, $bookUpdate);
+
+      $customer = $book->customer;
+    
+      $params = array(
+        'customer' => $book->customer->name,
+        'customer_phone' => $book->customer->phone,
+        'room_photo' => $book->room->photo_primary,
+        'room_name' => $book->room->name,
+        'location_name' => $book->room->location->name,
+        'date_checkin' => $book->date_checkin,
+        'date_checkout' => $book->date_checkout,
+        'rooms' => $book->rooms,
+        'guests' => $book->guests,
+        'grand_total' => $book->grand_total,
+        'owner_name' => $book->room->owner->name,
+        'owner_phone' => $book->room->owner->phone,
+        'room_address' => $book->room->address,
+        'room_address_detail' => $book->room->address_detail['en'],
+        'map' => 'https://maps.google.com/?q='.$book->room->latitude.','.$book->room->longitude
+      );
+
+      self::emailSuccess($customer->email, $params);
+      self::emailOwner($book->room->owner->email, $params);
     }
 
     // booking using credit card
@@ -581,7 +625,32 @@ class PublicController extends Controller
       $dataBooking = $history->data;
       $dataBooking['payment_id'] = $midtrans->id;
       $dataBooking['status'] = 1;
-      Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
+
+      unset($dataBooking['notes']);
+      $book = Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
+
+      $customer = $book->customer;
+    
+      $params = array(
+        'customer' => $book->customer->name,
+        'customer_phone' => $book->customer->phone,
+        'room_photo' => $book->room->photo_primary,
+        'room_name' => $book->room->name,
+        'location_name' => $book->room->location->name,
+        'date_checkin' => $book->date_checkin,
+        'date_checkout' => $book->date_checkout,
+        'rooms' => $book->rooms,
+        'guests' => $book->guests,
+        'grand_total' => $book->grand_total,
+        'owner_name' => $book->room->owner->name,
+        'owner_phone' => $book->room->owner->phone,
+        'room_address' => $book->room->address,
+        'room_address_detail' => $book->room->address_detail['en'],
+        'map' => 'https://maps.google.com/?q='.$book->room->latitude.','.$book->room->longitude
+      );
+
+      self::emailSuccess($customer->email, $params);
+      self::emailOwner($book->room->owner->email, $params);
     }
 
     // booking expired
@@ -637,5 +706,39 @@ class PublicController extends Controller
   public function callbackSuccess(Request $request)
   {
 
+  }
+
+
+  public function emailSuccess($email, $params)
+  {
+
+    Mail::send('site::public.mails.successPayment', $params, function ($message) use ($email)
+    {
+      $message->subject('Success Payment');
+      $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
+      $message->to($email);
+    });
+  }
+
+  public function emailWaitPayment($email, $params)
+  {
+
+    Mail::send('site::public.mails.waitingPayment', $params, function ($message) use ($email)
+    {
+      $message->subject('Waiting Payment');
+      $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
+      $message->to($email);
+    });
+  }
+
+  public function emailOwner($email, $params)
+  {
+
+    Mail::send('site::public.mails.owner', $params, function ($message) use ($email)
+    {
+      $message->subject('Booking Notification');
+      $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
+      $message->to($email);
+    });
   }
 }

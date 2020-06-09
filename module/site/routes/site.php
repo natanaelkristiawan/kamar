@@ -47,5 +47,8 @@ $route->get('booking-receipt/{uuid}', 'CustomerController@bookingReceipt')->name
 $route->post('update-profile', 'CustomerController@updateProfile')->name('public.updateProfile');
 $route->post('send-review', 'CustomerController@sendReview')->name('public.sendReview');
 
+
+$route->get('email-success', 'PublicController@emailSuccess');
+
 $route->get('login', function(){
 })->name('login');

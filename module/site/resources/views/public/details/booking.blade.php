@@ -121,7 +121,7 @@
 <script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
 <script src="{{ asset('themes/additionals/') }}/number/jquery.number.min.js" defer></script>
 <script type="text/javascript">
-  var disabledDate = {!! json_encode(explode(',','2020-06-03,2020-06-04')) !!}
+  var disabledDate = {!! json_encode($dateDisable) !!}
   var uuid = "{{ $uuid }}"
   async function findDateInRange() {
     var response = new Promise((resolve) => {
@@ -348,6 +348,7 @@
       });
     });
     
+    var disabledDays = "{!! implode(',' , $dateDisable) !!}"
     var options = {
       large: true,
       largeOnly: true,
@@ -356,7 +357,7 @@
       maxYear: new Date().getFullYear() + 5,
       format: 'Y-m-d',
       modal: true,
-      disabledDays: '2020-06-03,2020-06-04',
+      disabledDays: disabledDays,
       autofill: false
     }
     $('.datecheckin').dateDropper( $.extend(false,options,{

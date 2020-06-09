@@ -99,6 +99,19 @@ class PublicController extends Controller
     $locations = self::getLocations();
 
 
+
+    $dateDisable = array();
+
+    foreach ($room->date_off as $key => $value) {
+
+      if($value->status){
+
+        $list = self::getDatesFromRange($value->date_start, $value->date_end);
+
+        $dateDisable = $dateDisable + $list;
+      }
+    }
+
     // pengen tau uuid tetap sama atau beda
     $uuid = Uuid::uuid4();
     Meta::title('kamartamu.com - '.$room->meta->title);
@@ -106,7 +119,18 @@ class PublicController extends Controller
     Meta::set('keywords', $room->meta->tag);
     Meta::set('description', $room->meta->description);
     Meta::set('active', 'rooms');
-    return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid'));
+    return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid' , 'dateDisable'));
+  }
+
+
+  protected function getDatesFromRange($start_date, $end_date, $date_format = 'Y-m-d')
+  {
+    $dates_array = array();
+    for ($x = strtotime($start_date); $x <= strtotime($end_date); $x += 86400) {
+       array_push($dates_array, date($date_format, $x));
+    }
+
+    return $dates_array;
   }
 
   protected function getFeaturedRooms($limit = 6, $language = 'id'){

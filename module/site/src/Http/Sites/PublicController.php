@@ -239,7 +239,7 @@ class PublicController extends Controller
       // send for check email to activate
       return response()->json([
         'status' => true,
-        'message' => 'Thank you for submit data, check your email to activate your kamartamu account',
+        'message' => 'Congratulations. The room is available. Please check your email to activate your account',
         'step' => 'activate_account'
       ]);
     }

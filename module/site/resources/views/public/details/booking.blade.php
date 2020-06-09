@@ -69,10 +69,10 @@
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group room-wrap">
           <select class="form-control rooms">
-            <option value="1">1room - 2people</option>
-            <option value="2">2room - 4people</option>
-            <option value="3">3room - 6people</option>
-            <option value="4">4room - 8people</option>
+            <option value="1">1 room - 2 persons</option>
+            <option value="2">2 room - 4 persons</option>
+            <option value="3">3 room - 6 persons</option>
+            <option value="4">4 room - 8 persons</option>
           </select>
           <span class="helper error"></span>
         </div>
@@ -207,34 +207,34 @@
   var constraints = {
     fullname : {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^The field is mandatory'
       }
     }, 
     datecheckin : {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^The field is mandatory'
       }
     }, 
     datecheckout : {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^The field is mandatory'
       }
     },
     @if(!(bool)Auth::check())
     phone : {
-      format: {
-        pattern: /^(^\+62\s?|^0)(\d{3,4}-?){2}\d{3,4}$/,
-        flags: "g",
-        message: "format wrong, insert 0 or +62"
-      },
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^The field is mandatory'
       }
     },
     @endif
     email : {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^The field is mandatory'
       },
       email: {
         message: "^Email is not valid"

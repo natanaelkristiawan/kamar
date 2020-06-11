@@ -611,6 +611,10 @@ class PublicController extends Controller
     // booking success to payment
     if ($request->transaction_status == 'settlement' && $request->status_code == 200) {
       $book = Books::findBook($request->order_id);
+
+      if (is_null($book)) {
+        return;
+      }
       // update data
       $bookUpdate = array(
         'payment_id' => $midtrans->id,
@@ -646,6 +650,9 @@ class PublicController extends Controller
     // booking using credit card
     if ($request->transaction_status == 'capture' && $request->status_code == 200) {
       $history = Books::findHistory($request->order_id);
+      if (is_null($history)) {
+        return;
+      }
       $dataBooking = $history->data;
       $dataBooking['payment_id'] = $midtrans->id;
       $dataBooking['status'] = 1;
@@ -680,6 +687,10 @@ class PublicController extends Controller
     // booking expired
     if ($request->transaction_status == 'expire' && $request->status_code == 202) {
       $book = Books::findBook($request->order_id);
+
+      if (is_null($book)) {
+        return;
+      }
       // update data
       $bookUpdate = array(
         'payment_id' => $midtrans->id,
@@ -692,6 +703,10 @@ class PublicController extends Controller
     if ($request->transaction_status == 'cancel' && $request->status_code == 202) {
       $book = Books::findBook($request->order_id);
       // update data
+
+      if (is_null($book)) {
+        return;
+      }
       $bookUpdate = array(
         'payment_id' => $midtrans->id,
         'status' => 2,

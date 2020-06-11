@@ -88,7 +88,7 @@
                                                         </tr>
                                                     </table>
 
-                                                    <p style="margin-bottom: 5px;font-size:20px; font-weight: bold;">Rp. {{ number_format($grand_total, '0', ',', '.') }}</p>
+                                                    <p style="margin-bottom: 5px;font-size:20px; font-weight: bold;">Rp. {{ number_format($total, '0', ',', '.') }}</p>
                                                     <p style="margin-top: 0;">(included Service fee Kamartamu 10%)</p>
                                                 </td>                           
                                             </tr>

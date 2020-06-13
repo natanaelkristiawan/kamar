@@ -9,10 +9,10 @@
 	        <a href="{{ route('public.dashboard') }}" class="list-group-item">
 	          Profile
 	        </a>
-	        <a href="{{ route('public.bookingHistory') }}" class="list-group-item is-active">
+	        <a href="{{ route('public.bookingHistory') }}" class="list-group-item">
 	          Booking History
 	        </a>
-	        <a href="{{ route('public.bookmarkList') }}" class="list-group-item">
+	        <a href="{{ route('public.bookmarkList') }}" class="list-group-item is-active">
             Bookmark
           </a>
 		    </div>        
@@ -22,25 +22,22 @@
 				<div class="custom-tab style-1">
 					<ul class="nav nav-tabs pb-2 b-0" id="myTab" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" href="{{ route('public.bookingHistory') }}" role="tab" aria-controls="home" aria-selected="true">Pending</a>
+							<a class="nav-link" id="home-tab" href="{{ route('public.bookingHistory') }}" role="tab" aria-controls="home" aria-selected="true">Pending</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="profile-tab"  href="{{ route('public.bookingHistorySuccess') }}" role="tab" aria-controls="profile" aria-selected="false">Success</a>
+							<a class="nav-link active" id="profile-tab"  href="{{ route('public.bookingHistorySuccess') }}" role="tab" aria-controls="profile" aria-selected="false">Success</a>
 						</li>
 					</ul>
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 							<div class="row">
-								@foreach($books as $book)
+								@foreach($rooms as $book)
 								<div class="col-12">
 									<div class="card shadow">
 											<div class="card-header">
 												<div class="row center">
 													<div class="col-lg-6">
 														{{ $book->created_at }}
-													</div>
-													<div class="col-lg-6 text-right center">
-														
 													</div>
 												</div>
 											</div>
@@ -58,30 +55,15 @@
 										            </a>
 				                	    </div>
 				                	    <div class="col-md-5 mb-3">
-				                	        <a class="link" href="{{ route('public.roomDetail', array('slug'=>$book->room_slug)) }}"><h4 class="mb-0">{{ $book->room }}</h4></a>
-				                	        <div class="d-block mb-1">
-				                	        	{{ $book->room_location }}
-				                	        </div>
-				                	        <div class="d-inline-block">
-				                	        	<i class="fas fa-calendar-check"></i>
-				                	        	<span>{{ $book->date_checkin }} - </span>
-				                	        </div> 
-				                	        <div class="d-inline-block">
-				                	        	<i class="fas fa-calendar-check"></i>
-				                	        	<span>{{ $book->date_checkout }}</span>
-				                	        </div>
-
-				                	        <div class="d-block">
-				                	        	<i class="fas fa-bed"></i>
-				                	        	<span>{{ $book->rooms }}room - {{ $book->guests }}people</span>
-				                	        </div>
-
+			                	        <a class="link" href="{{ route('public.roomDetail', array('slug'=>$book->room_slug)) }}"><h4 class="mb-0">{{ $book->room }}</h4></a>
+			                	        <div class="d-block mb-1">
+			                	        	{{ $book->room_location }}
+			                	        </div>
 				                	    </div>
 				                	    <div class="col-md-4 text-center">
-				                	        <h3>Rp {{ number_format($book->grand_total, 0, ',', '.') }}</h3>
-				                	        <small>Waiting For Payment*</small>
+
 				                	        <div class="sub-row">
-				                	            <a target="_blank" href="{{ $book->notes->pdf_url }}" type="button" class="btn btn-theme">How To Pay</a>
+				                	        	<a target="_blank" href="{{ route('public.roomDetail', array('slug'=>$book->room_slug)) }}" type="button" class="btn btn-theme">BOOK NOW</a>
 				                	        </div>
 				                	    </div>
 				                	</div>
@@ -113,3 +95,5 @@
 	}
 </style>
 @stop
+
+

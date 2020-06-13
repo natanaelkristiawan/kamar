@@ -123,6 +123,7 @@ class Rooms
         'owner_name'  => $model->owner->name,
         'owner_phone'  => $model->owner->phone,
         'owner_photo'  => $model->owner->photo,
+        'reviews' => $model->reviews,
         'status' => $model->status,
       ];
     });
@@ -145,7 +146,9 @@ class Rooms
   public function getRoomBySlug($slug='', $language = 'id')
   {
     $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
-    $query = $this->rooms->with(['owner'])->findWhere(array('slug'=>$slug));
+    $query = $this->rooms->with(['owner', 'reviews' => function($query){
+      return $query->where('status', 1);
+    }])->findWhere(array('slug'=>$slug));
     $fractal = new Manager();
     $resource = self::renderRooms($query, $language);
     $response = $fractal->createData($resource)->toJson();

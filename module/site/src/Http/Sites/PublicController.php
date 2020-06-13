@@ -95,10 +95,18 @@ class PublicController extends Controller
       return abort(404);
     }
     $room = $data[0];
+
     $ameneties = json_decode(Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang))->data;
     $locations = self::getLocations();
 
+    $isBookmark = false;
 
+    if (Auth::check()) {
+
+      $customer = Auth::user();
+
+      $isBookmark = !(bool)is_null(Site::isBookmark(array('customer_id'=>$customer->id, 'room_id'=>$room->id)));
+    }
 
     $dateDisable = array();
 
@@ -119,7 +127,7 @@ class PublicController extends Controller
     Meta::set('keywords', $room->meta->tag);
     Meta::set('description', $room->meta->description);
     Meta::set('active', 'rooms');
-    return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid' , 'dateDisable'));
+    return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid' , 'dateDisable', 'isBookmark'));
   }
 
 
@@ -235,7 +243,7 @@ class PublicController extends Controller
       'dateStart' => 'required',
       'dateEnd' => 'required',
       'roomID' => 'required',
-      'g-recaptcha-response' => 'captcha'
+      'g-recaptcha-response' => 'required|captcha'
     ]);
 
     if ($validator->fails()) {
@@ -292,7 +300,7 @@ class PublicController extends Controller
   {
     $validator = Validator::make($request->all(), [
       'email' => 'required|email',
-      'g-recaptcha-response' => 'captcha'
+      'g-recaptcha-response' => 'required|captcha'
     ]);
 
     if ($validator->fails()) {
@@ -373,7 +381,7 @@ class PublicController extends Controller
     $validator = Validator::make($request->all(), [
       'email' => 'required|email',
       'password'  => 'required|min:6',
-      'g-recaptcha-response' => 'captcha'
+      'g-recaptcha-response' => 'required|captcha'
     ]);
 
     if ($validator->fails()) {
@@ -422,7 +430,7 @@ class PublicController extends Controller
       'password'  => 'required|min:6|confirmed',
       'name'  => 'required',
       'phone'  => 'required',
-      'g-recaptcha-response' => 'captcha'
+      'g-recaptcha-response' => 'required|captcha'
     ]);
 
     if ($validator->fails()) {
@@ -741,6 +749,55 @@ class PublicController extends Controller
     $banner = Site::getDataSite('condition-banner');
 
     return view('site::public.page', compact('data', 'banner'));
+  }
+
+
+
+  public function bookmark(Request $request)
+  {
+    if (!(bool)Auth::check()) {
+      return response()->json(
+        array(
+          'status' => false,
+          'message' => 'need_login'
+        ),
+        401
+      );
+    }
+
+    $validator = Validator::make($request->all(), [
+      'room_id' => 'required'
+    ]);
+
+    if ($validator->fails()) {
+      return response()->json(
+        array(
+          'status' => false,
+          'error' => $validator->errors()
+        )
+      );
+    }
+
+    $customer = Auth::user();
+
+    $attribute = array(
+      'customer_id' => $customer->id,
+      'room_id' => $request->room_id
+    );
+
+    $params = array(
+      'customer_id' => $customer->id,
+      'room_id' => $request->room_id,
+      'status' => $request->status
+    );
+
+
+    $query = Site::setBookmark($attribute, $params);
+
+    return response()->json(array(
+      'status' => true
+    ));
+    
   }
 
 

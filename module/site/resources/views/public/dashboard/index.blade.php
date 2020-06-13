@@ -12,6 +12,9 @@
 	        <a href="{{ route('public.bookingHistory') }}" class="list-group-item">
 	          Booking History
 	        </a>
+          <a href="{{ route('public.bookmarkList') }}" class="list-group-item">
+            Bookmark
+          </a>
 		    </div>        
 			</div>
 

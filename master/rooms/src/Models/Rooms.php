@@ -63,4 +63,9 @@ class Rooms extends Model
   {
     return $this->belongsTo(\Master\Rooms\Models\Types::class, 'type_id', 'id');
   }
+
+  public function reviews()
+  {
+    return $this->hasMany(\Master\Reviews\Models\Reviews::class, 'room_id', 'id');
+  }
 }

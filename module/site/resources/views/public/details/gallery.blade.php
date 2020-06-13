@@ -62,13 +62,13 @@
       
         <div class="pr-all-info text-center mb-3 mt-4">
           <div class="pr-single-info">
-            <a href="JavaScript:Void(0);" data-toggle="tooltip" data-original-title="Share Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:;" onclick="shareFB()" data-toggle="tooltip" data-original-title="Share Facebook"><i class="fab fa-facebook-f"></i></a>
           </div>
           <div class="pr-single-info">
-            <a href="JavaScript:Void(0);" data-toggle="tooltip" data-original-title="Get Print"><i class="fas fa-print"></i></a>
+            <a href="javascript:;" onclick="window.print()" data-toggle="tooltip" data-original-title="Get Print"><i class="fas fa-print"></i></a>
           </div>
           <div class="pr-single-info">
-            <a href="JavaScript:Void(0);" class="like-bitt add-to-favorite" data-toggle="tooltip" data-original-title="Add To Favorites"><i class="lni-heart-filled"></i></a>
+            <a href="javascript:;" class="like-bitt add-to-favorite {{ $isBookmark ? 'active' : '' }}" data-toggle="tooltip" data-original-title="Add To Favorites"><i class="lni-heart-filled"></i></a>
           </div>
           
         </div>
@@ -97,3 +97,71 @@
     </div>
   </div>
 </section>
+
+
+@section('script')
+@parent
+
+<style>
+  .add-to-favorite.active i{
+    color: #eb3b5a
+  }
+</style>
+
+<script type="text/javascript">
+
+  async function bookmark(status) {
+    var response = new Promise((resolve, reject) => {
+      $.ajax({
+        url : "{{ route('public.bookmark') }}",
+        data: $.extend(false, TOKEN, {room_id:"{{ $room->id }}", status:status}),
+        type: 'post',
+        dataType : 'json',
+        success : function(result) {
+          resolve(result)
+        },
+        error : function(error) {
+          reject(error)
+        }
+      });
+    })
+
+    return await response;
+  }
+
+  $(document).on('click', '.add-to-favorite', function(){
+    if ($(this).hasClass('active')) {
+      bookmark(0).then(response => {
+        Swal.fire('Success', 'Remove Bookmark', 'success');
+        $(this).removeClass('active')
+      }).catch(error => {
+        $('.modalLogin').click();
+      })
+    } else {
+  
+      bookmark(1).then(response => {
+        Swal.fire('Success', 'Add Bookmark', 'success');
+        $(this).addClass('active')
+      }).catch(error => {
+        $('.modalLogin').click();
+      })
+    }
+  })
+
+
+  function shareFB() {
+    FB.ui(
+      {
+        method: 'share',
+        href: '{{ url()->current() }}',
+      },
+      function(response) {
+      }
+    );
+  }
+
+
+
+</script>
+
+@stop

@@ -18,36 +18,6 @@
 <section>
 	<div class="container">
 	
-		<div class="row">
-			
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="contact-box">
-					<i class="ti-shopping-cart theme-cl"></i>
-					<h4>Contact Sales</h4>
-					<p>sales@rikadahelp.co.uk</p>
-					<span>+01 215 245 6258</span>
-				</div>
-			</div>
-			
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="contact-box">
-					<i class="ti-user theme-cl"></i>
-					<h4>Contact Sales</h4>
-					<p>sales@rikadahelp.co.uk</p>
-					<span>+01 215 245 6258</span>
-				</div>
-			</div>
-			
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="contact-box">
-					<i class="ti-comment-alt theme-cl"></i>
-					<h4>Start Live Chat</h4>
-					<span>+01 215 245 6258</span>
-					<span class="live-chat">Live Chat</span>
-				</div>
-			</div>
-			
-		</div>
 		
 		<div class="row">
 			

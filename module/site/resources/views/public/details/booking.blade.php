@@ -101,10 +101,15 @@
 
       <div class="col-lg-12 col-md-12 col-sm-6 hide" id="checkout-button">
         <div class="form-group">
+          <input id="confirmation" class="checkbox-custom" name="confirmation" type="checkbox">
+          <label for="confirmation" class="checkbox-custom-label"> <a target="_blank" class="checkbox-custom-label" href="{{ route('public.condition') }}">{{ trans('site::default.termCondition')}}</a></label>
+         
+        </div>
+        <div class="form-group">
           @if(Auth::check() && (bool)Auth::user()->status)
-          <button type="button" class="btn btn-theme full-width" id="bookingNow">Booking Now</button>
+          <button type="button" disabled="" class="btn btn-theme full-width" id="bookingNow">Booking Now</button>
           @else
-          <button type="button" disabled="" class="btn btn-theme full-width">Booking Now</button>
+          <button type="button" disabled="" data-toggle="tooltip" data-original-title="Please validate your email" class="btn btn-theme full-width">Booking Now</button>
           @endif
         </div>
       </div>
@@ -121,6 +126,14 @@
 <script src="{{ asset('themes/additionals/') }}/datedropper/datedropper.pro.min.js"></script>
 <script src="{{ asset('themes/additionals/') }}/number/jquery.number.min.js" defer></script>
 <script type="text/javascript">
+  $(document).on('click', '#confirmation', function(){
+    if ($(this).is(':checked')) {
+      $('#bookingNow').removeAttr('disabled')
+    } else {
+      $('#bookingNow').attr('disabled', 'disabled')
+    }
+  });
+
   var disabledDate = {!! json_encode($dateDisable) !!}
   var uuid = "{{ $uuid }}"
   async function findDateInRange() {

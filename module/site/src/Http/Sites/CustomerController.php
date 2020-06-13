@@ -10,6 +10,8 @@ use Rooms;
 use Books;
 use Hash;
 use Reviews;
+use Module\Site\Facades\Site;
+
 class CustomerController extends Controller
 {
   protected $customer;
@@ -74,7 +76,7 @@ class CustomerController extends Controller
     $validator = Validator::make($request->all(), [
       'name' => 'required',
       'phone' => 'required',
-      'g-recaptcha-response' => 'captcha'
+      'g-recaptcha-response' => 'required|captcha'
     ]);
 
     if ($validator->fails()) {
@@ -144,7 +146,7 @@ class CustomerController extends Controller
       'roomID' => 'required',
       'nights' => 'required',
       'uuid'  => 'required',
-      'g-recaptcha-response' => 'captcha'
+      'g-recaptcha-response' => 'required|captcha'
     ]);
 
     if ($validator->fails()) {
@@ -241,7 +243,7 @@ class CustomerController extends Controller
   public function saveResponseMidtrans(Request $request)
   {
     $validator = Validator::make($request->all(), [
-      'g-recaptcha-response' => 'captcha'
+      'g-recaptcha-response' => 'required|captcha'
     ]);
 
      if ($validator->fails()) {
@@ -291,7 +293,7 @@ class CustomerController extends Controller
 
     $customer = Auth::user();
     $validator = Validator::make($request->all(), [
-      'g-recaptcha-response' => 'captcha',
+      'g-recaptcha-response' => 'required|captcha',
       'review' => 'required',
       'book_id' => 'required',
     ]);
@@ -331,6 +333,20 @@ class CustomerController extends Controller
         'message' => $response ? : 'The field is mandatory'
       )
     );
+  }
+
+
+  public function bookmark(Request $request)
+  {
+    $customer = Auth::user();
+    $data = json_decode(Site::findBookmarkByCustomer($request, $customer->id, 4));
+    $rooms = $data->data;
+    $pagination = $data->meta->pagination;
+
+    $route = 'bookmarkList';
+    $requestParams = $request->all();
+
+    return view('site::public.dashboard.bookmark', compact('rooms', 'pagination', 'route', 'requestParams', 'request'));
   }
 
 

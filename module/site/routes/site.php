@@ -50,5 +50,9 @@ $route->post('send-review', 'CustomerController@sendReview')->name('public.sendR
 
 $route->get('email-success', 'PublicController@emailSuccess');
 
+/*Bookmark*/
+$route->post('bookmark', 'PublicController@bookmark')->name('public.bookmark');
+$route->get('bookmark-list', 'CustomerController@bookmark')->name('public.bookmarkList');
+
 $route->get('login', function(){
 })->name('login');

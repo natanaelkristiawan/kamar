@@ -1,3 +1,14 @@
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : "{{ env('FACEBOOK_APP_ID') }}",
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v7.0'
+    });
+  };
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script src="{{ asset('themes/landing') }}/assets/js/jquery.min.js"></script>
 <script src="{{ asset('themes/landing') }}/assets/js/popper.min.js"></script>
 <script src="{{ asset('themes/landing') }}/assets/js/bootstrap.min.js"></script>

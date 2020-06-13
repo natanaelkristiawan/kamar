@@ -79,6 +79,11 @@ class SiteServiceProvider extends ServiceProvider
 		\Module\Site\Repositories\Eloquent\FaqCategoriesRepository::class
 		);
 
+		$this->app->bind(
+		'Module\Site\Interfaces\BookmarkRepositoryInterface',
+		\Module\Site\Repositories\Eloquent\BookmarkRepository::class
+		);
+
 		$this->app->register(\Module\Site\Providers\RouteServiceProvider::class);
 	}
 

@@ -20,14 +20,6 @@
 			<div class="col-md-9 col-sm-12">
 				<h4>History</h4>
 				<div class="custom-tab style-1">
-					<ul class="nav nav-tabs pb-2 b-0" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link" id="home-tab" href="{{ route('public.bookingHistory') }}" role="tab" aria-controls="home" aria-selected="true">Pending</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" id="profile-tab"  href="{{ route('public.bookingHistorySuccess') }}" role="tab" aria-controls="profile" aria-selected="false">Success</a>
-						</li>
-					</ul>
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 							<div class="row">

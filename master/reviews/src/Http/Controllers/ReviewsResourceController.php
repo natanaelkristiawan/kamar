@@ -43,10 +43,11 @@ class ReviewsResourceController extends Controller
 	}
 
 
-	public function confirm(Request $request, Reviews $data)
+	public function confirm(Request $request, Reviews $data, $rating = 0)
 	{
 	  $dataUpdate = array(
-	  	'status' => 1
+	  	'status' => 1,
+	  	'rating' => (int)$rating
 	  );
 
 	  $this->repository->update($dataUpdate, $data->id);

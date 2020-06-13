@@ -94,6 +94,23 @@ class Rooms
   protected function renderRooms($query, $language)
   {
     return new Collection($query, function(ModelRooms $model) use ($language) {
+
+      $rating = 5;
+      $total = 0;
+      $data = 0;
+      foreach ($model->reviews as $key => $value) {
+        if (!(bool)$value->rating) {
+          continue;
+        }
+        $total = $total + $value->rating;
+        $data++; 
+      }
+
+      if ($total) {
+        $rating = $total / $data;
+      }
+
+
       return [
         'id' => (int) $model->id,
         'meta'=> $model->meta[$language],
@@ -125,6 +142,7 @@ class Rooms
         'owner_photo'  => $model->owner->photo,
         'reviews' => $model->reviews,
         'status' => $model->status,
+        'rating' => $rating
       ];
     });
   }
@@ -202,7 +220,6 @@ class Rooms
     $data =  $this->rooms->scopeQuery(function($query) use($request) {
       if (!(bool)is_null($request->price)) {
         if ($request->price == 'high') {
-          # code...
           return $query->orderBy('price','desc');
         }
       }

@@ -14,6 +14,7 @@ class CreateReviewsTable extends Migration
 			$table->integer('book_id')->nullable();
 			$table->integer('room_id')->nullable();
 			$table->integer('customer_id')->nullable();
+			$table->integer('rating')->nullable();
 			$table->text('review')->nullable();
 			$table->tinyInteger('status')->default(0)->nullable();
 			$table->softDeletes();

@@ -38,7 +38,7 @@
             </div>
             <div class="ullist_panel_right">
               <h4 class="uilist_price_title">Rp {{ number_format($room->price) }}</h4>
-              <div class="uilist-rating"><i class="ti-star"></i>4.7 Reviews</div>
+              <div class="uilist-rating"><i class="ti-star"></i>{{ $room->rating }} Reviews</div>
             </div>
           </div>
         </div>

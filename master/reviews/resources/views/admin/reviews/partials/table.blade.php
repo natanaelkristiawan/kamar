@@ -6,6 +6,7 @@
       <th>Book ID</th>
       <th>Room</th>
       <th>Review</th>
+      <th>Rating</th>
       <th width="10%">Status</th>
       <th width="10%">Action</th>
     </tr>

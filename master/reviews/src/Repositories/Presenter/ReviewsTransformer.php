@@ -11,7 +11,7 @@ class ReviewsTransformer extends TransformerAbstract
 
 
 		$button = '<div class="btn-group">
-				<a href="'.route('admin.reviews.confirm', ['id'=>$model->id]).'" onclick="return confirm(\'Are you confirm this item?\')" class="btn btn-sm btn-success btn-flat"><i class="fas fa-check"></i></a>
+				<a href="javascript:;" onclick="var point = prompt(\'Please enter rating\', \'0\');if (point != null) { window.location.href=\''.route('admin.reviews.confirm', ['id'=>$model->id]).'\'+\'/\'+point ;return true}; return false" class="btn btn-sm btn-success btn-flat"><i class="fas fa-check"></i></a>
 				<a href="'.route('admin.reviews.delete', ['id'=>$model->id]).'" onclick="return confirm(\'Are you delete this item?\')" class="btn btn-sm btn-primary btn-flat btn-delete" data-id="'.$model->id.'"><i class="fa fa-fw fa-trash"></i></a>
 				</div>';
 
@@ -30,6 +30,7 @@ class ReviewsTransformer extends TransformerAbstract
 			'uuid' => $model->book->uuid,
 			'roomName' => $model->room->name,
 			'review' => $model->review,
+			'rating' => (int)$model->rating,
 			'status'=> $model->status == 0 ? 'Draft' : 'Live',
 			'action'=> $button
 		];

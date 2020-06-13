@@ -13,6 +13,7 @@ class Reviews extends Model
 		'room_id',
 		'customer_id',
 		'review',
+		'rating',
 		'status',
 	];
 

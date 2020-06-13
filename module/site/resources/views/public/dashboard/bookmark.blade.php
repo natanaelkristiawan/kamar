@@ -18,7 +18,7 @@
 		    </div>        
 			</div>
 			<div class="col-md-9 col-sm-12">
-				<h4>History</h4>
+				<h4>Bookmark</h4>
 				<div class="custom-tab style-1">
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">

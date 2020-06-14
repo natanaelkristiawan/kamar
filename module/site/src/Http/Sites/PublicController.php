@@ -605,6 +605,10 @@ class PublicController extends Controller
       // find customernya
       $customer = $book->customer;
 
+      if (is_null($customer)) {
+        return;
+      }
+
       $params = array(
         'customer' => $book->customer->name,
         'room_photo' => $book->room->photo_primary,
@@ -638,10 +642,14 @@ class PublicController extends Controller
       $book = Books::updateBook($book->id, $bookUpdate);
 
       $customer = $book->customer;
-    
+
+      if (is_null($customer)) {
+        return;
+      }
+
       $params = array(
-        'customer' => $book->customer->name,
-        'customer_phone' => $book->customer->phone,
+        'customer' => isset($customer->name),
+        'customer_phone' => $customer->phone,
         'room_photo' => $book->room->photo_primary,
         'room_name' => $book->room->name,
         'location_name' => $book->room->location->name,
@@ -657,6 +665,7 @@ class PublicController extends Controller
         'room_address_detail' => $book->room->address_detail['en'],
         'map' => 'https://maps.google.com/?q='.$book->room->latitude.','.$book->room->longitude
       );
+
 
       self::emailSuccess($customer->email, $params);
       self::emailOwner($book->room->owner->email, $params);
@@ -676,7 +685,9 @@ class PublicController extends Controller
       $book = Books::updateOrCreateBookPending(array('uuid' => $request->order_id), $dataBooking);
 
       $customer = $book->customer;
-    
+      if (is_null($customer)) {
+        return;
+      }
       $params = array(
         'customer' => $book->customer->name,
         'customer_phone' => $book->customer->phone,

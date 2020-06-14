@@ -590,6 +590,12 @@ class PublicController extends Controller
     if ($request->transaction_status == 'pending' && $request->status_code == 201) {
       // find data detail from book history
       $history = Books::findHistory($request->order_id);
+
+      if (is_null($history)) {
+        return;
+      }
+      
+
       $dataBooking = $history->data;
       unset($dataBooking['notes']);
       // create Book pending

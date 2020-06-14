@@ -64,24 +64,26 @@ class BooksRepository extends BaseRepository implements BooksRepositoryInterface
 	public function customFilters($request)
 	{
 	 	$this->scopeQuery(function($query) use ($request) {
-			$query->join('customers', 'customers.id', '=', 'books.customer_id')
-      ->join('rooms', 'rooms.id', '=', 'books.room_id')
+      $filter = $request->search;
+			$query->join('customers', function ($join) use ($filter){
+        $join->on('customers.id', '=', 'books.customer_id');
+				if ( !(bool)empty($filter['email']) ) {
+					$join->where('email', 'like', '%'.$filter['email'].'%');
+				}
+      })
+			->join('rooms', function ($join) use ($filter){
+        $join->on('rooms.id', '=', 'books.room_id');
+				if (!(bool)empty($filter['roomName'])) {
+					$join->where('rooms.name', 'like', '%'.$filter['roomName'].'%');
+				}
+      })
       ->select('books.*','customers.email', 'rooms.name as roomName');
       $query->with(['customer', 'room']);
-      $filter = $request->search;
-      $query->whereHas('customer', function ($query) use ($filter) {
-      	if ( !(bool)empty($filter['email']) ) {
-					$query->where('email', 'like', '%'.$filter['email'].'%');
-      	}
-			});
+
       if (!(bool)empty($filter['uuid'])) {
 				$query->where('uuid', 'like', '%'.$filter['uuid'].'%');
       }
-      $query->whereHas('room', function ($query) use ($filter) {
-        if (!(bool)empty($filter['roomName'])) {
-        	$query->where('name', 'like', '%'.$filter['roomName'].'%');
-        }
-			});
+
 			$dateFilter = $filter['date_filter'];
 			if ($dateFilter == 'created_at') {
 				$query = self::filterDate($query, 'created_at', $filter, true);

@@ -12,6 +12,7 @@
       <th>Total</th>
       <th>Service</th>
       <th>Grand Total</th>
+      <th>Payout To Owner</th>
       <th>Date Checkin</th>
       <th>Date Checkout</th>
       <th width="10%">Status</th>

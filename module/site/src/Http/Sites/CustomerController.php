@@ -120,8 +120,10 @@ class CustomerController extends Controller
       $changePassword = true;
     }
 
+
     $customer->name = $request->name;
     $customer->phone = $request->phone;
+    $customer->photo = $request->photo;
     $customer->save();
      if ($changePassword) {
       $request->session()->flash('status_notif', 'Success, your data update with change password');

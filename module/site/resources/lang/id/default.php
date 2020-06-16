@@ -19,7 +19,7 @@ return [
   'our_featured_partners_sub' => 'Dengan bangga memperkenalkan "The Rising Stars" desa wisata Bali',
   'book_it_now' => 'Pesan Sekarang',
   'description' => 'Deskripsi',
-  'house_rules' => 'Aturan Tempat Tinggal',
+  'house_rules' => 'Aturan Tempat Tinggal & Kesepakatan Pembatalan',
   'ameneties' => 'Fasilitas',
   'location' => 'Lokasi',
   'home'  => 'Beranda',
@@ -31,4 +31,5 @@ return [
   'privacyPolicy' => 'Kebijakan & Privasi',
   'termCondition' => 'Syarat & Ketentuan',
   'aboutUs' => 'Tentang Kami',
+  'notif_booking' => 'Anda belum dikenakan biaya'
 ];

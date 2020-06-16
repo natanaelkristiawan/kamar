@@ -19,7 +19,7 @@ return [
   'our_featured_partners_sub' => 'Proudly Present You "The Rising Stars" of Tourism Village in Bali',
   'book_it_now' => 'Book it now',
   'description' => 'Description',
-  'house_rules' => 'House Rules',
+  'house_rules' => 'House Rules & Cancelation Policy',
   'ameneties' => 'Ameneties',
   'location' => 'Location',
   'home'  => 'Home',
@@ -31,5 +31,6 @@ return [
   'privacyPolicy' => 'Privacy & Policy',
   'termCondition' => 'Term & Condition',
   'aboutUs' => 'About Us',
+  'notif_booking' => 'You won\'t be charged yet'
 
 ];

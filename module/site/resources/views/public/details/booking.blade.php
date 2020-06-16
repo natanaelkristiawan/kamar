@@ -89,7 +89,7 @@
           <span class="detail ml-auto">Rp. <span id="total"></span></span>
         </div>
         <div class="detail-wrap d-flex">
-          <span class="tag">Service Charger :</span>
+          <span data-toggle="tooltip" data-original-title="This help Kamartamu run the platform 24 hours"  class="tag">Service Fee/ :</span>
           <span class="detail ml-auto">Rp. <span id="service"></span></span>
         </div>
         <div class="defer pb-1 mb-1 d-block" style="border-bottom: 1px dashed #e6eaf3 "></div>
@@ -108,8 +108,10 @@
         <div class="form-group">
           @if(Auth::check() && (bool)Auth::user()->status)
           <button type="button" disabled="" class="btn btn-theme full-width" id="bookingNow">Booking Now</button>
+          <span class="text-mute">{{ trans('site::default.notif_booking') }}</span>
           @else
           <button type="button" disabled="" data-toggle="tooltip" data-original-title="Please validate your email" class="btn btn-theme full-width">Booking Now</button>
+          <span class="text-mute">{{ trans('site::default.notif_booking') }}</span> 
           @endif
         </div>
       </div>

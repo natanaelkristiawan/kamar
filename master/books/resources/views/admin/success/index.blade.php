@@ -47,6 +47,19 @@
 
 @section('script')
 @parent
+<style type="text/css">
+  #datatable tr td:nth-child(10) {
+    background: #00b894;
+    color: white
+  }
+
+
+  #datatable tr td:nth-child(12) {
+    background: #ff7675;
+    color: white
+  }
+</style>
+
 
 <script type="text/javascript">
 var oTable;
@@ -59,7 +72,7 @@ $(document).ready(function() {
     dom: 'lrtip',
     order: [[ 0, "desc" ]],
     columnDefs: [
-      { orderable: false, targets: 13 },
+      { orderable: false, targets: 14 },
     ],
     processing: true,
     serverSide: true,
@@ -99,10 +112,11 @@ $(document).ready(function() {
       {data : 'total'},
       {data : 'service'},
       {data : 'grand_total'},
+      {data : 'total'},
       {data : 'date_checkin'},
       {data : 'date_checkout'},
       {data : 'status'}
-    ],
+    ]
   });
 
   $('.filter-btn').on('click', function(){

@@ -27,7 +27,7 @@
 					<ul class="nav nav-tabs customize-tab" id="myTab" role="tablist">
 						@foreach($data as $key => $list)
 					  <li class="nav-item">
-						<a class="nav-link {{ !(bool)$key ? 'active' : '' }}" id="{{$list->slug}}-tab" data-toggle="tab" href="#{{$list->slug}}" role="tab" aria-controls="general" aria-selected="true">General</a>
+						<a class="nav-link {{ !(bool)$key ? 'active' : '' }}" id="{{$list->slug}}-tab" data-toggle="tab" href="#{{$list->slug}}" role="tab" aria-controls="{{$list->slug}}" aria-selected="true">{{$list->name}}</a>
 					  </li>
 					  @endforeach		  
 					</ul>
@@ -35,10 +35,10 @@
 				
 				<div class="tab-content" id="myTabContent">
 					
-					@foreach($data as $key => $list)
+					@foreach($data as $count => $list)
 					<!-- general Query -->
-					<div class="tab-pane fade show {{ !(bool)$key ? 'active' : '' }}" id="{{$list->slug}}" role="tabpanel" aria-labelledby="{{$list->slug}}">
-						<div class="accordion" id="generalac">
+					<div class="tab-pane fade {{ !(bool)$count ? 'show active' : '' }}" id="{{$list->slug}}" role="tabpanel" aria-labelledby="{{$list->slug}}">
+						<div class="accordion">
 							
 							@foreach($list->contents as $listKey => $dataContent)
 
@@ -51,7 +51,7 @@
 								  </h2>
 								</div>
 
-								<div id="{{$dataContent->slug}}" class="collapse show" aria-labelledby="{{ $listKey }}" data-parent="#{{$list->slug}}">
+								<div id="{{$dataContent->slug}}" class="collapse {{ !(bool)$listKey ? 'show' : '' }}" aria-labelledby="{{ $listKey }}" data-parent="#{{$list->slug}}">
 								  <div class="card-body">
 										<p class="ac-para">
 											{!! $dataContent->description[$lang] !!}

@@ -89,7 +89,6 @@
                                                     </table>
 
                                                     <p style="margin-bottom: 5px;font-size:20px; font-weight: bold;">Rp. {{ number_format($total, '0', ',', '.') }}</p>
-                                                    <p style="margin-top: 0;">(included Service fee Kamartamu 10%)</p>
                                                 </td>                           
                                             </tr>
                                         </table>
@@ -102,7 +101,7 @@
                                                         - Please prepare the room and make it clean, neat, and comfortable for guest <br />
                                                         - The amenities should be ready prior guest check-in and brief the guest before check- in with your house rule.<br />
                                                         - Kamartamu will transfer the payment to you in 5 work days.<br />
-                                                        - Total payment to Owner: Rate – 10% Service fee Kamartamu.<br />
+                                                        - Total payment to Owner: Rate - 10% commision fee to Kamartamu <br />
                                                     </p>
                                                     
                                                 </td>

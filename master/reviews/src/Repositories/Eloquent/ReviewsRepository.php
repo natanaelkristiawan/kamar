@@ -31,6 +31,15 @@ class ReviewsRepository extends BaseRepository implements ReviewsRepositoryInter
 	}
 
 
+	public function countAll()
+	{
+		$model = $this->model->where(array('status'=>0))->whereNull('deleted_at')->whereHas('customer', function($query){
+			return $query;
+		})->count();
+		$this->resetModel();
+		return $model;
+	}
+
 
 	protected function filterDate($query, $table, $filter)
 	{

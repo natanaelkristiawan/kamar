@@ -45,7 +45,7 @@
                     <select class="form-control select-bank" name="bank_code"></select>  
                   </div>
                   <div class="form-group">
-                    <label>Bank Account</label>
+                    <label>Account Number</label>
                     <input type="text" value="{{ $data->bank_account }}" placeholder="Bank Account" name="bank_account" class="form-control">
                   </div>
 
@@ -108,7 +108,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Status</label> 
+                    <label>Verified</label> 
                     <div>
                       <input type="hidden" name="status" value="0">
                       <input type="checkbox" class="js-switch" name="status" value="1" {{ (bool)$data->status ?  'checked' : ''}} />

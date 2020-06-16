@@ -332,9 +332,9 @@ class PublicController extends Controller
     });
   }
 
-  public function sendPassword($customer)
+  public function sendPassword($customer, $password)
   {
-    Mail::send('site::public.mails.password', array('name'=>$customer->name, 'password'=>'123456'), function ($message) use ($customer)
+    Mail::send('site::public.mails.password', array('name'=>$customer->name, 'password'=>$password), function ($message) use ($customer)
     {
       $message->subject('Your Default Password');
       $message->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_ADDRESS'));
@@ -355,12 +355,13 @@ class PublicController extends Controller
     $customer->verified_at = date('Y-m-d H:i:s');
     $customer->status = 1;
 
+    $password = Str::random(6);
     if(is_null($exist)){
-      $customer->password = bcrypt('123456');
+      $customer->password = $password;
     }
     $customer->save();
     if (is_null($exist)) {
-      self::sendPassword($customer);
+      self::sendPassword($customer, $password);
       $request->session()->flash('status_notif', 'Thank you for activate your account. Please check your email to get your password');
     } else {
       $request->session()->flash('status_notif', 'Thank you for activate your account.');

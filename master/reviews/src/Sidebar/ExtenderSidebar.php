@@ -7,7 +7,8 @@ use Maatwebsite\Sidebar\Item;
 use Maatwebsite\Sidebar\Menu;
 use Maatwebsite\Sidebar\Sidebar;
 use Maatwebsite\Sidebar\SidebarExtender;
-
+use Maatwebsite\Sidebar\Badge;
+use Master\Reviews\Interfaces\ReviewsRepositoryInterface;
 
 class ExtenderSidebar implements SidebarExtender 
 {
@@ -17,6 +18,9 @@ class ExtenderSidebar implements SidebarExtender
 			$group->item('Reviews', function(Item $item){
 				$item->icon('mdi mdi-signal-variant');
 				$item->url(route('admin.reviews'));
+				$item->badge(function (Badge $badge, ReviewsRepositoryInterface $review) {
+				  $badge->setValue($review->countAll());
+				});
 			});
 		});
 		return $menu;

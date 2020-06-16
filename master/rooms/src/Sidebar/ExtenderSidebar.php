@@ -17,24 +17,24 @@ class ExtenderSidebar implements SidebarExtender
 			$group->item('Rooms', function(Item $item){
 				$item->icon('mdi mdi-sofa');
 				$item->url('rooms');
-				$item->item('Ameneties', function(Item $item){
-          $item->url(route('admin.ameneties'));
-        });
-
-        $item->item('Types', function(Item $item){
-          $item->url(route('admin.types'));
-        });
-        
-        $item->item('Locations', function(Item $item){
-          $item->url(route('admin.locations'));
-        });
-
         $item->item('Owners', function(Item $item){
           $item->url(route('admin.owners'));
         });
 
         $item->item('Rooms', function(Item $item){
           $item->url(route('admin.rooms'));
+        });
+
+        $item->item('Locations', function(Item $item){
+          $item->url(route('admin.locations'));
+        });
+
+        $item->item('Types', function(Item $item){
+          $item->url(route('admin.types'));
+        });
+				
+        $item->item('Ameneties', function(Item $item){
+          $item->url(route('admin.ameneties'));
         });
 			});
 		});

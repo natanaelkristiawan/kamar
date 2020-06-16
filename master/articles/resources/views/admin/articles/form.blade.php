@@ -118,7 +118,7 @@
                 <div class="card-body">
                   <h4 class="mt-0 header-title">Images</h4>
                   <div class="form-group" >
-                    <label>Image Primary</label>
+                    <label>Photo Profile</label>
                     <div style="position: relative; width: 128px;">
                       <div class="lds-dual-ring hide"></div>
                       <a href="javascript:;" class="upload-now">

@@ -11,12 +11,18 @@
           @foreach($room->reviews as $review)
           <li class="article_comments_wrap">
             <article>
+              <div class="article_comments_thumb">
+                <img src="{{ (is_null( Customers::findByField('id', $review->customer_id)->photo) || empty( Customers::findByField('id', $review->customer_id)->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'. Customers::findByField('id', $review->customer_id)->photo) }}" alt="">
+              </div>
               <div class="comment-details">
                 <div class="comment-meta">
                   <div class="comment-left-meta">
                     <h4 class="author-name">{{ Customers::findByField('id', $review->customer_id)->name }}</h4>
                     <div class="comment-date">{{ date('d F Y H:i:s', strtotime($review->created_at)) }}</div>
                   </div>
+                  @for($i=0;$i<5;$i++)
+                  <span class="fa fa-star {{ $i < $review->rating ? 'checked' : '' }}"></span>
+                  @endfor
                 </div>
                 <div class="comment-text">
                   <p>{!! $review->review !!}</p>
@@ -30,3 +36,14 @@
     </div>
   </div>
 </div>
+
+
+@section('script')
+@parent
+<style type="text/css">
+  .checked {
+  color: orange;
+}
+</style>
+
+@stop

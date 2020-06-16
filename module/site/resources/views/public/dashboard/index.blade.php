@@ -25,7 +25,7 @@
 						<h4>Data Profile</h4>
 
             <div class="form-group" >
-              <label>Image Primary</label>
+              <label>Photo</label>
               <div style="position: relative; width: 128px;">
                 <div class="lds-dual-ring hide"></div>
                 <a href="javascript:;" class="upload-now">

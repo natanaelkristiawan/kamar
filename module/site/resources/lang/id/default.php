@@ -41,5 +41,6 @@ return [
   'date_checkout' => 'Tanggal Keluar',
   'notif_fee' => 'Untuk membantu kamartamu me-support kamu 24 jam',
   'notif_email' => 'Validasi dahulu email anda',
-  'notif_mandatory' => 'Tidak boleh kosong'
+  'notif_mandatory' => 'Tidak boleh kosong',
+  'notif_login' => 'Your email is exist. Please login'
 ];

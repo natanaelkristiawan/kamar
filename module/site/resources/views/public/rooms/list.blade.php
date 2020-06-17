@@ -25,16 +25,12 @@
         
         <div class="ulisting-listing-category left">
           <span class="rent">{{ $room->type_content }}</span>
-          <span class="like-prty"><i class="ti-heart"></i></span>
         </div>
         
         <div class="uilist_bottom_panel">
           <div class="uilist_full_panel">
             <div class="ullist_panel_left">
               <h4 class="uilist_title">{{ $room->name }}</h4>
-              <ul>
-                <li><i class="lni lni-phone theme-cl"></i>{{ $room->owner_phone }}</li>
-              </ul>
             </div>
             <div class="ullist_panel_right">
               <h4 class="uilist_price_title">Rp {{ number_format($room->price) }}</h4>

@@ -1,4 +1,4 @@
-<section class="pt-0">
+<section>
   <div class="container">
   
     <div class="row">

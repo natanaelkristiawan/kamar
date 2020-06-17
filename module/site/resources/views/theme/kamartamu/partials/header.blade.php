@@ -3,7 +3,7 @@
     <nav id="navigation" class="navigation navigation-landscape">
       <div class="nav-header">
         <a class="nav-brand" href="{{ route('public.index') }}">
-          <img src="{{ asset('themes/landing') }}/assets/img/logo.png" class="logo" alt="" />
+          <img src="{{ is_null(Site::getDataSite('main-logo')) ? asset('themes/landing/assets/img/logo.png') : url('image/original/'.Site::getDataSite('main-logo')) }}" class="logo" alt="" />
         </a>
         <div class="nav-toggle"></div>
       </div>

@@ -341,6 +341,7 @@
                   $('#message-resend').addClass('hide');
                   setDefaultBooking();
                   $('.modalLogin').click();
+                  $('#notif_login').removeClass('hide');
                 }
                 if (response.step == 'calculate_booking') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 1});

@@ -41,5 +41,6 @@ return [
   'date_checkout' => 'Date Checkout',
   'notif_fee' => 'This help Kamartamu run the platform 24 hours',
   'notif_email' => 'Please validate your email',
-  'notif_mandatory' => 'The field is mandatory'
+  'notif_mandatory' => 'The field is mandatory',
+  'notif_login' => 'Your email is exist. Please login'
 ];

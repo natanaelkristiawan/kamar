@@ -4,7 +4,7 @@
     <div class="topbar-left">
         <a href="{{ route('admin.dashboard') }}" class="logo">
             <span>
-                <img src="{{ asset('themes/vertical') }}/assets/images/logo.png" alt="" height="24">
+                <img src="{{is_null(Site::getDataSite('main-logo')) ? asset('themes/vertical/assets/images/logo.png') : url('image/original/'.Site::getDataSite('main-logo')) }} " alt="" height="32">
             </span>
             <i>
                 <img src="{{ asset('themes/vertical') }}/assets/images/logo-sm.png" alt="" height="22">

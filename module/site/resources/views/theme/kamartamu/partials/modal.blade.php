@@ -5,7 +5,8 @@
     <div class="modal-content" id="registermodal">
       <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
       <div class="modal-body">
-        <h4 class="modal-header-title">{{ trans('site::default.login')}}</h4>
+        <h4 class="modal-header-title mb-2">{{ trans('site::default.login')}}</h4>
+        <span class="text-center mb-3 d-block hide" id="notif_login"> {{ trans('site::default.notif_login')}}</span>
         <div class="login-form">
           <div id="login-field"></div>
         </div>
@@ -65,6 +66,12 @@
 
 @section('script')
 @parent
+
+<style type="text/css">
+  .hide {
+    display: none !important;
+  }
+</style>
 <script type="x-tmpl-mustache" id="form-login">
 
   <div class="form-group">

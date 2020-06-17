@@ -80,11 +80,11 @@
             <div class="agent-_blocks_thumb"><img src="{{ (is_null($room->owner_photo) || empty($room->owner_photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$room->owner_photo) }}" alt=""></div>
             <div class="agent-_blocks_caption">
               <h4><a href="#">{{ $room->owner_name }}</a></h4>
-              <span   data-toggle="tooltip" data-original-title="This owner is valid with ID Card & Indonesian Bank Account" class="approved-agent"><i class="ti-check"></i>approved</span>
+              <span   data-toggle="tooltip" data-original-title="{{ trans('site::default.owner_valid')  }}" class="approved-agent"><i class="ti-check"></i>{{ trans('site::default.approve')  }}</span>
             </div>
             <div class="clearfix"></div>
           </div>
-          <a href="mailto:{{ Site::getDataSite('email') }}" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>Contact Us</a>         
+          <a href="mailto:{{ Site::getDataSite('email') }}" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
         </div>
         
       </div>

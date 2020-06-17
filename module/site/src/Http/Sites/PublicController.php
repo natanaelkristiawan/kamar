@@ -278,7 +278,7 @@ class PublicController extends Controller
     if (!(bool)is_null($customer->token_verified)) {
       return response()->json([
         'status' => true,
-        'message' => 'Your account not active, please activate your account',
+        'message' => trans('site::default.sweet_activate'),
         'step' => 'account_exist_not_active'
       ]);
     }
@@ -429,7 +429,7 @@ class PublicController extends Controller
     $validator = Validator::make($request->all(), [
       'email' => 'required|email|unique:customers',
       'password'  => 'required|min:6|confirmed',
-      'name'  => 'required',
+      'fullname'  => 'required',
       'phone'  => 'required',
       'g-recaptcha-response' => 'required|captcha'
     ]);
@@ -450,7 +450,7 @@ class PublicController extends Controller
     $dataCustomer = array(
       'email'   => $request->email,
       'phone'   => $request->phone,
-      'name' => $request->name,
+      'name' => $request->fullname,
       'password'  => bcrypt($request->input('password')),
       'token_verified'  =>  Str::random(40),
       'status' => 1

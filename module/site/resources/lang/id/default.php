@@ -42,5 +42,16 @@ return [
   'notif_fee' => 'Untuk membantu kamartamu me-support kamu 24 jam',
   'notif_email' => 'Validasi dahulu email anda',
   'notif_mandatory' => 'Tidak boleh kosong',
-  'notif_login' => 'Your email is exist. Please login'
+  'notif_login' => 'Email anda sudah terdaftar. Silahkan login',
+  'notif_social_login' => 'Atau login menggunakan',
+  'notif_any_account' => 'Tidak memiliki akun?',
+  'click_here' => 'Klik di sini',
+  'notif_already_account' => 'Sudah memiliki akun?',
+  'sweet_activate' => 'Akun anda belum aktif. Aktifkan sekarang',
+  'notif' => 'Pemberitahuan',
+  'resend_code' => 'Kirim ulang code',
+  'date_error' => 'Tanggal yang anda pilih tidak tersedia. Segera di ubah',
+  'owner_valid' => 'Pemilik sudah di verifikasi dengan KTP dan Akun Bank',
+  'approve' => 'Disetujui',
+  'contact_us' => 'Hubungi Kami'
 ];

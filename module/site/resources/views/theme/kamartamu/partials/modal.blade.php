@@ -10,26 +10,15 @@
         <div class="login-form">
           <div id="login-field"></div>
         </div>
-        <div class="modal-divider"><span>Or login via</span></div>
+        <div class="modal-divider"><span>{{ trans('site::default.notif_social_login')}}</span></div>
         <div class="social-login mb-3">
           <ul>
             <li><a href="{{ route('public.fbLogin') }}" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
             <li><a href="{{ route('public.googleLogin') }}" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
           </ul>
         </div>
-        
-        <div class="social-login mb-3">
-          <ul>
-            <li>
-              <input id="reg" class="checkbox-custom" name="reg" type="checkbox">
-              <label for="reg" class="checkbox-custom-label">Save Password</label>
-            </li>
-            <li><a href="#" class="theme-cl">Forget Password?</a></li>
-          </ul>
-        </div>
-        
         <div class="text-center">
-          <p class="mt-2">Haven't Any Account? <a href="javascript:;" class="link modalSignup">Click here</a></p>
+          <p class="mt-2">{{ trans('site::default.notif_any_account')}} <a href="javascript:;" class="link modalSignup">{{ trans('site::default.click_here')}}</a></p>
         </div>
       </div>
     </div>
@@ -47,7 +36,7 @@
         <div class="login-form">
           <div id="signup-field"></div>
         </div>
-        <div class="modal-divider"><span>Or Signup via</span></div>
+        <div class="modal-divider"><span>{{ trans('site::default.notif_social_login')}}</span></div>
         <div class="social-login mb-3">
           <ul>
             <li><a href="{{ route('public.fbLogin') }}" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
@@ -55,7 +44,7 @@
           </ul>
         </div>
         <div class="text-center">
-          <p class="mt-3"><i class="ti-user mr-1"></i>Already Have An Account? <a href="#" class="link modalLogin">Login</a></p>
+          <p class="mt-3"><i class="ti-user mr-1"></i>{{ trans('site::default.notif_already_account')}}<a href="#" class="link modalLogin">{{ trans('site::default.click_here')}}</a></p>
         </div>
       </div>
     </div>
@@ -282,7 +271,8 @@
   var registerValidate = {
     email : {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       },
       email: {
         message: "^Email is not valid"
@@ -293,24 +283,22 @@
         message: "format wrong"
       },
     },
-    name : {
+    fullname : {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       }
     },
     phone : {
-      format: {
-        pattern: /^(^\+62\s?|^0)(\d{3,4}-?){2}\d{3,4}$/,
-        flags: "g",
-        message: "format wrong, insert 0 or +62"
-      },
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       }
     },
     password : {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       },
       length: {
         minimum: 6,
@@ -319,7 +307,8 @@
     },
     password_confirmation: {
       presence: {
-        allowEmpty: false
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       },
       equality: "password"
     }
@@ -330,7 +319,7 @@
       $('.helper-register').html('')
       validate.async({
         email : $('#email-register').val(),
-        name : $('#fullname-register').val(),
+        fullname : $('#fullname-register').val(),
         phone : $('#phone-register').val(),
         password : $('#password-register').val(),
         password_confirmation : $('#password_confirmation-register').val(),
@@ -376,7 +365,7 @@
     validate.async(
     {
       email : $('#email-register').val(),
-      name : $('#fullname-register').val(),
+      fullname : $('#fullname-register').val(),
       phone : $('#phone-register').val(),
       password : $('#password-register').val(),
       password_confirmation : $('#password_confirmation-register').val(),

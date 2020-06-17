@@ -42,5 +42,16 @@ return [
   'notif_fee' => 'This help Kamartamu run the platform 24 hours',
   'notif_email' => 'Please validate your email',
   'notif_mandatory' => 'The field is mandatory',
-  'notif_login' => 'Your email is exist. Please login'
+  'notif_login' => 'Your email is exist. Please login',
+  'notif_social_login' => 'Or login via',
+  'notif_any_account' => 'Haven\'t Any Account?',
+  'notif_already_account' => 'Already Have An Account?',
+  'click_here' => 'Click here',
+  'sweet_activate' => 'Your account not active, please activate your account',
+  'notif' => 'Notification',
+  'resend_code' => 'Resend Code',
+  'date_error' => 'Your date selected is not available. Please change it',
+  'owner_valid' => 'This owner is valid with ID Card & Indonesian Bank Account',
+  'approve' => 'Approve',
+  'contact_us' => 'Contact Us'
 ];

@@ -89,7 +89,7 @@
           <span class="detail ml-auto">Rp. <span id="total"></span></span>
         </div>
         <div class="detail-wrap d-flex">
-          <span data-toggle="tooltip" data-original-title="{{ trans('site::default.notif_fee')  }}"  class="tag">Service Fee/ :</span>
+          <span data-toggle="tooltip" data-original-title="{{ trans('site::default.notif_fee')  }}"  class="tag">Service Fee:</span>
           <span class="detail ml-auto">Rp. <span id="service"></span></span>
         </div>
         <div class="defer pb-1 mb-1 d-block" style="border-bottom: 1px dashed #e6eaf3 "></div>
@@ -106,12 +106,12 @@
          
         </div>
         <div class="form-group">
-          @if(Auth::check() && (bool)Auth::user()->status)
+          @if(Auth::check() && !(bool)is_null(Auth::user()->verified_at))
           <button type="button" disabled="" class="btn btn-theme full-width" id="bookingNow">{{ trans('site::default.book_it_now')  }}</button>
           <span class="text-mute">{{ trans('site::default.notif_booking') }}</span>
           @else
           <button type="button" disabled="" data-toggle="tooltip" data-original-title="{{ trans('site::default.notif_email')  }}" class="btn btn-theme full-width">{{ trans('site::default.book_it_now')  }}</button>
-          <span class="text-mute">{{ trans('site::default.notif_booking') }}</span> 
+          <span class="text-mute">{{ trans('site::default.notif_email')  }}</span> 
           @endif
         </div>
       </div>
@@ -307,19 +307,19 @@
                 // setcookies di sini supaya datanya gak ilang, set aja sehari
                 if (response.step == 'activate_account') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
-                  Swal.fire('Notification', response.message, 'success');
+                  Swal.fire('{{ trans('site::default.notif') }}', response.message, 'success');
                   setDefaultBooking();
                 }
                 if (response.step == 'account_exist_not_active') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
                   setDefaultBooking();
                   Swal.fire({
-                    title: 'Notification',
+                    title: '{{ trans('site::default.notif') }}',
                     icon: 'info',
                     html: response.message,
                     showCancelButton: true,
                     focusConfirm: false,
-                    confirmButtonText: 'Resend Code',
+                    confirmButtonText: '{{ trans('site::default.resend_code') }}',
                     cancelButtonText: 'Close'
                   }).then((result) => {
                     if (result.value) {
@@ -327,7 +327,7 @@
                       resendActivateEmail(params).then((response)=>{
                         if (response.status) {
                           if (response.step == 'activate_account') {
-                            Swal.fire('Notification', response.message, 'success')
+                            Swal.fire('{{ trans('site::default.notif') }}', response.message, 'success')
                           }
                         }
                       }).then(()=>{
@@ -353,7 +353,7 @@
               $('#loader').addClass('hide')
             })
           } else {
-            Swal.fire('Notification', 'Your date selected is not available. Please change it', 'error');
+            Swal.fire('{{ trans('site::default.notif') }}', '{{ trans('site::default.date_error') }}', 'error');
             $('#loader').addClass('hide')
           }
         }) 
@@ -554,7 +554,7 @@
         resendActivateEmail(bookingPending).then((response)=>{
           if (response.status) {
             if (response.step == 'activate_account') {
-              Swal.fire('Notification', response.message, 'success')
+              Swal.fire('{{ trans('site::default.notif') }}', response.message, 'success')
             }
           }
         }).then(()=>{

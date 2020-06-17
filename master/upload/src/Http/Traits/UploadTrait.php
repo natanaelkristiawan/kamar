@@ -18,7 +18,7 @@ trait UploadTrait
         $field = array_pop($path);
         $folder = implode('/', $path);
 
-         if ($request->hasFile($file)) {
+        if ($request->hasFile($file)) {
             $ufolder = $this->uploadFolder($config, $folder, $field);
             $array = $this->filer->upload($request->file($file), $ufolder);
             $array['folder'] = $folder.'/'.$field;
@@ -34,6 +34,10 @@ trait UploadTrait
 
             return response()->json($array)
                 ->setStatusCode(203, 'UPLOAD_SUCCESS');
+        } else {
+            return response()->json(array(
+                'status' => false
+            ), 403);
         }
 	}
 

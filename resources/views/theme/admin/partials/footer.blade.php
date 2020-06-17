@@ -148,7 +148,7 @@ async function readURL(input) {
     var formData = new FormData($('#upload-picture')[0]);
     var real = $(input).prop('files')[0];
     formData.append('file', real);
-    var response = new Promise((resolve, errors) => {
+    var response = new Promise((resolve, reject) => {
       $.ajax({
         url: uploadPath,   
         data : formData,
@@ -162,6 +162,9 @@ async function readURL(input) {
         processData:false,
         success : function(result){
           resolve(result);
+        },
+        error: function(response) {
+          reject(response);
         }
       });
     });
@@ -176,6 +179,9 @@ $(document).on('change', '.file-upload', function() {
     $(path).parent().find('.image-preview').attr('src', "{{ url('image/profile/') }}/"+result.path);
     $(path).parent().find('.image-path').val(result.path);
     $(path).parent().find('.lds-dual-ring').addClass('hide')
+  }).catch(response => {
+    $(path).parent().find('.lds-dual-ring').addClass('hide')
+    toastr.error('Failed Upload')
   })
 });
 

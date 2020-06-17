@@ -61,6 +61,7 @@
                       </a>
                       <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
                       <input type="hidden" name="bank_account_photo" value="{{ $data->bank_account_photo }}" class="image-path">
+                      <small class="form-text text-muted d-inline-block">Recommended 1280x720</b></small>
                     </div>
                   </div>
 
@@ -76,6 +77,7 @@
                       </a>
                       <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
                       <input type="hidden" name="photo" value="{{ $data->photo }}" class="image-path">
+                      <small class="form-text text-muted d-inline-block">Recommended 1280x720</b></small>
                     </div>
                   </div>
                   <div class="form-group" >
@@ -90,6 +92,7 @@
                       </a>
                       <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
                       <input type="hidden" name="card_id" value="{{ $data->card_id }}" class="image-path">
+                      <small class="form-text text-muted d-inline-block">Recommended 1280x720</b></small>
                     </div>
                   </div>
 
@@ -105,6 +108,7 @@
                       </a>
                       <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
                       <input type="hidden" name="selfie_with_card_id" value="{{ $data->selfie_with_card_id }}" class="image-path">
+                      <small class="form-text text-muted d-inline-block">Recommended 1280x720</b></small>
                     </div>
                   </div>
                   <div class="form-group">

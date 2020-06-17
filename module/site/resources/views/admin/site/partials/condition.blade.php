@@ -42,5 +42,6 @@
     </a>
     <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
     <input type="hidden" name="condition_banner" value="{{ $conditionBanner }}" class="image-path">
+    <small class="form-text text-muted d-inline-block">Recommended 1280x720</b></small>
   </div>
 </div>

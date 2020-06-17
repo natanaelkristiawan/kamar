@@ -69,7 +69,7 @@
           <p class="mb-0">© {{date('Y')}} kamartamu.com</p>
         </div>
         
-        <div class="col-lg-6 col-md-6 text-right">
+        <div class="col-lg-6 col-md-6 text-right hide">
           <ul class="footer-bottom-social">
             <li><a href="#"><i class="ti-facebook"></i></a></li>
             <li><a href="#"><i class="ti-twitter"></i></a></li>

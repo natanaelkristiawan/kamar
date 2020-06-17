@@ -24,6 +24,7 @@ class SiteResourceController extends Controller
 	{
 		$meta = self::getMeta('array');
 		$mainBanner = self::getMainBanner();
+		$mainLogo = self::getMainLogo();
 		$phone = self::getPhone();
 		$email = self::getEmail();
 		$address = self::getAddress();
@@ -40,6 +41,7 @@ class SiteResourceController extends Controller
 		$payment = self::getPayment('array');
 		$paymentBanner = self::getPaymentBanner();
 		return view('site::admin.site.index', compact(
+			'mainLogo', 
 			'meta', 
 			'mainBanner', 
 			'phone', 
@@ -64,6 +66,7 @@ class SiteResourceController extends Controller
 	{
 		/*main group*/
 		self::setMainBanner($request);
+		self::setMainLogo($request);
 		self::setMeta($request, 'array');
 		self::setPhone($request);
 		self::setEmail($request);

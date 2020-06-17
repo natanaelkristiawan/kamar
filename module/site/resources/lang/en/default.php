@@ -31,6 +31,15 @@ return [
   'privacyPolicy' => 'Privacy & Policy',
   'termCondition' => 'Term & Condition',
   'aboutUs' => 'About Us',
-  'notif_booking' => 'You won\'t be charged yet'
-
+  'notif_booking' => 'You won\'t be charged yet',
+  'room' => 'room',
+  'persons' => 'persons',
+  'welcome' => 'Welcome',
+  'your_email' => 'your email not verified yet. Please check your email. Didn\'t receive?',
+  'fullname' => 'Fullname',
+  'date_checkin' => 'Date Checkin',
+  'date_checkout' => 'Date Checkout',
+  'notif_fee' => 'This help Kamartamu run the platform 24 hours',
+  'notif_email' => 'Please validate your email',
+  'notif_mandatory' => 'The field is mandatory'
 ];

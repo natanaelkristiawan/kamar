@@ -31,5 +31,15 @@ return [
   'privacyPolicy' => 'Kebijakan & Privasi',
   'termCondition' => 'Syarat & Ketentuan',
   'aboutUs' => 'Tentang Kami',
-  'notif_booking' => 'Anda belum dikenakan biaya'
+  'notif_booking' => 'Anda belum dikenakan biaya',
+  'room' => 'ruangan',
+  'persons' => 'orang',
+  'welcome' => 'Selamat Datang',
+  'your_email' => 'your email not verified yet. Please check your email. Didn\'t receive?',
+  'fullname' => 'Nama Lengkap',
+  'date_checkin' => 'Tanggal Masuk',
+  'date_checkout' => 'Tanggal Keluar',
+  'notif_fee' => 'Untuk membantu kamartamu me-support kamu 24 jam',
+  'notif_email' => 'Validasi dahulu email anda',
+  'notif_mandatory' => 'Tidak boleh kosong'
 ];

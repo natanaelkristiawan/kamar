@@ -84,12 +84,7 @@
             </div>
             <div class="clearfix"></div>
           </div>
-          
-          <a href="#" class="agent-btn-contact btn btn-theme" data-toggle="modal" data-target="#autho-message"><i class="ti-comment-alt"></i>Contact Us</a>         
-          <span id="number" class="style-2" data-last="{{ $room->owner_phone }}">
-            <span><i class="ti-headphone-alt"></i><a class="see">{{ \Illuminate\Support\Str::limit($room->owner_phone, 5) }}...Show</a></span>
-          </span>
-          
+          <a href="mailto:{{ Site::getDataSite('email') }}" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>Contact Us</a>         
         </div>
         
       </div>

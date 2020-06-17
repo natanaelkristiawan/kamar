@@ -39,7 +39,20 @@
   </div>
 </div>
 
-
+<div class="form-group" >
+  <label>Logo</label>
+  <div style="position: relative; max-width: 128px;">
+    <div class="lds-dual-ring hide"></div>
+    <a href="javascript:;" class="upload-now">
+      <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($mainLogo) || empty($mainLogo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$mainLogo) }}" class="card-img-top img-fluid image-preview">
+    </a>
+    <a href="javascript:;" class="remove-image-single">
+      <i class="fa fa-times"></i>
+    </a>
+    <input accept="image/x-png,image/gif,image/jpeg"  type="file" class="file-upload" name="file" style="display:none">
+    <input type="hidden" name="main_logo" value="{{$mainLogo}}" class="image-path">
+  </div>
+</div>
 <div class="form-group" >
   <label>Main Banner</label>
   <div style="position: relative; max-width: 128px;">

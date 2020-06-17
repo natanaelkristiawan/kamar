@@ -8,8 +8,8 @@
     <div class="row mb-3 hide" id="checkout-message">
       <div class="col-12">
         <div class="px-4 py-3 mx-1 rounded" style="background-color: #e6eaf3">
-          <p class="text-center mb-0">Welcome <span class="fullname-display" style="font-weight: bold;"></span></p>
-          <p class="text-center" id="message-resend">your email not verified yet. Please check your email. Didn't receive? <a href="javascript:;" style="color: #fc6e51" id="resendActivate">Resend</a></p>
+          <p class="text-center mb-0">{{ trans('site::default.welcome') }} <span class="fullname-display" style="font-weight: bold;"></span></p>
+          <p class="text-center" id="message-resend"> {{ trans('site::default.your_email') }} <a href="javascript:;" style="color: #fc6e51" id="resendActivate">Resend</a></p>
           @if(!(bool)Auth::check())
           <button data-toggle="collapse" href="#main-data" role="button" aria-expanded="false" aria-controls="main-data" class="btn btn-theme full-width">Change Data</button>
           @endif
@@ -24,7 +24,7 @@
           <div class="form-group">
             <div class="cld-box">
               <i class="ti-user"></i>
-              <input type="text" class="form-control fullname is-required" placeholder="Full Name"  value="" />
+              <input type="text" class="form-control fullname is-required" placeholder="{{  trans('site::default.fullname')  }}"  value="" />
             </div>
             <span class="helper error"></span>
           </div>
@@ -52,7 +52,7 @@
         <div class="form-group">
           <div class="cld-box">
             <i class="ti-agenda"></i>
-            <input type="text" class="form-control datecheckin is-required dateSelected" placeholder="Date Checkin"  value="" />
+            <input type="text" class="form-control datecheckin is-required dateSelected" placeholder="{{  trans('site::default.date_checkin')  }}"  value="" />
           </div>
           <span class="helper error"></span>
         </div>
@@ -61,7 +61,7 @@
         <div class="form-group">
           <div class="cld-box">
             <i class="ti-agenda"></i>
-            <input type="text" class="form-control datecheckout is-required dateSelected" placeholder="Date Checkout"  value="" />
+            <input type="text" class="form-control datecheckout is-required dateSelected" placeholder="{{  trans('site::default.date_checkout')  }}"  value="" />
           </div>
           <span class="helper error"></span>
         </div>
@@ -69,17 +69,17 @@
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group room-wrap">
           <select class="form-control rooms">
-            <option value="1">1 room - 2 persons</option>
-            <option value="2">2 room - 4 persons</option>
-            <option value="3">3 room - 6 persons</option>
-            <option value="4">4 room - 8 persons</option>
+            <option value="1">1 {{ trans('site::default.room') }} - 2 {{ trans('site::default.persons') }}</option>
+            <option value="2">2 {{ trans('site::default.room') }} - 4 {{ trans('site::default.persons') }}</option>
+            <option value="3">3 {{ trans('site::default.room') }} - 6 {{ trans('site::default.persons') }}</option>
+            <option value="4">4 {{ trans('site::default.room') }} - 8 {{ trans('site::default.persons') }}</option>
           </select>
           <span class="helper error"></span>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
-          <button type="button" class="btn btn-theme full-width" id="btnCheckRoom">Check Availability</button>
+          <button type="button" class="btn btn-theme full-width" id="btnCheckRoom">{{ trans('site::default.check_availability') }}</button>
         </div>
       </div>
 
@@ -89,7 +89,7 @@
           <span class="detail ml-auto">Rp. <span id="total"></span></span>
         </div>
         <div class="detail-wrap d-flex">
-          <span data-toggle="tooltip" data-original-title="This help Kamartamu run the platform 24 hours"  class="tag">Service Fee/ :</span>
+          <span data-toggle="tooltip" data-original-title="{{ trans('site::default.notif_fee')  }}"  class="tag">Service Fee/ :</span>
           <span class="detail ml-auto">Rp. <span id="service"></span></span>
         </div>
         <div class="defer pb-1 mb-1 d-block" style="border-bottom: 1px dashed #e6eaf3 "></div>
@@ -107,10 +107,10 @@
         </div>
         <div class="form-group">
           @if(Auth::check() && (bool)Auth::user()->status)
-          <button type="button" disabled="" class="btn btn-theme full-width" id="bookingNow">Booking Now</button>
+          <button type="button" disabled="" class="btn btn-theme full-width" id="bookingNow">{{ trans('site::default.book_it_now')  }}</button>
           <span class="text-mute">{{ trans('site::default.notif_booking') }}</span>
           @else
-          <button type="button" disabled="" data-toggle="tooltip" data-original-title="Please validate your email" class="btn btn-theme full-width">Booking Now</button>
+          <button type="button" disabled="" data-toggle="tooltip" data-original-title="{{ trans('site::default.notif_email')  }}" class="btn btn-theme full-width">{{ trans('site::default.book_it_now')  }}</button>
           <span class="text-mute">{{ trans('site::default.notif_booking') }}</span> 
           @endif
         </div>
@@ -223,33 +223,33 @@
     fullname : {
       presence: {
         allowEmpty: false,
-        message: '^The field is mandatory'
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       }
     }, 
     datecheckin : {
       presence: {
         allowEmpty: false,
-        message: '^The field is mandatory'
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       }
     }, 
     datecheckout : {
       presence: {
         allowEmpty: false,
-        message: '^The field is mandatory'
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       }
     },
     @if(!(bool)Auth::check())
     phone : {
       presence: {
         allowEmpty: false,
-        message: '^The field is mandatory'
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       }
     },
     @endif
     email : {
       presence: {
         allowEmpty: false,
-        message: '^The field is mandatory'
+        message: '^{{ trans('site::default.notif_mandatory') }}'
       },
       email: {
         message: "^Email is not valid"

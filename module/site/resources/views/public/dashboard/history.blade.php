@@ -10,7 +10,7 @@
 	          Profile
 	        </a>
 	        <a href="{{ route('public.bookingHistory') }}" class="list-group-item is-active">
-	          Booking History
+	          {{ trans('site::default.booking_history')}} 
 	        </a>
 	        <a href="{{ route('public.bookmarkList') }}" class="list-group-item">
             Bookmark
@@ -18,14 +18,14 @@
 		    </div>        
 			</div>
 			<div class="col-md-9 col-sm-12">
-				<h4>History</h4>
+				<h4> {{ trans('site::default.booking_history')}} </h4>
 				<div class="custom-tab style-1">
 					<ul class="nav nav-tabs pb-2 b-0" id="myTab" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" href="{{ route('public.bookingHistory') }}" role="tab" aria-controls="home" aria-selected="true">Pending</a>
+							<a class="nav-link active" id="home-tab" href="{{ route('public.bookingHistory') }}" role="tab" aria-controls="home" aria-selected="true">{{ trans('site::default.pending')}} </a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" id="profile-tab"  href="{{ route('public.bookingHistorySuccess') }}" role="tab" aria-controls="profile" aria-selected="false">Success</a>
+							<a class="nav-link" id="profile-tab"  href="{{ route('public.bookingHistorySuccess') }}" role="tab" aria-controls="profile" aria-selected="false">{{ trans('site::default.success')}} </a>
 						</li>
 					</ul>
 					<div class="tab-content" id="myTabContent">
@@ -79,9 +79,9 @@
 				                	    </div>
 				                	    <div class="col-md-4 text-center">
 				                	        <h3>Rp {{ number_format($book->grand_total, 0, ',', '.') }}</h3>
-				                	        <small>Waiting For Payment*</small>
+				                	        <small>{{ trans('site::default.waiting_payment')}}</small>
 				                	        <div class="sub-row">
-				                	            <a target="_blank" href="{{ $book->notes->pdf_url }}" type="button" class="btn btn-theme">How To Pay</a>
+				                	            <a target="_blank" href="{{ $book->notes->pdf_url }}" type="button" class="btn btn-theme">{{ trans('site::default.how_to_pay')}}</a>
 				                	        </div>
 				                	    </div>
 				                	</div>

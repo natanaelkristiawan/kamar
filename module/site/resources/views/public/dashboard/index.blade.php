@@ -11,7 +11,7 @@
 	          Profile
 	        </a>
 	        <a href="{{ route('public.bookingHistory') }}" class="list-group-item">
-	          Booking History
+	         {{ trans('site::default.booking_history')}} 
 	        </a>
           <a href="{{ route('public.bookmarkList') }}" class="list-group-item">
             Bookmark
@@ -29,7 +29,7 @@
               <div style="position: relative; width: 128px;">
                 <div class="lds-dual-ring hide"></div>
                 <a href="javascript:;" class="upload-now">
-                  <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($customer->photo) || empty($customer->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$customer->photo) }}" class="card-img-top img-fluid image-preview">
+                  <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($customer->photo) || empty($customer->photo)) ? url('img/pngwave.png') : url('image/profile/'.$customer->photo) }}" class="card-img-top img-fluid image-preview">
                 </a>
                 <a href="javascript:;" class="remove-image-single">
                   <i class="fa fa-times"></i>
@@ -45,7 +45,7 @@
 							<span class="error helper-profile"></span>
 						</div>
 						<div class="form-group">
-							<label>Fullname</label>
+							<label>{{ trans('site::default.fullname')}} </label>
 							<input type="text" class="form-control form-profile is-validate" id="name-profile"  value="{{ $customer->name }}">
 							<span class="error helper-profile"></span>
 						</div>
@@ -58,17 +58,17 @@
 					<div class="col-lg-12 mt-3">
 						<h4>Data Password</h4>
 						<div class="form-group">
-							<label>Old Password</label>
+							<label>{{ trans('site::default.old_password')}} </label>
 							<input type="password" class="form-control" id="old_passsword-profile" name="old_passsword">
 							<span class="error helper-profile" id="old_password_error"></span>
 						</div>
 						<div class="form-group">
-							<label>New Password</label>
+							<label>{{ trans('site::default.new_password')}} </label>
 							<input type="password" class="form-control" id="password-profile" name="new_password">
 							<span class="error helper-profile" id="password_error"></span>
 						</div>
 						<div class="form-group">
-							<label>New Password Confirmation</label>
+							<label>{{ trans('site::default.new_password_confirmation')}} </label>
 							<input type="password" class="form-control" id="password_confirmation-profile" name="new_password_confirmation">
 						</div>
 						<div class="form-group">
@@ -157,7 +157,7 @@
   $(document).on('click', '.remove-image-single', function(){
     $(this).parent().find('.image-path').val(''); 
     $(this).parent().find('.file-upload').val(''); 
-    $(this).parent().find('.image-preview').attr('src', 'https://via.placeholder.com/360x360')
+    $(this).parent().find('.image-preview').attr('src', '{{ url('img/pngwave.png') }}')
   });
 
 

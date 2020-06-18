@@ -10,7 +10,7 @@
 	          Profile
 	        </a>
 	        <a href="{{ route('public.bookingHistory') }}" class="list-group-item is-active">
-	          Booking History
+	          {{ trans('site::default.booking_history')}} 
 	        </a>
 	        <a href="{{ route('public.bookmarkList') }}" class="list-group-item">
             Bookmark
@@ -18,14 +18,14 @@
 		    </div>        
 			</div>
 			<div class="col-md-9 col-sm-12">
-				<h4>History</h4>
+				<h4>{{ trans('site::default.booking_history')}} </h4>
 				<div class="custom-tab style-1">
 					<ul class="nav nav-tabs pb-2 b-0" id="myTab" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link" id="home-tab" href="{{ route('public.bookingHistory') }}" role="tab" aria-controls="home" aria-selected="true">Pending</a>
+							<a class="nav-link" id="home-tab" href="{{ route('public.bookingHistory') }}" role="tab" aria-controls="home" aria-selected="true">{{ trans('site::default.pending')}}</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" id="profile-tab"  href="{{ route('public.bookingHistorySuccess') }}" role="tab" aria-controls="profile" aria-selected="false">Success</a>
+							<a class="nav-link active" id="profile-tab"  href="{{ route('public.bookingHistorySuccess') }}" role="tab" aria-controls="profile" aria-selected="false">{{ trans('site::default.success')}}</a>
 						</li>
 					</ul>
 					<div class="tab-content" id="myTabContent">
@@ -41,7 +41,7 @@
 													</div>
 													@if(is_null($book->review_id))
 													<div class="col-lg-6 text-right center">
-														<button data-id="{{ $book->id }}" class="btn btn-outline-theme py-1 btn-review">Write Review</button>
+														<button data-id="{{ $book->id }}" class="btn btn-outline-theme py-1 btn-review">{{ trans('site::default.write_review')}}</button>
 													</div>
 													@endif
 												</div>
@@ -75,15 +75,15 @@
 
 				                	        <div class="d-block">
 				                	        	<i class="fas fa-bed"></i>
-				                	        	<span>{{ $book->rooms }}room - {{ $book->guests }}people</span>
+				                	        	<span>{{ $book->rooms }} {{ trans('site::default.room')}} - {{ $book->guests }} {{ trans('site::default.persons')}}</span>
 				                	        </div>
 
 				                	    </div>
 				                	    <div class="col-md-4 text-center">
 				                	        <h3>Rp {{ number_format($book->grand_total, 0, ',', '.') }}</h3>
-				                	        <small>Thank You For Payment*</small>
+				                	        <small>{{ trans('site::default.notif_thank_payment')}}</small>
 				                	        <div class="sub-row">
-				                	        	<a target="_blank" href="{{ route('public.bookingReceipt', array('uuid' => $book->uuid)) }}" type="button" class="btn btn-theme">Receipt</a>
+				                	        	<a target="_blank" href="{{ route('public.bookingReceipt', array('uuid' => $book->uuid)) }}" type="button" class="btn btn-theme">{{ trans('site::default.receipt')}}</a>
 				                	        </div>
 				                	    </div>
 				                	</div>
@@ -124,7 +124,7 @@
     <div class="modal-content" id="sign-up">
       <span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
       <div class="modal-body">
-        <h4 class="modal-header-title">Review</h4>
+        <h4 class="modal-header-title">{{ trans('site::default.write_review')}}</h4>
         <div class="login-form">
         <div id="review-field">
         	
@@ -146,7 +146,6 @@
 
 <script type="x-tmpl-mustache" id="form-review">
 	<div class="form-group">
-		<label>Leave Review</label>
 		<textarea class="form-control" id="review-text" data-id="@{{id}}" name="review"></textarea>
 		<span class="helper error" id="error-review"></span>
 	</div>

@@ -4,12 +4,36 @@
 		"selected_items":
 		[
 			[
-				"pho",
-				"photo"
+				"remov",
+				"removeClass"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"reso",
+				"response"
+			],
+			[
+				"data",
+				"dataInsert"
+			],
+			[
+				"form",
+				"form-control"
 			],
 			[
 				"in",
-				"ingredientTitle"
+				"input\tTag"
+			],
+			[
+				"for",
+				"for\tfor …"
+			],
+			[
+				"pho",
+				"photo"
 			],
 			[
 				"a",
@@ -44,10 +68,6 @@
 				"is_array"
 			],
 			[
-				"form",
-				"form-content"
-			],
-			[
 				"room",
 				"roomName"
 			],
@@ -60,20 +80,12 @@
 				"form-control"
 			],
 			[
-				"data",
-				"dataInsertAnswer"
-			],
-			[
 				"fo",
 				"for\tfor …"
 			],
 			[
 				"req",
 				"request"
-			],
-			[
-				"text",
-				"text-right"
 			],
 			[
 				"di",
@@ -114,10 +126,6 @@
 			[
 				"pos",
 				"position"
-			],
-			[
-				"for",
-				"foreach\tforeach …"
 			],
 			[
 				"shwo",
@@ -506,91 +514,11 @@
 			[
 				"date-check",
 				"date-checkin"
-			],
-			[
-				"val",
-				"value"
-			],
-			[
-				"send",
-				"sendPassword"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "master/reviews/src/Sidebar/ExtenderSidebar.php",
-			"settings":
-			{
-				"buffer_size": 746,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "module/site/resources/views/public/faq.blade.php",
-			"settings":
-			{
-				"buffer_size": 2561,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "master/books/resources/views/admin/success/index.blade.php",
-			"settings":
-			{
-				"buffer_size": 3097,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "module/site/resources/lang/en/default.php",
-			"settings":
-			{
-				"buffer_size": 1536,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "module/site/resources/lang/id/default.php",
-			"settings":
-			{
-				"buffer_size": 1582,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "module/site/resources/views/public/dashboard/index.blade.php",
-			"settings":
-			{
-				"buffer_size": 9226,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "master/books/resources/views/admin/success/partials/table.blade.php",
-			"settings":
-			{
-				"buffer_size": 593,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "master/books/src/Repositories/Presenter/BookSuccessTransformer.php",
-			"settings":
-			{
-				"buffer_size": 1005,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -633,42 +561,82 @@
 	"expanded_folders":
 	[
 		"/var/www/personal/buditama/kamar",
-		"/var/www/personal/buditama/kamar/master",
 		"/var/www/personal/buditama/kamar/module",
-		"/var/www/personal/buditama/kamar/module/site",
-		"/var/www/personal/buditama/kamar/module/site/resources",
-		"/var/www/personal/buditama/kamar/module/site/resources/views",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/partials"
+		"/var/www/personal/buditama/kamar/module/site"
 	],
 	"file_history":
 	[
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/review.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/partials/ourmission.blade.php",
+		"/var/www/personal/buditama/kamar/master/rooms/resources/views/admin/rooms/form.blade.php",
+		"/var/www/personal/buditama/kamar/master/rooms/resources/views/admin/owners/form.blade.php",
+		"/var/www/personal/buditama/kamar/master/articles/resources/views/admin/articles/form.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/partials/main.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/partials/payment.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/partials/privacypolicy.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/partials/condition.blade.php",
+		"/var/www/personal/buditama/kamar/master/upload/src/Http/Traits/UploadTrait.php",
+		"/var/www/personal/buditama/kamar/resources/views/theme/admin/partials/footer.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/partials/partners.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/partials/aboutus.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/partials/ourmission.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/rooms/featured.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/modal.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/header.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Site.php",
+		"/var/www/personal/buditama/kamar/resources/views/theme/admin/partials/metadata.blade.php",
+		"/var/www/personal/buditama/kamar/resources/views/theme/admin/partials/header.blade.php",
+		"/var/www/personal/buditama/kamar/resources/views/theme/admin/layouts/login.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/footer.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/lang/en/default.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/lang/id/default.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/rooms/list.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/gallery.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/metadata.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/ReceiptsResourceController.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Sidebar/ExtenderSidebar.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/receipts/index.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/receipts/form.blade.php",
+		"/var/www/maxsolution/cannedfish/master/upload/src/Http/Traits/UploadTrait.php",
+		"/var/www/maxsolution/cannedfish/resources/views/theme/admin/partials/footer.blade.php",
+		"/var/www/maxsolution/cannedfish/public/themes/vertical/assets/scss/_form-validation.scss",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/questions/form.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/receipts/partials/table.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/receipts/partials/filter.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/ReceiptsPresenter.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/ReceiptsTransformer.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Providers/RouteServiceProvider.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/questions/partials/filter.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Receipts.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/ReceiptsRepository.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/PisaServiceprovider.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/routes/web.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/routes/breadcrumbs.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/ReceiptsRepositoryInterface.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849964_pisa_receipts_table.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Controllers/SiteResourceController.php",
 		"/var/www/personal/buditama/kamar/master/reviews/src/Sidebar/ExtenderSidebar.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/faq.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/index.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/index.blade.php",
+		"/var/www/personal/buditama/kamar/.env",
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/partials/table.blade.php",
+		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Presenter/BookSuccessTransformer.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/review.blade.php",
 		"/var/www/personal/buditama/kamar/master/reviews/src/Repositories/Eloquent/ReviewsRepository.php",
 		"/var/www/personal/buditama/kamar/resources/views/vendor/sidebar/badge.blade.php",
 		"/var/www/personal/buditama/kamar/vendor/maatwebsite/laravel-sidebar/src/Item.php",
 		"/var/www/personal/buditama/kamar/vendor/maatwebsite/laravel-sidebar/src/SidebarExtender.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/index.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/CustomerController.php",
 		"/var/www/personal/buditama/kamar/public/themes/additionals/style/additional.css",
-		"/var/www/personal/buditama/kamar/master/articles/resources/views/admin/articles/form.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/gallery.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/index.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/lang/en/default.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/lang/id/default.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/mails/owner.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
 		"/var/www/personal/buditama/kamar/master/rooms/src/Sidebar/ExtenderSidebar.php",
-		"/var/www/personal/buditama/kamar/master/rooms/resources/views/admin/owners/form.blade.php",
 		"/var/www/personal/buditama/kamar/master/rooms/src/Rooms.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/page/product.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/web.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/PageResourceController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/page/abcci.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/questions/form.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/page/home.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/QuestionsResourceController.php",
 		"/var/www/personal/buditama/kamar/master/books/src/Http/Controllers/BookSuccessResourceController.php",
@@ -678,17 +646,11 @@
 		"/var/www/personal/buditama/kamar/master/books/src/Models/Books.php",
 		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
 		"/var/www/personal/buditama/kamar/master/upload/src/Providers/RouteServiceProvider.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Sidebar/ExtenderSidebar.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/breadcrumbs.php",
-		"/var/www/personal/buditama/kamar/.env",
-		"/var/www/maxsolution/cannedfish/resources/views/theme/admin/partials/footer.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/homepage/home.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/questions/partials/filter.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849963_pisa_settings_table.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Settings.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/AnswersRepository.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/SettingsRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/PisaServiceprovider.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/SettingsRepositoryInterface.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/questions/index.blade.php",
 		"/var/www/maxsolution/cannedfish/vendor/league/flysystem/src/Exception.php",
@@ -699,9 +661,7 @@
 		"/var/www/personal/buditama/kamar/public/themes/landing/assets/css/styles.min.css",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/ameneties.blade.php",
 		"/var/www/personal/buditama/kamar/public/themes/landing/assets/css/styles.css",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/rooms/list.blade.php",
 		"/var/www/personal/buditama/kamar/master/reviews/database/migrations/2020_06_07_000000_create_reviews_table.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Site.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/history.blade.php",
 		"/var/www/personal/buditama/kamar/master/rooms/src/Models/Rooms.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/history-success.blade.php",
@@ -720,9 +680,7 @@
 		"/var/www/personal/buditama/kamar/module/site/src/Repositories/Eloquent/BookmarkRepository.php",
 		"/var/www/personal/buditama/kamar/module/site/src/SiteServiceprovider.php",
 		"/var/www/personal/buditama/kamar/module/site/src/Interfaces/BookmarkRepositoryInterface.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/metadata.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/script.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/faq.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/QuestionsTransformer.php",
 		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-math.js",
 		"/var/www/maxsolution/cannedfish/master/pisa/config/config.php",
@@ -735,53 +693,18 @@
 		"/var/www/maxsolution/cannedfish/master/articles/resources/views/admin/articles/form.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Answers.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Questions.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/AnswersRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849959_pisa_answer_table.php",
-		"/var/www/maxsolution/cannedfish/master/articles/src/Facades/Articles.php",
-		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/questions/partials/table.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/QuestionsRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/pisa/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/QuestionsRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Providers/RouteServiceProvider.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/QuestionsPresenter.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Criteria/LiveCriteria.php",
-		"/var/www/maxsolution/cannedfish/config/breadcrumbs.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849957_pisa_question_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849960_pisa_customers_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/PisaResourceController.php",
-		"/var/www/maxsolution/cannedfish/master/customers/src/Sidebar/ExtenderSidebar.php",
-		"/var/www/maxsolution/cannedfish/master/customers/src/Http/Controllers/CustomersResourceController.php",
-		"/var/www/maxsolution/cannedfish/master/customers/routes/breadcrumbs.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849961_pisa_customer_histories_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849962_pisa_grades_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849958_pisa_customer_table.php",
-		"/var/www/maxsolution/cannedfish/master/customers/routes/web.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849957_pisa_table.php",
-		"/var/www/maxsolution/cannedfish/composer.json",
-		"/var/www/personal/buditama/kamar/config/app.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/composer.json",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/pisa/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/pisa/partials/filter.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/pisa/partials/table.blade.php",
-		"/var/www/maxsolution/tclub/modules/Location/Http/Skeleton/LocationSkeleton.php",
-		"/var/www/html/sanctum/app/Http/Controllers/PublicController.php",
-		"/var/www/html/sanctum/.env.example",
-		"/var/www/html/sanctum/routes/web.php",
-		"/var/www/html/sanctum/resources/views/resetPassword.blade.php",
-		"/var/www/html/sanctum/resources/js/components/ResetComponent.vue",
-		"/var/www/html/sanctum/resources/js/components/SecretComponent.vue",
-		"/var/www/html/sanctum/resources/js/app.js"
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/AnswersRepositoryInterface.php"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
 		"height": 110.0,
 		"where_history":
 		[
+			"/var/www/maxsolution/cannedfish/public/themes/vertical/assets/scss",
 			"/var/www/personal/buditama/kamar/public/themes",
 			"/var/www/personal/buditama/kamar/master",
 			"/var/www/personal/buditama/kamar/module/site",
@@ -876,6 +799,38 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fire",
+			"notif'),",
+			"notif'), ",
+			"'),",
+			"Notification",
+			"please activate your account",
+			"questions",
+			"readURL",
+			"upload",
+			"error",
+			"questions",
+			"youtu",
+			"articles",
+			"questions",
+			"Questions",
+			"questions",
+			"Questions",
+			"Question",
+			" Question",
+			"Question",
+			"QuestionsResourceController",
+			"questions",
+			"Settings",
+			"Answers",
+			"settings",
+			"Banner",
+			"mainBanner",
+			"The field is mandatory",
+			"book_it_now",
+			"persons",
+			"book_it_now",
+			"room",
 			")",
 			"page",
 			"$customer",
@@ -971,39 +926,7 @@
 			"tablePlaylist",
 			"playlist-list",
 			"playlist_create",
-			"playlist-list",
-			"list",
-			"tablePlaylist",
-			"showModal",
-			"image",
-			"position",
-			"answer",
-			"btn-add-playlist",
-			"Answer",
-			"answer",
-			"pisaImageLeft",
-			"Title",
-			"ImageRight",
-			"Left",
-			"articles",
-			"score",
-			"content",
-			"MainBanner",
-			"<button class=\"btn",
-			"whereHas",
-			"customFilters",
-			"map",
-			"right",
-			"left",
-			"ABCCI",
-			"abcci",
-			"<div class=\"help-block with-errors error\"></div>",
-			"activity",
-			"playlist",
-			"gallery",
-			"content",
-			"home",
-			"jquery-sortable.js"
+			"playlist-list"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1029,258 +952,8 @@
 	"groups":
 	[
 		{
-			"selected": 5,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "master/reviews/src/Sidebar/ExtenderSidebar.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 746,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								709,
-								709
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "module/site/resources/views/public/faq.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2561,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2039,
-								2039
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 780.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "master/books/resources/views/admin/success/index.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3097,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1367,
-								1367
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 420.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "module/site/resources/lang/en/default.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1536,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								334,
-								334
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 88.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "module/site/resources/lang/id/default.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1582,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								387,
-								387
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "module/site/resources/views/public/dashboard/index.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9226,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								871,
-								871
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "master/books/resources/views/admin/success/partials/table.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 593,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								446,
-								446
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "master/books/src/Repositories/Presenter/BookSuccessTransformer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								638,
-								638
-							],
-							[
-								696,
-								696
-							],
-							[
-								757,
-								757
-							],
-							[
-								826,
-								826
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				}
 			]
 		}
 	],

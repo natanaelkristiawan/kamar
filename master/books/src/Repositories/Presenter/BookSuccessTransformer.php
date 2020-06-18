@@ -22,6 +22,7 @@ class BookSuccessTransformer extends TransformerAbstract
 			'total' => number_format($model->total, 0, ',', '.'),
 			'service' => number_format($model->service, 0, ',', '.'),
 			'grand_total' => number_format($model->grand_total, 0, ',', '.'),
+			'payout_to_owner' => number_format($model->payout_to_owner, 0, ',', '.'),
 			'date_checkin' => $model->date_checkin,
 			'date_checkout' => $model->date_checkout,
 			'status' => (bool)$model->status ? 'Success Payment' : 'Pending Payment',

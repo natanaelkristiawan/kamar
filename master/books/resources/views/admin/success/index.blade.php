@@ -112,7 +112,7 @@ $(document).ready(function() {
       {data : 'total'},
       {data : 'service'},
       {data : 'grand_total'},
-      {data : 'total'},
+      {data : 'payout_to_owner'},
       {data : 'date_checkin'},
       {data : 'date_checkout'},
       {data : 'status'}

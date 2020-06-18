@@ -4,7 +4,7 @@ namespace Master\Books\Repositories\Eloquent;
 
 use Master\Books\Interfaces\BooksRepositoryInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
-
+use DB;
 class BooksRepository extends BaseRepository implements BooksRepositoryInterface
 {
 	private $pageLimit;
@@ -66,7 +66,7 @@ class BooksRepository extends BaseRepository implements BooksRepositoryInterface
 	 	$this->scopeQuery(function($query) use ($request) {
 			$query->join('customers', 'customers.id', '=', 'books.customer_id')
       ->join('rooms', 'rooms.id', '=', 'books.room_id')
-      ->select('books.*','customers.email', 'rooms.name as roomName');
+      ->select(DB::raw('books.*, (books.total - books.service) as payout_to_owner, customers.email, rooms.name as roomName'));
       $query->with(['customer', 'room']);
       $filter = $request->search;
       $query->whereHas('customer', function ($query) use ($filter) {

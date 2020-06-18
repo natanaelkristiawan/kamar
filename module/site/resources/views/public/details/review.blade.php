@@ -12,7 +12,7 @@
           <li class="article_comments_wrap">
             <article>
               <div class="article_comments_thumb">
-                <img src="{{ (is_null( Customers::findByField('id', $review->customer_id)->photo) || empty( Customers::findByField('id', $review->customer_id)->photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'. Customers::findByField('id', $review->customer_id)->photo) }}" alt="">
+                <img  src="{{ (is_null( Customers::findByField('id', $review->customer_id)->photo) || empty( Customers::findByField('id', $review->customer_id)->photo)) ? url('img/pngwave.png') : url('image/profile/'. Customers::findByField('id', $review->customer_id)->photo) }}" alt="">
               </div>
               <div class="comment-details">
                 <div class="comment-meta">
@@ -20,9 +20,12 @@
                     <h4 class="author-name">{{ Customers::findByField('id', $review->customer_id)->name }}</h4>
                     <div class="comment-date">{{ date('d F Y H:i:s', strtotime($review->created_at)) }}</div>
                   </div>
+                  <div>
+                    
                   @for($i=0;$i<5;$i++)
                   <span class="fa fa-star {{ $i < $review->rating ? 'checked' : '' }}"></span>
                   @endfor
+                  </div>
                 </div>
                 <div class="comment-text">
                   <p>{!! $review->review !!}</p>

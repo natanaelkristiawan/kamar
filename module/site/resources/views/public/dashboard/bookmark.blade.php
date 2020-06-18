@@ -10,7 +10,7 @@
 	          Profile
 	        </a>
 	        <a href="{{ route('public.bookingHistory') }}" class="list-group-item">
-	          Booking History
+	          {{ trans('site::default.booking_history')}} 
 	        </a>
 	        <a href="{{ route('public.bookmarkList') }}" class="list-group-item is-active">
             Bookmark
@@ -55,7 +55,7 @@
 				                	    <div class="col-md-4 text-center">
 
 				                	        <div class="sub-row">
-				                	        	<a target="_blank" href="{{ route('public.roomDetail', array('slug'=>$book->room_slug)) }}" type="button" class="btn btn-theme">BOOK NOW</a>
+				                	        	<a target="_blank" href="{{ route('public.roomDetail', array('slug'=>$book->room_slug)) }}" type="button" class="btn btn-theme">{{ trans('site::default.book_it_now')}} </a>
 				                	        </div>
 				                	    </div>
 				                	</div>

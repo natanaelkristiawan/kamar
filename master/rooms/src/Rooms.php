@@ -140,6 +140,7 @@ class Rooms
         'owner_name'  => $model->owner->name,
         'owner_phone'  => $model->owner->phone,
         'owner_photo'  => $model->owner->photo,
+        'owner_verified'  => $model->owner->status,
         'reviews' => $model->reviews,
         'status' => $model->status,
         'rating' => $rating
@@ -166,9 +167,7 @@ class Rooms
     $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     $query = $this->rooms->with(['owner', 'reviews' => function($query){
       return $query->where('status', 1);
-    }])->whereHas('owner', function($query){
-      return $query->where('status', 1);
-    })->findWhere(array('slug'=>$slug));
+    }])->findWhere(array('slug'=>$slug));
     $fractal = new Manager();
     $resource = self::renderRooms($query, $language);
     $response = $fractal->createData($resource)->toJson();
@@ -231,8 +230,6 @@ class Rooms
         return $query->where('slug', $request->location);
       }
       return $query;
-    })->whereHas('owner', function($query){
-      return $query->where('status', 1);
     })->paginate($limit);
     $query = $data->getCollection();
     $resource = self::renderRooms($query, $language);

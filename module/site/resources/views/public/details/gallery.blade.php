@@ -77,10 +77,14 @@
         <div class="agent-_blocks_wrap mb-4">
           <div class="agent-_blocks_title">
           
-            <div class="agent-_blocks_thumb"><img src="{{ (is_null($room->owner_photo) || empty($room->owner_photo)) ? 'https://via.placeholder.com/360x360' : url('image/profile/'.$room->owner_photo) }}" alt=""></div>
+            <div class="agent-_blocks_thumb"><img src="{{ (is_null($room->owner_photo) || empty($room->owner_photo)) ? url('img/pngwave.png') : url('image/profile/'.$room->owner_photo) }}" alt=""></div>
             <div class="agent-_blocks_caption">
               <h4><a href="#">{{ $room->owner_name }}</a></h4>
-              <span   data-toggle="tooltip" data-original-title="{{ trans('site::default.owner_valid')  }}" class="approved-agent"><i class="ti-check"></i>{{ trans('site::default.approve')  }}</span>
+              @if($room->owner_verified)
+              <span data-toggle="tooltip" data-original-title="{{ trans('site::default.owner_valid')  }}" class="approved-agent"><i class="ti-check"></i>{{ trans('site::default.verified')  }}</span>
+              @else
+              <span data-toggle="tooltip" data-original-title="{{ trans('site::default.owner_not_valid')  }}"><i style="color: #fd5332" class="fas fa-times-circle mr-1"></i>{{ trans('site::default.not_verified')  }}</span>
+              @endif
             </div>
             <div class="clearfix"></div>
           </div>

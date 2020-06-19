@@ -10,6 +10,7 @@ use Rooms;
 use Books;
 use Hash;
 use Reviews;
+use Meta;
 use Module\Site\Facades\Site;
 
 class CustomerController extends Controller
@@ -21,9 +22,19 @@ class CustomerController extends Controller
     $this->middleware('auth:web');
     $this->customer = Auth::user();
   }
+  public function setMeta()
+  {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::set('robots', $meta['tag']); 
+    Meta::set('keywords', $meta['tag']);
+    Meta::set('description', $meta['description']);
+  }
 
   public function dashboard()
   {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - Dashboard');
+    self::setMeta();
     $customer = Auth::user();
     return view('site::public.dashboard.index', compact('customer'));
   }
@@ -31,7 +42,9 @@ class CustomerController extends Controller
   public function bookingHistory(Request $request)
   {
     $customer = Auth::user();
-
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - Booking History');
+    self::setMeta();
     $data = json_decode(Books::findPendingBookByCustomer($request, $customer->id));
 
     $books = $data->data;
@@ -52,6 +65,9 @@ class CustomerController extends Controller
 
   public function bookingHistorySuccess(Request $request)
   {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - Booking History');
+    self::setMeta();
     $customer = Auth::user();
 
     $data = json_decode(Books::findSuccessBookByCustomer($request, $customer->id));
@@ -340,6 +356,9 @@ class CustomerController extends Controller
 
   public function bookmark(Request $request)
   {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - Bookmark');
+    self::setMeta();
     $customer = Auth::user();
     $data = json_decode(Site::findBookmarkByCustomer($request, $customer->id, 4));
     $rooms = $data->data;

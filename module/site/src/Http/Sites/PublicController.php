@@ -56,7 +56,8 @@ class PublicController extends Controller
   public function index()
   { 
     self::setMeta();
-    Meta::title('kamartamu.com');
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title']);
     Meta::set('active', 'home');
     $mainBanner = Site::getDataSite('main-banner');
     $missionBanner = Site::getDataSite('mission-banner');
@@ -122,7 +123,8 @@ class PublicController extends Controller
 
     // pengen tau uuid tetap sama atau beda
     $uuid = Uuid::uuid4();
-    Meta::title('kamartamu.com - '.$room->meta->title);
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - '.$room->meta->title);
     Meta::set('robots', $room->meta->tag); 
     Meta::set('keywords', $room->meta->tag);
     Meta::set('description', $room->meta->description);
@@ -161,7 +163,8 @@ class PublicController extends Controller
   public function rooms(Request $request)
   {
     self::setMeta();
-    Meta::title('kamartamu.com - '.trans('routes.rooms'));
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - '.trans('routes.rooms'));
     Meta::set('active', 'rooms');
     $data = json_decode(Rooms::getRooms($request, 8, $this->lang));
     $rooms = $data->data;
@@ -188,7 +191,8 @@ class PublicController extends Controller
   public function blogs(Request $request)
   {
     self::setMeta();
-    Meta::title('kamartamu.com - blogs');
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - blogs');
     Meta::set('active', 'blogs');
     $data = json_decode(Articles::getArticles($request, 8, $this->lang));
     $articles = $data->data;
@@ -210,7 +214,8 @@ class PublicController extends Controller
 
     $article = $data[0];
     Meta::set('active', 'blogs');
-    Meta::title('kamartamu.com - '.$article->meta->title);
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - '.$article->meta->title);
     Meta::set('robots', $article->meta->tag); 
     Meta::set('keywords', $article->meta->tag);
     Meta::set('description', $article->meta->description);
@@ -228,7 +233,8 @@ class PublicController extends Controller
   public function faq()
   {
     self::setMeta();
-    Meta::title('kamartamu.com - faq');
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - faq');
     $data = Site::getFaqData();
     $lang = $this->lang;
     return view('site::public.faq', compact('data', 'lang'));
@@ -747,6 +753,10 @@ class PublicController extends Controller
 
   public function privacyPolicy(Request $request)
   {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - '.trans('site::default.privacyPolicy'));
+    self::setMeta();
+
     $data = Site::getDataSite('privacy')[$this->lang];
     $banner = Site::getDataSite('privacy-banner');
 
@@ -755,6 +765,10 @@ class PublicController extends Controller
 
   public function aboutUs(Request $request)
   {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - '.trans('site::default.aboutUs'));
+    self::setMeta();
+    
     $data = Site::getDataSite('aboutus')[$this->lang];
     $banner = Site::getDataSite('aboutus-banner');
 
@@ -763,6 +777,9 @@ class PublicController extends Controller
 
   public function condition(Request $request)
   {
+    $meta = Site::getDataSite('meta')[$this->lang];
+    Meta::title($meta['title'].' - '.trans('site::default.termCondition'));
+    self::setMeta();
     $data = Site::getDataSite('condition')[$this->lang];
     $banner = Site::getDataSite('condition-banner');
 

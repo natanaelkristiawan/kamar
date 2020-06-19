@@ -20,8 +20,8 @@ class ExtenderSidebar implements SidebarExtender
 			});	
 
 			$group->item('Media Social', function(Item $item){
-				$item->icon('mdi mdi-cloud-sync');
-				$item->url(route('admin.site'));
+				$item->icon('mdi mdi-share-variant');
+				$item->url(route('admin.mediasocial'));
 			});
 
 			$group->item('FAQs', function(Item $item){

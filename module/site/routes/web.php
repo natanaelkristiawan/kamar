@@ -6,6 +6,9 @@ $route->group(['prefix' => env('ADMIN_URL', 'admin')], function ($route) {
 			$route->get('/', 'SiteResourceController@index')->name('admin.site');
 			$route->post('/', 'SiteResourceController@store');
 		});
+    
+    $route->get('media-social', 'SiteResourceController@mediaSocial')->name('admin.mediasocial');
+    $route->post('media-social', 'SiteResourceController@setMediaSocial');
 
     $route->group(['prefix' => 'faq-categories'], function($route) {
       $route->get('/', 'FaqCategoriesResourceController@index')->name('admin.faqcategories');

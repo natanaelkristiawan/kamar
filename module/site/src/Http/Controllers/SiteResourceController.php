@@ -62,6 +62,33 @@ class SiteResourceController extends Controller
 		));
 	}
 
+	public function mediaSocial(Request $request)
+	{
+		$facebook = self::getMediaFacebook();
+		$instagram = self::getMediaInstagram();
+		$twitter = self::getMediaTwitter();
+		$linkedin = self::getMediaLinkedin();
+		
+		return view('site::admin.site.mediasocial', compact(
+			'facebook',
+			'instagram',
+			'twitter',
+			'linkedin'
+		));
+	}
+
+
+	public function setMediaSocial(Request $request)
+	{
+		self::setMediaFacebook($request);
+		self::setMediaInstagram($request);
+		self::setMediaTwitter($request);
+		self::setMediaLinkedin($request);
+
+		$request->session()->flash('status', 'Success Insert Data!');
+		return redirect()->route('admin.mediasocial');
+	}
+
 	public function store(Request $request)
 	{
 		/*main group*/

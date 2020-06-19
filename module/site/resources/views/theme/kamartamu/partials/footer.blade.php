@@ -61,15 +61,15 @@
             <div class="d-block col-lg-12">
               <h4 class="widget_title mb-1">Payment Partners</h4>
             </div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336137510-758f10ec383cb349ffee7bc0fa516c3f.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336144166-e6e7ce40ff72a97e6e0eeeabda7595d7.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336148727-34b7516141fad67cf3b28a682ab0cc93.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336152817-f0ef4ea005ad461b4b2cd0a8fdec6628.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336157462-2cdb1a639427a49e80060bb6e293d50f.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336160378-6e3d05dade33f8b94afb06edad45582e.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336166816-6749d37525bdb6599b47e8f134a094f6.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336170813-a362e7f1758db9360ee23dfb38463ae4.png?tr=q-75&amp;w=51"></div>
-            <div class="col-lg-4 mb-2"><img class="img-fluid p-1" style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336173985-7a9c617faf21b6770c4b81bfae3df621.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336137510-758f10ec383cb349ffee7bc0fa516c3f.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336144166-e6e7ce40ff72a97e6e0eeeabda7595d7.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336148727-34b7516141fad67cf3b28a682ab0cc93.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336152817-f0ef4ea005ad461b4b2cd0a8fdec6628.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336157462-2cdb1a639427a49e80060bb6e293d50f.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336160378-6e3d05dade33f8b94afb06edad45582e.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336166816-6749d37525bdb6599b47e8f134a094f6.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336170813-a362e7f1758db9360ee23dfb38463ae4.png?tr=q-75&amp;w=51"></div>
+            <div class="col-lg-4 mb-2"><img class="img-fluid p-1 " style="background-color: white " src="https://ik.imagekit.io/tvlk/image/imageResource/2019/05/20/1558336173985-7a9c617faf21b6770c4b81bfae3df621.png?tr=q-75&amp;w=51"></div>
           </div>
 
 
@@ -108,7 +108,7 @@
   $(document).ready(function() {
     $.each($('.medsos'), function(){
       if ($(this).attr('href') == '') {
-        $(this).addClass('hide')
+        $(this).parent().addClass('hide')
       }
     })
   })

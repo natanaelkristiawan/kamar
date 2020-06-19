@@ -17,6 +17,11 @@ class ExtenderSidebar implements SidebarExtender
 			$group->item('Site', function(Item $item){
 				$item->icon('mdi mdi-cloud-sync');
 				$item->url(route('admin.site'));
+			});	
+
+			$group->item('Media Social', function(Item $item){
+				$item->icon('mdi mdi-cloud-sync');
+				$item->url(route('admin.site'));
 			});
 
 			$group->item('FAQs', function(Item $item){

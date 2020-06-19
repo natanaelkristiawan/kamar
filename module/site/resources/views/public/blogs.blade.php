@@ -1,7 +1,7 @@
 @extends('site::theme.kamartamu.layouts.index')
 @section('content')
 <!-- ============================ Page Title Start================================== -->
-<div class="page-title" style="background:#f4f4f4 url('{{ asset('img/assets/hotel-4416515_1920.jpg') }}');" data-overlay="5">
+<div class="page-title" style="background:#f4f4f4 url('{{ asset('img/blog.jpg') }}');" data-overlay="5">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12">

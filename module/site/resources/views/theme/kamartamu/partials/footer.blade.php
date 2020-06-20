@@ -5,7 +5,7 @@
         
         <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
-            <img src="{{ asset('themes/landing') }}/assets/img/logo-light.png" class="img-footer" alt="" />
+            <img src="{{ is_null(Site::getDataSite('main-logo')) ? asset('themes/landing/assets/img/logo.png') : url('image/original/'.Site::getDataSite('main-logo')) }}" class="logo" alt="" />
             <div class="footer-add">
               <p>{{ Site::getDataSite('address') }}</p>
               <p>{{ Site::getDataSite('phone') }}</p>

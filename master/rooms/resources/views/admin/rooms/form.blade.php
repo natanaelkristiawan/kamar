@@ -184,7 +184,6 @@
                   <tr>
                     <th>Date Start</th>
                     <th>Date End</th>
-                    <th width="10%">Status</th>
                     <th width="10%">Action</th>
                   </tr>
                 </thead>
@@ -343,16 +342,11 @@
 <script type="x-tmpl-mustache" id="date-off-template">
 <tr id="dateoff_@{{ counter }}">
   <td>
+      <input type="hidden" name="date_off[@{{counter}}][status]" value="1">
     <input type="text" value="@{{ date_start }}" name="date_off[@{{counter}}][date_start]" id="datestart@{{counter}}" class="datetime form-control datestart" >
   </td>
   <td>
     <input type="text"  value="@{{ date_end }}" name="date_off[@{{counter}}][date_end]" id="dateend@{{counter}}" class="datetime form-control dateend" >
-  </td>
-  <td>
-    <div>
-      <input type="hidden" name="date_off[@{{counter}}][status]" value="0">
-      <input type="checkbox" id="status@{{counter}}" class="js-switch" name="date_off[@{{counter}}][status]" value="1"  />
-    </div>
   </td>
   <td>
     <button type="button" onclick="$('#dateoff_@{{ counter }}').remove()" class="btn btn-danger btn-sm">Delete</button>
@@ -441,7 +435,6 @@
           $('#status'+counter).attr('checked', true)
         }
       }
-      var switchery = new Switchery(elem, { color: '#1AB394', size: 'small' });
 
       resolve({
         dateStart: dateStart,

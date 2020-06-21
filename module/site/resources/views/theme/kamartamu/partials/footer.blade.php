@@ -5,7 +5,7 @@
         
         <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
-            <img src="{{ is_null(Site::getDataSite('main-logo')) ? asset('themes/landing/assets/img/logo.png') : url('image/original/'.Site::getDataSite('main-logo')) }}" class="logo" alt="" />
+            <img style="max-width: 200px" src="{{ asset('img/logo-with-text-white.png')  }}" class="logo mb-2" alt="" />
             <div class="footer-add">
               <p>{{ Site::getDataSite('address') }}</p>
               <p>{{ Site::getDataSite('phone') }}</p>
@@ -29,14 +29,14 @@
             
         <div class="col-lg-3 col-md-3">
           <div class="footer_widget">
-            <h4 class="widget_title">Location</h4>
+            <h4 class="widget_title">Types</h4>
             <ul class="footer-menu">
 
-              @foreach(Rooms::getLocations(true) as $key => $location)
+              @foreach(Rooms::getTypes(true) as $key => $type)
               @if($key > 4)
               @continue
               @endif
-              <li><a href="#">{{ $location->name }}</a></li>
+              <li><a href="{{ route('public.rooms', array('type' => $type->slug)) }}">{{ $type->name }}</a></li>
               @endforeach
             </ul>
           </div>

@@ -230,6 +230,11 @@ class Rooms
         return $query->where('slug', $request->location);
       }
       return $query;
+    })->whereHas('type', function($query) use ($request){
+      if ($request->type) {
+        return $query->where('slug', $request->type);
+      }
+      return $query;
     })->paginate($limit);
     $query = $data->getCollection();
     $resource = self::renderRooms($query, $language);

@@ -104,6 +104,14 @@
 @section('script')
 @parent
 
+<style type="text/css">
+  @media screen and (max-width: 600px) {
+    footer {
+      z-index: 1000 !important;
+    }
+  }
+</style>
+
 <script type="text/javascript">
   $(document).ready(function() {
     $.each($('.medsos'), function(){

@@ -109,6 +109,9 @@
     footer {
       z-index: 1000 !important;
     }
+    #back2Top {
+      z-index: 1001 !important;
+    }
   }
 </style>
 

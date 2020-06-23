@@ -363,7 +363,7 @@ class PublicController extends Controller
 
     $password = Str::random(6);
     if(is_null($exist)){
-      $customer->password = $password;
+      $customer->password = bcrypt($password);
     }
     $customer->save();
     if (is_null($exist)) {

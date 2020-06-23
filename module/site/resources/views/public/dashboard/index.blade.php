@@ -29,7 +29,7 @@
               <div style="position: relative; width: 128px;">
                 <div class="lds-dual-ring hide"></div>
                 <a href="javascript:;" class="upload-now">
-                  <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($customer->photo) || empty($customer->photo)) ? url('img/pngwave.png') : url('image/profile/'.$customer->photo) }}" class="card-img-top img-fluid image-preview">
+                  <img style="max-width: 128px; border-radius: 5px" alt="Card image cap" src="{{ (is_null($customer->photo) || empty($customer->photo)) ? asset('img/pngwave.png') : url('image/profile/'.$customer->photo) }}" class="card-img-top img-fluid image-preview">
                 </a>
                 <a href="javascript:;" class="remove-image-single">
                   <i class="fa fa-times"></i>

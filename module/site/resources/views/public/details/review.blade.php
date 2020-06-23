@@ -12,7 +12,7 @@
           <li class="article_comments_wrap">
             <article>
               <div class="article_comments_thumb">
-                <img  src="{{ (is_null( Customers::findByField('id', $review->customer_id)->photo) || empty( Customers::findByField('id', $review->customer_id)->photo)) ? url('img/pngwave.png') : url('image/profile/'. Customers::findByField('id', $review->customer_id)->photo) }}" alt="">
+                <img  src="{{ (is_null( Customers::findByField('id', $review->customer_id)->photo) || empty( Customers::findByField('id', $review->customer_id)->photo)) ? asset('img/pngwave.png') : url('image/profile/'. Customers::findByField('id', $review->customer_id)->photo) }}" alt="">
               </div>
               <div class="comment-details">
                 <div class="comment-meta">

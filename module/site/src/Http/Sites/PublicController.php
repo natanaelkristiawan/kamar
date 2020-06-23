@@ -361,7 +361,7 @@ class PublicController extends Controller
     $customer->verified_at = date('Y-m-d H:i:s');
     $customer->status = 1;
 
-    $password = Str::random(6);
+    $password = strtolower(Str::random(6));
     if(is_null($exist)){
       $customer->password = bcrypt($password);
     }

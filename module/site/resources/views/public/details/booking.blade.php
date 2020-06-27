@@ -566,7 +566,10 @@
 </script>
 
 <!-- for booking -->
-<script src="https://app.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}" defer></script>
+<!-- ini di ganti saat live -->
+<!-- <script src="https://app.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}" defer></script> -->
+<!-- ini saat sandbox -->
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}" defer></script>
 <script type="text/javascript">
 
   async function getSnapToken(params) {

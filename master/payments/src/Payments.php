@@ -15,7 +15,7 @@ class Payments
 	)
 	{
 		MidtransConfig::$serverKey = env('MIDTRANS_SERVER_KEY');
-		MidtransConfig::$isProduction = true;
+		MidtransConfig::$isProduction = false;
 		MidtransConfig::$isSanitized = true;
 		MidtransConfig::$is3ds = true;
 

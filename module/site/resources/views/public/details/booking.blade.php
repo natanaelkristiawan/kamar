@@ -111,7 +111,8 @@
           <span class="text-mute">{{ trans('site::default.notif_booking') }}</span>
           @else
           <button type="button" disabled="" data-toggle="tooltip" data-original-title="{{ trans('site::default.notif_email')  }}" class="btn btn-theme full-width">{{ trans('site::default.book_it_now')  }}</button>
-          <span class="text-mute">{{ trans('site::default.notif_email')  }}</span> 
+          <span id="email_need_validate" class="text-mute hide">{{ trans('site::default.notif_email_validate')  }}</span> 
+          <span id="email_need_login" class="text-mute hide">{{ trans('site::default.notif_email_login')  }}</span> 
           @endif
         </div>
       </div>
@@ -309,6 +310,7 @@
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
                   Swal.fire('{{ trans('site::default.notif') }}', response.message, 'success');
                   setDefaultBooking();
+
                 }
                 if (response.step == 'account_exist_not_active') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
@@ -332,6 +334,7 @@
                         }
                       }).then(()=>{
                         $('#loader').addClass('hide')
+                        $('#email_need_validate').removeClass('hide');
                       })
                     }
                   })
@@ -342,6 +345,7 @@
                   setDefaultBooking();
                   $('.modalLogin').click();
                   $('#notif_login').removeClass('hide');
+                  $('#email_need_login').removeClass('hide');
                 }
                 if (response.step == 'calculate_booking') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:true})), { path: '/',  expires: 1});

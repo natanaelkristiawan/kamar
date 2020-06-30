@@ -17,13 +17,13 @@ $route->get('activate-account/{token}', 'PublicController@activateAccount')->nam
 $route->post('resend-activate', 'PublicController@reSendEmailActivate')->name('public.resendActivate');
 
 /*logout*/ 
-$route->get('logout', 'CustomerController@logout')->name('public.logout');
+$route->get(aravelLocalization::transRoute('routes.logout'), 'CustomerController@logout')->name('public.logout');
 
 
 /*login*/ 
-$route->post('login', 'PublicController@doLogin')->name('public.login');
+$route->post(LaravelLocalization::transRoute('routes.login'), 'PublicController@doLogin')->name('public.login');
 /*register*/
-$route->post('register', 'PublicController@doRegister')->name('public.register');
+$route->post(LaravelLocalization::transRoute('routes.register'), 'PublicController@doRegister')->name('public.register');
 
 
 

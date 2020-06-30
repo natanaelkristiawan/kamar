@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"data",
+				"dataActivity"
+			],
+			[
+				"ac",
+				"activities"
+			],
+			[
+				"com",
+				"component"
+			],
+			[
+				"di",
+				"directionScroll\tvar"
+			],
+			[
 				"fu",
 				"fun\tFunction"
 			],
@@ -46,10 +62,6 @@
 			[
 				"h",
 				"h2\tTag"
-			],
-			[
-				"data",
-				"dataGallery"
 			],
 			[
 				"for",
@@ -248,10 +260,6 @@
 				"request"
 			],
 			[
-				"di",
-				"div\tTag"
-			],
-			[
 				"cus",
 				"customer"
 			],
@@ -428,16 +436,8 @@
 				"payment_id"
 			],
 			[
-				"com",
-				"compact"
-			],
-			[
 				"url",
 				"urlRoom"
-			],
-			[
-				"ac",
-				"action\tAttr"
 			],
 			[
 				"reu",
@@ -519,6 +519,23 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/var/www/maxsolution/cannedfish/.env",
+			"settings":
+			{
+				"buffer_size": 971,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
+			"settings":
+			{
+				"buffer_size": 8350,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -560,40 +577,53 @@
 	},
 	"expanded_folders":
 	[
-		"/var/www/maxsolution/cannedfish"
+		"/var/www/maxsolution/cannedfish",
+		"/var/www/maxsolution/cannedfish/master",
+		"/var/www/maxsolution/cannedfish/master/pisa",
+		"/var/www/maxsolution/cannedfish/master/pisa/src",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites"
 	],
 	"file_history":
 	[
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/sardenAbc.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/startPisaTest.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
+		"/var/www/maxsolution/cannedfish/public/.htaccess",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Pisa.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/script.blade.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/js/style.js",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/js/style.js",
+		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote.js",
+		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote.js",
+		"/var/www/personal/buditama/kamar/master/payments/src/Payments.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/lang/en/default.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/lang/id/default.php",
+		"/var/www/personal/buditama/kamar/vendor/public/site/resources/views/public/details/booking.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php",
+		"/var/www/personal/buditama/kamar/storage/framework/views/16f393c644500643ff4b50a05d76e63d82c1b15e.php",
 		"/var/www/maxsolution/cannedfish/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Financial.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/index.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/receipts/form.blade.php",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/product-2.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849964_pisa_receipts_table.php",
 		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote-bs4.js",
-		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote.js",
 		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-lite.js",
 		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_24_000000000_pisa_video_youtube_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/ReceiptsResourceController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Receipts.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaResult.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Pisa.php",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/bukucerdas.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Questions.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/PisaCustomerHistories.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/js/style.js",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/script.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/page/abcci.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/routes/site.php",
 		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote-lite.js",
 		"/var/www/maxsolution/cannedfish/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/MathTrig.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasAbc.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasDetail.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote.js",
 		"/home/natanael/Downloads/login.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/VideoYoutube.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/index.blade.php",
@@ -623,9 +653,6 @@
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/test-detail.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/index.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/review.blade.php",
-		"/var/www/personal/buditama/kamar/master/payments/src/Payments.php",
-		"/var/www/personal/buditama/kamar/vendor/public/site/resources/views/public/details/booking.blade.php",
-		"/var/www/personal/buditama/kamar/storage/framework/views/16f393c644500643ff4b50a05d76e63d82c1b15e.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/composer.json",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Criteria/LiveCriteria.php",
 		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
@@ -686,12 +713,7 @@
 		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Eloquent/BooksRepository.php",
 		"/var/www/personal/buditama/kamar/master/books/src/Books.php",
 		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Presenter/BookSuccessTransformer.php",
-		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/index.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/lang/en/default.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/lang/id/default.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/bookmark.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/history-success.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/history.blade.php"
+		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/index.blade.php"
 	],
 	"find":
 	{
@@ -702,6 +724,10 @@
 		"height": 110.0,
 		"where_history":
 		[
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/js",
+			"/var/www/personal/buditama/kamar/module",
+			"/var/www/personal/buditama/kamar",
 			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views",
 			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src",
 			"/var/www/maxsolution/cannedfish/master",
@@ -808,6 +834,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"showActivity",
+			"1",
+			"activities",
+			"galleries",
+			"Gallery",
+			"10",
+			"Gallery",
+			"../../",
+			"previousScroll",
+			"directionScroll",
+			"email_need_validate",
+			"Please validate your email",
+			"notif_login",
+			"check",
+			"Please",
+			"Please validate",
+			"snap/snap.js",
 			"showReadmore",
 			"hahaha",
 			"read-more",
@@ -918,24 +961,7 @@
 			"fire",
 			"notif'),",
 			"notif'), ",
-			"'),",
-			"Notification",
-			"please activate your account",
-			"questions",
-			"readURL",
-			"upload",
-			"error",
-			"questions",
-			"youtu",
-			"articles",
-			"questions",
-			"Questions",
-			"questions",
-			"Questions",
-			"Question",
-			" Question",
-			"Question",
-			"QuestionsResourceController"
+			"'),"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -961,8 +987,65 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/var/www/maxsolution/cannedfish/.env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 971,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								229,
+								229
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 8350,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2779,
+								2779
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1344.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1038,7 +1121,7 @@
 		[
 			[
 				"",
-				"ACCRINT"
+				".note-btn-subscript"
 			]
 		],
 		"width": 659.0

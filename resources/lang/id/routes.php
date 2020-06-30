@@ -13,5 +13,5 @@ return [
   'roomDetail' => 'kamar/{slug}',
   'rooms' => 'kamar',
   'login' => 'login',
-    'register' => 'register'
+  'register' => 'register'
 ];

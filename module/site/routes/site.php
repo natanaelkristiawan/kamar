@@ -17,7 +17,7 @@ $route->get('activate-account/{token}', 'PublicController@activateAccount')->nam
 $route->post('resend-activate', 'PublicController@reSendEmailActivate')->name('public.resendActivate');
 
 /*logout*/ 
-$route->get(aravelLocalization::transRoute('routes.logout'), 'CustomerController@logout')->name('public.logout');
+$route->get(LaravelLocalization::transRoute('routes.logout'), 'CustomerController@logout')->name('public.logout');
 
 
 /*login*/ 

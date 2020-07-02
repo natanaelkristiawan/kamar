@@ -520,19 +520,20 @@
 	"buffers":
 	[
 		{
-			"file": "/var/www/maxsolution/cannedfish/.env",
+			"file": "/var/www/maxsolution/cannedfish/app/Http/Kernel.php",
 			"settings":
 			{
-				"buffer_size": 971,
+				"buffer_size": 4760,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
+			"file": "/var/www/maxsolution/cannedfish/app/Http/Middleware/ClearIndex.php",
 			"settings":
 			{
-				"buffer_size": 8350,
+				"buffer_size": 436,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -578,14 +579,34 @@
 	"expanded_folders":
 	[
 		"/var/www/maxsolution/cannedfish",
-		"/var/www/maxsolution/cannedfish/master",
-		"/var/www/maxsolution/cannedfish/master/pisa",
-		"/var/www/maxsolution/cannedfish/master/pisa/src",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites"
+		"/var/www/maxsolution/cannedfish/app",
+		"/var/www/maxsolution/cannedfish/public",
+		"/var/www/maxsolution/cannedfish/public/themes",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist"
 	],
 	"file_history":
 	[
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/table.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/form.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/index.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/SubmissionsTransformer.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Providers/RouteServiceProvider.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Sidebar/ExtenderSidebar.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/filter.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/SubmissionsResourceController.php",
+		"/var/www/personal/buditama/kamar/module/site/routes/site.php",
+		"/var/www/personal/buditama/kamar/resources/lang/en/routes.php",
+		"/var/www/personal/buditama/kamar/resources/lang/id/routes.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/SubmissionsRepository.php",
+		"/var/www/personal/buditama/kamar/master/rooms/src/Rooms.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/routes/breadcrumbs.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/routes/web.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/PisaServiceprovider.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/SubmissionsRepositoryInterface.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/SubmissionsPresenter.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/VideoYoutube.php",
+		"/var/www/maxsolution/cannedfish/.env",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/sardenAbc.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/startPisaTest.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
@@ -625,7 +646,6 @@
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasAbc.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasDetail.blade.php",
 		"/home/natanael/Downloads/login.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/VideoYoutube.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/index.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/single.blade.php",
 		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-bs4.js",
@@ -635,7 +655,6 @@
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/PisaCustomers.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/PisaCustomersRepositoryInterface.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/PisaCustomersRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/PisaServiceprovider.php",
 		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/PisaCustomerHistoriesRepository.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/PisaCustomerHistoriesRepositoryInterface.php",
@@ -649,7 +668,6 @@
 		"/var/www/personal/buditama/kamar/master/rooms/resources/views/admin/rooms/form.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/EbooksResourceController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/ebooks/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Sidebar/ExtenderSidebar.php",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/test-detail.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/index.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/review.blade.php",
@@ -657,7 +675,6 @@
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Criteria/LiveCriteria.php",
 		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaTest.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Providers/RouteServiceProvider.php",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/partials/metadata.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/footer.blade.php",
 		"/var/www/maxsolution/cannedfish/routes/web.php",
@@ -671,11 +688,9 @@
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/grades/partials/filter.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849965_pisa_tutorials_table.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/TutorialsRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/breadcrumbs.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/TutorialsResourceController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/tutorials/index.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/tutorials/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/web.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Tutorials.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/TutorialsRepository.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/TutorialsPresenter.php",
@@ -691,7 +706,6 @@
 		"/var/www/html/halah/procurement/terima1.php",
 		"/var/www/html/halah/procurement/validasi.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/footer.blade.php",
-		"/var/www/personal/buditama/kamar/master/rooms/src/Rooms.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/grades/index.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/grades/partials/table.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/GradesPresenter.php",
@@ -700,24 +714,11 @@
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/GradesRepository.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/EbooksTransformer.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/ebooks/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/EbooksPresenter.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/admin/site/mediasocial.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Sidebar/ExtenderSidebar.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Http/Controllers/SiteResourceController.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/CustomerController.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/partials/signup.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/routes/web.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/blogs.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/EbooksRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/EbooksRepository.php",
-		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Eloquent/BooksRepository.php",
-		"/var/www/personal/buditama/kamar/master/books/src/Books.php",
-		"/var/www/personal/buditama/kamar/master/books/src/Repositories/Presenter/BookSuccessTransformer.php",
-		"/var/www/personal/buditama/kamar/master/books/resources/views/admin/success/index.blade.php"
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/EbooksPresenter.php"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -834,6 +835,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tutorials",
+			"receipts",
+			"getFeaturedRooms",
+			"getTypesFeatured",
+			"customer_phone",
+			"customer_email",
+			"name",
+			"receipts",
+			"Tutorials",
+			"Receipts",
+			"SubmissionRepositoryInterface",
+			"submission",
+			"Submission",
+			"submission",
+			"Submission",
+			"submission",
+			"Submission $data",
+			"submission",
+			"SubmissionPresenter",
+			"Submission",
+			"receipts",
+			"Receipts $data",
+			"receipts",
+			"Receipts",
 			"showActivity",
 			"1",
 			"activities",
@@ -937,31 +962,7 @@
 			"validasi",
 			"modalValidasi",
 			"no pengiriman",
-			"validasi",
-			"switc",
-			"receipts",
-			"Ebooks",
-			"ebooks",
-			"Ebooks",
-			"Receipts",
-			"ebooks",
-			"Questions",
-			"Receipts",
-			"receipts",
-			"Receipts",
-			"Questions",
-			"receipts",
-			"Facebook",
-			"trans",
-			"receipts",
-			"Receipts $data",
-			"Receipts",
-			"receipts",
-			"Pembayaran",
-			"fire",
-			"notif'),",
-			"notif'), ",
-			"'),"
+			"validasi"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -992,27 +993,29 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/var/www/maxsolution/cannedfish/.env",
+					"file": "/var/www/maxsolution/cannedfish/app/Http/Kernel.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 971,
+						"buffer_size": 4760,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								229,
-								229
+								881,
+								881
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1020,27 +1023,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
-					"semi_transient": true,
+					"file": "/var/www/maxsolution/cannedfish/app/Http/Middleware/ClearIndex.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8350,
+						"buffer_size": 436,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2779,
-								2779
+								348,
+								348
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1344.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1051,7 +1056,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -1092,7 +1097,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 54.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":

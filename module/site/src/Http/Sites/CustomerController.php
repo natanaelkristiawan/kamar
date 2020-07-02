@@ -180,7 +180,7 @@ class CustomerController extends Controller
     $customer = Auth::user();
 
     $customer_details = array(
-      'first_name'       => $customer->name,
+      'first_name'       => 'PT. Kamar Tamu Baru ('.$customer->name.')',
       'email'            => $customer->email,
       'phone'            => $customer->phone
     );

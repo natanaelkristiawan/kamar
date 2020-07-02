@@ -576,6 +576,7 @@ class PublicController extends Controller
 
   public function captureMidtrans(Request $request)
   {
+
     Storage::disk('local')->append('public/midtrans.json', json_encode($request->all()));
     // debug dulu
     // return true;

@@ -53,7 +53,7 @@
                                             <tr>
                                                 <td>
                                                     <h1 style="margin:0; font-family:Arial, sans-serif; color:#606060; letter-spacing:-1px; font-size:20px; font-weight:bold;">Dear {{ $customer }}</h1>
-                                                    <p style="margin:0; font-family:Arial, sans-serif; color:#606060; line-height:150%; font-size:16px;">Thank you for your purchase. The property detail can be found below:</p>
+                                                    <p style="margin:0; font-family:Arial, sans-serif; color:#606060; line-height:150%; font-size:16px;">Thank you for your booking. The property detail can be found below:</p>
                                                 </td>
                                             </tr>
                                         </table>

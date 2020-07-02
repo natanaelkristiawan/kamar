@@ -656,7 +656,7 @@ class PublicController extends Controller
       }
 
       $params = array(
-        'customer' => isset($customer->name),
+        'customer' => $customer->name,
         'customer_phone' => $customer->phone,
         'room_photo' => $book->room->photo_primary,
         'room_name' => $book->room->name,

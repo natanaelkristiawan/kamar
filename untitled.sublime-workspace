@@ -4,8 +4,56 @@
 		"selected_items":
 		[
 			[
+				"showReadmoreS",
+				"showReadmoreSubmission"
+			],
+			[
+				"subm",
+				"submissions"
+			],
+			[
+				"list",
+				"listsubmission"
+			],
+			[
+				"sub",
+				"submission"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"vid",
+				"video_youtube"
+			],
+			[
 				"data",
-				"dataActivity"
+				"dataYoutube"
+			],
+			[
+				"yo",
+				"youtube_url"
+			],
+			[
+				"da",
+				"dataYoutube"
+			],
+			[
+				"you",
+				"youtube_video_id"
+			],
+			[
+				"vide",
+				"videoId"
+			],
+			[
+				"fu",
+				"fun\tfunction …"
+			],
+			[
+				"s",
+				"src"
 			],
 			[
 				"ac",
@@ -14,14 +62,6 @@
 			[
 				"com",
 				"component"
-			],
-			[
-				"di",
-				"directionScroll\tvar"
-			],
-			[
-				"fu",
-				"fun\tFunction"
 			],
 			[
 				"show",
@@ -102,10 +142,6 @@
 			[
 				"ver",
 				"version"
-			],
-			[
-				"list",
-				"listActive"
 			],
 			[
 				"rece",
@@ -396,10 +432,6 @@
 				"importfile"
 			],
 			[
-				"da",
-				"data"
-			],
-			[
 				"re",
 				"repository"
 			],
@@ -482,57 +514,33 @@
 			[
 				"pa",
 				"payments"
-			],
-			[
-				"PA",
-				"Payments"
-			],
-			[
-				"boo",
-				"book"
-			],
-			[
-				"ord",
-				"order_id"
-			],
-			[
-				"json",
-				"json"
-			],
-			[
-				"find",
-				"findOrder"
-			],
-			[
-				"cal",
-				"calculatePayment"
-			],
-			[
-				"C",
-				"CustomerExport"
-			],
-			[
-				"Re",
-				"Redeem"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/var/www/maxsolution/cannedfish/app/Http/Kernel.php",
+			"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
 			"settings":
 			{
-				"buffer_size": 4760,
+				"buffer_size": 11090,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/var/www/maxsolution/cannedfish/app/Http/Middleware/ClearIndex.php",
+			"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
 			"settings":
 			{
-				"buffer_size": 436,
+				"buffer_size": 2359,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/abcci.php",
+			"settings":
+			{
+				"buffer_size": 14117,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -579,86 +587,117 @@
 	"expanded_folders":
 	[
 		"/var/www/maxsolution/cannedfish",
-		"/var/www/maxsolution/cannedfish/app",
+		"/var/www/maxsolution/cannedfish/master",
+		"/var/www/maxsolution/cannedfish/master/pisa",
+		"/var/www/maxsolution/cannedfish/master/pisa/config",
+		"/var/www/maxsolution/cannedfish/master/pisa/database",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public",
+		"/var/www/maxsolution/cannedfish/master/pisa/src",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Models",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories",
 		"/var/www/maxsolution/cannedfish/public",
 		"/var/www/maxsolution/cannedfish/public/themes",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist"
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views"
 	],
 	"file_history":
 	[
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/table.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
+		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Support/Str.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/sardenAbc.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/VideoYoutube.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/form.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/SubmissionsResourceController.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_25_000000000_pisa_video_youtube_update_table.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Pisa.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/script.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/table.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/index.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/filter.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/SubmissionsRepository.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/SubmissionsTransformer.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/CustomerController.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php",
+		"/var/www/personal/buditama/kamar/master/payments/src/Payments.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_24_000000000_pisa_video_youtube_table.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/routes/site.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/product-2.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/test-landing.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaTest.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaResult.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/config/config.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/abcci.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/index.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/partials/metadata.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/index.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/metadata.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/index.blade.php",
+		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/footer.blade.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/node_modules/ajv/dist/ajv.bundle.js",
+		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-bs4.js",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/gulpfile.js",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/partials/metadata.php",
+		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/partials/scripts.php",
+		"/var/www/maxsolution/cannedfish/app/Http/Kernel.php",
+		"/var/www/maxsolution/cannedfish/app/Http/Middleware/ClearIndex.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Providers/RouteServiceProvider.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Sidebar/ExtenderSidebar.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/filter.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/SubmissionsResourceController.php",
 		"/var/www/personal/buditama/kamar/module/site/routes/site.php",
 		"/var/www/personal/buditama/kamar/resources/lang/en/routes.php",
 		"/var/www/personal/buditama/kamar/resources/lang/id/routes.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/SubmissionsRepository.php",
 		"/var/www/personal/buditama/kamar/master/rooms/src/Rooms.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/routes/breadcrumbs.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/routes/web.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/PisaServiceprovider.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/SubmissionsRepositoryInterface.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/SubmissionsPresenter.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/VideoYoutube.php",
 		"/var/www/maxsolution/cannedfish/.env",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/sardenAbc.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/startPisaTest.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
 		"/var/www/maxsolution/cannedfish/public/.htaccess",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Pisa.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/script.blade.php",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/js/style.js",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/js/style.js",
 		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote.js",
 		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote.js",
-		"/var/www/personal/buditama/kamar/master/payments/src/Payments.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/lang/en/default.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/lang/id/default.php",
 		"/var/www/personal/buditama/kamar/vendor/public/site/resources/views/public/details/booking.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php",
 		"/var/www/personal/buditama/kamar/storage/framework/views/16f393c644500643ff4b50a05d76e63d82c1b15e.php",
 		"/var/www/maxsolution/cannedfish/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Financial.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/index.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/receipts/form.blade.php",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/product-2.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849964_pisa_receipts_table.php",
 		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote-bs4.js",
 		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-lite.js",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_24_000000000_pisa_video_youtube_table.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/ReceiptsResourceController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Receipts.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaResult.blade.php",
 		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/bukucerdas.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Questions.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/PisaCustomerHistories.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/page/abcci.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/site.php",
 		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote-lite.js",
 		"/var/www/maxsolution/cannedfish/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/MathTrig.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasAbc.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasDetail.blade.php",
 		"/home/natanael/Downloads/login.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/index.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/single.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-bs4.js",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/script.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/gallery.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/metadata.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/PisaCustomers.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/PisaCustomersRepositoryInterface.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/PisaCustomersRepository.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/PisaCustomerHistoriesRepository.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/PisaCustomerHistoriesRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/config/config.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849964_pisa_ebooks_table.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Ebooks.php",
 		"/var/www/maxsolution/cannedfish/composer.json",
@@ -674,9 +713,6 @@
 		"/var/www/maxsolution/cannedfish/master/pisa/composer.json",
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Criteria/LiveCriteria.php",
 		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaTest.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/partials/metadata.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/footer.blade.php",
 		"/var/www/maxsolution/cannedfish/routes/web.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/layouts/index.blade.php",
 		"/var/www/maxsolution/cannedfish/master/pisa/resources/layouts/partials/metadata.blade.php",
@@ -701,30 +737,21 @@
 		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/QuestionsTransformer.php",
 		"/var/www/html/halah/index.php",
 		"/var/www/html/halah/library/inc.connection.php",
-		"/var/www/html/halah/login_validasi.php",
-		"/var/www/html/halah/login.php",
-		"/var/www/html/halah/procurement/terima1.php",
-		"/var/www/html/halah/procurement/validasi.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/footer.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/grades/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/grades/partials/table.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/GradesPresenter.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/GradesRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Grades.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/GradesRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/EbooksTransformer.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/ebooks/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/EbooksPresenter.php"
+		"/var/www/html/halah/login_validasi.php"
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
 		"height": 110.0,
 		"where_history":
 		[
+			"/var/www/maxsolution/cannedfish/master",
+			"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public",
+			"/var/www/personal/buditama/kamar/module",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views",
 			"/var/www/maxsolution/cannedfish/public/themes/cannedfish",
 			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/js",
 			"/var/www/personal/buditama/kamar/module",
@@ -835,6 +862,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"activity-item",
+			"hide-button",
+			"hideReadmoreSubmission",
+			"hide-button",
+			"showReadmore",
+			"changeSubmission",
+			"submission",
+			"list",
+			"item",
+			"image",
+			"list",
+			"listActive",
+			"image",
+			"receipt",
+			"listActive",
+			"youtube_video_description",
+			"receipt",
+			"tutorial",
+			"public.submit-video",
+			"modalSubmitVideo",
+			"youtubeTester",
+			"desc",
+			"youtube",
+			"snap",
+			"..",
+			"layout",
+			"../",
+			"../src",
+			"src",
 			"tutorials",
 			"receipts",
 			"getFeaturedRooms",
@@ -933,36 +989,7 @@
 			"}",
 			"Uuid",
 			"ramsey",
-			"youtube",
-			"category",
-			"selected",
-			"defaultValue",
-			"customRadio1",
-			"https://app.sandbox.midtrans.com/snap/snap.js",
-			"password",
-			"bcrypt",
-			"Rooms",
-			"tutorials",
-			"Tutorials",
-			"tutorials",
-			"Grades",
-			"receipts",
-			"Grades",
-			"receipts",
-			"receipt",
-			"receipts",
-			"Receipts",
-			"Receipts $data",
-			"Receipts",
-			"receipts",
-			"receipt",
-			"Ebooks",
-			"noPengiriman",
-			"modalValidasi",
-			"validasi",
-			"modalValidasi",
-			"no pengiriman",
-			"validasi"
+			"youtube"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -988,67 +1015,97 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/var/www/maxsolution/cannedfish/app/Http/Kernel.php",
+					"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4760,
+						"buffer_size": 11090,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								881,
-								881
+								6764,
+								6764
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 2563.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/var/www/maxsolution/cannedfish/app/Http/Middleware/ClearIndex.php",
-					"semi_transient": false,
+					"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 436,
+						"buffer_size": 2359,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								348,
-								348
+								123,
+								123
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/abcci.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								590,
+								590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1056,7 +1113,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -1097,7 +1154,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 52.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1126,10 +1183,10 @@
 		[
 			[
 				"",
-				".note-btn-subscript"
+				"$shouldUseRule"
 			]
 		],
-		"width": 659.0
+		"width": 565.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -1139,7 +1196,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 488.0,
+	"side_bar_width": 416.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

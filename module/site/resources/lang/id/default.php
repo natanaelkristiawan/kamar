@@ -35,7 +35,7 @@ return [
   'room' => 'ruangan',
   'persons' => 'orang',
   'welcome' => 'Selamat Datang',
-  'your_email' => 'your email not verified yet. Please check your email. Didn\'t receive?',
+  'your_email' => 'email kamu belum diverifikasi. Belum menerimanya?',
   'fullname' => 'Nama Lengkap',
   'date_checkin' => 'Tanggal Masuk',
   'date_checkout' => 'Tanggal Keluar',

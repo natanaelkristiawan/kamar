@@ -21,11 +21,13 @@ use Storage;
 use Curl;
 use Payments;
 use Books;
+use View;
 class PublicController extends Controller
 {
   function __construct()
   {
     $this->lang = App::getLocale();
+    View::share('callback_login', \Request::fullUrl());
   }
   public function setMeta()
   {
@@ -242,6 +244,15 @@ class PublicController extends Controller
 
   public function findCustomer(Request $request)
   {
+    // tambahan saja
+    if (is_null($request->email) && is_null($request->fullname)) {
+      return response()->json([
+        'status' => true,
+        'step' => 'new_book_step'
+      ]);
+    }
+
+
     $validator = Validator::make($request->all(), [
       'email' => 'required|email',
       'fullname'  => 'required',
@@ -475,16 +486,22 @@ class PublicController extends Controller
   } 
 
 
-  public function fbLogin()
+  public function fbLogin(Request $request)
   {
     $this->middleware('guard:web');
+
+    session(['callback' => $request->callback]);
+
     return Socialite::driver('facebook')->redirect();
   }
 
 
-  public function googleLogin()
+  public function googleLogin(Request $request)
   {
     $this->middleware('guard:web');
+    
+    session(['callback' => $request->callback]);
+
     return Socialite::driver('google')->redirect();
   }
 
@@ -511,6 +528,15 @@ class PublicController extends Controller
         self::sendEmailActivate($request, $customer);
         Auth::guard('web')->loginUsingId($customer->id);
         $request->session()->flash('status_notif', 'Thank you for registration. Please check your email to activate your account');
+        
+        if (session()->has('callback')) {
+
+          $callback = session('callback');
+          session(['callback' => null]);
+          return redirect($callback);
+        }
+
+
         return redirect()->route('public.index');
         
       }
@@ -527,6 +553,15 @@ class PublicController extends Controller
     }
     // force login
     Auth::guard('web')->loginUsingId($customer->id);
+
+    if (session()->has('callback')) {
+
+      $callback = session('callback');
+      session(['callback' => null]);
+      return redirect($callback);
+    }
+
+
     return redirect()->route('public.index');
   }
 
@@ -558,6 +593,14 @@ class PublicController extends Controller
         self::sendEmailActivate($request, $customer);
         Auth::guard('web')->loginUsingId($customer->id);
         $request->session()->flash('status_notif', 'Thank you for registration. Please check your email to activate your account');
+        
+        if (session()->has('callback')) {
+
+          $callback = session('callback');
+          session(['callback' => null]);
+          return redirect($callback);
+        }
+
         return redirect()->route('public.index');
       }
       // kalau udah daftar tinggal update aja
@@ -571,6 +614,15 @@ class PublicController extends Controller
     }
     // force login
     Auth::guard('web')->loginUsingId($customer->id);
+
+
+    if (session()->has('callback')) {
+
+      $callback = session('callback');
+      session(['callback' => null]);
+      return redirect($callback);
+    }
+
     return redirect()->route('public.index');
   }
 

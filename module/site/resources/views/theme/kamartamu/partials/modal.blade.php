@@ -13,8 +13,8 @@
         <div class="modal-divider"><span>{{ trans('site::default.notif_social_login')}}</span></div>
         <div class="social-login mb-3">
           <ul>
-            <li><a href="{{ route('public.fbLogin') }}" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
-            <li><a href="{{ route('public.googleLogin') }}" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
+            <li><a href="{{ route('public.fbLogin', array('callback'=>$callback_login)) }}" class="btn connect-fb"><i class="ti-facebook"></i>Facebook</a></li>
+            <li><a href="{{ route('public.googleLogin',array('callback'=>$callback_login)) }}" class="btn connect-google"><i class="ti-google"></i>Google</a></li>
           </ul>
         </div>
         <div class="text-center">

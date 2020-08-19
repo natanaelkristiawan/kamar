@@ -20,7 +20,7 @@
 
 
     <div class="row">
-      <div id="main-data" class="collapse show"  style="width:100%; display: none">
+      <div id="main-data" class="collapse show"  style="width:100%;">
         <div class="col-lg-12 col-md-12 col-sm-6">
           <div class="form-group">
             <div class="cld-box">
@@ -81,7 +81,6 @@
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
           <button type="button" class="btn btn-theme full-width" id="btnCheckRoom">{{ trans('site::default.check_availability') }}</button>
-          <button type="button" class="btn btn-theme full-width hide" id="bookingNowNew">{{ trans('site::default.book_it_now')  }}</button>
         </div>
       </div>
 
@@ -108,10 +107,11 @@
          
         </div>
         <div class="form-group">
-          <button type="button" disabled="" class="btn btn-theme full-width hide" id="bookingNow">{{ trans('site::default.book_it_now')  }}</button>
           @if(Auth::check() && !(bool)is_null(Auth::user()->verified_at))
+          <button type="button" disabled="" class="btn btn-theme full-width" id="bookingNow">{{ trans('site::default.book_it_now')  }}</button>
           <span class="text-mute">{{ trans('site::default.notif_booking') }}</span>
           @else
+          <button type="button" disabled="" data-toggle="tooltip" data-original-title="{{ trans('site::default.notif_email')  }}" class="btn btn-theme full-width">{{ trans('site::default.book_it_now')  }}</button>
           <span id="email_need_validate" class="text-mute hide">{{ trans('site::default.notif_email_validate')  }}</span> 
           <span id="email_need_login" class="text-mute hide">{{ trans('site::default.notif_email_login')  }}</span> 
           @endif
@@ -222,6 +222,12 @@
     }, 100);
   })
   var constraints = {
+    fullname : {
+      presence: {
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
+      }
+    }, 
     datecheckin : {
       presence: {
         allowEmpty: false,
@@ -233,6 +239,28 @@
         allowEmpty: false,
         message: '^{{ trans('site::default.notif_mandatory') }}'
       }
+    },
+    @if(!(bool)Auth::check())
+    phone : {
+      presence: {
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
+      }
+    },
+    @endif
+    email : {
+      presence: {
+        allowEmpty: false,
+        message: '^{{ trans('site::default.notif_mandatory') }}'
+      },
+      email: {
+        message: "^Email is not valid"
+      },
+      format: {
+        pattern: /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/,
+        flags: "g",
+        message: "format wrong"
+      },
     }
   };
   function setErrors(params) {
@@ -248,43 +276,8 @@
     var text = $(this).val();
     $('.fullname-display').html(text);
   })
-
-
-  $('#bookingNowNew').on('click', function(){
-    $('.modalLogin').click();
-  })
-
-
-  function newBookCalculate() {
-    var params = {
-      roomTotal : $('.rooms').val(),
-      dateStart: $('.datecheckin').val(),
-      dateEnd: $('.datecheckout').val(),
-      roomID : "{{ $room->id }}"
-    }
-    Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
-    calculateBooking(params).then((response)=>{
-      $('#total').html($.number(response.total,0,',', '.' ))
-      $('#service').html($.number(response.service,0,',', '.' ))
-      $('#grandTotal').html($.number(response.grandTotal,0,',', '.' ))
-    });
-    $('#checkout-detail').removeClass('hide');
-    $('#btnCheckRoom').addClass('hide');
-    $('#checkout-detail').removeClass('hide');
-    $('#checkout-button').removeClass('hide');
-    $('#bookingNow').removeClass('hide');
-  }
-
-
   $(document).ready(function() {
-    $('.rooms').select2();
-
-
-    $('.rooms').on('select2:select', function (e) {
-      if(!Boolean($('#bookingNow').hasClass('hide'))){
-        newBookCalculate();
-      }
-    });
+    $('.rooms').select2()
     $('#btnCheckRoom').on('click', function(){
       resetError();
       $('.is-required').addClass('validate');
@@ -312,18 +305,7 @@
               callback: "{{ $room->slug }}"
             }
             checkAvailability(params).then((response) => {
-
-
-
-
               if (response.status) {
-
-                if (response.step == 'new_book_step') {
-                  newBookCalculate();
-                }
-
-
-
                 // setcookies di sini supaya datanya gak ilang, set aja sehari
                 if (response.step == 'activate_account') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
@@ -334,7 +316,6 @@
                 if (response.step == 'account_exist_not_active') {
                   Cookies.set('booking-pending', JSON.stringify($.extend(false,params,{userExist:false})), { path: '/',  expires: 1});
                   setDefaultBooking();
-                  $('#email_need_validate').removeClass('hide');
                   Swal.fire({
                     title: '{{ trans('site::default.notif') }}',
                     icon: 'info',
@@ -354,7 +335,7 @@
                         }
                       }).then(()=>{
                         $('#loader').addClass('hide')
-                        
+                        $('#email_need_validate').removeClass('hide');
                       })
                     }
                   })
@@ -405,7 +386,6 @@
         var dateSelected = new Date(res.date.formatted);
 
         if ($('.datecheckout').val() == '') {
-          return;
           resetDateOut(dateSelected).then((response) => {
             $('.datecheckout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
           })
@@ -414,18 +394,9 @@
           if (compareDate == 'more' || compareDate == 'same') {
             resetDateOut(dateSelected).then((response)=>{
               $('.datecheckout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
-              if(!Boolean($('#bookingNow').hasClass('hide'))){
-                newBookCalculate()
-              }
             })
           }
         }
-
-
-        if(!Boolean($('#bookingNow').hasClass('hide'))){
-          newBookCalculate()
-        }
-
       }
     }))
     $('.datecheckout').dateDropper($.extend(false,options,{
@@ -444,19 +415,12 @@
             resetDateIn(dateSelected).then((response)=>{
               resetDateOut(dateSelected).then((response)=>{
                 $('.datecheckout').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
-                if(!Boolean($('#bookingNow').hasClass('hide'))){
-                  newBookCalculate()
-                }
               })
               $('.datecheckin').dateDropper('setDate',{d: response.d, m:response.m, y:response.y})
             })
           }
         }
 
-
-        if(!Boolean($('#bookingNow').hasClass('hide'))){
-          newBookCalculate();
-        }
       }
     }));
   })
@@ -502,12 +466,15 @@
     if (typeof Cookies.get('booking-pending') != 'undefined') {
       var bookingPending = JSON.parse(Cookies.get('booking-pending'));
       if (bookingPending.roomID == {{ $room->id }}) {
-
-        @if(Auth::check())
         $('#checkout-message').removeClass('hide');
+        @if(Auth::check())
         $('.email').val("{{Auth::user()->email}}")
         $('.fullname').val("{{Auth::user()->name}}")
+        @else
+        $('.email').val(bookingPending.email)
+        $('.fullname').val(bookingPending.fullname)
         @endif
+        $('.phone').val(bookingPending.phone)
         $('.datecheckin').val(bookingPending.dateStart)
         $('.datecheckout').val(bookingPending.dateEnd)
         $('.rooms').val(bookingPending.roomTotal).trigger('change');
@@ -518,11 +485,10 @@
         var dateOut = bookingPending.dateEnd.split("-");
         $('.datecheckin').dateDropper('setDate',{d: dateIn[2], m:dateIn[1], y:dateIn[0]});
         $('.datecheckout').dateDropper('setDate',{d: dateOut[2], m:dateOut[1], y:dateOut[0]});
-        $('#checkout-detail').removeClass('hide');
-        $('#btnCheckRoom').addClass('hide');
+        $('#main-data').removeClass('show');
+        $('#btnCheckRoom').removeAttr('disabled');
         $('#checkout-detail').removeClass('hide');
         $('#checkout-button').removeClass('hide');
-        $('#bookingNow').removeClass('hide');
 
         @if(Auth::check() && (bool)Auth::user()->status)
           bookingPending.userExist = true;
@@ -542,11 +508,8 @@
       }
     }
   }
-
   async function calculateBooking(params) {
-
     var pricePerNight = parseInt("{{ $room->price }}");
-
     var rooms = parseInt(params.roomTotal);
     var nights = parseInt(daysBetween(new Date(params.dateStart), new Date(params.dateEnd)));
 
@@ -736,15 +699,7 @@
 
   $(document).ready(function(){
     $('#bookingNow').on('click', function(){
-      @if(Auth::check() && !(bool)is_null(Auth::user()->verified_at))
       callPayment()
-
-      @elseif(Auth::check())
-      $('#btnCheckRoom').click();
-      @else
-      $('.modalLogin').click();
-      @endif
-
     })
   })
 </script>

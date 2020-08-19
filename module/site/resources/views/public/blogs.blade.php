@@ -11,7 +11,7 @@
             <li class="breadcrumb-item"><a href="{{ route('public.index') }}">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Blog</li>
           </ol>
-          <h2 class="breadcrumb-title">Our Blogs</h2>
+          <h2 class="breadcrumb-title">Our Blog</h2>
         </div>
         
       </div>

@@ -154,7 +154,7 @@ class Rooms
       $this->rooms->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     }
     $fractal = new Manager();
-    $query =  $this->rooms->with(['location', 'type', 'owner'])->limit($limit)->where(array('is_featured'=>1))->get();
+    $query =  $this->rooms->with(['location', 'type', 'owner'])->limit($limit)->where(array('is_featured'=>1))->orderBy('id', 'desc')->get();
     $resource = self::renderRooms($query, $language);
     $response = $fractal->createData($resource)->toJson();
     $this->rooms->resetModel();

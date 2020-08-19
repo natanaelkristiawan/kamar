@@ -27,6 +27,17 @@
 <link href="{{ asset('themes/landing') }}/assets/css/colors.min.css" rel="preload">
 <link rel="stylesheet" href="{{ asset('themes/landing') }}/assets/css/colors.min.css" media="print" onload="this.media='all'">
 
+<link rel="icon" href="{{ asset('themes/landing') }}/assets/favicon.png" sizes="16x16" type="image/png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170461592-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-170461592-1');
+</script>
 
 <style type="text/css">
   .property_gallery_slide-thumb:before {

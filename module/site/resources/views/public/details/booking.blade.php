@@ -1,3 +1,4 @@
+<span id="booknow"></span>
 <div class="agent-_blocks_wrap">
   <div class="side-booking-header">
     <div class="sb-header-left">{{ trans('site::default.book_it_now') }}</div>
@@ -121,7 +122,7 @@
 
   </div>
 </div>
-
+<a href="#booknow" class="fixed-bottom btn btn-primary d-lg-none d-md-none">RESERVE</a>
 @section('script')
 @parent
 <!-- Date Booking Script -->

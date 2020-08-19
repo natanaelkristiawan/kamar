@@ -9,10 +9,19 @@
       <div id="map" style="height: 400px" data-latitude="{{ $room->latitude }}" data-longitude="{{ $room->longitude }}" data-mapTitle="Our Location">
         
       </div>
+      <p class="pt-3"><strong>*{{ trans('site::default.map_notif') }}</strong></p>
     </div>
-
   </div>
   
+</div>
+
+<div class="property_block_wrap">
+  <div class="property_block_wrap_header">
+    <h4 class="property_block_title">{{ trans('site::default.house_rules') }}</h4>
+  </div>
+  <div class="block-body">
+    {!! $room->house_rules !!}
+  </div>
 </div>
 
 

@@ -5,7 +5,7 @@
       <div class="col text-center">
         <div class="sec-heading center">
           <h2>{!! trans('site::default.our_featured_partners') !!}</h2>
-          <p>{!! trans('site::default.our_featured_partners_sub') !!}</p>
+          <!--<p>{{-- trans('site::default.our_featured_partners_sub') --}}</p>-->
         </div>
       </div>
     </div>

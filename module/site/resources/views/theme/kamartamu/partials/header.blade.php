@@ -12,9 +12,9 @@
           @if(Auth::check())
           <li class="hide-in-mobile"><a href="{{ route('public.dashboard') }}">Dashboard</a></li>
           @endif
-          <li class= "{{ Meta::get('active') == 'home' ? 'active' : ''  }}"><a href="{{ route('public.index') }}">Home</a></li>
-          <li class= "{{ Meta::get('active') == 'rooms' ? 'active' : ''  }}"><a href="{{ route('public.rooms') }}">Rooms</a></li>
-          <li class= "{{ Meta::get('active') == 'blogs' ? 'active' : ''  }}"><a href="{{ route('public.blogs') }}">Blogs</a></li>
+          <li class= "{{ Meta::get('active') == 'home' ? 'active' : ''  }}"><a href="{{ route('public.index') }}">{{ trans('site::default.home')}}</a></li>
+          <li class= "{{ Meta::get('active') == 'rooms' ? 'active' : ''  }}"><a href="{{ route('public.rooms') }}">{{ trans('site::default.rooms')}}</a></li>
+          <li class= "{{ Meta::get('active') == 'blogs' ? 'active' : ''  }}"><a href="{{ route('public.blogs') }}">Blog</a></li>
           @if(Auth::check())
           <li class="hide-in-mobile"><a href="{{ route('public.logout') }}">Logout</a></li>
           @endif

@@ -67,7 +67,7 @@
           <span class="helper error"></span>
         </div>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-6">
+      <div class="col-lg-12 col-md-12 col-sm-6 hide">
         <div class="form-group room-wrap">
           <select class="form-control rooms">
             <option value="1">1 {{ trans('site::default.room') }} - 2 {{ trans('site::default.persons') }}</option>

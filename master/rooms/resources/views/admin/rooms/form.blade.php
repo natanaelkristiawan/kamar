@@ -199,8 +199,8 @@
             <div class="card-body">
               <h4 class="mt-0 header-title">Details</h4>
               <div class="form-group">
-                <label>Total Room <span class="required">*</span></label>
-                <input required="" data-error="Please enter total room" type="number" value="{{ $data->total_room }}" placeholder="Total Room" name="total_room" class="form-control col-lg-4">
+                <label>Maximal Guest <span class="required">*</span></label>
+                <input required="" data-error="Please enter total room" type="number" value="{{ $data->total_room }}" placeholder="Maximal Guest" name="total_room" class="form-control col-lg-4">
                 <div class="help-block with-errors error"></div>
               </div> 
               <div class="form-group">

@@ -72,10 +72,6 @@
                                                             <td>Date</td>
                                                             <td>: {{ date('d F Y', strtotime($date_checkin)) }} - {{ date('d F Y', strtotime($date_checkout)) }}</td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>Room</td>
-                                                            <td>: {{ $rooms }} room - {{ $guests }} persons</td>
-                                                        </tr>
                                                     </table>
                                                     <p style="margin-bottom: 5px;font-size:20px; font-weight: bold;">Rp. {{ number_format($grand_total, 0, ',', '.') }}</p>
                                                     <p style="margin-top: 0;">(included Service fee Kamartamu 10%)</p>

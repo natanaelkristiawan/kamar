@@ -4,6 +4,430 @@
 		"selected_items":
 		[
 			[
+				"res",
+				"result"
+			],
+			[
+				"the",
+				"then"
+			],
+			[
+				"app",
+				"approve_code"
+			],
+			[
+				"bacn",
+				"background-color\tproperty"
+			],
+			[
+				"VAR",
+				"var_dump"
+			],
+			[
+				"fu",
+				"fun\tfunction …"
+			],
+			[
+				"sele",
+				"select"
+			],
+			[
+				"che",
+				"checkProvider"
+			],
+			[
+				"com",
+				"commission_value"
+			],
+			[
+				"date",
+				"date_inforce"
+			],
+			[
+				"cust",
+				"customer_dob"
+			],
+			[
+				"provi",
+				"province"
+			],
+			[
+				"payme",
+				"payment_id"
+			],
+			[
+				"stt",
+				"status"
+			],
+			[
+				"A",
+				"ANP"
+			],
+			[
+				"ro",
+				"row"
+			],
+			[
+				"delete",
+				"deleted_at"
+			],
+			[
+				"whee",
+				"whereNull"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"error",
+				"error_message"
+			],
+			[
+				"post",
+				"posts"
+			],
+			[
+				"pos",
+				"post_id"
+			],
+			[
+				"new",
+				"new_post"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"r",
+				"required\tAttr"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"marg",
+				"margin-bottom\tproperty"
+			],
+			[
+				"is",
+				"isHttps"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"S",
+				"StaticController"
+			],
+			[
+				"data",
+				"dataCustomer"
+			],
+			[
+				"stat",
+				"statusTransaction"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"def",
+				"defaultValidator"
+			],
+			[
+				"de",
+				"defaultValidator"
+			],
+			[
+				"Prod",
+				"ProductRepositoryInterface"
+			],
+			[
+				"find",
+				"findContact"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"bookingN",
+				"bookingNowNew"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"poi",
+				"point"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"us",
+				"user"
+			],
+			[
+				"fa",
+				"fails"
+			],
+			[
+				"pro",
+				"province"
+			],
+			[
+				"use",
+				"user"
+			],
+			[
+				"requ",
+				"request"
+			],
+			[
+				"prod",
+				"product"
+			],
+			[
+				"note",
+				"notes"
+			],
+			[
+				"mas",
+				"master_data"
+			],
+			[
+				"type",
+				"type_register"
+			],
+			[
+				"cus",
+				"customer"
+			],
+			[
+				"agent",
+				"agent_id"
+			],
+			[
+				"fons",
+				"font-size\tproperty"
+			],
+			[
+				"c",
+				"customer"
+			],
+			[
+				"ass",
+				"asset"
+			],
+			[
+				"create",
+				"created_at"
+			],
+			[
+				"strt",
+				"strtotime"
+			],
+			[
+				"tab",
+				"table_related"
+			],
+			[
+				"a",
+				"agent"
+			],
+			[
+				"Pro",
+				"ProductCategoryRepositoryInterface"
+			],
+			[
+				"php",
+				"php"
+			],
+			[
+				"vid",
+				"video"
+			],
+			[
+				"File",
+				"Filevalidation"
+			],
+			[
+				"fn",
+				"function"
+			],
+			[
+				"Fil",
+				"Filevalidation"
+			],
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"bac",
+				"background-image\tproperty"
+			],
+			[
+				"Role",
+				"RoleRepositoryInterface"
+			],
+			[
+				"ad",
+				"admin"
+			],
+			[
+				"daa",
+				"dataPermission"
+			],
+			[
+				"name",
+				"nameSplit"
+			],
+			[
+				"nam",
+				"nameSplit"
+			],
+			[
+				"uns",
+				"unset"
+			],
+			[
+				"permi",
+				"permission_"
+			],
+			[
+				"col",
+				"col-12"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"arry",
+				"array"
+			],
+			[
+				"na",
+				"nameSplit"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"Per",
+				"PermissionRepositoryInterface"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"int",
+				"integer"
+			],
+			[
+				"agen",
+				"agent_id"
+			],
+			[
+				"Age",
+				"Agent"
+			],
+			[
+				"ME",
+				"method"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"col-",
+				"col-lg-4"
+			],
+			[
+				"co",
+				"cover\tobject-fit"
+			],
+			[
+				"obje",
+				"object-fit\tproperty"
+			],
+			[
+				"loca",
+				"location"
+			],
+			[
+				"datee",
+				"dateend"
+			],
+			[
+				"dates",
+				"datestart"
+			],
+			[
+				"fom",
+				"form-group"
+			],
+			[
+				"respo",
+				"responseMessage"
+			],
+			[
+				"USer",
+				"UserRepositoryInterface"
+			],
+			[
+				"wh",
+				"whoActive"
+			],
+			[
+				"reso",
+				"resolve"
+			],
+			[
+				"my",
+				"myScroll"
+			],
+			[
 				"showReadmoreS",
 				"showReadmoreSubmission"
 			],
@@ -24,20 +448,8 @@
 				"div\tTag"
 			],
 			[
-				"vid",
-				"video_youtube"
-			],
-			[
-				"data",
-				"dataYoutube"
-			],
-			[
 				"yo",
 				"youtube_url"
-			],
-			[
-				"da",
-				"dataYoutube"
 			],
 			[
 				"you",
@@ -48,20 +460,8 @@
 				"videoId"
 			],
 			[
-				"fu",
-				"fun\tfunction …"
-			],
-			[
 				"s",
 				"src"
-			],
-			[
-				"ac",
-				"activities"
-			],
-			[
-				"com",
-				"component"
 			],
 			[
 				"show",
@@ -88,10 +488,6 @@
 				"pisa_customer_id"
 			],
 			[
-				"a",
-				"auto\toverflow-x"
-			],
-			[
 				"max",
 				"max-height\tproperty"
 			],
@@ -102,10 +498,6 @@
 			[
 				"h",
 				"h2\tTag"
-			],
-			[
-				"for",
-				"for\tfor (…) {…}"
 			],
 			[
 				"gal",
@@ -122,425 +514,34 @@
 			[
 				"now",
 				"nowPlayingTitle"
-			],
-			[
-				"play",
-				"playlist"
-			],
-			[
-				"pla",
-				"playlist"
-			],
-			[
-				"e",
-				"ebook"
-			],
-			[
-				"fo",
-				"foreach\tforeach …"
-			],
-			[
-				"ver",
-				"version"
-			],
-			[
-				"rece",
-				"receipts"
-			],
-			[
-				"rec",
-				"receipts"
-			],
-			[
-				"al",
-				"alt\tAttr"
-			],
-			[
-				"que",
-				"query"
-			],
-			[
-				"pis",
-				"pisa"
-			],
-			[
-				"Pisa",
-				"PisaCustomersRepositoryInterface"
-			],
-			[
-				"pu",
-				"public"
-			],
-			[
-				"get",
-				"getElementById"
-			],
-			[
-				"full",
-				"fullAnswer"
-			],
-			[
-				"base",
-				"baseUrl"
-			],
-			[
-				"BAHASA",
-				"bahasa"
-			],
-			[
-				"fa",
-				"false"
-			],
-			[
-				"has",
-				"hasNext"
-			],
-			[
-				"le",
-				"length"
-			],
-			[
-				"va",
-				"value1"
-			],
-			[
-				"qu",
-				"questions"
-			],
-			[
-				"q",
-				"questions"
-			],
-			[
-				"ques",
-				"question"
-			],
-			[
-				"sc",
-				"script\tTag"
-			],
-			[
-				"my",
-				"myData"
-			],
-			[
-				"mi",
-				"min-width\tproperty"
-			],
-			[
-				"rq",
-				"request"
-			],
-			[
-				"ca",
-				"category"
-			],
-			[
-				"remov",
-				"removeClass"
-			],
-			[
-				"text",
-				"text-center"
-			],
-			[
-				"reso",
-				"response"
-			],
-			[
-				"form",
-				"form-control"
-			],
-			[
-				"in",
-				"input\tTag"
-			],
-			[
-				"pho",
-				"photo"
-			],
-			[
-				"rene",
-				"renderNow"
-			],
-			[
-				"res",
-				"response"
-			],
-			[
-				"html",
-				"html\thtml"
-			],
-			[
-				"rend",
-				"renderNow"
-			],
-			[
-				"is_a",
-				"is_array"
-			],
-			[
-				"room",
-				"roomName"
-			],
-			[
-				"i",
-				"i\tTag"
-			],
-			[
-				"fom",
-				"form-control"
-			],
-			[
-				"req",
-				"request"
-			],
-			[
-				"cus",
-				"customer"
-			],
-			[
-				"is",
-				"isBookmark"
-			],
-			[
-				"stat",
-				"status"
-			],
-			[
-				"disa",
-				"disabled"
-			],
-			[
-				"dat",
-				"dataAnswer"
-			],
-			[
-				"ans",
-				"answer"
-			],
-			[
-				"an",
-				"answer"
-			],
-			[
-				"col",
-				"collectAnswers"
-			],
-			[
-				"pos",
-				"position"
-			],
-			[
-				"shwo",
-				"showModal"
-			],
-			[
-				"appe",
-				"appendAnswer"
-			],
-			[
-				"htm",
-				"htmlBody"
-			],
-			[
-				"onc",
-				"onclick\tAttr"
-			],
-			[
-				"ove",
-				"overflow-x\tproperty"
-			],
-			[
-				"over",
-				"overflow-wrap\tproperty"
-			],
-			[
-				"x",
-				"x-tmpl-mustache"
-			],
-			[
-				"sho",
-				"showModal"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"toke",
-				"tokenuser"
-			],
-			[
-				"tok",
-				"tokenuser"
-			],
-			[
-				"rou",
-				"route"
-			],
-			[
-				"reset",
-				"resetPassword"
-			],
-			[
-				"use",
-				"user"
-			],
-			[
-				"pas",
-				"password_confirmation"
-			],
-			[
-				"log",
-				"logout"
-			],
-			[
-				"REQUEST",
-				"request"
-			],
-			[
-				"ro",
-				"row"
-			],
-			[
-				"mar",
-				"margin-bottom\tproperty"
-			],
-			[
-				"date",
-				"dateDisable"
-			],
-			[
-				"disab",
-				"disabledDays"
-			],
-			[
-				"getd",
-				"getDatesFromRange"
-			],
-			[
-				"Pa",
-				"Payment"
-			],
-			[
-				"unse",
-				"unset"
-			],
-			[
-				"im",
-				"importfile"
-			],
-			[
-				"re",
-				"repository"
-			],
-			[
-				"vi",
-				"view"
-			],
-			[
-				"Book",
-				"Books"
-			],
-			[
-				"arra",
-				"array"
-			],
-			[
-				"strto",
-				"strtotime"
-			],
-			[
-				"RE",
-				"ReviewsRepositoryInterface"
-			],
-			[
-				"btn",
-				"btn-theme"
-			],
-			[
-				"te",
-				"textarea\tTag"
-			],
-			[
-				"paym",
-				"payment_id"
-			],
-			[
-				"url",
-				"urlRoom"
-			],
-			[
-				"reu",
-				"request"
-			],
-			[
-				"lo",
-				"log"
-			],
-			[
-				"jso",
-				"json"
-			],
-			[
-				"min",
-				"min-height\tproperty"
-			],
-			[
-				"token",
-				"token_verified"
-			],
-			[
-				"payme",
-				"payment_id"
-			],
-			[
-				"dta",
-				"dataBooking"
-			],
-			[
-				"sta",
-				"status"
-			],
-			[
-				"upda",
-				"updateBook"
-			],
-			[
-				"findB",
-				"findByField"
-			],
-			[
-				"pa",
-				"payments"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
+			"file": "/var/www/personal/jevon/agent/master/core/resources/views/admin/core/dashboard.blade.php",
 			"settings":
 			{
-				"buffer_size": 11090,
+				"buffer_size": 17421,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
+			"file": "/var/www/personal/jevon/agent/master/core/resources/views/theme/admin/layouts/dashboard.blade.php",
 			"settings":
 			{
-				"buffer_size": 2359,
+				"buffer_size": 550,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/abcci.php",
+			"file": "/var/www/personal/jevon/agent/master/core/src/Controllers/Http/DashboardResourceController.php",
 			"settings":
 			{
-				"buffer_size": 14117,
+				"buffer_size": 1758,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -586,168 +587,241 @@
 	},
 	"expanded_folders":
 	[
-		"/var/www/maxsolution/cannedfish",
-		"/var/www/maxsolution/cannedfish/master",
-		"/var/www/maxsolution/cannedfish/master/pisa",
-		"/var/www/maxsolution/cannedfish/master/pisa/config",
-		"/var/www/maxsolution/cannedfish/master/pisa/database",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public",
-		"/var/www/maxsolution/cannedfish/master/pisa/src",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories",
-		"/var/www/maxsolution/cannedfish/public",
-		"/var/www/maxsolution/cannedfish/public/themes",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views"
+		"/var/www/personal/jevon/agent",
+		"/var/www/personal/jevon/agent/master",
+		"/var/www/personal/jevon/agent/master/core",
+		"/var/www/personal/jevon/agent/master/core/resources",
+		"/var/www/personal/jevon/agent/master/core/resources/views",
+		"/var/www/personal/jevon/agent/master/core/resources/views/admin",
+		"/var/www/personal/jevon/agent/master/core/resources/views/admin/admin",
+		"/var/www/personal/jevon/agent/master/core/resources/views/admin/admin/partials",
+		"/var/www/personal/jevon/agent/master/core/resources/views/admin/core",
+		"/var/www/personal/jevon/agent/master/core/resources/views/theme",
+		"/var/www/personal/jevon/agent/master/core/resources/views/theme/admin",
+		"/var/www/personal/jevon/agent/master/core/resources/views/theme/admin/layouts",
+		"/var/www/personal/jevon/agent/master/core/resources/views/theme/admin/partials",
+		"/var/www/personal/jevon/agent/master/core/src",
+		"/var/www/personal/jevon/agent/master/core/src/Controllers",
+		"/var/www/personal/jevon/agent/master/core/src/Controllers/Http"
 	],
 	"file_history":
 	[
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Sites/PublicController.php",
-		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Support/Str.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/sardenAbc.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/VideoYoutube.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/SubmissionsResourceController.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_25_000000000_pisa_video_youtube_update_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Pisa.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/script.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/table.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/submissions/partials/filter.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/SubmissionsRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/SubmissionsTransformer.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/CustomerController.php",
+		"/var/www/personal/jevon/agent/master/core/resources/views/theme/admin/layouts/dashboard.blade.php",
+		"/var/www/personal/jevon/agent/master/core/resources/views/admin/core/dashboard.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/TransactionResourceController.php",
+		"/var/www/personal/jevon/agent/module/api/src/Http/Controllers/AgentController.php",
+		"/var/www/maxsolution/uwrf/wp-content/plugins/submissioncode/wp-list-table-custom.php",
+		"/var/www/maxsolution/uwrf/wp-content/plugins/gravityforms/widget.php",
+		"/var/www/maxsolution/uwrf/wp-includes/plugin.php",
+		"/var/www/maxsolution/uwrf/wp-admin/includes/class-wp-list-table.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Presenter/ContactTransformer.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/contact/form.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Models/Transaction.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/transaction/form.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/transaction/partials/filter.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Models/Customer.php",
+		"/var/www/html/regex.php",
+		"/var/www/personal/jevon/agent/public/index.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Providers/RouteServiceProvider.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Eloquent/TransactionRepository.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/transaction/partials/table.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/transaction/index.blade.php",
+		"/var/www/maxsolution/uwrf/wp-content/plugins/jetpack/modules/search/class.jetpack-search-helpers.php",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/page-submission-event.php",
+		"/var/www/maxsolution/uwrf/wp-content/plugins/wordpress-seo/inc/class-wpseo-utils.php",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/footer.php",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/js/functions.js",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/config.codekit",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/js/validator.js",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/functions.php",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/page-sign-in.php",
+		"/var/www/maxsolution/uwrf/wp-config.php",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/header.php",
+		"/var/www/maxsolution/uwrf/wp-includes/functions.wp-scripts.php",
+		"/var/www/personal/jevon/agent/public/themes/vertical/assets/js/app.js",
+		"/var/www/maxsolution/uwrf/wp-admin/includes/plugin.php",
+		"/var/www/maxsolution/uwrf/wp-admin/includes/class-custom-image-header.php",
+		"/var/www/maxsolution/uwrf/wp-includes/single-submission-event.php",
+		"/var/www/personal/jevon/agent/master/upload/src/Http/Traits/UploadPublicTrait.php",
+		"/var/www/personal/jevon/agent/master/upload/src/Http/Controllers/UploadPublicController.php",
+		"/var/www/personal/jevon/agent/master/upload/src/Http/Controllers/AgentAsset.php",
+		"/var/www/personal/jevon/agent/master/upload/routes/web.php",
+		"/var/www/personal/jevon/agent/master/upload/src/Http/Controllers/AgentUploadController.php",
+		"/home/natanael/Downloads/database.sql",
+		"/var/www/maxsolution/uwrf/.htaccess",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/style.css",
+		"/var/www/maxsolution/uwrf/credential.txt",
+		"/var/www/maxsolution/uwrf/wp-content/themes/uwrf/front-page.php",
+		"/var/www/personal/jevon/agent/.env",
+		"/var/www/personal/jevon/agent/master/upload/src/Traits/Uploader.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/CustomerResourceController.php",
+		"/var/www/personal/jevon/agent/master/agent/config/config.php",
+		"/var/www/personal/jevon/agent/master/agent/database/migrations/2020_07_12_000011_update_transaction_table.php",
+		"/var/www/personal/jevon/agent/module/api/src/Http/Controllers/SocialiteController.php",
+		"/var/www/personal/jevon/agent/module/api/src/Http/Controllers/StaticController.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Criteria/ProductCategoryCriteria.php",
+		"/var/www/personal/jevon/agent/module/api/routes/web.php",
+		"/var/www/personal/jevon/agent/app/Exceptions/Handler.php",
+		"/var/www/personal/jevon/agent/vendor/prettus/l5-repository/src/Prettus/Repository/Eloquent/BaseRepository.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php",
-		"/var/www/personal/buditama/kamar/master/payments/src/Payments.php",
-		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_24_000000000_pisa_video_youtube_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/site.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/product-2.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/test-landing.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaTest.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/pisaResult.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/config/config.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/abcci.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/index.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/partials/metadata.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/metadata.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/footer.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/node_modules/ajv/dist/ajv.bundle.js",
-		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-bs4.js",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/gulpfile.js",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/partials/metadata.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/partials/scripts.php",
-		"/var/www/maxsolution/cannedfish/app/Http/Kernel.php",
-		"/var/www/maxsolution/cannedfish/app/Http/Middleware/ClearIndex.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Providers/RouteServiceProvider.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Sidebar/ExtenderSidebar.php",
-		"/var/www/personal/buditama/kamar/module/site/routes/site.php",
-		"/var/www/personal/buditama/kamar/resources/lang/en/routes.php",
-		"/var/www/personal/buditama/kamar/resources/lang/id/routes.php",
-		"/var/www/personal/buditama/kamar/master/rooms/src/Rooms.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/breadcrumbs.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/routes/web.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/PisaServiceprovider.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/SubmissionsRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/SubmissionsPresenter.php",
-		"/var/www/maxsolution/cannedfish/.env",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/startPisaTest.blade.php",
-		"/var/www/maxsolution/cannedfish/public/.htaccess",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/js/style.js",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/js/style.js",
-		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote.js",
-		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote.js",
-		"/var/www/personal/buditama/kamar/module/site/resources/lang/en/default.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/lang/id/default.php",
-		"/var/www/personal/buditama/kamar/vendor/public/site/resources/views/public/details/booking.blade.php",
-		"/var/www/personal/buditama/kamar/storage/framework/views/16f393c644500643ff4b50a05d76e63d82c1b15e.php",
-		"/var/www/maxsolution/cannedfish/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Financial.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/receipts/form.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/product-2.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849964_pisa_receipts_table.php",
-		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote-bs4.js",
-		"/var/www/maxsolution/cannedfish/public/themes/plugins/summernote-0.8.8/dist/summernote-lite.js",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/ReceiptsResourceController.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Receipts.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/views/bukucerdas.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Questions.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/PisaCustomerHistories.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/page/abcci.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/additionals/summernote/summernote-lite.js",
-		"/var/www/maxsolution/cannedfish/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/MathTrig.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasAbc.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/bukuCerdasDetail.blade.php",
-		"/home/natanael/Downloads/login.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/single.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/script.blade.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/gallery.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/PisaCustomers.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/PisaCustomersRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/PisaCustomersRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/PisaCustomerHistoriesRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/PisaCustomerHistoriesRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849964_pisa_ebooks_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Ebooks.php",
-		"/var/www/maxsolution/cannedfish/composer.json",
-		"/var/www/maxsolution/cannedfish/composer.lock",
-		"/var/www/personal/buditama/kamar/module/site/composer.json",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849960_pisa_customers_table.php",
-		"/var/www/personal/buditama/kamar/master/rooms/resources/views/admin/rooms/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/EbooksResourceController.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/ebooks/form.blade.php",
-		"/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/test-detail.php",
-		"/var/www/personal/buditama/kamar/module/site/resources/views/public/dashboard/index.blade.php",
 		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/review.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/composer.json",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Criteria/LiveCriteria.php",
-		"/var/www/maxsolution/cannedfish/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
-		"/var/www/maxsolution/cannedfish/routes/web.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/layouts/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/layouts/partials/metadata.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/layouts/partials/header.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/layouts/partials/footer.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Site/PublicController.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Import/QuestionsImport.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/questions/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/grades/partials/filter.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/database/migrations/2020_06_11_1591849965_pisa_tutorials_table.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Interfaces/TutorialsRepositoryInterface.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/TutorialsResourceController.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/tutorials/index.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/tutorials/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Models/Tutorials.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Eloquent/TutorialsRepository.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/TutorialsPresenter.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/TutorialsTransformer.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/resources/views/admin/grades/form.blade.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Http/Controllers/GradesResourceController.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/GradesTransformer.php",
-		"/var/www/maxsolution/cannedfish/master/pisa/src/Repositories/Presenter/QuestionsTransformer.php",
-		"/var/www/html/halah/index.php",
-		"/var/www/html/halah/library/inc.connection.php",
-		"/var/www/html/halah/login_validasi.php"
+		"/var/www/personal/buditama/kamar/.env",
+		"/var/www/personal/jevon/agent/master/core/resources/views/theme/admin/partials/footer.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/PublicController.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/theme/kamartamu/partials/modal.blade.php",
+		"/var/www/personal/buditama/kamar/module/site/src/Http/Sites/CustomerController.php",
+		"/var/www/personal/jevon/agent/app/Http/Controllers/Controller.php",
+		"/var/www/personal/buditama/kamar/module/site/resources/views/public/details/booking.blade.php.bak",
+		"/var/www/maxsolution/ajinomoto/revamp/packages/master/article/src/Http/Controllers/ArticlePublicController.php",
+		"/var/www/maxsolution/ajinomoto/revamp/resources/views/theme/public/layouts/article.blade.php",
+		"/var/www/maxsolution/ajinomoto/revamp/packages/master/article/resources/views/public/article/detail.blade.php",
+		"/var/www/maxsolution/ajinomoto/revamp/resources/views/theme/public/partials/metadata-article.blade.php",
+		"/var/www/maxsolution/ajinomoto/revamp/resources/views/theme/public/partials/style.blade.php",
+		"/var/www/maxsolution/ajinomoto/revamp/resources/views/theme/public/partials/metadata.blade.php",
+		"/var/www/personal/jevon/agent/public/index2.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/AgentResourceController.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Criteria/LiveCriteria.php",
+		"/var/www/personal/jevon/agent/module/api/src/Http/Services/SocialUserResolver.php",
+		"/var/www/personal/jevon/agent/master/core/src/Controllers/Http/CoreResourceController.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Models/User.php",
+		"/var/www/personal/jevon/agent/config/cors.php",
+		"/var/www/personal/jevon/agent/app/Http/Middleware/VerifyCsrfToken.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Presenter/ActivityTransformer.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Presenter/CustomerTransformer.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/BannerResourceController.php",
+		"/var/www/personal/jevon/agent/master/agent/src/AgentServiceprovider.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Interfaces/TransactionRepositoryInterface.php",
+		"/var/www/personal/jevon/agent/master/agent/routes/breadcrumbs.php",
+		"/var/www/personal/jevon/agent/master/agent/routes/web.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Sidebar/ExtenderSidebar.php",
+		"/var/www/personal/jevon/agent/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/EaningResourceController.php",
+		"/var/www/maxsolution/tclub/modules/Customer/Http/Controllers/CustomerController.php",
+		"/var/www/maxsolution/tclub/modules/Voucher/Http/Controllers/VoucherController.php",
+		"/var/www/maxsolution/tclub/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Models/Activity.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/ActivityResourceController.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Criteria/TransactionCriteria.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Interfaces/ActivityRepositoryInterface.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/VoucherResourceController.php",
+		"/var/www/personal/jevon/agent/master/agent/database/migrations/2020_07_12_000009_create_transaction_table.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/activity/partials/filter.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/eaning/partials/filter.blade.php",
+		"/home/natanael/Documents/Jevon Christian/request.2.txt",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/activity/form.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/activity/index.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/activity/partials/table.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/training/form.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Eloquent/ActivityRepository.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/redeem/partials/filter.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers/ContactResourceController.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/customer/form.blade.php",
+		"/var/www/maxsolution/bmw-event/modules/Site/Views/admin/usher.blade.php",
+		"/var/www/maxsolution/bmw-event/modules/Site/Views/admin/unitcrew.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Presenter/ActivityPresenter.php",
+		"/var/www/personal/jevon/agent/master/agent/database/migrations/2020_07_12_000007_create_activity_table.php",
+		"/var/www/personal/jevon/agent/master/agent/database/migrations/2020_07_12_000006_create_voucher_table.php",
+		"/var/www/personal/jevon/agent/master/agent/resources/views/admin/contact/index.blade.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Repositories/Presenter/ContactPresenter.php",
+		"/var/www/personal/jevon/agent/master/agent/src/Models/Contact.php",
+		"/var/www/maxsolution/cannedfish-down/master/pisa/resources/views/public/sardenAbc.blade.php",
+		"/var/www/personal/jevon/agent/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php",
+		"/var/www/maxsolution/cannedfish-down/app/Providers/RouteServiceProvider.php",
+		"/var/www/maxsolution/cannedfish-down/master/core/helper/asset_helper.php",
+		"/var/www/maxsolution/cannedfish-down/master/core/composer.json",
+		"/var/www/maxsolution/cannedfish-down/vendor/laravel/framework/src/Illuminate/Contracts/Routing/UrlGenerator.php",
+		"/var/www/maxsolution/cannedfish-down/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+		"/var/www/maxsolution/cannedfish-down/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php",
+		"/var/www/maxsolution/cannedfish-down/vendor/symfony/routing/Generator/UrlGenerator.php"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
 		"height": 110.0,
 		"where_history":
 		[
+			"/var/www/personal/natanael/coklat/frontend/src",
+			"/var/www/personal/jevon/agent/master",
+			"/var/www/maxsolution/uwrf/wp-content/themes/uwrf",
+			"/var/www/personal/jevon/agent",
+			"/var/www/maxsolution/uwrf/wp-content/themes/uwrf",
+			"<open files>",
+			"/var/www/maxsolution/uwrf/wp-content/themes/uwrf",
+			"/var/www/maxsolution/uwrf",
+			"/var/www/maxsolution/uwrf/wp-content/themes/uwrf",
+			"/var/www/personal/buditama/kamar/module",
+			"/var/www/personal/jevon/agent/module",
+			"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers",
+			"/var/www/maxsolution/cannedfish-down/vendor",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/maxsolution/cannedfish-down/vendor",
+			"/var/www/personal/jevon/agent/vendor",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/personal/jevon/agent",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/maxsolution/cannedfish-down/vendor",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/maxsolution/cannedfish-down/vendor",
+			"/var/www/personal/jevon/agent/vendor",
+			"/var/www/maxsolution/cannedfish-down/vendor",
+			"/var/www/personal/jevon/agent/vendor",
+			"/var/www/maxsolution/cannedfish-down/vendor",
+			"/var/www/personal/jevon/agent/vendor",
+			"/var/www/maxsolution/cannedfish-down/vendor",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/personal/jevon/agent/vendor/prettus",
+			"/var/www/personal/jevon/agent/master/agent/src/Http/Controllers",
+			"/var/www/maxsolution/cannedfish-down/master",
+			"/var/www/personal/buditama/kamar/master/rooms",
+			"/var/www/maxsolution/bmw-event/modules/Site",
+			"/var/www/maxsolution/bmw-event/modules",
+			"/var/www/maxsolution/bmw-event",
+			"/var/www/maxsolution/cannedfish/master/pisa",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src",
+			"/var/www/maxsolution/cannedfish/master",
+			"/var/www/maxsolution/cannedfish",
+			"/var/www/maxsolution/tclub/modules",
+			"/var/www/personal/jevon/agent/vendor",
+			"/var/www/personal/jevon/agent/master/core",
+			"/var/www/maxsolution/tclub/modules/Main",
+			"/var/www/maxsolution/tclub",
+			"/var/www/personal/jevon/agent",
+			"/var/www/personal/jevon/agent/vendor/spatie",
+			"/var/www/maxsolution/cannedfish/master/upload/src/Http",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/scss",
+			"/var/www/maxsolution/max-ecommerce",
+			"/var/www/maxsolution/max-ecommerce/resources",
+			"/var/www/maxsolution/max-ecommerce/modules",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/scss",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src",
+			"/var/www/maxsolution/cannedfish/public/themes",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/scss/layout",
+			"/var/www/maxsolution/cannedfish/public/themes/cannedfish/src/scss",
+			"/var/www/maxsolution/max-ecommerce/modules/Order",
+			"/var/www/maxsolution/max-ecommerce/modules",
+			"/var/www/personal/jevon/agent/master/agent",
+			"/var/www/personal/jevon/agent/master/agent/resources/views/admin/province",
+			"/var/www/personal/jevon/agent/master/agent/src",
+			"/var/www/maxsolution/cannedfish/master/pisa/resources",
+			"/var/www/personal/jevon/agent/master/upload",
+			"/var/www/personal/jevon/agent/master/upload/src",
+			"/var/www/personal/jevon/agent/vendor/coderello",
+			"/var/www/personal/jevon/agent",
+			"/var/www/maxsolution/cannedfish",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/maxsolution/cannedfish",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/maxsolution/cannedfish-down/vendor/davejamesmiller/laravel-breadcrumbs/src",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/maxsolution/cannedfish-down/vendor/davejamesmiller",
+			"/var/www/maxsolution/cannedfish-down",
+			"/var/www/maxsolution/cannedfishlama/cannedfish",
+			"/var/www/maxsolution/cannedfish",
 			"/var/www/maxsolution/cannedfish/master",
 			"/var/www/maxsolution/cannedfish/master/pisa/resources/views/public",
 			"/var/www/personal/buditama/kamar/module",
@@ -797,64 +871,7 @@
 			"/var/www/maxsolution/cannedfish/master/pisa",
 			"/var/www/maxsolution/cannedfish/master/customers",
 			"/var/www/personal/buditama/kamar",
-			"/var/www/html/sanctum",
-			"/var/www/html/example/laravel-sanctum-example/vue-app",
-			"/var/www/html/example/laravel-sanctum-example/laravel-sanctum",
-			"/var/www/personal/buditama/kamar/module/site/resources/views/public",
-			"/var/www/personal/buditama/kamar/master",
-			"/var/www/maxsolution/cannedfish",
-			"/var/www/maxsolution/tclub",
-			"/var/www/personal/buditama/kamar/resources/views/theme",
-			"/var/www/personal/buditama/kamar/master",
-			"/var/www/maxsolution/tclub/modules/Main",
-			"/var/www/maxsolution/tclub/modules/Contactus",
-			"/var/www/maxsolution/tclub",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub/modules/Voucher/Http",
-			"/var/www/maxsolution/tclub",
-			"/var/www/html/admin/agroxaadmin/agroxaadmin-10/Agroxa_v1.0/Admin/vertical-green/assets",
-			"/var/www/maxsolution/tclub/modules",
-			"/var/www/maxsolution/tclub/modules/Main",
-			"/var/www/personal/buditama/kamar/master",
-			"/var/www/personal/buditama/kamar/module/site/resources/views/public",
-			"/var/www/personal/buditama/kamar/module",
-			"/var/www/personal/buditama/kamar/module/site/resources/views/public/details",
-			"/var/www/personal/buditama/kamar/module",
-			"/var/www/maxsolution/tclub/modules",
-			"/var/www/personal/buditama/kamar",
-			"/var/www/maxsolution/tclub",
-			"/var/www/maxsolution/tclub/modules/Main/Views/module",
-			"/var/www/maxsolution/tclub/modules/Main",
-			"/var/www/maxsolution/tclub/modules/Site/Http/Controllers",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/personal/buditama/kamar/config",
-			"/var/www/maxsolution/tclub",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub/modules/Site/Http/Controllers",
-			"/var/www/personal/alfonso/melimal/admin",
-			"/var/www/maxsolution/tclub",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub/public/themes/tclub2020",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub",
-			"/var/www/maxsolution/tclub/public/themes",
-			"/var/www/maxsolution/tclub/public/themes/tclub2020",
-			"/var/www/maxsolution/tclub/modules/Site/Views",
-			"/var/www/maxsolution/tclub/modules/Site/Http",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub/modules/Site/Views",
-			"/var/www/maxsolution/tclub",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub/public",
-			"/var/www/maxsolution/tclub/public/themes",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub/modules/Site/Views/layouts",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/personal/buditama/kamar",
-			"/var/www/maxsolution/tclub/modules",
-			"/var/www/maxsolution/tclub/public/themes/tclub2020",
-			"/var/www/maxsolution/tclub/modules/Site",
-			"/var/www/maxsolution/tclub/modules"
+			"/var/www/html/sanctum"
 		]
 	},
 	"find_state":
@@ -862,134 +879,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"activity-item",
-			"hide-button",
-			"hideReadmoreSubmission",
-			"hide-button",
-			"showReadmore",
-			"changeSubmission",
-			"submission",
-			"list",
-			"item",
-			"image",
-			"list",
-			"listActive",
-			"image",
-			"receipt",
-			"listActive",
-			"youtube_video_description",
-			"receipt",
-			"tutorial",
-			"public.submit-video",
-			"modalSubmitVideo",
-			"youtubeTester",
-			"desc",
-			"youtube",
-			"snap",
-			"..",
-			"layout",
-			"../",
-			"../src",
-			"src",
-			"tutorials",
-			"receipts",
-			"getFeaturedRooms",
-			"getTypesFeatured",
-			"customer_phone",
-			"customer_email",
+			"email",
+			"transaction",
+			"approve_code",
+			"$",
+			"r",
+			"my_action",
+			"12px",
+			"20px",
+			"list_table_page",
+			"_column_headers",
+			"prepare_items",
+			"set_pagination_args",
+			"page",
+			"email",
+			"getCustomer",
+			"getCustomer(0, true);\n    $product = self::getProduct",
+			"customer",
+			"Contact",
+			"contact",
+			"pt_name",
+			"pt_name'\n\t];",
+			"related_id",
+			"89",
+			"$/",
+			"/^",
+			"Provider",
+			"provider",
+			"$,",
+			"contact_type",
+			"Contact",
+			"contact",
+			"transaction",
+			"Transaction",
+			"transaction",
+			"TransactionRepositoryInterface",
+			"transaction",
+			"AgentFacade",
+			"transa",
+			"getAgent",
+			"agent",
+			"ProvinceR",
+			"province",
+			"getProduct",
 			"name",
-			"receipts",
-			"Tutorials",
-			"Receipts",
-			"SubmissionRepositoryInterface",
-			"submission",
+			"getType",
+			"datepicker",
+			"identity_image",
+			"ANP",
+			"<span class=\"required\">*</span>",
+			"Closing",
+			"category",
+			"dob",
+			"<div class=\"row\">",
+			"col-12 col-lg-4",
+			"<span class=\"required\">*</span>",
+			"transaction",
+			"whereNull",
+			"model",
+			"voucher",
+			"return $item[ $column_name ];    ",
+			"column_default",
+			"error",
+			"Error",
+			"error",
+			"warning",
+			"bootstrap",
+			"session_id",
+			"redirectBy",
+			"wpdb",
+			"title",
+			"class=\"col-sm-10\"",
+			"col-sm-2",
+			"custom-script",
+			"functions.min.js",
+			"modal.js",
+			"jquery.js",
+			"functions.js",
+			"js",
+			"title",
+			"Revenue",
+			"Orders",
+			"header-chart-2",
+			"http://www.paulund.co.uk",
+			"3",
+			"2",
+			"title",
+			"get_sortable_columns",
+			"director",
+			"year",
+			"manage_options",
+			"Example List Table",
+			"http://www.paulund.co.uk",
 			"Submission",
-			"submission",
-			"Submission",
-			"submission",
-			"Submission $data",
-			"submission",
-			"SubmissionPresenter",
-			"Submission",
-			"receipts",
-			"Receipts $data",
-			"receipts",
-			"Receipts",
-			"showActivity",
-			"1",
-			"activities",
-			"galleries",
-			"Gallery",
-			"10",
-			"Gallery",
-			"../../",
-			"previousScroll",
-			"directionScroll",
-			"email_need_validate",
-			"Please validate your email",
-			"notif_login",
-			"check",
-			"Please",
-			"Please validate",
-			"snap/snap.js",
-			"showReadmore",
-			"hahaha",
-			"read-more",
-			"setHideReadMore",
-			"read-more",
-			"setHideReadMore",
-			"list-active",
-			"showReadmore",
-			"hideReadmore",
-			"modalSubmitVideo",
-			"/p",
-			"p",
-			"border-bottom",
-			"modalVideo",
-			"date",
+			"www.paulund.co.uk",
+			"add_menu_example_list_table_page",
+			"wp_list_table",
+			"Link_List_Table",
+			"custom_detail_page",
+			"custom_detail",
+			"career",
+			"form-group",
+			".contact ",
+			"text",
+			"password",
+			"email",
+			"lname",
+			"fname",
+			"text",
+			"UploadTrait",
+			"costume",
+			"custome",
+			"ubudwritersfestival",
+			"menu",
+			"jquery.cycle2.carousel.min.js",
+			"http://malsup.github.io/min/jquery.cycle2.carousel.min.js",
+			"http://uwrf.otesuto.com",
+			"'),\n",
+			"fitvids-for-wordpress",
+			"fitvids-for-wordpress/jquery.fitvids.js",
+			"http",
+			"activity_id",
 			"activity",
-			"date",
-			"../../",
-			"src=\"../../",
-			"src=\"../../src",
-			"src=\"../../",
-			"main-header",
-			"margin",
-			"rellax",
-			"rellax-speed'",
-			"spacer",
-			"rocket",
-			"rellax",
-			"show",
-			"galleries",
-			"no-ssr",
-			"playerLoadById",
-			"renderFirst",
-			"playlistYoutube",
-			"dd",
-			"ebook",
-			"1",
-			"src=\"img",
-			"facebook",
-			"receipt",
-			"fb",
-			"share",
-			"ingredient",
-			"1",
-			"description",
-			"dist",
-			"src=\"../",
-			"Uuid",
-			"Customer",
-			"PisaCustomer",
-			"Customers",
-			"Tutorials",
-			"PisaCustomers",
-			"Settings",
-			"}",
-			"Uuid",
-			"ramsey",
-			"youtube"
+			"date_end",
+			"vouchers",
+			"->toArray()",
+			"province",
+			"# code...",
+			"first"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -997,6 +1014,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"https://uwrf-dev.com",
+			"{{ csrf_field() }}",
+			"Breadcrumbs::register",
+			"{{ csrf_field() }}",
 			"customers",
 			"reward voucher"
 		],
@@ -1009,30 +1030,30 @@
 	"folders":
 	[
 		{
-			"path": "/var/www/maxsolution/cannedfish"
+			"path": "/var/www/personal/jevon/agent"
 		}
 	],
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/public/abcCerdaskanIndonesia.blade.php",
+					"file": "/var/www/personal/jevon/agent/master/core/resources/views/admin/core/dashboard.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11090,
+						"buffer_size": 17421,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6764,
-								6764
+								1379,
+								1379
 							]
 						],
 						"settings":
@@ -1042,27 +1063,31 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2563.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/var/www/maxsolution/cannedfish/master/pisa/resources/views/layouts/partials/header.blade.php",
-					"semi_transient": true,
+					"file": "/var/www/personal/jevon/agent/master/core/resources/views/theme/admin/layouts/dashboard.blade.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2359,
+						"buffer_size": 550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								123,
-								123
+								0,
+								0
+							],
+							[
+								550,
+								550
 							]
 						],
 						"settings":
@@ -1080,19 +1105,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/var/www/maxsolution/cannedfish/public/themes/cannedfish/dist/views/abcci.php",
+					"file": "/var/www/personal/jevon/agent/master/core/src/Controllers/Http/DashboardResourceController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14117,
+						"buffer_size": 1758,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								590,
-								590
+								457,
+								457
 							]
 						],
 						"settings":
@@ -1102,10 +1127,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 57.0,
+						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1113,7 +1138,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -1148,13 +1173,13 @@
 	},
 	"output.find_results":
 	{
-		"height": 0.0
+		"height": 267.0
 	},
 	"pinned_build_system": "",
 	"project": "",
 	"replace":
 	{
-		"height": 54.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1183,10 +1208,10 @@
 		[
 			[
 				"",
-				"$shouldUseRule"
+				"$AggregateError"
 			]
 		],
-		"width": 565.0
+		"width": 1055.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -1196,7 +1221,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 416.0,
+	"side_bar_width": 401.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

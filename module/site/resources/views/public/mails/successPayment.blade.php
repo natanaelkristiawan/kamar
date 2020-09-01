@@ -72,10 +72,6 @@
                                                             <td>Stay Date</td>
                                                             <td>: {{ date('d F Y', strtotime($date_checkin)) }} - {{ date('d F Y', strtotime($date_checkout)) }}</td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>Room</td>
-                                                            <td>: {{ $rooms }} room - {{ $guests }} persons</td>
-                                                        </tr>
                                                     </table>
                                                     <table style="margin-top: 10px;">
                                                         <tr>

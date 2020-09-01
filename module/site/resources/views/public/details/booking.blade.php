@@ -67,6 +67,13 @@
           <span class="helper error"></span>
         </div>
       </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="form-group">
+
+          <span class="helper"> Maximal Guest is {{ $room->total_room }} peoples</span>
+        </div>
+      </div>
       <div class="col-lg-12 col-md-12 col-sm-6 hide">
         <div class="form-group room-wrap">
           <select class="form-control rooms">
@@ -79,7 +86,7 @@
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6">
-        <div class="form-group">
+        <div class="form-group" style="padding: 0">
           <button type="button" class="btn btn-theme full-width" id="btnCheckRoom">{{ trans('site::default.check_availability') }}</button>
           <button type="button" class="btn btn-theme full-width hide" id="bookingNowNew">{{ trans('site::default.book_it_now')  }}</button>
         </div>

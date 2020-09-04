@@ -120,7 +120,7 @@ class Rooms
         'location' => $model->location->name,
         'owner_id' => $model->owner_id,
         'type_id' => $model->type_id,
-        'type_content' => $model->type->content[$language],
+        'type_content' => is_null($model->type) ? '' : $model->type->content[$language],
         'address' => $model->address,
         'address_detail' => $model->address_detail[$language],
         'latitude' => $model->latitude,

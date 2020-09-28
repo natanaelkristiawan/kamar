@@ -191,6 +191,29 @@ class Rooms
   {
     $this->ameneties->pushCriteria(\Master\Rooms\Repositories\Criteria\LiveCriteria::class);
     $query = $this->ameneties->findWhereIn('id', $ids);
+
+    $result = array();
+    foreach ($ids as $key => $value) {
+      $result[] = $this->ameneties->find($value);
+      $this->ameneties->resetModel();
+      $this->ameneties->resetCriteria();
+    }
+
+    $response =array();
+
+    foreach ($result as $key => $value) {
+      $response[] = array(
+        'id' => (int) $value->id,
+        'content' => $value->content[$language],
+        'icon'  => $value->icon
+
+      );
+    }
+
+    return $response;
+
+
+
     $fractal = new Manager();
     $resource = new Collection($query, function(ModelAmeneties $model) use ($language) {
       return [
@@ -202,6 +225,8 @@ class Rooms
     $response = $fractal->createData($resource)->toJson();
     $this->ameneties->resetModel();
     $this->ameneties->resetCriteria();
+
+    dd($response);
     return $response;
   }
 

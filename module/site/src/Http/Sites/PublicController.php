@@ -99,7 +99,8 @@ class PublicController extends Controller
     }
     $room = $data[0];
 
-    $ameneties = json_decode(Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang))->data;
+    $ameneties = Rooms::getAmenetiesByIds($room->ameneties_ids, $this->lang);
+
     $locations = self::getLocations();
 
     $isBookmark = false;

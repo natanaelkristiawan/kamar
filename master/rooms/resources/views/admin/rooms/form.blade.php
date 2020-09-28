@@ -776,5 +776,11 @@ $(document).ready(function(){
   initMap();
   generateInputSearch();
 });
+
+
+
+$(window).on('load', function() {
+  setTimeout(function() {Sortable.create(document.getElementsByClassName('ms-list')[1])}, 1000);
+})
 </script>
 @stop

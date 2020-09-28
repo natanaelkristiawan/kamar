@@ -259,7 +259,10 @@
               <div class="form-group">
                 <label>Ameneties</label> 
                 <div>
-                  <select id='custom-headers' class="searchable" name="ameneties_ids[]" multiple='multiple'></select>
+                  <div id="hidden-multiple">
+
+                  </div>
+                  <select id='custom-headers' class="searchable" ></select>
                 </div>
               </div>
             </div>
@@ -529,6 +532,7 @@
     }
   });
   $(document).ready(function(){
+    var beleh = 99;
     $('.preview-youtube').on('click', function(){
       var videoID = $('#youtube').val();
       if (videoID == '') {
@@ -544,7 +548,9 @@
       var slug = slugify(name);
       $('#slug').val(slug);
     });
+
     $('.searchable').multiSelect({
+      keepOrder: true,
       selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='Select Ameneties'>",
       selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='Select Ameneties'>",
       afterInit: function(ms){
@@ -554,7 +560,7 @@
             selectableSearchString = '#'+that.$container.attr('id')+' .ms-elem-selectable:not(.ms-selected)',
             selectionSearchString = '#'+that.$container.attr('id')+' .ms-elem-selection.ms-selected';
         this.addOption(ameneties)
-        this.select({!! json_encode($data->ameneties_ids) !!}, 'init');
+        this.select({!! json_encode($data->ameneties_ids) !!}, 'no');
 
         that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
         .on('keydown', function(e){
@@ -572,11 +578,17 @@
           }
         });
       },
-      afterSelect: function(){
+      afterSelect: function(value){
+
+        $.each( value, function(key, list){
+          beleh++;
+          $('#hidden-multiple').append('<input type="hidden" name="ameneties_ids['+beleh+']" id="selected_coy_'+list+'" value="'+list+'">');
+        })
         this.qs1.cache();
         this.qs2.cache();
       },
-      afterDeselect: function(){
+      afterDeselect: function(value){
+        $('#selected_coy_'+value).remove();
         this.qs1.cache();
         this.qs2.cache();
       }
@@ -779,8 +791,8 @@ $(document).ready(function(){
 
 
 
-$(window).on('load', function() {
-  setTimeout(function() {Sortable.create(document.getElementsByClassName('ms-list')[1])}, 1000);
-})
+// $(window).on('load', function() {
+//   setTimeout(function() {Sortable.create(document.getElementsByClassName('ms-list')[1])}, 1000);
+// })
 </script>
 @stop

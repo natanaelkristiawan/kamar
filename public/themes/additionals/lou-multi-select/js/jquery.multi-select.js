@@ -362,7 +362,6 @@
           selectables = this.$selectableUl.find('#' + msIds.join('-selectable, #')+'-selectable').filter(':not(.'+that.options.disabledClass+')'),
           selections = this.$selectionUl.find('#' + msIds.join('-selection, #') + '-selection').filter(':not(.'+that.options.disabledClass+')'),
           options = ms.find('option:not(:disabled)').filter(function(){ return($.inArray(this.value, value) > -1); });
-
       if (method === 'init'){
         selectables = this.$selectableUl.find('#' + msIds.join('-selectable, #')+'-selectable'),
         selections = this.$selectionUl.find('#' + msIds.join('-selection, #') + '-selection');
@@ -372,12 +371,13 @@
         selectables.addClass('ms-selected').hide();
         selections.addClass('ms-selected').show();
 
-        options.attr('selected', 'selected');
+        // options.attr('selected', 'selected');
 
         that.$container.find(that.elemsSelector).removeClass('ms-hover');
 
         var selectableOptgroups = that.$selectableUl.children('.ms-optgroup-container');
         if (selectableOptgroups.length > 0){
+
           selectableOptgroups.each(function(){
             var selectablesLi = $(this).find('.ms-elem-selectable');
             if (selectablesLi.length === selectablesLi.filter('.ms-selected').length){
@@ -404,6 +404,7 @@
           ms.trigger('change');
           if (typeof that.options.afterSelect === 'function') {
             that.options.afterSelect.call(this, value);
+            console.log(value)
           }
         }
       }

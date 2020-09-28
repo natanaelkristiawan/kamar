@@ -1,6 +1,6 @@
 <?php 
 return [
-  'quote' => 'Live Like Local',
+  'quote' => 'Create bonding again.',
   'location' => 'Location',
   'search' => 'Search',
   'signup' => 'Signup',
@@ -10,8 +10,8 @@ return [
   'signup_today' => 'Signup Today',
   'signup_quote' => 'Register your property',
   'signup_quote_sub' => 'Only with email address.',
-  'featured_property' => 'Featured <span class="theme-cl">Property</span>',
-  'featured_property_sub' => 'Featured Property means Property that provides complete facilities & unique experiences.',
+  'featured_property' => 'Chance <span class="theme-cl">for you</span>',
+  'featured_property_sub' => 'Create bonding again with your loved one.',
   'browse_all_property' => 'Browse All Property',
   'our_mission' => 'Our Mission & <span class="theme-cl">Work Process</span>',
   'our_mission_sub' => 'Professional & Dedicated Team',
@@ -69,4 +69,6 @@ return [
   'new_password' => 'New Password',
   'new_password_confirmation' => 'New Password Confirmation',
   'map_notif' => 'Exact Location Provided After Booking',
+  'max_guest1' => 'Maximum Guest: ',
+  'max_guest2' => 'Guest(s)',
 ];

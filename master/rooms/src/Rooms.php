@@ -133,6 +133,7 @@ class Rooms
         'abstract' => $model->abstract[$language],
         'description' => $model->description[$language],
         'house_rules' => $model->house_rules[$language],
+        'other_review' => $model->other_review[$language],
         'price' => $model->price,
         'date_off' => $model->date_off,
         'total_room' => $model->total_room,

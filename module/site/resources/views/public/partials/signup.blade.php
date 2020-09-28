@@ -9,7 +9,7 @@
             <h3>{{ trans('site::default.signup_quote')  }}</h3>
             <span>{{ trans('site::default.signup_quote_sub')  }}</span>
           </div>
-          <a href="https://bit.ly/addpropertykamartamu" target="_blank" class="btn btn-call_action_wrap">{{ trans('site::default.signup_today')  }}</a>
+          <a href="https://www.kamartamu.com/add-property" target="_blank" class="btn btn-call_action_wrap">{{ trans('site::default.signup_today')  }}</a>
         </div>
         
       </div>

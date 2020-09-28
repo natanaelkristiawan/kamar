@@ -1,6 +1,6 @@
 <?php 
 return [
-  'quote' => 'Tinggal Bersama Penduduk Lokal',
+  'quote' => 'Ciptakan kembali kehangatan.',
   'location' => 'Lokasi',
   'search' => 'Cari',
   'signup' => 'Daftar',
@@ -10,8 +10,8 @@ return [
   'signup_today' => 'Daftar Sekarang',
   'signup_quote' => 'Daftarkan properti anda',
   'signup_quote_sub' => 'Hanya dengan alamat email.',
-  'featured_property' => 'Properti <span class="theme-cl">Terbaik</span>',
-  'featured_property_sub' =>'Properti terbaik berarti Properti yang menyediakan fasilitas lengkap & pengalaman unik.',
+  'featured_property' => 'Kesempatan <span class="theme-cl">untuk kamu</span>',
+  'featured_property_sub' =>'Ciptakan kembali kehangatan dengan orang tersayangmu.',
   'browse_all_property' => 'Cari Seluruh Properti',
   'our_mission' => 'Misi & <span class="theme-cl">Proses Kerja</span> Kami',
   'our_mission_sub' => 'Tim Profesional & Berdedikasi',
@@ -69,4 +69,6 @@ return [
   'new_password' => 'Password Baru',
   'new_password_confirmation' => 'Konfirmasi Password Baru',
   'map_notif' => 'Detail Lokasi dan Maps Akan Diberikan Setelah Pemesanan',
+  'max_guest1' => 'Maksimal Tamu: ',
+  'max_guest2' => 'Tamu',
 ];

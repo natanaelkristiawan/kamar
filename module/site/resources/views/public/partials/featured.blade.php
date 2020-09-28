@@ -37,8 +37,8 @@
             </div>
             <div class="modern-list-content">
               <div class="listing-content-wrap smalls">
-                <h4 class="lst-title"><a href="single-property-3.html">{{ $room->name }}</a></h4> 
-                <p>{{ $room->location }}</p>
+                <h4 class="lst-title"><a href="{{ route('public.roomDetail', array('slug'=>$room->slug)) }}">{{ $room->name }}</a></h4> 
+                <p>{{ $room->location }}<br>{!! $room->abstract !!}</p>
               </div>
               <div class="listing-footer-wrap property-lists mt-2 text-center justify-content-center">
                 <h4 class="mdr-price">Rp {{ number_format($room->price) }} </h4>/<span class=" text-muted">{{ trans('site::default.night') }}</span>

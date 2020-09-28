@@ -71,7 +71,7 @@
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="form-group">
 
-          <span class="helper"> Maximal Guest is {{ $room->total_room }} peoples</span>
+          <span class="helper"> {{ trans('site::default.max_guest1') }} {{ $room->total_room }} {{ trans('site::default.max_guest2') }}</span>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-6 hide">
@@ -559,7 +559,7 @@
 
     var response = new Promise((resolve) => {
       var total = pricePerNight * rooms * nights;
-      var service = (total * 10) / 100;
+      var service = (total * 12) / 100;
       var grandTotal = total + service;
       resolve({
         total : total,

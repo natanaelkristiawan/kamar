@@ -143,7 +143,12 @@
                     <label>House Rules</label>
                     <textarea name="house_rules[id]" class="textarea form-control">{{ (bool)count((array)$data->house_rules) ? $data->house_rules['id'] : '' }}</textarea>
                   </div>
+                  <div class="form-group">
+                    <label>Other review</label>
+                    <textarea name="other_review[id]" class="textarea form-control">{{ (bool)count((array)$data->other_review) ? $data->other_review['id'] : '' }}</textarea>
+                  </div>
                 </div>
+                
                 <div class="tab-pane p-3" id="content-en" role="tabpanel">
                   <div class="form-group">
                     <label>Title</label> 
@@ -160,6 +165,10 @@
                   <div class="form-group">
                     <label>House Rules</label>
                     <textarea name="house_rules[en]" class="textarea form-control">{{ (bool)count((array)$data->house_rules) ? $data->house_rules['en'] : '' }}</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Other review</label>
+                    <textarea name="other_review[en]" class="textarea form-control">{{ (bool)count((array)$data->other_review) ? $data->other_review['en'] : '' }}</textarea>
                   </div>
                 </div>
 

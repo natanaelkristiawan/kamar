@@ -1,14 +1,14 @@
 <section>
   <div class="container">
   
-    <div class="row">
-      <div class="col-lg-12 col-md-12">
-        <div class="sec-heading center">
-          <h2>{!! trans('site::default.our_mission') !!}</h2>
-          <p>{{ trans('site::default.our_mission_sub') }}</p>
-        </div>
-      </div>
-    </div>
+    <!--<div class="row">-->
+    <!--  <div class="col-lg-12 col-md-12">-->
+    <!--    <div class="sec-heading center">-->
+    <!--      <h2>{!! trans('site::default.our_mission') !!}</h2>-->
+    <!--      <p>{{ trans('site::default.our_mission_sub') }}</p>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</div>-->
     
     <div class="row align-items-center">
       

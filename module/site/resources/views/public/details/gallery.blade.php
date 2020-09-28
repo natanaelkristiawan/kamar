@@ -80,6 +80,7 @@
             <div class="agent-_blocks_thumb"><img src="{{ (is_null($room->owner_photo) || empty($room->owner_photo)) ? url('img/pngwave.png') : url('image/profile/'.$room->owner_photo) }}" alt=""></div>
             <div class="agent-_blocks_caption">
               <h4><a href="#">{{ $room->owner_name }}</a></h4>
+              <!--<span>ASD</span>-->
               @if($room->owner_verified)
               <span data-toggle="tooltip" data-original-title="{{ trans('site::default.owner_valid')  }}" class="approved-agent"><i class="ti-check"></i>{{ trans('site::default.verified')  }}</span>
               @endif

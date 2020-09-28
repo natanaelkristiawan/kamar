@@ -27,6 +27,7 @@ class Rooms extends Model
     'abstract',
     'description',
     'house_rules',
+    'other_review',
     'price',
     'date_off',
     'total_room',
@@ -43,6 +44,7 @@ class Rooms extends Model
     'abstract' => 'array',
     'description' => 'array',
     'house_rules' => 'array',
+    'other_review' => 'array',
     'meta' => 'array',
     'date_off' => 'array',
     'address_detail' => 'array'

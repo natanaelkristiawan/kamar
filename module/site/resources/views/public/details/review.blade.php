@@ -40,6 +40,21 @@
   </div>
 </div>
 
+<div class="property_block_wrap">
+  
+  <div class="property_block_wrap_header">
+    <h4 class="property_block_title">Other Reviews</h4>
+  </div>
+
+  <div class="block-body">
+    <div class="author-review">
+      <div class="comment-list">
+        {!! $room->other_review !!}
+      </div>
+    </div>
+  </div>
+</div>
+
 
 @section('script')
 @parent

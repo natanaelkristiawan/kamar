@@ -1,7 +1,8 @@
 <div class="property_lexible-1 mb-4">
   <div class="pr-price-into flex-1" style="margin-right: 29px;word-break: break-all;">
     <h2>{{ $room->name }}</h2>
-    <span ><i class="lni-map-marker"></i> {{ $room->location }}</span>
+    <span>{!! $room->abstract !!}</span>
+    <span><i class="lni-map-marker"></i> {{ $room->location }}</span>
   </div>
   <div class="price_into_last">
     <h2>Rp {{ number_format($room->price) }}<span>/{{ trans('site::default.night') }}</span></h2>

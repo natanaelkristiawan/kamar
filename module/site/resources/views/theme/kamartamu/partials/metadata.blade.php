@@ -2,6 +2,9 @@
 <meta name="author" content="www.natanaelkristiawan.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 {!! Meta::tag('title') !!}
+
+<meta property="og:image" content="https://www.kamartamu.com/img.jpg" />
+
 <script type="text/javascript">
     var TOKEN = {'_token' : "{{ csrf_token() }}"};
 </script>

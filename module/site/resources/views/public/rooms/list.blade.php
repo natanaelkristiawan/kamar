@@ -31,6 +31,7 @@
           <div class="uilist_full_panel">
             <div class="ullist_panel_left">
               <h4 class="uilist_title">{{ $room->name }}</h4>
+              <small class="text-white">{!! $room->abstract !!}</small>
             </div>
             <div class="ullist_panel_right">
               <h4 class="uilist_price_title">Rp {{ number_format($room->price) }}</h4>

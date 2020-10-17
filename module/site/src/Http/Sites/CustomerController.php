@@ -229,7 +229,7 @@ class CustomerController extends Controller
     /*calculate backend*/ 
 
     $total = $room->price * $roomTotal * $nights;
-    $service = ($total * 10) / 100;
+    $service = ($total * 12) / 100;
     $grandTotal = $total + $service;
 
 

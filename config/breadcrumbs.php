@@ -45,6 +45,7 @@ return [
         base_path('master/books/routes/breadcrumbs.php'),
         base_path('master/payments/routes/breadcrumbs.php'),
         base_path('master/reviews/routes/breadcrumbs.php'),
+        base_path('master/packages/routes/breadcrumbs.php'),
         base_path('module/site/routes/breadcrumbs.php'),
     ],
 

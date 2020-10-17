@@ -29,15 +29,15 @@ use Symfony\Component\String\Exception\RuntimeException;
  */
 abstract class AbstractString implements \Stringable, \JsonSerializable
 {
-    public const PREG_PATTERN_ORDER = PREG_PATTERN_ORDER;
-    public const PREG_SET_ORDER = PREG_SET_ORDER;
-    public const PREG_OFFSET_CAPTURE = PREG_OFFSET_CAPTURE;
-    public const PREG_UNMATCHED_AS_NULL = PREG_UNMATCHED_AS_NULL;
+    public const PREG_PATTERN_ORDER = \PREG_PATTERN_ORDER;
+    public const PREG_SET_ORDER = \PREG_SET_ORDER;
+    public const PREG_OFFSET_CAPTURE = \PREG_OFFSET_CAPTURE;
+    public const PREG_UNMATCHED_AS_NULL = \PREG_UNMATCHED_AS_NULL;
 
     public const PREG_SPLIT = 0;
-    public const PREG_SPLIT_NO_EMPTY = PREG_SPLIT_NO_EMPTY;
-    public const PREG_SPLIT_DELIM_CAPTURE = PREG_SPLIT_DELIM_CAPTURE;
-    public const PREG_SPLIT_OFFSET_CAPTURE = PREG_SPLIT_OFFSET_CAPTURE;
+    public const PREG_SPLIT_NO_EMPTY = \PREG_SPLIT_NO_EMPTY;
+    public const PREG_SPLIT_DELIM_CAPTURE = \PREG_SPLIT_DELIM_CAPTURE;
+    public const PREG_SPLIT_OFFSET_CAPTURE = \PREG_SPLIT_OFFSET_CAPTURE;
 
     protected $string = '';
     protected $ignoreCase = false;
@@ -643,7 +643,11 @@ abstract class AbstractString implements \Stringable, \JsonSerializable
         }
 
         if (!$cut) {
-            $length = $ellipsisLength + ($this->indexOf([' ', "\r", "\n", "\t"], ($length ?: 1) - 1) ?? $stringLength);
+            if (null === $length = $this->indexOf([' ', "\r", "\n", "\t"], ($length ?: 1) - 1)) {
+                return clone $this;
+            }
+
+            $length += $ellipsisLength;
         }
 
         $str = $this->slice(0, $length - $ellipsisLength);

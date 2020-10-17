@@ -10,6 +10,7 @@ return [
     '\Master\Payments\Sidebar\ExtenderSidebar',
     '\Master\Reviews\Sidebar\ExtenderSidebar',
     '\Master\Articles\Sidebar\ExtenderSidebar',
+    '\Master\Packages\Sidebar\ExtenderSidebar',
     '\Module\Site\Sidebar\ExtenderSidebar'
 	]
 ];

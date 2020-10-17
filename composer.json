@@ -64,6 +64,13 @@
             "options"   : {
                 "symlink" : true
             }
+        }, 
+        {
+            "type"      : "path",
+            "url"       : "master/packages",
+            "options"   : {
+                "symlink" : true
+            }
         },
         {
             "type"      : "path",
@@ -90,6 +97,7 @@
         "master/reviews": "@dev",
         "master/rooms": "@dev",
         "master/upload": "@dev",
+        "master/packages": "@dev",
         "midtrans/midtrans-php": "^2.2",
         "public/site": "@dev"
       

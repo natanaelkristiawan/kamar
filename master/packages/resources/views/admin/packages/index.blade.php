@@ -59,7 +59,7 @@
 @section('script')
 @parent
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 var oTable;
 var page = 1;
 $(document).ready(function() {
@@ -99,8 +99,12 @@ $(document).ready(function() {
       page = parseInt(api.rows().page()) + 1;
     },
     columns: [
-      {data : 'name'},
-      {data : 'abstract'},
+      {data : 'owner'},
+      {data : 'total_quota'},
+      {data : 'used_quota'},
+      {data : 'remaining_quota'},
+      {data : 'date_start'},
+      {data : 'date_end'},
       {data : 'status'},
       {data : 'action'},
     ],
@@ -116,6 +120,6 @@ $(document).ready(function() {
   });
 });
 
-</script> -->
+</script>
 
 @stop

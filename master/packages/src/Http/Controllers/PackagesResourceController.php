@@ -8,17 +8,34 @@ use Master\Packages\Interfaces\PackagesRepositoryInterface;
 use Master\Packages\Models\Packages;
 use Validator;
 use Meta;
+use Master\Rooms\Facades\Rooms as Facade;
 
 class PackagesResourceController extends Controller
 {
 	protected $repository;
-
-	public function __construct(PackagesRepositoryInterface $repository)
+	public function __construct(
+		PackagesRepositoryInterface $repository
+	)
 	{
 		$this->middleware('auth:admin');
 		$this->repository = $repository;
 
 		Meta::title('Packages');
+	}
+
+
+	protected function getOwners()
+	{
+		$data = Facade::getOwners();
+		$response[] = array();
+		foreach ($data as $key => $list) {
+		  $response[] = array(
+		    'id' => $list->id,
+		    'text' =>  $list->name.' - '.$list->phone,
+		    'phone' => $list->phone
+		  );
+		} 
+		return $response;
 	}
 
 	public function index(Request $request)
@@ -39,6 +56,9 @@ class PackagesResourceController extends Controller
 
 	public function create(Request $request)
 	{
+		$owners = self::getOwners();
+		$data = $this->repository->newInstance([]);
+		return view('packages::admin.packages.form', compact('owners', 'data'));
 
 	}
 

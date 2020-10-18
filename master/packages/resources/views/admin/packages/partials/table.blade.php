@@ -6,7 +6,7 @@
       <th>Used Quota</th>
       <th>Remaining Quota</th>
       <th>Date Start</th>
-      <th>Date Stop</th>
+      <th>Date End</th>
       <th width="10%">Status</th>
       <th width="10%">Action</th>
     </tr>

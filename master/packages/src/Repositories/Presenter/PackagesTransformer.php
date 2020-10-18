@@ -27,13 +27,12 @@ class PackagesTransformer extends TransformerAbstract
 			'used_quota'	=> $model->used_quota,
 			'remaining_quota' => $model->remaining_quota,
 			'date_start' => $model->date_start,
-			'date_stop' => $model->date_end,
+			'date_end' => $model->date_end,
 			'status' => $status,
 			'action'=> '<div class="btn-group">
                 <a href="'.route('admin.packages.edit', ['id'=>$model->id]).'" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-fw fa-pencil-alt"></i></a>
                 <a href="'.route('admin.packages.delete', ['id'=>$model->id]).'" onclick="return confirm(\'Are you delete this item?\')" class="btn btn-sm btn-danger btn-flat btn-delete" data-id="'.$model->id.'"><i class="fa fa-fw fa-trash"></i></a>
                 </div>'
-			];
 		];
 	}
 }

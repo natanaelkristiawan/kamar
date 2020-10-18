@@ -30,14 +30,35 @@
 
                   <div class="form-group">
                     <label>Total Quota <span class="required">*</span></label>
-                  </div>
+                    <input required="" data-error="Please enter total quota" type="text" value="{{ $data->total_quota }}" placeholder="Total Quota"  name="total_quota" class="form-control">
+                    <div class="help-block with-errors error"></div>
+                  </div> 
+
                   <div class="form-group">
-                    <label>Status</label> 
-                    <div>
-                      <input type="hidden" name="status" value="0">
-                      <input type="checkbox" class="js-switch" name="status" value="1" {{ (bool)$data->status ?  'checked' : ''}} />
-                    </div>
+                    <label>Used Quota <span class="required">*</span></label>
+                    <input required="" data-error="Please enter used quota" type="text" value="{{ $data->used_quota }}" placeholder="Used Quota"  name="used_quota" class="form-control">
+                    <div class="help-block with-errors error"></div>
+                  </div> 
+
+                  <div class="form-group">
+                    <label>Remaining Quota <span class="required">*</span></label>
+                    <input required="" data-error="Please enter remaining quota" type="text" value="{{ $data->remaining_quota }}" placeholder="Remaining Quota"  name="remaining_quota" class="form-control">
+                    <div class="help-block with-errors error"></div>
                   </div>
+
+
+                  <div class="form-group">
+                    <label>Date Start <span class="required">*</span></label>
+                    <input required="" data-error="Please enter date start" type="text" value="{{ $data->date_start }}" placeholder="Date Start"  name="date_start" class="form-control datepicker">
+                    <div class="help-block with-errors error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Date End <span class="required">*</span></label>
+                    <input required="" data-error="Please enter date end" type="text" value="{{ $data->date_end }}" placeholder="Date End"  name="date_end" class="form-control datepicker">
+                    <div class="help-block with-errors error"></div>
+                  </div>
+
                   <div class="form-group row">
                     <div class="col-lg-4 col-sm-offset-2">
                       <button class="btn btn-primary btn-sm" name="submit" value="submit" type="submit">Save</button>
@@ -60,16 +81,21 @@
 @parent
 <script type="text/javascript">
 
-  var elem = document.querySelector('.js-switch');
-  var switchery = new Switchery(elem, { color: '#1AB394' });
-  var uploadPath = "{{ route('public.upload', array('config'=> 'master.packages')).'/'.date('Y/m/d').'/file/file' }}";
-
   $(document).ready(function(){
     var owners = {!! json_encode($owners) !!}
+
 
     initSelect2('.select-owner', owners).then((result) => {
       result.val("{{ $data->owner_id }}").trigger('change');
     });
+
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        autoclose : true,
+        startDate: new Date(),
+        clearBtn: true
+      })
+
 
   })
 

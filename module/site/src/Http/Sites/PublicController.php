@@ -22,6 +22,7 @@ use Curl;
 use Payments;
 use Books;
 use View;
+use Packages;
 class PublicController extends Controller
 {
   function __construct()
@@ -132,7 +133,54 @@ class PublicController extends Controller
     Meta::set('keywords', $room->meta->tag);
     Meta::set('description', $room->meta->description);
     Meta::set('active', 'rooms');
-    return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid' , 'dateDisable', 'isBookmark'));
+
+
+    // get info of owner
+
+
+    $packageOwner = Packages::getPackageByOwner($room->owner_id);
+
+    $numeric = '';
+
+    if (!(bool)is_null($packageOwner)) {
+      $numeric = self::addOrdinalNumberSuffix($packageOwner->used_quota + 1);
+    }
+
+    return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid' , 'dateDisable', 'isBookmark', 'packageOwner', 'numeric'));
+  }
+
+
+  protected function addOrdinalNumberSuffix($num) {
+      if (!in_array(($num % 100),array(11,12,13))){
+      switch ($num % 10) {
+        // Handle 1st, 2nd, 3rd
+        case 1:  return $num.'st';
+        case 2:  return $num.'nd';
+        case 3:  return $num.'rd';
+      }
+    }
+    return $num.'th';
+  }
+
+
+
+  protected function packageChecker($data = array()){
+    $result = false;
+
+    $date = strtotime(date('Y-m-d'));
+
+    foreach ($data as $key => $value) {
+      if ($date >= strtotime($value->date_start)) {
+        if ($date <= strtotime($value->date_end)) {
+          if($value->remaining_quota){
+            $result = true;
+          }
+        }
+      }
+    }
+
+    return $result;
+
   }
 
 

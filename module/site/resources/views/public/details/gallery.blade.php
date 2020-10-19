@@ -87,7 +87,18 @@
             </div>
             <div class="clearfix"></div>
           </div>
-          <a href="mailto:{{ Site::getDataSite('email') }}" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
+
+          @if(is_null($packageOwner))
+
+          <a href="https://wa.me/6282237437577" target="_blank" data-toggle="tooltip" data-original-title="Owner is not online yet, leave a message to Kamartamu team" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
+          
+          @else
+
+          <a href="https://wa.me/{{ $room->owner_phone }}" target="_blank" data-toggle="tooltip" data-original-title="You are {{ $numeric }} guest from {{ $packageOwner->total_quota }} to use this chat" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
+
+          @endif
+
+
         </div>
         
       </div>

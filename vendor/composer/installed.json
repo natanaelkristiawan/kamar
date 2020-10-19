@@ -167,7 +167,7 @@
         "keywords": [
             "laravel"
         ],
-        "abandoned": true
+        "abandoned": "diglactic/laravel-breadcrumbs"
     },
     {
         "name": "dnoegel/php-xdg-base-dir",
@@ -872,37 +872,37 @@
     },
     {
         "name": "filp/whoops",
-        "version": "2.7.3",
-        "version_normalized": "2.7.3.0",
+        "version": "2.8.0",
+        "version_normalized": "2.8.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/filp/whoops.git",
-            "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d"
+            "reference": "fa50d9db1c0c2fae99cf988d27023effda5524a3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/filp/whoops/zipball/5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
-            "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
+            "url": "https://api.github.com/repos/filp/whoops/zipball/fa50d9db1c0c2fae99cf988d27023effda5524a3",
+            "reference": "fa50d9db1c0c2fae99cf988d27023effda5524a3",
             "shasum": ""
         },
         "require": {
-            "php": "^5.5.9 || ^7.0",
+            "php": "^5.5.9 || ^7.0 || ^8.0",
             "psr/log": "^1.0.1"
         },
         "require-dev": {
             "mockery/mockery": "^0.9 || ^1.0",
-            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0",
+            "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.3",
             "symfony/var-dumper": "^2.6 || ^3.0 || ^4.0 || ^5.0"
         },
         "suggest": {
             "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
             "whoops/soap": "Formats errors as SOAP responses"
         },
-        "time": "2020-06-14T09:00:00+00:00",
+        "time": "2020-10-17T09:00:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.6-dev"
+                "dev-master": "2.7-dev"
             }
         },
         "installation-source": "dist",
@@ -1733,17 +1733,17 @@
     },
     {
         "name": "league/commonmark",
-        "version": "1.5.5",
-        "version_normalized": "1.5.5.0",
+        "version": "1.5.6",
+        "version_normalized": "1.5.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/thephpleague/commonmark.git",
-            "reference": "45832dfed6007b984c0d40addfac48d403dc6432"
+            "reference": "a56e91e0fa1f6d0049153a9c34f63488f6b7ce61"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/45832dfed6007b984c0d40addfac48d403dc6432",
-            "reference": "45832dfed6007b984c0d40addfac48d403dc6432",
+            "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/a56e91e0fa1f6d0049153a9c34f63488f6b7ce61",
+            "reference": "a56e91e0fa1f6d0049153a9c34f63488f6b7ce61",
             "shasum": ""
         },
         "require": {
@@ -1766,7 +1766,7 @@
             "scrutinizer/ocular": "^1.5",
             "symfony/finder": "^4.2"
         },
-        "time": "2020-09-13T14:44:46+00:00",
+        "time": "2020-10-17T21:33:03+00:00",
         "bin": [
             "bin/commonmark"
         ],
@@ -2033,17 +2033,17 @@
     },
     {
         "name": "league/mime-type-detection",
-        "version": "1.5.0",
-        "version_normalized": "1.5.0.0",
+        "version": "1.5.1",
+        "version_normalized": "1.5.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/thephpleague/mime-type-detection.git",
-            "reference": "ea2fbfc988bade315acd5967e6d02274086d0f28"
+            "reference": "353f66d7555d8a90781f6f5e7091932f9a4250aa"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/ea2fbfc988bade315acd5967e6d02274086d0f28",
-            "reference": "ea2fbfc988bade315acd5967e6d02274086d0f28",
+            "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/353f66d7555d8a90781f6f5e7091932f9a4250aa",
+            "reference": "353f66d7555d8a90781f6f5e7091932f9a4250aa",
             "shasum": ""
         },
         "require": {
@@ -2054,7 +2054,7 @@
             "phpstan/phpstan": "^0.12.36",
             "phpunit/phpunit": "^8.5.8"
         },
-        "time": "2020-09-21T18:10:53+00:00",
+        "time": "2020-10-18T11:50:25+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2381,14 +2381,17 @@
         "dist": {
             "type": "path",
             "url": "master/packages",
-            "reference": "56841cdf129ed5e2108a8f7cb615cf8f6ba47ceb"
+            "reference": "9a0bde2be74b008c6ed046c4bc19889d548867d5"
         },
         "type": "library",
         "extra": {
             "laravel": {
                 "providers": [
                     "Master\\Packages\\PackagesServiceProvider"
-                ]
+                ],
+                "aliases": {
+                    "Packages": "Master\\Packages\\Facades\\Packages"
+                }
             }
         },
         "installation-source": "dist",

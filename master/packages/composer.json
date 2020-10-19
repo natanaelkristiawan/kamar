@@ -14,7 +14,10 @@
         "laravel": {
             "providers": [
                 "Master\\Packages\\PackagesServiceProvider"
-            ]
+            ],
+            "aliases" : {
+                "Packages": "Master\\Packages\\Facades\\Packages"
+            }
         }
     },
     "minimum-stability": "dev"

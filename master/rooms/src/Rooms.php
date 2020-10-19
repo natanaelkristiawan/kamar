@@ -280,4 +280,5 @@ class Rooms
     $this->rooms->resetCriteria();
     return $response;
   }
+
 }

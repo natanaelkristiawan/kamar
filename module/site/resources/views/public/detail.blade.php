@@ -21,7 +21,12 @@
       <!-- property Sidebar -->
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div class="property-sidebar">
+
+          @if(is_null($packageOwner))
+
           @include('site::public.details.booking')
+          
+          @endif
           <!-- Find New Property -->
           @include('site::public.details.filter')
         </div>

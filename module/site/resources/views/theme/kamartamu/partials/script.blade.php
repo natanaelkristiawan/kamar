@@ -30,6 +30,24 @@
 <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}" defer></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js" defer=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js" defer></script>
+
+
+<script>
+  function onFingerprintJSLoad(fpAgent) {
+    // The FingerprintJS agent is ready. Get a visitor identifier when you'd like to.
+    fpAgent.get().then(result => {
+      // This is the visitor identifier:
+      const visitorId = result.visitorId;
+      Cookies.set('fingerprint', visitorId, { path: '/',  expires: 1});
+    });
+  }
+</script>
+<script
+  async src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+  onload="FingerprintJS.load().then(onFingerprintJSLoad)"
+></script>
+
+
 @if(session()->has('status_notif'))
 <script type="text/javascript">
   $(document).ready(function(){

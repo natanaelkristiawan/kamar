@@ -43,6 +43,12 @@ class PackagesServiceProvider extends ServiceProvider
 		\Master\Packages\Repositories\Eloquent\PackagesRepository::class
 		);
 
+
+		$this->app->bind(
+		'Master\Packages\Interfaces\CounterRepositoryInterface',
+		\Master\Packages\Repositories\Eloquent\CounterRepository::class
+		);
+
 		$this->app->register(\Master\Packages\Providers\RouteServiceProvider::class);
 	}
 

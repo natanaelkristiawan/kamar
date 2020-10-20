@@ -5,7 +5,7 @@ namespace Master\Packages\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Master\Packages\Interfaces\PackagesRepositoryInterface;
-use Master\Packages\Models\Packages;
+use Master\Packages\Models\Package;
 use Validator;
 use Meta;
 use Master\Rooms\Facades\Rooms as Facade;
@@ -100,13 +100,13 @@ class PackagesResourceController extends Controller
 	    return redirect()->route('admin.packages.edit', ['id' => $data->id]);
 	}
 
-	public function edit(Request $request, Packages $data)
+	public function edit(Request $request, Package $data)
 	{
 		$owners = self::getOwners();
 		return view('packages::admin.packages.form', compact('owners', 'data')); 
 	}
 
-	public function update(Request $request, Packages $data)
+	public function update(Request $request, Package $data)
 	{
 	  $validator = Validator::make($request->all(), [
 			'owner_id' => 'required',
@@ -143,7 +143,7 @@ class PackagesResourceController extends Controller
 	    return redirect()->route('admin.packages.edit', ['id' => $data->id]);
 	}
 
-	public function delete(Request $request, Packages $data)
+	public function delete(Request $request, Package $data)
 	{
 	   	$data = $this->repository->delete($data->id);
 		$request->session()->flash('status', 'Success Delete Data!');

@@ -16,7 +16,16 @@ class ExtenderSidebar implements SidebarExtender
 		$menu->group('ADMINISTRATOR', function(Group $group) {
 			$group->item('Packages', function(Item $item){
 				$item->icon('fa fa-fw fa-rss');
-				$item->url(route('admin.packages'));
+				$item->url('package');
+
+				$item->item('Packages', function(Item $item){
+					$item->url(route('admin.packages'));
+				});
+
+				$item->item('Counter Report', function(Item $item){
+					$item->url('javascript:;');
+				});
+
 			});
 
 			

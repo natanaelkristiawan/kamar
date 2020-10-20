@@ -4,9 +4,9 @@ namespace Master\Packages\Repositories\Presenter;
 
 use League\Fractal\TransformerAbstract;
 
-class PackagesTransformer extends TransformerAbstract
+class CounterTransformer extends TransformerAbstract
 {
-	public function transform(\Master\Packages\Models\Package $model)
+	public function transform(\Master\Packages\Models\Counter $model)
 	{
 		switch ($model->status) {
 			case '1':

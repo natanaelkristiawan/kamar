@@ -375,7 +375,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `migrations` */
 
@@ -401,7 +401,8 @@ insert  into `migrations`(`id`,`migration`,`batch`) values
 (58,'2020_05_30_000000_create_books_table',8),
 (59,'2020_06_07_000000_create_reviews_table',9),
 (60,'2020_05_17_1589714484_bookmark_table',10),
-(61,'2020_10_17_1602901356_packages_table',11);
+(61,'2020_10_17_1602901356_packages_table',11),
+(63,'2020_10_17_0000000_package_counter_table',12);
 
 UNLOCK TABLES;
 
@@ -437,6 +438,29 @@ insert  into `owners`(`id`,`name`,`email`,`phone`,`photo`,`card_id`,`selfie_with
 
 UNLOCK TABLES;
 
+/*Table structure for table `package_counter` */
+
+DROP TABLE IF EXISTS `package_counter`;
+
+CREATE TABLE `package_counter` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `package_id` int DEFAULT NULL,
+  `ip` varchar(199) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fingerprint` varchar(199) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `owner_id` int DEFAULT NULL,
+  `room_id` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `package_counter` */
+
+LOCK TABLES `package_counter` WRITE;
+
+UNLOCK TABLES;
+
 /*Table structure for table `packages` */
 
 DROP TABLE IF EXISTS `packages`;
@@ -454,11 +478,14 @@ CREATE TABLE `packages` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `packages` */
 
 LOCK TABLES `packages` WRITE;
+
+insert  into `packages`(`id`,`owner_id`,`total_quota`,`used_quota`,`remaining_quota`,`date_start`,`date_end`,`status`,`created_at`,`updated_at`,`deleted_at`) values 
+(1,1,10,0,10,'2020-10-01','2020-10-31',1,'2020-10-18 19:31:55','2020-10-18 19:31:55',NULL);
 
 UNLOCK TABLES;
 

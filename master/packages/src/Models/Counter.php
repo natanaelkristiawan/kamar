@@ -11,10 +11,16 @@ class Counter extends Model
 	protected $fillable = [
 		'package_id',
 		'ip',
+		'dataIPClient',
 		'fingerprint',
 		'owner_id',
 		'room_id',
 	];
+
+
+	protected $casts = array(
+		'dataIPClient' => 'array'
+	);
 
 
 	public function owner()

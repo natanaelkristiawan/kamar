@@ -1,21 +1,18 @@
 <?php
 namespace Master\Packages;
 
-use Master\Packages\Interfaces\PackagesRepositoryInterface;
+use Master\Packages\Interfaces\PackagesRepositoryInterface as Repository;
 
 class Packages
 {
 
-	protected $packages;
+	public $packages;
 
 
-	public function __construct(
-  		PackagesRepositoryInterface $packages
-	)
+	public function __construct(Repository $repository)
 	{
-		$this->packages = $packages;
+		$this->packages = $repository;
 	}
-
 
 	public function getPackageByOwner($owner_id = 0)
 	{

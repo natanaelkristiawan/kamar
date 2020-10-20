@@ -23,6 +23,8 @@ use Payments;
 use Books;
 use View;
 use Packages;
+use Master\Packages\Models\Package;
+use Master\Packages\Models\Counter;
 class PublicController extends Controller
 {
   function __construct()
@@ -140,6 +142,7 @@ class PublicController extends Controller
 
     $packageOwner = Packages::getPackageByOwner($room->owner_id);
 
+    // $packageOwner = null;
     $numeric = '';
 
     if (!(bool)is_null($packageOwner)) {
@@ -147,6 +150,41 @@ class PublicController extends Controller
     }
 
     return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid' , 'dateDisable', 'isBookmark', 'packageOwner', 'numeric'));
+  }
+
+
+  public function checkDataCounter(Request $request)
+  {
+    $dataSend = array(
+      'fingerprint' => $request->fingerprint,
+      'dataIPClient' => $request->dataIPClient,
+      'ip' => $request->ip,
+      'owner_id' => $request->owner_id,
+      'room_id' => $request->room_id,
+      'package_id' => $request->package_id
+    );
+
+
+    // find data dulu sebelum kalkulasi
+    $findData = Counter::where(array('fingerprint' => $request->fingerprint, 'ip' => $request->ip, 'room_id' => $request->room_id))->first();
+
+    if ( is_null($findData) ) {
+      // find data room packages
+      $package = Package::find($request->package_id);
+
+      $package->used_quota = $package->used_quota + 1;
+      $package->remaining_quota = $package->remaining_quota - 1;
+
+      $package->save();
+
+
+      // saatnya insert sebagai report
+
+      Counter::create($dataSend);
+    }
+
+
+    return true;
   }
 
 

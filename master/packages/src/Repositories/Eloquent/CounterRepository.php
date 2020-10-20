@@ -5,7 +5,7 @@ namespace Master\Packages\Repositories\Eloquent;
 use Master\Packages\Interfaces\CounterRepositoryInterface;
 use Prettus\Repository\Eloquent\BaseRepository;
 
-class PackagesRepository extends BaseRepository implements CounterRepositoryInterface
+class CounterRepository extends BaseRepository implements CounterRepositoryInterface
 {
 	private $pageLimit;
 

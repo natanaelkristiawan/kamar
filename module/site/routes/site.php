@@ -5,6 +5,12 @@ $route->get(LaravelLocalization::transRoute('routes.rooms'), 'PublicController@r
 $route->get('blogs', 'PublicController@blogs')->name('public.blogs');
 $route->get('blogs/{slug}', 'PublicController@blogDetail')->name('public.blogDetail');
 $route->get('faq', 'PublicController@faq')->name('public.faq');
+
+/*check data counter*/
+$route->post('check-data-counter', 'PublicController@checkDataCounter')->name('public.checkdatacounter');
+
+
+
 $route->get(LaravelLocalization::transRoute('routes.privacyPolicy'), 'PublicController@privacyPolicy')->name('public.privacyPolicy');
 $route->get(LaravelLocalization::transRoute('routes.aboutUs'), 'PublicController@aboutUs')->name('public.aboutUs');
 $route->get(LaravelLocalization::transRoute('routes.termAndCondition'), 'PublicController@condition')->name('public.condition');

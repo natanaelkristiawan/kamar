@@ -12,6 +12,7 @@ class PackageCounterTable extends Migration
 		Schema::create('package_counter', function (Blueprint $table) {
 		$table->increments('id');
 		$table->integer('package_id')->nullable();
+		$table->text('dataIPClient')->nullable();
 		$table->string('ip')->nullable();
 		$table->string('fingerprint')->nullable();
 		$table->integer('owner_id')->nullable();

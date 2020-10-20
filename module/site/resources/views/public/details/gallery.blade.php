@@ -94,7 +94,7 @@
           
           @else
 
-          <a href="https://wa.me/{{ $room->owner_phone }}" target="_blank" data-toggle="tooltip" data-original-title="You are {{ $numeric }} guest from {{ $packageOwner->total_quota }} to use this chat" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
+          <a data-href="https://wa.me/{{ $room->owner_phone }}" href="javascript:;" target="_blank" data-toggle="tooltip" data-original-title="You are {{ $numeric }} guest from {{ $packageOwner->total_quota }} to use this chat" class="agent-btn-contact btn btn-theme counter-chat"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
 
           @endif
 
@@ -169,6 +169,34 @@
     );
   }
 
+
+
+  $(document).on('click', '.counter-chat', function(e){
+    e.preventDefault();
+
+    var dataWA = $(this).attr('data-href');
+    var dataIP = JSON.parse(Cookies.get('dataIP'));
+    var dataSend = {
+      fingerprint: Cookies.get('fingerprint'),
+      dataIPClient: dataIP,
+      ip: dataIP.ip,
+      owner_id: "{{ $room->owner_id }}",
+      room_id: "{{ $room->id }}",
+      package_id: "{{ $packageOwner->id }}"
+    }
+
+    $.ajax({
+      url : "{{ route('public.checkdatacounter') }}",
+      data: $.extend(false, TOKEN, dataSend),
+      type: "POST",
+      dataType: 'json',
+      success: function (results) {
+        if (results) {
+          window.location.href = dataWA;
+        }
+      }
+    });
+  })
 
 
 </script>

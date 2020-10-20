@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
+class ComposerStaticInit27fd202927714fc42b5d4549a0736e7f
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -1121,7 +1121,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Faker\\Provider\\cs_CZ\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/Payment.php',
         'Faker\\Provider\\cs_CZ\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/Person.php',
         'Faker\\Provider\\cs_CZ\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/PhoneNumber.php',
-        'Faker\\Provider\\cs_CZ\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/Text.php',
         'Faker\\Provider\\da_DK\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/da_DK/Address.php',
         'Faker\\Provider\\da_DK\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/da_DK/Company.php',
         'Faker\\Provider\\da_DK\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/da_DK/Internet.php',
@@ -1160,7 +1159,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Faker\\Provider\\el_GR\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/Payment.php',
         'Faker\\Provider\\el_GR\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/Person.php',
         'Faker\\Provider\\el_GR\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/PhoneNumber.php',
-        'Faker\\Provider\\el_GR\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/Text.php',
         'Faker\\Provider\\en_AU\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/en_AU/Address.php',
         'Faker\\Provider\\en_AU\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/en_AU/Internet.php',
         'Faker\\Provider\\en_AU\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/en_AU/PhoneNumber.php',
@@ -1261,7 +1259,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Faker\\Provider\\fr_FR\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/Payment.php',
         'Faker\\Provider\\fr_FR\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/Person.php',
         'Faker\\Provider\\fr_FR\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/PhoneNumber.php',
-        'Faker\\Provider\\fr_FR\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/Text.php',
         'Faker\\Provider\\he_IL\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/he_IL/Address.php',
         'Faker\\Provider\\he_IL\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/he_IL/Company.php',
         'Faker\\Provider\\he_IL\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/he_IL/Payment.php',
@@ -1277,7 +1274,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Faker\\Provider\\hu_HU\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/Payment.php',
         'Faker\\Provider\\hu_HU\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/Person.php',
         'Faker\\Provider\\hu_HU\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/PhoneNumber.php',
-        'Faker\\Provider\\hu_HU\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/Text.php',
         'Faker\\Provider\\hy_AM\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hy_AM/Address.php',
         'Faker\\Provider\\hy_AM\\Color' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hy_AM/Color.php',
         'Faker\\Provider\\hy_AM\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hy_AM/Company.php',
@@ -1324,7 +1320,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Faker\\Provider\\ka_GE\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/Payment.php',
         'Faker\\Provider\\ka_GE\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/Person.php',
         'Faker\\Provider\\ka_GE\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/PhoneNumber.php',
-        'Faker\\Provider\\ka_GE\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/Text.php',
         'Faker\\Provider\\kk_KZ\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/kk_KZ/Address.php',
         'Faker\\Provider\\kk_KZ\\Color' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/kk_KZ/Color.php',
         'Faker\\Provider\\kk_KZ\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/kk_KZ/Company.php',
@@ -1423,7 +1418,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Faker\\Provider\\ru_RU\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/Payment.php',
         'Faker\\Provider\\ru_RU\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/Person.php',
         'Faker\\Provider\\ru_RU\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/PhoneNumber.php',
-        'Faker\\Provider\\ru_RU\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/Text.php',
         'Faker\\Provider\\sk_SK\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/sk_SK/Address.php',
         'Faker\\Provider\\sk_SK\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/sk_SK/Company.php',
         'Faker\\Provider\\sk_SK\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/sk_SK/Internet.php',
@@ -1472,7 +1466,6 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Faker\\Provider\\uk_UA\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/Payment.php',
         'Faker\\Provider\\uk_UA\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/Person.php',
         'Faker\\Provider\\uk_UA\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/PhoneNumber.php',
-        'Faker\\Provider\\uk_UA\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/Text.php',
         'Faker\\Provider\\vi_VN\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/vi_VN/Address.php',
         'Faker\\Provider\\vi_VN\\Color' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/vi_VN/Color.php',
         'Faker\\Provider\\vi_VN\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/vi_VN/Internet.php',
@@ -3118,12 +3111,15 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
         'Master\\Customers\\Sidebar\\ExtenderSidebar' => __DIR__ . '/..' . '/master/customers/src/Sidebar/ExtenderSidebar.php',
         'Master\\Packages\\Facades\\Packages' => __DIR__ . '/..' . '/master/packages/src/Facades/Packages.php',
         'Master\\Packages\\Http\\Controllers\\PackagesResourceController' => __DIR__ . '/..' . '/master/packages/src/Http/Controllers/PackagesResourceController.php',
+        'Master\\Packages\\Interfaces\\CounterRepositoryInterface' => __DIR__ . '/..' . '/master/packages/src/Interfaces/CounterRepositoryInterface.php',
         'Master\\Packages\\Interfaces\\PackagesRepositoryInterface' => __DIR__ . '/..' . '/master/packages/src/Interfaces/PackagesRepositoryInterface.php',
+        'Master\\Packages\\Models\\Counter' => __DIR__ . '/..' . '/master/packages/src/Models/Counter.php',
         'Master\\Packages\\Models\\Packages' => __DIR__ . '/..' . '/master/packages/src/Models/Packages.php',
         'Master\\Packages\\Packages' => __DIR__ . '/..' . '/master/packages/src/Packages.php',
         'Master\\Packages\\PackagesServiceProvider' => __DIR__ . '/..' . '/master/packages/src/PackagesServiceprovider.php',
         'Master\\Packages\\Providers\\RouteServiceProvider' => __DIR__ . '/..' . '/master/packages/src/Providers/RouteServiceProvider.php',
         'Master\\Packages\\Repositories\\Criteria\\PackagesCriteria' => __DIR__ . '/..' . '/master/packages/src/Repositories/Criteria/PackagesCriteria.php',
+        'Master\\Packages\\Repositories\\Eloquent\\CounterRepository' => __DIR__ . '/..' . '/master/packages/src/Repositories/Eloquent/CounterRepository.php',
         'Master\\Packages\\Repositories\\Eloquent\\PackagesRepository' => __DIR__ . '/..' . '/master/packages/src/Repositories/Eloquent/PackagesRepository.php',
         'Master\\Packages\\Repositories\\Presenter\\PackagesPresenter' => __DIR__ . '/..' . '/master/packages/src/Repositories/Presenter/PackagesPresenter.php',
         'Master\\Packages\\Repositories\\Presenter\\PackagesTransformer' => __DIR__ . '/..' . '/master/packages/src/Repositories/Presenter/PackagesTransformer.php',
@@ -5648,10 +5644,10 @@ class ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdffbe61d38a09c9836d870f1bba7aa9b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit27fd202927714fc42b5d4549a0736e7f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit27fd202927714fc42b5d4549a0736e7f::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit27fd202927714fc42b5d4549a0736e7f::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit27fd202927714fc42b5d4549a0736e7f::$classMap;
 
         }, null, ClassLoader::class);
     }

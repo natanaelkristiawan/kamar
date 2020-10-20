@@ -16,7 +16,7 @@ class PackagesRepository extends BaseRepository implements PackagesRepositoryInt
 
 	public function model()
 	{
-		return \Master\Packages\Models\Packages::class;
+		return \Master\Packages\Models\Package::class;
 	}
 
 	public function newInstance(array $attributes)

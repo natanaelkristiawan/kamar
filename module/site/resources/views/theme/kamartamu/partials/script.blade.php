@@ -31,6 +31,13 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js" defer=""></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js" defer></script>
 
+<script type="text/javascript">
+  if (Cookies.get('dataIP') == undefined) {
+    $.getJSON('https://ipinfo.io', function(data){
+      Cookies.set('dataIP', JSON.stringify(data), { path: '/',  expires: 1});
+    });
+  }
+</script>
 
 <script>
   function onFingerprintJSLoad(fpAgent) {

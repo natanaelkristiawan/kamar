@@ -4,7 +4,7 @@ namespace Master\Packages\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Packages extends Model 
+class Package extends Model 
 {
 	use SoftDeletes;
 	protected $table = 'packages';

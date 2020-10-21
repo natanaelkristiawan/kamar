@@ -170,6 +170,7 @@
   }
 
 
+  @if(!is_null($packageOwner))
 
   $(document).on('click', '.counter-chat', function(e){
     e.preventDefault();
@@ -198,7 +199,7 @@
     });
   })
 
-
+  @endif
 </script>
 
 @stop

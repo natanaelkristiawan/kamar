@@ -23,7 +23,7 @@ class ExtenderSidebar implements SidebarExtender
 				});
 
 				$item->item('Counter Report', function(Item $item){
-					$item->url('javascript:;');
+					$item->url(route('admin.counter'));
 				});
 
 			});

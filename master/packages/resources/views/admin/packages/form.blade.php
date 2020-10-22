@@ -44,6 +44,13 @@
                     <label>Remaining Quota <span class="required">*</span></label>
                     <input required="" data-error="Please enter remaining quota" type="text" value="{{ $data->remaining_quota }}" placeholder="Remaining Quota"  name="remaining_quota" class="form-control">
                     <div class="help-block with-errors error"></div>
+                  </div> 
+
+
+                  <div class="form-group">
+                    <label>Bitly Link <span class="required">*</span></label>
+                    <input required="" data-error="Please enter bitly link" type="text" value="{{ $data->bitly }}" placeholder="Bitly Link"  name="bitly" class="form-control">
+                    <div class="help-block with-errors error"></div>
                   </div>
 
 

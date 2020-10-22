@@ -9,6 +9,7 @@ use Master\Packages\Models\Package;
 use Validator;
 use Meta;
 use Master\Rooms\Facades\Rooms as Facade;
+use Master\Rooms\Models\Rooms as ModelRoom;
 
 class CounterResourceController extends Controller
 {
@@ -19,7 +20,7 @@ class CounterResourceController extends Controller
 	{
 		$this->middleware('auth:admin');
 		$this->repository = $repository;
-
+		$this->repository->pushCriteria(\Master\Core\Repositories\Criteria\RequestCriteria::class);
 		Meta::title('Counter');
 	}
 
@@ -38,20 +39,38 @@ class CounterResourceController extends Controller
 		return $response;
 	}
 
+
+	protected function getRooms()
+	{
+		$data = ModelRoom::all();
+		$response[] = array();
+		foreach ($data as $key => $list) {
+		  $response[] = array(
+		    'id' => $list->id,
+		    'text' =>  $list->name
+		  );
+		} 
+		return $response;
+	}
+
 	public function index(Request $request)
 	{
+
+		$owners = self::getOwners();
+		$rooms = self::getRooms();
+
 		if($request->ajax()){
 			$pageLimit = $request->length;
 
 			$data = $this->repository
-			->setPresenter(\Master\Packages\Repositories\Presenter\PackagesPresenter::class)
+			->setPresenter(\Master\Packages\Repositories\Presenter\CounterPresenter::class)
 			->setPageLimit($pageLimit)
 			->getDataTable();
 
 			return response()->json($data);
 		}
 
-		return view('packages::admin.packages.index');  
+		return view('packages::admin.counter.index', compact('owners', 'rooms'));  
 	}
 
 }

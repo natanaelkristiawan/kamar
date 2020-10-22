@@ -94,7 +94,7 @@
           
           @else
 
-          <a data-href="https://wa.me/{{ $room->owner_phone }}" href="javascript:;" target="_blank" data-toggle="tooltip" data-original-title="You are {{ $numeric }} guest from {{ $packageOwner->total_quota }} to use this chat" class="agent-btn-contact btn btn-theme counter-chat"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
+          <a data-href="{{$packageOwner->bitly}}" href="javascript:;" target="_blank" data-toggle="tooltip" data-original-title="You are {{ $numeric }} guest from {{ $packageOwner->total_quota }} to use this chat" class="agent-btn-contact btn btn-theme counter-chat"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
 
           @endif
 

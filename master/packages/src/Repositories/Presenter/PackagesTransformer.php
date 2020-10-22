@@ -22,7 +22,7 @@ class PackagesTransformer extends TransformerAbstract
 
 		return [
 			'id'   	=> $model->id,
-			'owner' => $model->owner->name,
+			'owner_id' => $model->owner->name,
 			'total_quota' 	=> $model->total_quota,
 			'used_quota'	=> $model->used_quota,
 			'remaining_quota' => $model->remaining_quota,

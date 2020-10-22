@@ -6,24 +6,16 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label>Owner</label> 
-              <select class="form-control select-owner" name="search[owner_id]" required="" data-error="Please select owner"></select>
-              <div class="help-block with-errors error"></div>
+              <select class="form-control select-owner" name="search[owner_id]"></select>
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="form-group">
-              <label>Status</label> 
-              <select class="form-control filter-field" name="search[status]">
-                <option value="all">All</option>
-                <option value="1">Live</option>
-                <option value="0">Draft</option>
-                <option value="2">Exhausted Limit</option>
-              </select>
+              <label>Room</label> 
+              <select class="form-control select-room" name="search[room_id]"></select>
             </div>
           </div>
         </div>
-       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger filter-btn">Filter</button>
@@ -34,17 +26,16 @@
   </div>
 </div>
 
-
 @section('script')
 @parent
 <script type="text/javascript">
    $(document).ready(function(){
     var owners = {!! json_encode($owners) !!}
+    var rooms = {!! json_encode($rooms) !!}
 
 
-    initSelect2('.select-owner', owners).then((result) => {
-      
-    });
+    initSelect2('.select-owner', owners)
+    initSelect2('.select-room', rooms)
 
   })
 </script>

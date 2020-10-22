@@ -16,6 +16,7 @@ class Package extends Model
 		'date_start',
 		'date_end',
 		'status',
+		'bitly',
 	];
 
 

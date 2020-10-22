@@ -19,7 +19,7 @@ class PackagesResourceController extends Controller
 	{
 		$this->middleware('auth:admin');
 		$this->repository = $repository;
-
+		$this->repository->pushCriteria(\Master\Core\Repositories\Criteria\RequestCriteria::class);
 		Meta::title('Packages');
 	}
 
@@ -39,7 +39,9 @@ class PackagesResourceController extends Controller
 	}
 
 	public function index(Request $request)
-	{
+	{	
+		$owners = self::getOwners();
+
 		if($request->ajax()){
 			$pageLimit = $request->length;
 
@@ -51,7 +53,7 @@ class PackagesResourceController extends Controller
 			return response()->json($data);
 		}
 
-		return view('packages::admin.packages.index');  
+		return view('packages::admin.packages.index', compact('owners'));  
 	}
 
 	public function create(Request $request)
@@ -87,6 +89,7 @@ class PackagesResourceController extends Controller
 			'remaining_quota' => $request->remaining_quota,
 			'date_start' => $request->date_start,
 			'date_end' => $request->date_end,
+			'bitly' => $request->bitly,
 			'status' => 1,
 	    );
 
@@ -130,7 +133,8 @@ class PackagesResourceController extends Controller
 			'used_quota' => $request->used_quota,
 			'remaining_quota' => $request->remaining_quota,
 			'date_start' => $request->date_start,
-			'date_end' => $request->date_end
+			'date_end' => $request->date_end,
+			'bitly' => $request->bitly,
 	    );
 
 	    $data = $this->repository->update($dataInsert, $data->id);

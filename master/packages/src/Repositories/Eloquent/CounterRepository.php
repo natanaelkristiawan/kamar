@@ -10,7 +10,8 @@ class CounterRepository extends BaseRepository implements CounterRepositoryInter
 	private $pageLimit;
 
 	protected $fieldSearchable = [
-		'name'      => 'like',
+		'owner_id'  => '=',
+		'room_id'   => '=',
 		'status'    => '='
 	];
 

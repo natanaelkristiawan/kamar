@@ -10,7 +10,7 @@ class PackagesRepository extends BaseRepository implements PackagesRepositoryInt
 	private $pageLimit;
 
 	protected $fieldSearchable = [
-		'name'      => 'like',
+		'owner_id' 	=> '=',
 		'status'    => '='
 	];
 

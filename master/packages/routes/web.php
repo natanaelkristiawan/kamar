@@ -11,4 +11,9 @@ $route->group(['prefix' => env('ADMIN_URL', 'admin')], function ($route) {
 			$route->get('delete/{id}', 'PackagesResourceController@delete')->name('admin.packages.delete');
 		});
 	});
+	$route->group(['middleware' => ['admin']], function ($route) {
+		$route->group(['prefix' => 'counter'], function($route) {
+			$route->get('/', 'CounterResourceController@index')->name('admin.counter');
+		});
+	});
 });

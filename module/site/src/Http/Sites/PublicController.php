@@ -175,6 +175,10 @@ class PublicController extends Controller
       $package->used_quota = $package->used_quota + 1;
       $package->remaining_quota = $package->remaining_quota - 1;
 
+      if (($package->remaining_quota - 1) == 0) {
+        $package->status = 3;
+      }
+
       $package->save();
 
 

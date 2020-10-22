@@ -10,7 +10,7 @@
       <div class="col-sm-12">
         <div class="page-title-box">
           <h4 class="page-title">{!! Meta::get('title') !!}</h4>
-          {{ Breadcrumbs::render('packages') }}
+          {{ Breadcrumbs::render('counter') }}
         </div>
       </div>
     </div>
@@ -26,12 +26,11 @@
                   <h4 class="mt-0 header-title">Data</h4>
                 </div>
                 <div class="col-lg-6 text-right">
-                  <a href="{{ route('admin.packages.create') }}" class="btn btn-sm btn-primary">New</a>
                   <button type="button" data-toggle="modal" data-target="#modal-filter" class="btn btn-sm btn-neutral">Filter</button>
                 </div>
               </div>
 
-              @include('packages::admin.packages.partials.table')
+              @include('packages::admin.counter.partials.table')
 
               
             </div>
@@ -52,7 +51,7 @@
 @section('modal')
 @parent
 
-@include('packages::admin.packages.partials.filter')
+@include('packages::admin.counter.partials.filter')
 @stop
 
 
@@ -81,7 +80,7 @@ $(document).ready(function() {
       }
     },
     ajax: {
-      url: "{{ route('admin.packages') }}",
+      url: "{{ route('admin.counter') }}",
       dataType: "json",
       type: "GET",
       data: function ( d ) {
@@ -99,14 +98,11 @@ $(document).ready(function() {
       page = parseInt(api.rows().page()) + 1;
     },
     columns: [
+      {data : 'created_at'},
+      {data : 'ip'},
+      {data : 'fingerprint'},
+      {data : 'room_id'},
       {data : 'owner_id'},
-      {data : 'total_quota'},
-      {data : 'used_quota'},
-      {data : 'remaining_quota'},
-      {data : 'date_start'},
-      {data : 'date_end'},
-      {data : 'status'},
-      {data : 'action'},
     ],
   });
 

@@ -91,11 +91,15 @@
           @if(is_null($packageOwner))
 
           <a href="https://wa.me/6282237437577" target="_blank" data-toggle="tooltip" data-original-title="Owner is not online yet, leave a message to Kamartamu team" class="agent-btn-contact btn btn-theme"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
-          
+          <div style="padding-top: 5px; font-weight: bold; font-size: 12px;color: #d45e46" class="mobile">
+            Owner is not online yet, leave a message to Kamartamu team*
+          </div>
           @else
 
-          <a data-href="{{$packageOwner->bitly}}" href="javascript:;" target="_blank" data-toggle="tooltip" data-original-title="You are {{ $numeric }} guest from {{ $packageOwner->total_quota }} to use this chat" class="agent-btn-contact btn btn-theme counter-chat"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
-
+          <a data-href="{{$packageOwner->bitly}}" href="javascript:;" target="_blank" data-toggle="tooltip" data-original-title="{{ $numeric }} guests have contacted this accomodation" class="agent-btn-contact btn btn-theme counter-chat"><i class="ti-comment-alt"></i>{{ trans('site::default.contact_us') }}</a>         
+          <div style="padding-top: 5px; font-weight: bold; font-size: 12px;color: #d45e46" class="mobile">
+            {{ $numeric }} guests have contacted this accomodation*
+          </div>
           @endif
 
 
@@ -114,6 +118,12 @@
 <style>
   .add-to-favorite.active i{
     color: #eb3b5a
+  }
+  @media only screen and (min-width: 600px) {
+    .mobile {
+      display: none
+    }
+
   }
 </style>
 

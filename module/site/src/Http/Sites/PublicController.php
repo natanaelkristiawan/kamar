@@ -146,7 +146,7 @@ class PublicController extends Controller
     $numeric = '';
 
     if (!(bool)is_null($packageOwner)) {
-      $numeric = self::addOrdinalNumberSuffix($packageOwner->used_quota + 1);
+      $numeric = $packageOwner->used_quota;
     }
 
     return view('site::public.detail', compact('room', 'ameneties', 'locations', 'uuid' , 'dateDisable', 'isBookmark', 'packageOwner', 'numeric'));

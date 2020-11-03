@@ -137,6 +137,13 @@ class PackagesResourceController extends Controller
 			'bitly' => $request->bitly,
 	    );
 
+
+	    if ($request->used_quota <  $request->total_quota) {
+	    	$dataInsert['status'] = 1;
+	    } else {
+	    	$dataInsert['status'] = 3;
+	    }
+
 	    $data = $this->repository->update($dataInsert, $data->id);
 
 	    $request->session()->flash('status', 'Success Insert Data!');

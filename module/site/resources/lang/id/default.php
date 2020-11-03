@@ -56,7 +56,7 @@ return [
   'owner_not_valid' => 'Pemilik belum di verifikasi dengan KTP dan Akun Bank',
   'verified' => 'Telah diverikasi',
   'not_verified' => 'Belum diverikasi',
-  'contact_us' => 'Hubungi Kami',
+  'contact_us' => 'Chat dengan Pemilik',
   'booking_history' => 'Riwayat Pemesanan',
   'pending' => 'Tertunda',
   'success' => 'Berhasil',

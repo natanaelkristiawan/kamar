@@ -56,7 +56,7 @@ return [
   'owner_not_valid' => 'This owner not validate with ID Card & Indonesian Bank Account',
   'verified' => 'Verified',
   'not_verified' => 'Not Verified',
-  'contact_us' => 'Contact Us',
+  'contact_us' => 'Chat with Owner',
   'booking_history' => 'Booking History',
   'pending' => 'Pending',
   'success' => 'Success',

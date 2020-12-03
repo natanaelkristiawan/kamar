@@ -13,7 +13,7 @@ class CounterTransformer extends TransformerAbstract
 		$owner_id = null;
 
 		if (count($model->room)) {
-			$room = $model->room->name
+			$room = $model->room->name;
 		}
 
 		if (count($model->owner_id)) {

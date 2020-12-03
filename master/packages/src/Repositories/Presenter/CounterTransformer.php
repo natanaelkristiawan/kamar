@@ -12,11 +12,11 @@ class CounterTransformer extends TransformerAbstract
 		$room_id = null;
 		$owner_id = null;
 
-		if (count($model->room)) {
+		if (!is_null($model->room)) {
 			$room = $model->room->name;
 		}
 
-		if (count($model->owner_id)) {
+		if (!is_null($model->owner_id)) {
 			$$owner_id = $model->owner->name;
 		}
 

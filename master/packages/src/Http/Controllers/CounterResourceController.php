@@ -63,6 +63,7 @@ class CounterResourceController extends Controller
 			$pageLimit = $request->length;
 
 			$data = $this->repository
+			->pushCriteria(\Master\Packages\Repositories\Criteria\CounterCriteria::class)
 			->setPresenter(\Master\Packages\Repositories\Presenter\CounterPresenter::class)
 			->setPageLimit($pageLimit)
 			->getDataTable();

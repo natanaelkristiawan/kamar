@@ -8,26 +8,13 @@ class CounterTransformer extends TransformerAbstract
 {
 	public function transform(\Master\Packages\Models\Counter $model)
 	{
-
-		$room_id = null;
-		$owner_id = null;
-
-		if (!is_null($model->room)) {
-			$room = $model->room->name;
-		}
-
-		if (!is_null($model->owner_id)) {
-			$$owner_id = $model->owner->name;
-		}
-
-
 		return [
 			'id'   	=> $model->id,
 			'created_at' => date('Y-m-d', strtotime($model->created_at)),
 			'ip'	=> $model->ip,
 			'fingerprint' => $model->fingerprint,
-			'room_id' => $room_id,
-			'owner_id' => $owner_id,
+			'room_id' => $model->room->name,
+			'owner_id' => $model->owner->name,
 		];
 	}
 }

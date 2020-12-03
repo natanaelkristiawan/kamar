@@ -9,7 +9,7 @@ class CounterCriteria implements CriteriaInterface {
 	public function apply($model, RepositoryInterface $repository)
 	{
 		return $model->with(['owner','room'])->whereHas('room', function($query){
-			return $query->status(1);
+			return $query->where('status', 1);
 		});
 	}
 }

@@ -10,8 +10,6 @@ class CounterCriteria implements CriteriaInterface {
 	{
 		return $model->with(['owner','room'])->whereHas('room', function($query){
 			return $query->where('status', 1);
-		})->whereHas('owner', function($query){
-			return $query->where('status', 1);
 		});
 	}
 }

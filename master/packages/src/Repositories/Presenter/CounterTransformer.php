@@ -14,7 +14,7 @@ class CounterTransformer extends TransformerAbstract
 			'ip'	=> $model->ip,
 			'fingerprint' => $model->fingerprint,
 			'room_id' => $model->room->name,
-			'owner_id' => $model->owner->name,
+			'owner_id' => $model->owner_id,
 		];
 	}
 }

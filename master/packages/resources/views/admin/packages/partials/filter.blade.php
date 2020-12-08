@@ -6,7 +6,7 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label>Owner</label> 
-              <select class="form-control select-owner" name="search[owner_id]" required="" data-error="Please select owner"></select>
+              <select class="form-control select-owner filter-field" name="search[owner_id]" required="" data-error="Please select owner"></select>
               <div class="help-block with-errors error"></div>
             </div>
           </div>

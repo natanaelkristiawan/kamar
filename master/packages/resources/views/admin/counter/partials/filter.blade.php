@@ -6,13 +6,13 @@
           <div class="col-lg-6">
             <div class="form-group">
               <label>Owner</label> 
-              <select class="form-control select-owner" name="search[owner_id]"></select>
+              <select class="form-control select-owner filter-field" name="search[owner_id]"></select>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
               <label>Room</label> 
-              <select class="form-control select-room" name="search[room_id]"></select>
+              <select class="form-control select-room filter-field" name="search[room_id]"></select>
             </div>
           </div>
         </div>
